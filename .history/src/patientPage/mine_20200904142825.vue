@@ -127,13 +127,15 @@ export default {
             height: 1.08rem;
             position: relative;
             left: 50%;
-            transform: translate(-50%, 36%);
+            top: 50%;
+            transform: translate(-50%);
             border-radius: 50%;
         }
 
         p {
             font-size: 0.26rem;
             color: #606060;
+            padding-top: 0.1rem;
             text-align: center;
         }
     }
@@ -143,16 +145,16 @@ export default {
     width: 100%;
     margin: 0 auto;
     padding-top: 0.354rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1.51rem;
 
     p {
         width: 100%;
         height: 0.875rem;
         border-bottom: 1px solid #ebebeb;
-        line-height: 0.075rem;
+        line-height: 0.875rem;
 
         span {
-            font-size: 0.36rem;
+            font-size: 0.26rem;
             color: #7B7B7B;
             float: left;
             padding-left: 0.2rem;
@@ -163,7 +165,7 @@ export default {
             height: 0.416rem;
             float: right;
             position: relative;
-            // top: 50%;
+            top: 50%;
             transform: translateY(-50%);
             opacity: 1;
         }

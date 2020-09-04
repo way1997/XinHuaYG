@@ -143,7 +143,7 @@ export default {
     width: 100%;
     margin: 0 auto;
     padding-top: 0.354rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1.51rem;
 
     p {
         width: 100%;
@@ -164,8 +164,8 @@ export default {
             float: right;
             position: relative;
             // top: 50%;
-            transform: translateY(-50%);
-            opacity: 1;
+            [transform: translateY(-50%);
+            ] opacity: 1;
         }
 
         &:last-child {

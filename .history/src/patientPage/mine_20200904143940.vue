@@ -143,7 +143,7 @@ export default {
     width: 100%;
     margin: 0 auto;
     padding-top: 0.354rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1.2rem;
 
     p {
         width: 100%;

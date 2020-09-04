@@ -143,7 +143,7 @@ export default {
     width: 100%;
     margin: 0 auto;
     padding-top: 0.354rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1.51rem;
 
     p {
         width: 100%;
@@ -152,7 +152,7 @@ export default {
         line-height: 0.075rem;
 
         span {
-            font-size: 0.36rem;
+            font-size: 0.26rem;
             color: #7B7B7B;
             float: left;
             padding-left: 0.2rem;
