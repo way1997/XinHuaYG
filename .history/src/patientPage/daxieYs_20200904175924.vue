@@ -176,10 +176,11 @@ export default {
     height: 5.5rem;
     background: #fff;
     margin-top: .64rem;
-    margin: 0.3rem auto
+    margin: 0 auto;
 }
 
 .top1 .center {
+    border: 1px solid red;
     width: 75%;
     margin: 0 auto;
 }
@@ -213,7 +214,7 @@ export default {
     width: 100%;
     height: .34rem;
     color: #828282;
-    font-size: 0.23rem;
+    font-size: 0.25rem;
     line-height: .34rem;
     margin-top: .24rem;
     text-align: center;

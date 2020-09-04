@@ -175,8 +175,8 @@ export default {
     width: 100%;
     height: 5.5rem;
     background: #fff;
-    margin-top: .64rem;
-    margin: 0.3rem auto
+    margin-top: .84rem;
+    margin: 0 auto;
 }
 
 .top1 .center {

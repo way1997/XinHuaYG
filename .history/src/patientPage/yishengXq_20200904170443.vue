@@ -245,7 +245,7 @@ export default {
 @import "../assets/less/base.less";
 
 .backHome {
-    width: 88.133%;
+    width: 88.133%%;
     height: 0.76rem;
     background: #00afc2;
     border-radius: 0.13rem;

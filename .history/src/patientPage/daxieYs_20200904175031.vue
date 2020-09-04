@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <div class="xian"></div>
+    <!--<div class="xian"></div>
     <div class="warp">
         <div class="foot">
             <div><img src="../assets/img/hongquan_03.png"> 收到{{list2.number}}次答谢</div>
@@ -31,7 +31,7 @@
             </div>
             <img :src="'https://www.mfzhosp.com'+item.giftPircture" class="liwupic">
         </div>
-    </div>
+    </div>-->
 </div>
 </template>
 
@@ -176,11 +176,10 @@ export default {
     height: 5.5rem;
     background: #fff;
     margin-top: .64rem;
-    margin: 0.3rem auto
 }
 
 .top1 .center {
-    width: 75%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -213,7 +212,7 @@ export default {
     width: 100%;
     height: .34rem;
     color: #828282;
-    font-size: 0.23rem;
+    font-size: 0.25rem;
     line-height: .34rem;
     margin-top: .24rem;
     text-align: center;

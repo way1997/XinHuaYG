@@ -13,12 +13,12 @@
         <div class="center">
             <div class="cengter2" v-for="(item,index) in message" :key="index" @click="giveLiwu(item)">
                 <img :src="'https://www.mfzhosp.com'+item.pircture" class="tu">
-                <div class="zi">{{item.givingName}}</div>
-                <div class="zi1">{{item.givingMoney}}元</div>
+                <!--<div class="zi">{{item.givingName}}</div>
+                <div class="zi1">{{item.givingMoney}}元</div> -->
             </div>
         </div>
     </div>
-    <div class="xian"></div>
+    <!--<div class="xian"></div>
     <div class="warp">
         <div class="foot">
             <div><img src="../assets/img/hongquan_03.png"> 收到{{list2.number}}次答谢</div>
@@ -31,7 +31,7 @@
             </div>
             <img :src="'https://www.mfzhosp.com'+item.giftPircture" class="liwupic">
         </div>
-    </div>
+    </div>-->
 </div>
 </template>
 
@@ -176,44 +176,43 @@ export default {
     height: 5.5rem;
     background: #fff;
     margin-top: .64rem;
-    margin: 0.3rem auto
 }
 
 .top1 .center {
-    width: 75%;
+    width: 100%;
     margin: 0 auto;
 }
 
 .top1 .center .cengter2 {
-    width: 25%;
+    width: 23.1%;
     height: 2.06rem;
     float: left;
     margin-bottom: .46rem;
-    margin-right: 0.36rem;
+    margin-right: 0.16rem;
     margin-top: 0.2rem;
 }
 
-.top1 .center .cengter2:nth-of-type(3n) {
+.top1 .center .cengter2:nth-of-type(4n) {
     margin-right: 0;
 }
 
 .top1 .center .cengter2 .tu {
-    width: 1.26rem;
-    height: 1.26rem;
+    width: 126px;
+    height: 126px;
     display: block;
     margin: 0 auto;
     border-radius: 50%;
-    border: 0.01rem solid #cecece;
-    -webkit-box-shadow: 0.01rem 0.1rem 0.1rem 0 rgba(4, 0, 0, 0.35);
-    box-shadow: 0.01rem 0.1rem 0.1rem 0 rgba(4, 0, 0, 0.35);
-    border-radius: 0.13rem;
+    border: 1px solid #cecece;
+    box-shadow: 1px 10px 10px 0px rgba(4, 0, 0, 0.35);
+    border-radius: 13px;
 }
 
 .top1 .center .cengter2 .zi {
     width: 100%;
     height: .34rem;
     color: #828282;
-    font-size: 0.23rem;
+    text-align: center;
+    font-size: 25px;
     line-height: .34rem;
     margin-top: .24rem;
     text-align: center;
@@ -223,7 +222,7 @@ export default {
     height: .34rem;
     color: #00afc2;
     text-align: center;
-    font-size: 0.22rem;
+    font-size: 22px;
     line-height: .34rem;
     margin-top: .10rem;
 }
