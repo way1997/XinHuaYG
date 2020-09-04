@@ -162,7 +162,7 @@ export default {
 
         img {
             float: left;
-            width: 14%;
+            width: 15.24%;
             height: 29.66%;
             border-radius: 50%;
             margin-top: .19rem;

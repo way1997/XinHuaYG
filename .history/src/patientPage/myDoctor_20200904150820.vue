@@ -8,11 +8,7 @@
     <div class="tuijian">
         <div v-for="(item,index) in xz" :key="index" @click="goDetail(item.doctorId)">
             <img :src="item.doctorPhoto" alt />
-            <div>{{item.doctorName}} {{item.doctorLevelName}}</div>
-            <div>{{item.doctorHospitalName}} {{item.departmentName}}</div>
-            <div>
-                <span v-for="(item,index) in item.list_adept||item.doctorAdept" :key="index">{{item.medicineSubjectName}}</span>
-            </div>
+
         </div>
     </div>
     <!--<img src="../assets/img/LODING.gif" alt class="loading" v-if="loadUp" />
@@ -158,45 +154,44 @@ export default {
         height: 3rem;
         border-bottom: 0.01rem solid #e9e9e9;
         font-size: 0.25rem;
-        padding-bottom: 1.2rem;
 
         img {
             float: left;
-            width: 14%;
+            width: 13.24%;
             height: 29.66%;
             border-radius: 50%;
-            margin-top: .19rem;
+            margin-top: 19px;
         }
 
         div {
             float: left;
             width: 80%;
-            padding-left: 0.2rem;
+            padding-left: 20px;
 
             &:nth-of-type(1) {
                 color: #606060;
-                padding-top: 0.28rem;
+                padding-top: 28px;
             }
 
             &:nth-of-type(2) {
                 color: #bababa;
-                padding-top: 0.16rem;
-                height: 0.25rem;
-                line-height: 0.3rem;
+                padding-top: 16px;
+                height: 25px;
+                line-height: 30px;
                 overflow: hidden;
             }
 
             &:nth-of-type(3) {
                 color: #fff;
-                padding-top: 0.19rem;
+                padding-top: 19px;
 
                 span {
                     float: left;
-                    margin-right: 0.1rem;
-                    padding: 0.08rem 0.15rem;
+                    margin-right: 10px;
+                    padding: 8px 15px;
                     background: #00afc2;
-                    border-radius: 0.3rem;
-                    margin-bottom: 0.1rem;
+                    border-radius: 30px;
+                    margin-bottom: 10px;
                 }
             }
         }

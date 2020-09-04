@@ -5,7 +5,7 @@
         <input type="text" placeholder="输入医生名字" v-model="name" @input="getDoctorByTel" style="border:1px solid #e9e9e9;" />
     </div>
     <div class="xian"></div>
-    <div class="tuijian">
+    <!--<div class="tuijian">
         <div v-for="(item,index) in xz" :key="index" @click="goDetail(item.doctorId)">
             <img :src="item.doctorPhoto" alt />
             <div>{{item.doctorName}} {{item.doctorLevelName}}</div>
@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    <!--<img src="../assets/img/LODING.gif" alt class="loading" v-if="loadUp" />
+    <img src="../assets/img/LODING.gif" alt class="loading" v-if="loadUp" />
     <img class="zanwuxinxi" v-show="ifShow" src="../assets/img/zanwuxinxi.png" />-->
 </div>
 </template>
@@ -129,7 +129,7 @@ export default {
     width: 62.93%;
     float: left;
     height: 0.76rem;
-    border: 0.01rem solid #e9e9e9;
+    border: 1px solid #e9e9e9;
     border-radius: 0.38rem;
     line-height: 0.76rem;
     margin-top: 0.15rem;
@@ -137,66 +137,65 @@ export default {
 
     input {
         width: 100%;
-        height: 0.74rem;
-        border-radius: 0.38rem;
+        height: 74px;
+        border-radius: 38px;
         color: #ccc;
-        font-size: 0.25rem;
+        font-size: 25px;
         float: left;
         text-align: center;
     }
 
     input::-webkit-input-placeholder {
         color: #c9c9c9;
-        font-size: .25rem;
+        font-size: 25px;
     }
 }
 
 .tuijian {
     >div {
-        width: 89.6%;
+        width: 672px;
         margin: 0 auto;
-        height: 3rem;
-        border-bottom: 0.01rem solid #e9e9e9;
-        font-size: 0.25rem;
-        padding-bottom: 1.2rem;
+        height: 300px;
+        border-bottom: 1px solid #e9e9e9;
+        font-size: 25px;
 
         img {
             float: left;
-            width: 14%;
-            height: 29.66%;
+            width: 89px;
+            height: 89px;
             border-radius: 50%;
-            margin-top: .19rem;
+            margin-top: 19px;
         }
 
         div {
             float: left;
             width: 80%;
-            padding-left: 0.2rem;
+            padding-left: 20px;
 
             &:nth-of-type(1) {
                 color: #606060;
-                padding-top: 0.28rem;
+                padding-top: 28px;
             }
 
             &:nth-of-type(2) {
                 color: #bababa;
-                padding-top: 0.16rem;
-                height: 0.25rem;
-                line-height: 0.3rem;
+                padding-top: 16px;
+                height: 25px;
+                line-height: 30px;
                 overflow: hidden;
             }
 
             &:nth-of-type(3) {
                 color: #fff;
-                padding-top: 0.19rem;
+                padding-top: 19px;
 
                 span {
                     float: left;
-                    margin-right: 0.1rem;
-                    padding: 0.08rem 0.15rem;
+                    margin-right: 10px;
+                    padding: 8px 15px;
                     background: #00afc2;
-                    border-radius: 0.3rem;
-                    margin-bottom: 0.1rem;
+                    border-radius: 30px;
+                    margin-bottom: 10px;
                 }
             }
         }

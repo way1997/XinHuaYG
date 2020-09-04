@@ -158,11 +158,10 @@ export default {
         height: 3rem;
         border-bottom: 0.01rem solid #e9e9e9;
         font-size: 0.25rem;
-        padding-bottom: 1.2rem;
 
         img {
             float: left;
-            width: 14%;
+            width: 15.24%;
             height: 29.66%;
             border-radius: 50%;
             margin-top: .19rem;
@@ -171,7 +170,7 @@ export default {
         div {
             float: left;
             width: 80%;
-            padding-left: 0.2rem;
+            padding-left: 20px;
 
             &:nth-of-type(1) {
                 color: #606060;

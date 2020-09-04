@@ -9,7 +9,7 @@
         <div>服务{{lists.countServer}}人 {{lists.subDiagnoseRate}}%复诊率 {{lists.countComment}}条评论</div>
         <div @touchstart="godaxie">答谢医生</div>
     </div>
-    <div class="tiaoli">
+    <!--<div class="tiaoli">
         <h1>擅长调理</h1>
         <div>
             <span v-for="(item,index) in list3" :key="index">{{item.medicineSubjectName}}</span>
@@ -29,11 +29,11 @@
                 <p>浏览量：123</p>
             </div>
         </div>
-    </div>
-    <div class="zixun" @touchstart="goLiaotian">
+    </div> -->
+    <!-- <div class="zixun" @touchstart="goLiaotian">
         立即咨询
-        <div style="width:2.5rem;height:0.9rem;text-align:center;line-height:0.9rem;font-size:0.36rem;margin:0 auto;">
-            <!-- <wx-open-launch-weapp
+        <!-- <div style="width:2.5rem;height:0.9rem;text-align:center;line-height:0.9rem;font-size:0.36rem;margin:0 auto;">
+                <wx-open-launch-weapp
                 id="launch-btn"
                 username="gh_071ecdb915dd"
                 @launch="handleLaunchFn"
@@ -51,9 +51,9 @@ style > .btn {
 } < /style> <
 button class = "btn" > 立即咨询 < /button>
 </script>
-                </wx-open-launch-weapp>-->
-        </div>
-    </div>
+                </wx-open-launch-weapp>
+      </div>
+    </div>-->
     <confirm :text="tipText" ref="confirm" @cancel="cancel" @confirm="confirm"></confirm>
 </div>
 </template>
@@ -266,8 +266,7 @@ export default {
 }
 
 .doctor {
-    width: 98%;
-    padding: 0 1%;
+    width: 100%;
     height: 1.79rem;
     border-bottom: 0.01rem solid #ececec;
     margin: 0 auto;
@@ -320,39 +319,38 @@ export default {
 }
 
 .tiaoli {
-    width: 92.4%;
-    height: 2.4rem;
+    width: 693px;
+    height: 240px;
     margin: 0 auto;
-    padding-bottom: 8%;
-    border-bottom: 0.01rem solid #ececec;
+    border-bottom: 1px solid #ececec;
 
     h1 {
-        font-size: 0.23rem;
-        padding: 0.3rem 0 0.25rem 0.13rem;
+        font-size: 25px;
+        padding: 30px 0 25px 13px;
         color: #7c7c7c;
     }
 
     div {
         color: #fff;
-        font-size: 0.24rem;
+        font-size: 25px;
 
         span {
             float: left;
-            margin-right: 0.1rem;
-            padding: 0.08rem 0.15rem;
+            margin-right: 10px;
+            padding: 8px 15px;
             background: #00afc2;
-            border-radius: 0.3rem;
-            margin-bottom: 0.1rem;
+            border-radius: 30px;
+            margin-bottom: 10px;
         }
     }
 }
 
 .jianjie {
+    width: 693px;
     //height:196px;
-    width: 100%;
-    padding-bottom: 2rem;
+    padding-bottom: 20px;
     margin: 0 auto;
-    border-bottom: 0.01rem solid #ececec;
+    border-bottom: 1px solid #ececec;
 
     h1 {
         font-size: 25px;
@@ -381,7 +379,6 @@ export default {
         >div {
             width: 100%;
             height: 157px;
-
             border-bottom: 1px solid #f1f1f1;
 
             div {

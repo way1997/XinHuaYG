@@ -538,7 +538,7 @@ export default {
         height: 3.125rem;
         border-bottom: 0.02rem solid #e9e9e9;
         font-size: 0.24rem;
-        padding-bottom: 0.3rem;
+        padding-bottom: 0.2rem;
 
         img {
             float: left;

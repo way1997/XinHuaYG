@@ -350,7 +350,7 @@ export default {
 .jianjie {
     //height:196px;
     width: 100%;
-    padding-bottom: 2rem;
+    padding-bottom: 0.2rem;
     margin: 0 auto;
     border-bottom: 0.01rem solid #ececec;
 

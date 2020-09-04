@@ -32,8 +32,8 @@
     </div>
     <div class="zixun" @touchstart="goLiaotian">
         立即咨询
-        <div style="width:2.5rem;height:0.9rem;text-align:center;line-height:0.9rem;font-size:0.36rem;margin:0 auto;">
-            <!-- <wx-open-launch-weapp
+        <!-- <div style="width:2.5rem;height:0.9rem;text-align:center;line-height:0.9rem;font-size:0.36rem;margin:0 auto;">
+                <wx-open-launch-weapp
                 id="launch-btn"
                 username="gh_071ecdb915dd"
                 @launch="handleLaunchFn"
@@ -51,8 +51,8 @@ style > .btn {
 } < /style> <
 button class = "btn" > 立即咨询 < /button>
 </script>
-                </wx-open-launch-weapp>-->
-        </div>
+                </wx-open-launch-weapp>
+      </div>-->
     </div>
     <confirm :text="tipText" ref="confirm" @cancel="cancel" @confirm="confirm"></confirm>
 </div>
@@ -350,7 +350,7 @@ export default {
 .jianjie {
     //height:196px;
     width: 100%;
-    padding-bottom: 2rem;
+    padding-bottom: 0.2rem;
     margin: 0 auto;
     border-bottom: 0.01rem solid #ececec;
 

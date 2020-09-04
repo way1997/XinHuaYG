@@ -162,7 +162,7 @@ export default {
 
         img {
             float: left;
-            width: 14%;
+            width: 15.24%;
             height: 29.66%;
             border-radius: 50%;
             margin-top: .19rem;
@@ -171,7 +171,7 @@ export default {
         div {
             float: left;
             width: 80%;
-            padding-left: 0.2rem;
+            padding-left: 20px;
 
             &:nth-of-type(1) {
                 color: #606060;

@@ -19,7 +19,7 @@
         <h1>医生简介</h1>
         <p>{{lists.doctorRemark}}</p>
     </div>
-    <div class="wenzhang" v-if="showWz">
+    <!--<div class="wenzhang" v-if="showWz">
         <h1>相关文章</h1>
         <div class="detailList">
             <div v-for="(item,index) in lists.list_article" :key="index" @touchstart="gowenxq(item.id)">
@@ -29,11 +29,11 @@
                 <p>浏览量：123</p>
             </div>
         </div>
-    </div>
-    <div class="zixun" @touchstart="goLiaotian">
+    </div> -->
+    <!-- <div class="zixun" @touchstart="goLiaotian">
         立即咨询
-        <div style="width:2.5rem;height:0.9rem;text-align:center;line-height:0.9rem;font-size:0.36rem;margin:0 auto;">
-            <!-- <wx-open-launch-weapp
+        <!-- <div style="width:2.5rem;height:0.9rem;text-align:center;line-height:0.9rem;font-size:0.36rem;margin:0 auto;">
+                <wx-open-launch-weapp
                 id="launch-btn"
                 username="gh_071ecdb915dd"
                 @launch="handleLaunchFn"
@@ -51,9 +51,9 @@ style > .btn {
 } < /style> <
 button class = "btn" > 立即咨询 < /button>
 </script>
-                </wx-open-launch-weapp>-->
-        </div>
-    </div>
+                </wx-open-launch-weapp>
+      </div>
+    </div>-->
     <confirm :text="tipText" ref="confirm" @cancel="cancel" @confirm="confirm"></confirm>
 </div>
 </template>
@@ -348,9 +348,8 @@ export default {
 }
 
 .jianjie {
-    //height:196px;
-    width: 100%;
-    padding-bottom: 2rem;
+    width: 6.93rem;
+    padding-bottom: 0.2rem;
     margin: 0 auto;
     border-bottom: 0.01rem solid #ececec;
 

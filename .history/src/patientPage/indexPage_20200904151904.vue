@@ -538,7 +538,7 @@ export default {
         height: 3.125rem;
         border-bottom: 0.02rem solid #e9e9e9;
         font-size: 0.24rem;
-        padding-bottom: 0.3rem;
+        padding-bottom: 0.4rem;
 
         img {
             float: left;
@@ -613,7 +613,6 @@ export default {
     >div {
         width: 100%;
         height: 1.63rem;
-        padding-bottom: 1rem;
         border-bottom: .02rem solid #f1f1f1;
 
         div {

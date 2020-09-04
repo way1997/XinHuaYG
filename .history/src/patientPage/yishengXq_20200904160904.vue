@@ -15,7 +15,7 @@
             <span v-for="(item,index) in list3" :key="index">{{item.medicineSubjectName}}</span>
         </div>
     </div>
-    <div class="jianjie">
+    <!--<div class="jianjie">
         <h1>医生简介</h1>
         <p>{{lists.doctorRemark}}</p>
     </div>
@@ -29,11 +29,11 @@
                 <p>浏览量：123</p>
             </div>
         </div>
-    </div>
-    <div class="zixun" @touchstart="goLiaotian">
+    </div> -->
+    <!-- <div class="zixun" @touchstart="goLiaotian">
         立即咨询
-        <div style="width:2.5rem;height:0.9rem;text-align:center;line-height:0.9rem;font-size:0.36rem;margin:0 auto;">
-            <!-- <wx-open-launch-weapp
+        <!-- <div style="width:2.5rem;height:0.9rem;text-align:center;line-height:0.9rem;font-size:0.36rem;margin:0 auto;">
+                <wx-open-launch-weapp
                 id="launch-btn"
                 username="gh_071ecdb915dd"
                 @launch="handleLaunchFn"
@@ -51,9 +51,9 @@ style > .btn {
 } < /style> <
 button class = "btn" > 立即咨询 < /button>
 </script>
-                </wx-open-launch-weapp>-->
-        </div>
-    </div>
+                </wx-open-launch-weapp>
+      </div>
+    </div>-->
     <confirm :text="tipText" ref="confirm" @cancel="cancel" @confirm="confirm"></confirm>
 </div>
 </template>
@@ -323,18 +323,18 @@ export default {
     width: 92.4%;
     height: 2.4rem;
     margin: 0 auto;
-    padding-bottom: 8%;
+    padding: 1%;
     border-bottom: 0.01rem solid #ececec;
 
     h1 {
-        font-size: 0.23rem;
+        font-size: 0.25rem;
         padding: 0.3rem 0 0.25rem 0.13rem;
         color: #7c7c7c;
     }
 
     div {
         color: #fff;
-        font-size: 0.24rem;
+        font-size: 0.25rem;
 
         span {
             float: left;
@@ -348,11 +348,11 @@ export default {
 }
 
 .jianjie {
+    width: 693px;
     //height:196px;
-    width: 100%;
-    padding-bottom: 2rem;
+    padding-bottom: 20px;
     margin: 0 auto;
-    border-bottom: 0.01rem solid #ececec;
+    border-bottom: 1px solid #ececec;
 
     h1 {
         font-size: 25px;
