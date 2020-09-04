@@ -1,13 +1,13 @@
 <template>
 <div class="yishengxq">
-    <div class="backHome" @click="goBack">返回上一级</div>
+    <div class="backHome" @touchstart="goBack">返回上一级</div>
     <div class="xian"></div>
     <div class="doctor">
         <img :src="lists.doctorPhoto" alt />
         <div>{{lists.doctorName}} {{lists.levelName}}</div>
         <div>{{lists.doctorHospital}}</div>
         <div>服务{{lists.countServer}}人 {{lists.subDiagnoseRate}}%复诊率 {{lists.countComment}}条评论</div>
-        <div @click="godaxie">答谢医生</div>
+        <div @touchstart="godaxie">答谢医生</div>
     </div>
     <div class="tiaoli">
         <h1>擅长调理</h1>
@@ -22,7 +22,7 @@
     <div class="wenzhang" v-if="showWz">
         <h1>相关文章</h1>
         <div class="detailList">
-            <div v-for="(item,index) in lists.list_article" :key="index" @click="gowenxq(item.id)">
+            <div v-for="(item,index) in lists.list_article" :key="index" @touchstart="gowenxq(item.id)">
                 <img src="../assets/img/head1.jpg" alt />
                 <div>{{item.title}}</div>
                 <p>来自：{{lists.doctorName}} {{item.levelName}}</p>
@@ -30,10 +30,10 @@
             </div>
         </div>
     </div>
-    <div class="zixun" @click="goLiaotian">
+    <div class="zixun" @touchstart="goLiaotian">
         立即咨询
-        <div style="width:2.5rem;height:0.9rem;text-align:center;line-height:0.9rem;font-size:0.36rem;margin:0 auto;">
-            <!-- <wx-open-launch-weapp
+        <!-- <div style="width:2.5rem;height:0.9rem;text-align:center;line-height:0.9rem;font-size:0.36rem;margin:0 auto;">
+                <wx-open-launch-weapp
                 id="launch-btn"
                 username="gh_071ecdb915dd"
                 @launch="handleLaunchFn"
@@ -51,8 +51,8 @@ style > .btn {
 } < /style> <
 button class = "btn" > 立即咨询 < /button>
 </script>
-                </wx-open-launch-weapp>-->
-        </div>
+                </wx-open-launch-weapp>
+      </div>-->
     </div>
     <confirm :text="tipText" ref="confirm" @cancel="cancel" @confirm="confirm"></confirm>
 </div>
@@ -245,112 +245,110 @@ export default {
 @import "../assets/less/base.less";
 
 .backHome {
-    width: 100%;
-    height: 0.76rem;
+    width: 611px;
+    height: 76px;
     background: #00afc2;
-    border-radius: 0.13rem;
+    border-radius: 13px;
     text-align: center;
-    line-height: 0.76rem;
+    line-height: 76px;
     color: #fff;
-    font-size: 0.25rem;
+    font-size: 25px;
     margin: 0 auto;
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .xian {
     width: 100%;
-    height: 0.1rem;
+    height: 10px;
     background: #efefef;
     clear: both;
 }
 
 .doctor {
-    width: 98%;
-    padding: 0 1%;
-    height: 1.79rem;
-    border-bottom: 0.01rem solid #ececec;
+    width: 693px;
+    height: 179px;
+    border-bottom: 1px solid #ececec;
     margin: 0 auto;
     position: relative;
 
     img {
-        width: 12%;
-        height: 48%;
+        width: 89px;
+        height: 89px;
         border-radius: 50%;
         float: left;
-        margin-top: 0.38rem;
+        margin-top: 38px;
     }
 
     div {
         float: left;
-        padding-left: 0.2rem;
+        padding-left: 20px;
     }
 
     div:nth-of-type(1) {
         color: #808080;
-        font-size: 0.25rem;
+        font-size: 25px;
         width: 60%;
-        padding-top: 0.37rem;
+        padding-top: 37px;
     }
 
     div:nth-of-type(2),
     div:nth-of-type(3) {
         color: #bababa;
-        font-size: 0.23rem;
+        font-size: 25px;
         width: 60%;
-        padding-top: 0.1rem;
+        padding-top: 10px;
     }
 
     div:nth-of-type(4) {
-        width: 19%;
-        height: 0.56rem;
+        width: 135px;
+        height: 56px;
         background: #00afc2;
-        border-radius: 0.13rem;
+        border-radius: 13px;
         text-align: center;
-        line-height: 0.56rem;
-        font-size: 0.22rem;
+        line-height: 56px;
+        font-size: 25px;
         color: #fff;
         position: absolute;
-        right: 0.2rem;
-        top: 0.25rem;
+        right: 20px;
+        top: 25px;
         padding-left: 0;
     }
 }
 
 .tiaoli {
-    width: 92.4%;
-    height: 2.4rem;
+    width: 693px;
+    height: 240px;
     margin: 0 auto;
-    padding-bottom: 8%;
-    border-bottom: 0.01rem solid #ececec;
+    border-bottom: 1px solid #ececec;
 
     h1 {
-        font-size: 0.23rem;
-        padding: 0.3rem 0 0.25rem 0.13rem;
+        font-size: 25px;
+        padding: 30px 0 25px 13px;
         color: #7c7c7c;
     }
 
     div {
         color: #fff;
-        font-size: 0.24rem;
+        font-size: 25px;
 
         span {
             float: left;
-            margin-right: 0.1rem;
-            padding: 0.08rem 0.15rem;
+            margin-right: 10px;
+            padding: 8px 15px;
             background: #00afc2;
-            border-radius: 0.3rem;
-            margin-bottom: 0.1rem;
+            border-radius: 30px;
+            margin-bottom: 10px;
         }
     }
 }
 
 .jianjie {
+    width: 693px;
     //height:196px;
-    width: 100%;
-    padding-bottom: 2rem;
+    padding-bottom: 20px;
     margin: 0 auto;
-    border-bottom: 0.01rem solid #ececec;
+    border-bottom: 1px solid #ececec;
 
     h1 {
         font-size: 25px;
@@ -379,7 +377,6 @@ export default {
         >div {
             width: 100%;
             height: 157px;
-
             border-bottom: 1px solid #f1f1f1;
 
             div {

@@ -1,13 +1,13 @@
 <template>
 <div class="yishengxq">
-    <div class="backHome" @click="goBack">返回上一级</div>
+    <div class="backHome" @touchstart="goBack">返回上一级</div>
     <div class="xian"></div>
     <div class="doctor">
         <img :src="lists.doctorPhoto" alt />
         <div>{{lists.doctorName}} {{lists.levelName}}</div>
         <div>{{lists.doctorHospital}}</div>
         <div>服务{{lists.countServer}}人 {{lists.subDiagnoseRate}}%复诊率 {{lists.countComment}}条评论</div>
-        <div @click="godaxie">答谢医生</div>
+        <div @touchstart="godaxie">答谢医生</div>
     </div>
     <div class="tiaoli">
         <h1>擅长调理</h1>
@@ -22,7 +22,7 @@
     <div class="wenzhang" v-if="showWz">
         <h1>相关文章</h1>
         <div class="detailList">
-            <div v-for="(item,index) in lists.list_article" :key="index" @click="gowenxq(item.id)">
+            <div v-for="(item,index) in lists.list_article" :key="index" @touchstart="gowenxq(item.id)">
                 <img src="../assets/img/head1.jpg" alt />
                 <div>{{item.title}}</div>
                 <p>来自：{{lists.doctorName}} {{item.levelName}}</p>
@@ -30,7 +30,7 @@
             </div>
         </div>
     </div>
-    <div class="zixun" @click="goLiaotian">
+    <div class="zixun" @touchstart="goLiaotian">
         立即咨询
         <div style="width:2.5rem;height:0.9rem;text-align:center;line-height:0.9rem;font-size:0.36rem;margin:0 auto;">
             <!-- <wx-open-launch-weapp
@@ -302,13 +302,13 @@ export default {
     }
 
     div:nth-of-type(4) {
-        width: 19%;
+        width: 18%;
         height: 0.56rem;
         background: #00afc2;
         border-radius: 0.13rem;
         text-align: center;
         line-height: 0.56rem;
-        font-size: 0.22rem;
+        font-size: 0.25rem;
         color: #fff;
         position: absolute;
         right: 0.2rem;
