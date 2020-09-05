@@ -99,10 +99,6 @@ export default {
 <style lang="less" scoped>
 @import '../assets/less/base.less';
 
-.buyLiwu {
-    position: relative;
-}
-
 .liwu {
     width: 1.35rem;
     margin: 0 auto;
@@ -164,7 +160,7 @@ export default {
     font-size: 0.25rem;
     color: #00afc2;
     position: absolute;
-    bottom: -.5rem;
+    bottom: 0px;
     left: 0;
 
     a {

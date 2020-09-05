@@ -99,29 +99,24 @@ export default {
 <style lang="less" scoped>
 @import '../assets/less/base.less';
 
-.buyLiwu {
-    position: relative;
-}
-
 .liwu {
-    width: 1.35rem;
+    width: 135px;
     margin: 0 auto;
-    padding-top: 0.65rem;
+    padding-top: 65px;
 
     img {
-        width: 100%;
-        height: 1.35rem;
-        border: 0.01rem solid #cecece;
-        -webkit-box-shadow: 0.01rem 0.1rem 0.1rem 0 rgba(4, 0, 0, 0.35);
-        box-shadow: 0.01rem 0.1rem 0.1rem 0 rgba(4, 0, 0, 0.35);
-        border-radius: 0.13rem;
+        width: 135px;
+        height: 135px;
+        border: 1px solid #cecece;
+        box-shadow: 1px 10px 10px 0px rgba(4, 0, 0, 0.35);
+        border-radius: 13px;
     }
 
     p {
-        font-size: 0.25rem;
+        font-size: 25px;
         color: #828282;
         text-align: center;
-        padding-top: 0.15rem;
+        padding-top: 15px;
 
         &:nth-of-type(2) {
             color: #00afc2;
@@ -143,17 +138,17 @@ export default {
 }
 
 .text {
-    width: 80%;
+    width: 600px;
     margin: 0 auto;
-    font-size: 0.25rem;
+    font-size: 25px;
     color: #828282;
-    padding-top: 0.86rem;
+    padding-top: 86px;
 
     p {
-        line-height: 0.4rem;
+        line-height: 40px;
 
         &:nth-of-type(1) {
-            padding: 0 0.2rem
+            padding: 0 20px;
         }
     }
 }
@@ -161,10 +156,10 @@ export default {
 .lxkf {
     width: 100%;
     text-align: center;
-    font-size: 0.25rem;
+    font-size: 25px;
     color: #00afc2;
     position: absolute;
-    bottom: -.5rem;
+    bottom: 20px;
     left: 0;
 
     a {

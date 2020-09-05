@@ -164,7 +164,7 @@ export default {
     font-size: 0.25rem;
     color: #00afc2;
     position: absolute;
-    bottom: -.5rem;
+    bottom: -.4rem;
     left: 0;
 
     a {

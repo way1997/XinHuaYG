@@ -99,10 +99,6 @@ export default {
 <style lang="less" scoped>
 @import '../assets/less/base.less';
 
-.buyLiwu {
-    position: relative;
-}
-
 .liwu {
     width: 1.35rem;
     margin: 0 auto;
@@ -131,29 +127,29 @@ export default {
 
 .zhifu {
     width: 74.13%;
-    height: 0.9rem;
-    border-radius: 0.1rem;
+    height: 90px;
+    border-radius: 10px;
     background: #28b84a;
     color: #fff;
-    font-size: 0.27rem;
+    font-size: 27px;
     text-align: center;
-    line-height: 0.9rem;
+    line-height: 90px;
     margin: 0 auto;
-    margin-top: 0.7rem;
+    margin-top: 70px;
 }
 
 .text {
-    width: 80%;
+    width: 600px;
     margin: 0 auto;
-    font-size: 0.25rem;
+    font-size: 25px;
     color: #828282;
-    padding-top: 0.86rem;
+    padding-top: 86px;
 
     p {
-        line-height: 0.4rem;
+        line-height: 40px;
 
         &:nth-of-type(1) {
-            padding: 0 0.2rem
+            padding: 0 20px;
         }
     }
 }
@@ -161,10 +157,10 @@ export default {
 .lxkf {
     width: 100%;
     text-align: center;
-    font-size: 0.25rem;
+    font-size: 25px;
     color: #00afc2;
     position: absolute;
-    bottom: -.5rem;
+    bottom: 20px;
     left: 0;
 
     a {
