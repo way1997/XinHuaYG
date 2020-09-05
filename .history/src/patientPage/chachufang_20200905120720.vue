@@ -207,6 +207,6 @@ export default {
     height: 4.17rem;
     display: block;
     margin: 0 auto;
-    margin-top: 1rem;
+    margin-top: 100px;
 }
 </style>

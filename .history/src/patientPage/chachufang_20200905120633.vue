@@ -118,7 +118,7 @@ export default {
         border-bottom: 0.01rem solid #ececec;
         margin: 0 auto;
         position: relative;
-        padding-bottom: 1.4rem;
+        padding-bottom: .5rem;
 
         img {
             width: 1rem;
@@ -126,7 +126,7 @@ export default {
             border-radius: 50%;
             float: left;
             margin-top: 0.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         div {
@@ -207,6 +207,6 @@ export default {
     height: 4.17rem;
     display: block;
     margin: 0 auto;
-    margin-top: 1rem;
+    margin-top: 100px;
 }
 </style>

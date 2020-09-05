@@ -17,8 +17,8 @@
             <div v-show="item.indentStates == 1">完成购买</div>
         </div>
     </div>
-    <!--<img src="../assets/img/LODING.gif" alt class="loading" v-if="loadUp" />
-    <img class="zanwuxinxi" v-show="message.length == 0" src="../assets/img/zanwuxinxi.png" /> -->
+    <img src="../assets/img/LODING.gif" alt class="loading" v-if="loadUp" />
+    <img class="zanwuxinxi" v-show="message.length == 0" src="../assets/img/zanwuxinxi.png" />
 </div>
 </template>
 
@@ -118,7 +118,7 @@ export default {
         border-bottom: 0.01rem solid #ececec;
         margin: 0 auto;
         position: relative;
-        padding-bottom: 1.4rem;
+        padding-bottom: .5rem;
 
         img {
             width: 1rem;
@@ -126,7 +126,7 @@ export default {
             border-radius: 50%;
             float: left;
             margin-top: 0.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
         }
 
         div {
@@ -187,7 +187,7 @@ export default {
             font-size: 0.25rem;
             float: left;
             padding-left: 0.2rem;
-            padding-top: 0rem;
+            padding-top: 0.2rem;
             width: 60%;
         }
     }
@@ -207,6 +207,6 @@ export default {
     height: 4.17rem;
     display: block;
     margin: 0 auto;
-    margin-top: 1rem;
+    margin-top: 100px;
 }
 </style>

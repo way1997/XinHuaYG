@@ -1,6 +1,6 @@
 <template>
 <div class="chufang">
-    <div class="backHome" @click="goBack">返回上一级</div>
+    <div class="backHome" @touchstart="goBack">返回上一级</div>
     <div class="xian" style="clear:both;"></div>
     <div class="list">
         <div class="doctor" v-for="(item,index) in message" :key="index">
@@ -11,10 +11,10 @@
                 <span>购买后即可查看药方</span>
                 <span>共{{item.sum}}味</span>
             </p>
-            <p>{{item.preShapeName}} {{item.creatDate}}</p>
-            <div @click="goXq(item.prescriptionId,item.indentStates,item.isPayLook)">查看详情</div>
-            <div v-show="item.indentStates == 0" @click="goBuy(item.indentId,item.prescriptionId,item.doctorId)">缴费购买</div>
-            <div v-show="item.indentStates == 1">完成购买</div>
+            <!--<p>{{item.preShapeName}} {{item.creatDate}}</p>-->
+            <!--<div @touchstart="goXq(item.prescriptionId,item.indentStates,item.isPayLook)">查看详情</div>-->
+            <!--<div v-show="item.indentStates == 0" @touchstart="goBuy(item.indentId,item.prescriptionId,item.doctorId)">缴费购买</div>
+            <div v-show="item.indentStates == 1">完成购买</div>-->
         </div>
     </div>
     <!--<img src="../assets/img/LODING.gif" alt class="loading" v-if="loadUp" />
@@ -118,7 +118,7 @@ export default {
         border-bottom: 0.01rem solid #ececec;
         margin: 0 auto;
         position: relative;
-        padding-bottom: 1.4rem;
+        padding-bottom: .5rem;
 
         img {
             width: 1rem;
@@ -126,7 +126,7 @@ export default {
             border-radius: 50%;
             float: left;
             margin-top: 0.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
         }
 
         div {
@@ -144,50 +144,50 @@ export default {
         div:nth-of-type(2) {
             //color:#BABABA;
             color: #808080;
-            font-size: 0.25rem;
+            font-size: 25px;
             width: 60%;
-            padding-top: 0.2rem;
+            padding-top: 20px;
         }
 
         div:nth-of-type(4),
         div:nth-of-type(3),
         div:nth-of-type(5) {
-            width: 20%;
-            height: 0.54rem;
+            width: 135px;
+            height: 56px;
             background: #00afc2;
-            border-radius: 0.13rem;
+            border-radius: 13px;
             text-align: center;
-            line-height: 0.56rem;
-            font-size: 0.22rem;
+            line-height: 56px;
+            font-size: 25px;
             color: #fff;
             padding-left: 0;
         }
 
         div:nth-of-type(3) {
             position: absolute;
-            right: 0rem;
-            top: 0.3rem;
+            right: 20px;
+            top: 25px;
         }
 
         div:nth-of-type(4) {
             position: absolute;
-            right: 0rem;
-            bottom: 0.3rem;
+            right: 20px;
+            bottom: 25px;
         }
 
         div:nth-of-type(5) {
             background: #b4b4b4;
             position: absolute;
-            right: 0rem;
-            bottom: 0.3rem;
+            right: 20px;
+            bottom: 25px;
         }
 
         p {
             color: #828282;
-            font-size: 0.25rem;
+            font-size: 25px;
             float: left;
-            padding-left: 0.2rem;
-            padding-top: 0rem;
+            padding-left: 20px;
+            padding-top: 20px;
             width: 60%;
         }
     }
@@ -207,6 +207,6 @@ export default {
     height: 4.17rem;
     display: block;
     margin: 0 auto;
-    margin-top: 1rem;
+    margin-top: 100px;
 }
 </style>

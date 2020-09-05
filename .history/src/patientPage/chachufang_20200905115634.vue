@@ -118,7 +118,7 @@ export default {
         border-bottom: 0.01rem solid #ececec;
         margin: 0 auto;
         position: relative;
-        padding-bottom: 1.4rem;
+        padding-bottom: .5rem;
 
         img {
             width: 1rem;
@@ -126,7 +126,7 @@ export default {
             border-radius: 50%;
             float: left;
             margin-top: 0.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
         }
 
         div {
@@ -153,33 +153,35 @@ export default {
         div:nth-of-type(3),
         div:nth-of-type(5) {
             width: 20%;
-            height: 0.54rem;
+            height: 0.58rem;
             background: #00afc2;
             border-radius: 0.13rem;
             text-align: center;
             line-height: 0.56rem;
             font-size: 0.22rem;
             color: #fff;
+            position: relative;
+            right: .2rem;
             padding-left: 0;
         }
 
         div:nth-of-type(3) {
             position: absolute;
-            right: 0rem;
-            top: 0.3rem;
+            right: 0.2rem;
+            top: 0.25rem;
         }
 
         div:nth-of-type(4) {
             position: absolute;
-            right: 0rem;
-            bottom: 0.3rem;
+            right: 0.2rem;
+            bottom: 0.25rem;
         }
 
         div:nth-of-type(5) {
             background: #b4b4b4;
             position: absolute;
-            right: 0rem;
-            bottom: 0.3rem;
+            right: 0.2rem;
+            bottom: 0.25rem;
         }
 
         p {
@@ -187,7 +189,7 @@ export default {
             font-size: 0.25rem;
             float: left;
             padding-left: 0.2rem;
-            padding-top: 0rem;
+            padding-top: 0.2rem;
             width: 60%;
         }
     }
@@ -207,6 +209,6 @@ export default {
     height: 4.17rem;
     display: block;
     margin: 0 auto;
-    margin-top: 1rem;
+    margin-top: 100px;
 }
 </style>
