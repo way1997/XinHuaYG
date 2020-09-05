@@ -233,7 +233,7 @@ export default {
                 height: 0.60rem;
                 border-radius: 50%;
                 float: left;
-                margin-top: 15%;
+                margin-top: 12%;
             }
 
             div {
@@ -266,7 +266,7 @@ export default {
                 color: #fff;
                 position: absolute;
                 right: 1%;
-                top: 22%;
+                top: 20%;
                 padding-left: 0;
             }
         }

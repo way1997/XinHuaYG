@@ -233,7 +233,7 @@ export default {
                 height: 0.60rem;
                 border-radius: 50%;
                 float: left;
-                margin-top: 15%;
+                margin-top: 12%;
             }
 
             div {
@@ -243,7 +243,7 @@ export default {
 
             div:nth-of-type(1) {
                 color: #808080;
-                font-size: 0.22rem;
+                font-size: 0.23rem;
                 width: 60%;
                 padding-top: 0.45rem;
             }
@@ -265,8 +265,8 @@ export default {
                 font-size: 0.21rem;
                 color: #fff;
                 position: absolute;
-                right: 1%;
-                top: 22%;
+                right: 0%;
+                top: 20%;
                 padding-left: 0;
             }
         }

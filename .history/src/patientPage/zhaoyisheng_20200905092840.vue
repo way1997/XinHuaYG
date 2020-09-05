@@ -1,28 +1,33 @@
 <template>
 <div class="zhaoYs">
-    <div class="back" @click="goBack">返回上一级</div>
+    <div class="back" @touchstart="goBack">返回上一级</div>
     <div class="search">
         <input type="text" placeholder="输入医生名字" v-model="doctorTel" style="border:1px solid #e9e9e9;" />
-        <em class="searchEm" @click="searchYs">搜索</em>
+        <em class="searchEm" @touchstart="searchYs">搜索</em>
     </div>
     <div class="xian"></div>
-    <div class="list">
-        <div class="zhonglei">
-            <p v-for="(item,index) in kemu" :key="index" :class="{choose:chooIdx==index}" @click="change(index,item.departmentId)">
-                <span>{{item.departmentName}}</span>
-            </p>
+    <!--<div class="list">
+      <div class="zhonglei">
+        <p
+          v-for="(item,index) in kemu"
+          :key="index"
+          :class="{choose:chooIdx==index}"
+          @touchstart="change(index,item.departmentId)"
+        >
+          <span>{{item.departmentName}}</span>
+        </p>
+      </div> -->
+    <!-- <div class="yisheng">
+        <div style="color:#828282;font-size:14px;padding:30px 0 20px 70px;" v-if="yishengList.length==0">该科室暂无医生</div>
+        <div class="doctor" v-for="(item,index) in yishengList" :key="index" @touchstart="goDetail(item.doctorId)">
+            <img :src="item.doctorPhoto" alt />
+            <div>{{item.doctorName}} {{item.doctorLevelName}}</div>
+            <div>{{item.doctorHospitalName}} {{item.departmentName}}</div>
+            <div v-if="item.doctorOnstatus==1">在线</div>
+            <div v-if="item.doctorOnstatus==0">离线</div>
         </div>
-        <div class="yisheng">
-            <div style="color:#828282;font-size:14px;padding:30px 0 20px 70px;" v-if="yishengList.length==0">该科室暂无医生</div>
-            <div class="doctor" v-for="(item,index) in yishengList" :key="index" @click="goDetail(item.doctorId)">
-                <img :src="item.doctorPhoto" alt />
-                <div>{{item.doctorName}} {{item.doctorLevelName}}</div>
-                <div>{{item.doctorHospitalName}} {{item.departmentName}}</div>
-                <div v-if="item.doctorOnstatus==1">在线</div>
-                <div v-if="item.doctorOnstatus==0">离线</div>
-            </div>
-        </div>
-    </div>
+    </div> -->
+</div>
 </div>
 </template>
 
@@ -113,7 +118,6 @@ export default {
 .zhaoYs {
     width: 100%;
     height: 100%;
-    position: relative;
 }
 
 .back {
@@ -149,7 +153,7 @@ export default {
         height: 0.71rem;
         border-radius: 0.38rem;
         color: #ccc;
-        font-size: 0.25rem;
+        font-size: 0.22rem;
         float: left;
         text-align: center;
         border: 0.01rem solid #d6d6d6;
@@ -164,13 +168,12 @@ export default {
 .searchEm {
     position: absolute;
     right: 0.4rem;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0.3rem;
     width: 13.33%;
     height: 0.4rem;
     line-height: 0.4rem;
     color: #00afc2;
-    font-size: 0.22rem;
+    font-size: 0.24rem;
     text-align: center;
     border: 0.01rem solid #00afc2;
     border-radius: 0.2rem;
@@ -181,26 +184,26 @@ export default {
     height: 91%;
 
     .zhonglei {
-        width: 29.33%;
+        width: 220px;
         height: 100%;
         overflow-y: scroll;
         float: left;
 
         p {
             width: 100%;
-            height: 0.94rem;
+            height: 94px;
             background: #00afc2;
             color: #fff;
-            font-size: 0.23rem;
+            font-size: 25px;
 
             span {
                 display: block;
-                width: 87.67%;
+                width: 192px;
                 height: 98%;
                 text-align: center;
-                line-height: 0.94rem;
+                line-height: 94px;
                 margin: 0 auto;
-                border-bottom: 0.01rem solid #99dfe7;
+                border-bottom: 1px solid #99dfe7;
             }
         }
 
@@ -215,58 +218,57 @@ export default {
     }
 
     .yisheng {
-        width: 70.66%;
+        width: 530px;
         height: 100%;
         overflow-y: scroll;
         float: left;
 
         .doctor {
             width: 94%;
-            height: 1.6rem;
-            border-bottom: 0.01rem solid #ececec;
+            height: 160px;
+            border-bottom: 1px solid #ececec;
             margin: 0 auto;
-            padding-bottom: 0.5rem;
             position: relative;
 
             img {
-                width: 0.60rem;
-                height: 0.60rem;
+                width: 89px;
+                height: 89px;
                 border-radius: 50%;
                 float: left;
-                margin-top: 15%;
+                margin-top: 30px;
             }
 
             div {
                 float: left;
-                padding-left: 0.2rem;
+                padding-left: 20px;
             }
 
             div:nth-of-type(1) {
                 color: #808080;
-                font-size: 0.22rem;
+                font-size: 25px;
                 width: 60%;
-                padding-top: 0.45rem;
+                padding-top: 45px;
             }
 
             div:nth-of-type(2) {
                 color: #bababa;
-                font-size: 0.23rem;
+                font-size: 25px;
                 width: 60%;
-                padding-top: 0.15rem;
+                padding-top: 15px;
             }
 
             div:nth-of-type(3) {
-                width: 18%;
-                height: 0.37rem;
+                width: 79px;
+                height: 37px;
                 background: #00afc2;
-                border-radius: 0.19rem;
+                border-radius: 19px;
                 text-align: center;
-                line-height: 0.36rem;
-                font-size: 0.21rem;
+                line-height: 37px;
+                font-size: 25px;
                 color: #fff;
                 position: absolute;
-                right: 1%;
-                top: 22%;
+                right: 20px;
+                top: 55px;
                 padding-left: 0;
             }
         }

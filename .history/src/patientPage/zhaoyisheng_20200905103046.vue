@@ -266,7 +266,7 @@ export default {
                 color: #fff;
                 position: absolute;
                 right: 1%;
-                top: 22%;
+                top: 20%;
                 padding-left: 0;
             }
         }

@@ -225,48 +225,47 @@ export default {
             height: 1.6rem;
             border-bottom: 0.01rem solid #ececec;
             margin: 0 auto;
-            padding-bottom: 0.5rem;
             position: relative;
 
             img {
-                width: 0.60rem;
-                height: 0.60rem;
+                width: 17.87%;
+                height: 89px;
                 border-radius: 50%;
                 float: left;
-                margin-top: 15%;
+                margin-top: 30px;
             }
 
             div {
                 float: left;
-                padding-left: 0.2rem;
+                padding-left: 20px;
             }
 
             div:nth-of-type(1) {
                 color: #808080;
-                font-size: 0.22rem;
+                font-size: 0.23rem;
                 width: 60%;
-                padding-top: 0.45rem;
+                padding-top: 45px;
             }
 
             div:nth-of-type(2) {
                 color: #bababa;
                 font-size: 0.23rem;
                 width: 60%;
-                padding-top: 0.15rem;
+                padding-top: 15px;
             }
 
             div:nth-of-type(3) {
-                width: 18%;
-                height: 0.37rem;
+                width: 79px;
+                height: 37px;
                 background: #00afc2;
-                border-radius: 0.19rem;
+                border-radius: 19px;
                 text-align: center;
-                line-height: 0.36rem;
-                font-size: 0.21rem;
+                line-height: 37px;
+                font-size: 0.23rem;
                 color: #fff;
                 position: absolute;
-                right: 1%;
-                top: 22%;
+                right: 20px;
+                top: 55px;
                 padding-left: 0;
             }
         }
