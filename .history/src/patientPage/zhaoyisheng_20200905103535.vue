@@ -234,7 +234,7 @@ export default {
                 border-radius: 50%;
                 float: left;
                 margin-top: 10%;
-                margin-bottom: 5%;
+                margin-bottom: 10%;
             }
 
             div {

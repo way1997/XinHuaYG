@@ -234,7 +234,6 @@ export default {
                 border-radius: 50%;
                 float: left;
                 margin-top: 10%;
-                margin-bottom: 5%;
             }
 
             div {
@@ -253,7 +252,7 @@ export default {
                 color: #bababa;
                 font-size: 0.23rem;
                 width: 60%;
-                padding-top: 0.12rem;
+                padding-top: 0.13rem;
             }
 
             div:nth-of-type(3) {
