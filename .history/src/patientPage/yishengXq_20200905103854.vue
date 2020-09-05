@@ -274,7 +274,7 @@ export default {
     position: relative;
 
     img {
-        width: .89rem;
+        width: .95rem;
         height: 48%;
         border-radius: 50%;
         float: left;
