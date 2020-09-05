@@ -552,7 +552,7 @@ export default {
             float: left;
             width: 80%;
             //padding-left: 20px;
-            transform: translateX(3%);
+            transform: translateX(4%);
 
             &:nth-of-type(1) {
                 color: #606060;

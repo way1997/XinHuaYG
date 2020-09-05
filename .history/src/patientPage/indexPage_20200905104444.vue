@@ -542,7 +542,7 @@ export default {
 
         img {
             float: left;
-            width: .85rem;
+            width: .87rem;
             height: 29.6%;
             border-radius: 50%;
             margin-top: 0.197rem;
@@ -552,7 +552,7 @@ export default {
             float: left;
             width: 80%;
             //padding-left: 20px;
-            transform: translateX(3%);
+            transform: translateX(4%);
 
             &:nth-of-type(1) {
                 color: #606060;
