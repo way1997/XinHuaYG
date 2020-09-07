@@ -313,7 +313,7 @@ export default {
         font-size: 0.22rem;
         color: #fff;
         position: absolute;
-        right: 0.1rem;
+        right: 0.2rem;
         top: 0.25rem;
         padding-left: 0;
     }
@@ -401,7 +401,7 @@ export default {
 
             img {
                 width: 1rem;
-                height: .7rem;
+                height: .6rem;
                 border-radius: 0.13rem;
                 float: right;
                 margin-top: 0.2rem;

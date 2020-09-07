@@ -313,7 +313,7 @@ export default {
         font-size: 0.22rem;
         color: #fff;
         position: absolute;
-        right: 0.1rem;
+        right: 0.2rem;
         top: 0.25rem;
         padding-left: 0;
     }
