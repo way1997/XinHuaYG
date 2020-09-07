@@ -157,7 +157,7 @@ export default {
         margin: 0 auto;
         height: 3rem;
         border-bottom: 0.01rem solid #e9e9e9;
-        font-size: 0.18rem;
+        font-size: 0.25rem;
         padding-bottom: 1.2rem;
 
         img {
@@ -185,7 +185,7 @@ export default {
                 padding-top: 0.16rem;
                 height: 0.25rem;
                 line-height: 0.2rem;
-                overflow: hidden;
+                // overflow: hidden;
             }
 
             &:nth-of-type(3) {

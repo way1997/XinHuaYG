@@ -508,7 +508,7 @@ export default {
     div {
         span {
             float: left;
-            width: 31.6%;
+            width: 31%;
             height: 0.7rem;
             border: 2px solid #E4E4E4;
             text-align: center;
@@ -517,7 +517,7 @@ export default {
             margin-right: 1%;
             vertical-align: middle;
             border-radius: 0.13rem;
-            font-size: .21rem;
+            font-size: .22rem;
             color: #7B7B7B;
             margin-bottom: 0.15rem;
 
