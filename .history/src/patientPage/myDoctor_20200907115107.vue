@@ -15,8 +15,9 @@
             </div>
         </div>
     </div>
-    <img src="../assets/img/LODING.gif" alt class="loading" v-if="loadUp" />
-    <img class="zanwuxinxi" v-show="ifShow" src="../assets/img/zanwuxinxi.png" />
+    //
+    <!--<img src="../assets/img/LODING.gif" alt class="loading" v-if="loadUp" />
+    // <img class="zanwuxinxi" v-show="ifShow" src="../assets/img/zanwuxinxi.png" />-->
 </div>
 </template>
 
