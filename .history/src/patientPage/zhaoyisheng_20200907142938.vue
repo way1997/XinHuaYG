@@ -239,7 +239,7 @@ export default {
 
             div {
                 float: left;
-                padding-left: 0.1rem;
+                padding-left: 0.2rem;
             }
 
             div:nth-of-type(1) {

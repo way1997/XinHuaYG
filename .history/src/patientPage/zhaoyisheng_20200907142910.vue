@@ -239,7 +239,7 @@ export default {
 
             div {
                 float: left;
-                padding-left: 0.1rem;
+                padding-left: 0.2rem;
             }
 
             div:nth-of-type(1) {
@@ -266,7 +266,7 @@ export default {
                 font-size: 0.21rem;
                 color: #fff;
                 position: absolute;
-                right: -0.1rem;
+                right: 0%;
                 top: 22%;
                 padding-left: 0;
             }
