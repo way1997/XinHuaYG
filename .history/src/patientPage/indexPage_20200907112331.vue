@@ -481,7 +481,7 @@ export default {
         margin-top: 0.208rem;
 
         span {
-            font-size: 0.35rem;
+            font-size: 0.385rem;
             color: #fff;
             float: right;
             padding-right: 0.406rem;

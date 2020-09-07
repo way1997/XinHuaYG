@@ -365,7 +365,7 @@ export default {
         font-size: 0.25rem;
         float: left;
         position: absolute;
-        left: 45%;
+        left: 48%;
         transform: translateX(-50%);
 
     }
@@ -378,7 +378,7 @@ export default {
 
 .search {
     position: absolute;
-    right: 0.2rem;
+    right: 0.28rem;
     top: 0.26rem;
     width: 14.1%;
     height: .41rem;
@@ -438,11 +438,11 @@ export default {
         }
 
         em {
-            font-size: 0.24rem;
+            font-size: 0.245rem;
             color: #fff;
             float: right;
             padding-right: 0.3125rem;
-            width: 82%;
+            width: 80%;
             text-align: right;
             padding-top: .10rem;
 
@@ -459,7 +459,6 @@ export default {
         border-radius: 0.135rem;
         float: right;
         line-height: 1.072rem;
-        text-align: center;
         margin-left: 0.104rem;
 
         span {
@@ -476,7 +475,6 @@ export default {
         background: linear-gradient(146deg, rgba(2, 204, 252, 1), rgba(52, 128, 216, 1));
         border-radius: 0.135rem;
         float: right;
-        text-align: center;
         line-height: 1.072rem;
         margin-top: 0.208rem;
 
@@ -514,7 +512,7 @@ export default {
             text-align: center;
             word-wrap: normal;
             line-height: 0.7rem;
-            margin-right: 1%;
+            margin-right: 2%;
             vertical-align: middle;
             border-radius: 0.13rem;
             font-size: .22rem;
@@ -540,12 +538,12 @@ export default {
         height: 3.125rem;
         border-bottom: 0.02rem solid #e9e9e9;
         font-size: 0.24rem;
-        padding-bottom: 0.9rem;
+        padding-bottom: 0.3rem;
 
         img {
             float: left;
             width: .85rem;
-            height: .85rem;
+            height: 29.6%;
             border-radius: 50%;
             margin-top: 0.197rem;
         }
