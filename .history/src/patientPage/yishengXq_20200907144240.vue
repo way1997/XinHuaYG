@@ -26,7 +26,7 @@
                 <img src="../assets/img/head1.jpg" alt />
                 <div>{{item.title}}</div>
                 <p>来自：{{lists.doctorName}} {{item.levelName}}</p>
-                <p style="padding-bottom: .9rem;">浏览量：123</p>
+                <p>浏览量：123</p>
             </div>
         </div>
     </div>
@@ -378,6 +378,7 @@ export default {
 
     .detailList {
         padding: 0 0.36rem;
+        margin-bottom: .3rem;
 
         >div {
             width: 100%;
@@ -397,7 +398,6 @@ export default {
                 color: #bbbbbb;
                 padding-top: 10px;
                 float: left;
-
                 width: 67%;
             }
 

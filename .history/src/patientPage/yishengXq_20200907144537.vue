@@ -26,7 +26,7 @@
                 <img src="../assets/img/head1.jpg" alt />
                 <div>{{item.title}}</div>
                 <p>来自：{{lists.doctorName}} {{item.levelName}}</p>
-                <p style="padding-bottom: .9rem;">浏览量：123</p>
+                <p style="padding-bottom: .3rem;">浏览量：123</p>
             </div>
         </div>
     </div>

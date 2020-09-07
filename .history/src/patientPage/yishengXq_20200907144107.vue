@@ -26,7 +26,7 @@
                 <img src="../assets/img/head1.jpg" alt />
                 <div>{{item.title}}</div>
                 <p>来自：{{lists.doctorName}} {{item.levelName}}</p>
-                <p style="padding-bottom: .9rem;">浏览量：123</p>
+                <p>浏览量：123</p>
             </div>
         </div>
     </div>
@@ -369,6 +369,7 @@ export default {
 }
 
 .wenzhang {
+    padding-bottom: .3rem;
 
     h1 {
         font-size: 0.25rem;
@@ -397,7 +398,6 @@ export default {
                 color: #bbbbbb;
                 padding-top: 10px;
                 float: left;
-
                 width: 67%;
             }
 
