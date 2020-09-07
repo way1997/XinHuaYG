@@ -211,7 +211,7 @@ export default {
 
 .top1 .center .cengter2 .zi {
     width: 100%;
-    height: .44rem;
+    height: .34rem;
     color: #828282;
     font-size: 0.23rem;
     line-height: .34rem;

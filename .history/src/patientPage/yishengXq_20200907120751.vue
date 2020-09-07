@@ -400,7 +400,7 @@ export default {
             }
 
             img {
-                width: 1rem;
+                width: 1.5rem;
                 height: 1.14rem;
                 border-radius: 0.13rem;
                 float: right;

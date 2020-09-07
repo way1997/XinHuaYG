@@ -380,8 +380,9 @@ export default {
 
         >div {
             width: 100%;
-            height: 1.57rem;
-            border-bottom: 0.01rem solid #f1f1f1;
+            height: 157px;
+
+            border-bottom: 1px solid #f1f1f1;
 
             div {
                 font-size: 25px;
@@ -400,11 +401,11 @@ export default {
             }
 
             img {
-                width: 1rem;
-                height: 1.14rem;
-                border-radius: 0.13rem;
+                width: 177px;
+                height: 114px;
+                border-radius: 13px;
                 float: right;
-                margin-top: 0.2rem;
+                margin-top: 20px;
             }
         }
     }

@@ -269,7 +269,6 @@ export default {
     width: 98%;
     padding: 0 1%;
     height: 1.79rem;
-    padding-bottom: 0.3rem;
     border-bottom: 0.01rem solid #ececec;
     margin: 0 auto;
     position: relative;
@@ -280,7 +279,6 @@ export default {
         border-radius: 50%;
         float: left;
         margin-top: 0.38rem;
-        margin-bottom: 0.38rem;
     }
 
     div {
@@ -304,7 +302,7 @@ export default {
     }
 
     div:nth-of-type(4) {
-        width: 20%;
+        width: 19.5%;
         height: 0.56rem;
         background: #00afc2;
         border-radius: 0.13rem;
@@ -323,7 +321,7 @@ export default {
     width: 92.4%;
     height: 2.4rem;
     margin: 0 auto;
-    padding-bottom: 0.82rem;
+    padding-bottom: 8%;
     border-bottom: 0.01rem solid #ececec;
 
     h1 {
@@ -370,18 +368,19 @@ export default {
 
 .wenzhang {
     h1 {
-        font-size: 0.25rem;
-        padding: 0.3rem 0 0.25rem 0.43rem;
+        font-size: 25px;
+        padding: 30px 0 25px 43px;
         color: #7c7c7c;
     }
 
     .detailList {
-        padding: 0 0.36rem;
+        padding: 0 36px;
 
         >div {
             width: 100%;
-            height: 1.57rem;
-            border-bottom: 0.01rem solid #f1f1f1;
+            height: 157px;
+
+            border-bottom: 1px solid #f1f1f1;
 
             div {
                 font-size: 25px;
@@ -400,11 +399,11 @@ export default {
             }
 
             img {
-                width: 1rem;
-                height: 1.14rem;
-                border-radius: 0.13rem;
+                width: 177px;
+                height: 114px;
+                border-radius: 13px;
                 float: right;
-                margin-top: 0.2rem;
+                margin-top: 20px;
             }
         }
     }
