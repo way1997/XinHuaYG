@@ -154,11 +154,11 @@ export default {
         padding-bottom: 0.09rem;
 
         span {
-            font-size: 0.4rem;
+            font-size: 0.3rem;
             color: #7B7B7B;
             float: left;
             padding-left: 0.2rem;
-            line-height: 0.3rem;
+            line-height: 0.35rem;
             transform: translateY(-100%);
         }
 
@@ -217,7 +217,7 @@ export default {
 
     p {
         width: 100%;
-        height: 1.083rem;
+        height: 1.083;
         border-bottom: .02rem solid #f1f1f1;
         color: #878787;
         font-size: 0.26rem;

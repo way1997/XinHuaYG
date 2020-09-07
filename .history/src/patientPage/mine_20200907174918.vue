@@ -140,105 +140,105 @@ export default {
     }
 }
 
-.list {
-    width: 100%;
-    // margin: 0 auto;
-    // padding-top: 0.354rem;
-    // padding-bottom: 1.51rem;
+// .list {
+//     width: 100%;
+//     // margin: 0 auto;
+//     // padding-top: 0.354rem;
+//     // padding-bottom: 1.51rem;
 
-    p {
-        width: 100%;
-        height: 0.3rem;
-        border-bottom: 1px solid #ebebeb;
-        line-height: 0.3rem;
-        padding-bottom: 0.09rem;
+//     p {
+//         width: 100%;
+//         height: 0.3rem;
+//         border-bottom: 1px solid #ebebeb;
+//         line-height: 0.3rem;
+//         padding-bottom: 0.09rem;
 
-        span {
-            font-size: 0.4rem;
-            color: #7B7B7B;
-            float: left;
-            padding-left: 0.2rem;
-            line-height: 0.3rem;
-            transform: translateY(-100%);
-        }
+//         span {
+//             font-size: 0.3rem;
+//             color: #7B7B7B;
+//             float: left;
+//             padding-left: 0.2rem;
+//             line-height: 0.35rem;
+//             transform: translateY(-100%);
+//         }
 
-        img {
-            width: 0.354rem;
-            height: 0.416rem;
-            float: right;
-            position: relative;
-            top: 50%;
-            transform: translateY(-120%);
-            opacity: 1;
-        }
+//         img {
+//             width: 0.354rem;
+//             height: 0.416rem;
+//             float: right;
+//             position: relative;
+//             top: 50%;
+//             transform: translateY(-120%);
+//             opacity: 1;
+//         }
 
-        &:last-child {
-            border-bottom: none;
-        }
-    }
-}
+//         &:last-child {
+//             border-bottom: none;
+//         }
+//     }
+// }
 
-.dianZhe {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
+// .dianZhe {
+//     width: 100%;
+//     height: 100%;
+//     position: fixed;
+//     left: 0;
+//     top: 0;
+//     background: rgba(0, 0, 0, 0.5);
+//     z-index: 9999;
 
-    .dianhua {
-        width: 94%;
-        height: 2.906rem;
-        background: rgba(255, 255, 255, 1);
-        border-radius: 0.135rem;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+//     .dianhua {
+//         width: 94%;
+//         height: 2.906rem;
+//         background: rgba(255, 255, 255, 1);
+//         border-radius: 0.135rem;
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//     }
 
-    .headDian {
-        width: 100%;
-        height: 0.895rem;
-        border-bottom: .02rem solid #a7a7a7;
-        text-align: center;
-        line-height: 0.895rem;
-        font-size: 0.26rem;
-        color: #878787;
+//     .headDian {
+//         width: 100%;
+//         height: 0.895rem;
+//         border-bottom: .02rem solid #a7a7a7;
+//         text-align: center;
+//         line-height: 0.895rem;
+//         font-size: 0.26rem;
+//         color: #878787;
 
-        img {
-            width: 0.34375rem;
-            height: 0.34375rem;
-            float: right;
-            margin: 0.1rem 0.1rem 0 0;
-        }
-    }
+//         img {
+//             width: 0.34375rem;
+//             height: 0.34375rem;
+//             float: right;
+//             margin: 0.1rem 0.1rem 0 0;
+//         }
+//     }
 
-    p {
-        width: 100%;
-        height: 1.083rem;
-        border-bottom: .02rem solid #f1f1f1;
-        color: #878787;
-        font-size: 0.26rem;
-        line-height: 1.083rem;
+//     p {
+//         width: 100%;
+//         height: 1.083;
+//         border-bottom: .02rem solid #f1f1f1;
+//         color: #878787;
+//         font-size: 0.26rem;
+//         line-height: 1.083rem;
 
-        span {
-            padding-left: 0.1rem;
-        }
+//         span {
+//             padding-left: 0.1rem;
+//         }
 
-        button {
-            width: 1.66rem;
-            height: 0.677rem;
-            background: rgba(84, 213, 210, 1);
-            border-radius: 0.135rem;
-            font-size: 0.26rem;
-            line-height: 0.26rem;
-            color: #fff;
-            border: none;
-            float: right;
-            margin: 0.2rem 0.1rem 0 0;
-        }
-    }
-}
+//         button {
+//             width: 1.66rem;
+//             height: 0.677rem;
+//             background: rgba(84, 213, 210, 1);
+//             border-radius: 0.135rem;
+//             font-size: 0.26rem;
+//             line-height: 0.26rem;
+//             color: #fff;
+//             border: none;
+//             float: right;
+//             margin: 0.2rem 0.1rem 0 0;
+//         }
+//     }
+// }
 </style>

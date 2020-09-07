@@ -217,7 +217,7 @@ export default {
 
     p {
         width: 100%;
-        height: 1.083rem;
+        height: 1.083;
         border-bottom: .02rem solid #f1f1f1;
         color: #878787;
         font-size: 0.26rem;
