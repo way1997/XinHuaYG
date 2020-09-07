@@ -24,8 +24,7 @@
         <div class="info">
             <p><span>诊金:</span><label>{{zhenjinT}}</label></p>
             <p><span>购药前查看药方:</span><label v-show="lists.isLook==0">不可看</label><label v-show="lists.isLook==1">可看</label></p>
-            <p class="fuyaojinji" style="height:auto"><span>服药禁忌:</span><label v-for="(item,index) in lists.taboo" :key="index">{{item.tabooName}}、</label></p>
-            <section style="clear: both;"></section>
+            <p class="fuyaojinji"><span>服药禁忌:</span><label v-for="(item,index) in lists.taboo" :key="index">{{item.tabooName}}、</label></p>
             <p class="buchongshuoming"><span>补充说明:</span><label>{{lists.sickName}}</label></p>
         </div>
         <div class="xian" style="clear:both;"></div>

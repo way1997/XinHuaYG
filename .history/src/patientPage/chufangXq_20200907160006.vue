@@ -24,8 +24,7 @@
         <div class="info">
             <p><span>诊金:</span><label>{{zhenjinT}}</label></p>
             <p><span>购药前查看药方:</span><label v-show="lists.isLook==0">不可看</label><label v-show="lists.isLook==1">可看</label></p>
-            <p class="fuyaojinji" style="height:auto"><span>服药禁忌:</span><label v-for="(item,index) in lists.taboo" :key="index">{{item.tabooName}}、</label></p>
-            <section style="clear: both;"></section>
+            <p class="fuyaojinji"><span>服药禁忌:</span><label v-for="(item,index) in lists.taboo" :key="index">{{item.tabooName}}、</label></p>
             <p class="buchongshuoming"><span>补充说明:</span><label>{{lists.sickName}}</label></p>
         </div>
         <div class="xian" style="clear:both;"></div>
@@ -34,10 +33,9 @@
             <div class="chooseWay">
                 <label v-for="(item,index) in peisong1" :key="index" @click="peisong(index)"><img :src="content1==index?require('../assets/img/danxuan.png'):require('../assets/img/danxuang1.png')" class="tu2">{{item.name}}</label>
             </div>
-            <p style="padding-bottom:0.9rem;line-height:0.6rem"><span>最近药房:</span><label>{{yaodiantext}}</label></p>
+            <p style="padding-bottom:0.9rem"><span>最近药房:</span><label>{{yaodiantext}}</label></p>
             <div v-if="content1==1">
                 <p><label style="color:#00afc2;" @click="showAdd">更改地址</label></p>
-                <section style="clear: both;"></section>
                 <p><span>收货人:</span><label>{{userAddress.recipient}}</label></p>
                 <p><span>手机号码:</span><label>{{userAddress.tel||userAddress.repPhone}}</label></p>
                 <p><span>收货地址:</span><label>{{userAddress.address}}</label></p>
@@ -45,7 +43,7 @@
             </div>
         </div>
         <h1 v-if="isAgency == 0">是否代煎</h1>
-        <div style="padding-bottom:.5rem" class="info" v-if="isAgency == 0">
+        <div class="info" v-if="isAgency == 0">
             <div class="chooseWay">
                 <label @click="daijian(index)" v-for="(item,index) in daijian1" :key="index"><img :src="content2==index?require('../assets/img/danxuan.png'):require('../assets/img/danxuang1.png')" class="tu2">{{item.name}}</label>
             </div>

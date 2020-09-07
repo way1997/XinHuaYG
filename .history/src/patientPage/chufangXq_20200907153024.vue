@@ -24,8 +24,7 @@
         <div class="info">
             <p><span>诊金:</span><label>{{zhenjinT}}</label></p>
             <p><span>购药前查看药方:</span><label v-show="lists.isLook==0">不可看</label><label v-show="lists.isLook==1">可看</label></p>
-            <p class="fuyaojinji" style="height:auto"><span>服药禁忌:</span><label v-for="(item,index) in lists.taboo" :key="index">{{item.tabooName}}、</label></p>
-            <section style="clear: both;"></section>
+            <p class="fuyaojinji"><span>服药禁忌:</span><label v-for="(item,index) in lists.taboo" :key="index">{{item.tabooName}}、</label></p>
             <p class="buchongshuoming"><span>补充说明:</span><label>{{lists.sickName}}</label></p>
         </div>
         <div class="xian" style="clear:both;"></div>
@@ -34,10 +33,9 @@
             <div class="chooseWay">
                 <label v-for="(item,index) in peisong1" :key="index" @click="peisong(index)"><img :src="content1==index?require('../assets/img/danxuan.png'):require('../assets/img/danxuang1.png')" class="tu2">{{item.name}}</label>
             </div>
-            <p style="padding-bottom:0.9rem;line-height:0.6rem"><span>最近药房:</span><label>{{yaodiantext}}</label></p>
+            <p><span>最近药房:</span><label>{{yaodiantext}}</label></p>
             <div v-if="content1==1">
                 <p><label style="color:#00afc2;" @click="showAdd">更改地址</label></p>
-                <section style="clear: both;"></section>
                 <p><span>收货人:</span><label>{{userAddress.recipient}}</label></p>
                 <p><span>手机号码:</span><label>{{userAddress.tel||userAddress.repPhone}}</label></p>
                 <p><span>收货地址:</span><label>{{userAddress.address}}</label></p>
@@ -45,7 +43,7 @@
             </div>
         </div>
         <h1 v-if="isAgency == 0">是否代煎</h1>
-        <div style="padding-bottom:.5rem" class="info" v-if="isAgency == 0">
+        <div class="info" v-if="isAgency == 0">
             <div class="chooseWay">
                 <label @click="daijian(index)" v-for="(item,index) in daijian1" :key="index"><img :src="content2==index?require('../assets/img/danxuan.png'):require('../assets/img/danxuang1.png')" class="tu2">{{item.name}}</label>
             </div>
@@ -367,7 +365,7 @@ export default {
             height: 0.77rem;
             border-bottom: 0.01rem solid #f5f5f5;
             color: #828282;
-            font-size: 0.22rem;
+            font-size: 0.24rem;
             line-height: 0.77rem;
             margin: 0 auto;
             padding: 0 0.1rem;
@@ -404,13 +402,13 @@ export default {
         div.chooseWay {
             width: 100%;
             height: .77rem;
-            font-size: .21rem;
+            font-size: .235rem;
             color: #828282;
             padding-top: .2rem;
 
             label {
                 float: left;
-                width: 32%;
+                width: 34%;
                 padding-left: 0.4rem;
 
                 &:nth-of-type(2) {
@@ -430,31 +428,31 @@ export default {
 
 .total {
     width: 100%;
-    height: 1.2rem;
+    height: 120px;
     position: fixed;
     bottom: 0;
     left: 0;
     background: #fff;
 
     div:nth-of-type(1) {
-        width: 53%;
-        font-size: .23rem;
+        width: 400px;
+        font-size: 25px;
         color: #828282;
-        line-height: 0.31rem;
-        padding: 0.36rem 0 0 0.32rem;
+        line-height: 31px;
+        padding: 36px 0 0 32px;
         float: left;
-        border-top: 0.01rem solid #f1f1f1;
+        border-top: 1px solid #f1f1f1;
     }
 
     div:nth-of-type(2) {
-        width: 35.7%;
-        height: 1.21rem;
+        width: 268px;
+        height: 121px;
         float: right;
         background: #00afc2;
-        font-size: 0.27rem;
+        font-size: 27px;
         color: #fff;
         text-align: center;
-        line-height: 1.21rem;
+        line-height: 121px;
     }
 }
 
@@ -476,57 +474,86 @@ export default {
     position: fixed;
     bottom: 0;
     left: 0;
+}
 
-    .list {
-        width: 100%;
+.list {
+    .doctor {
+        width: 92.4%;
+        height: 2.5rem;
+        border-bottom: 0.01rem solid #ececec;
+        margin: 0 auto;
+        position: relative;
+        padding-bottom: 1.4rem;
 
-        >div {
-            width: 100%;
-            height: 1.57rem;
-            border-bottom: 0.01rem solid #e4e4e4;
-            padding-bottom: .25rem;
-
-            div {
-                padding: 0 .3rem;
-
-                span {
-                    color: #00B0C2;
-                    float: right;
-
-                    img {
-                        width: .29rem;
-                        height: .3rem;
-                        vertical-align: middle;
-                        margin: 0 .1rem;
-                    }
-                }
-            }
-
-            div:nth-of-type(1) {
-                font-size: 0.25rem;
-                color: #757575;
-                padding-top: 0.5rem;
-            }
-
-            div:nth-of-type(2) {
-                font-size: 0.25rem;
-                color: #B7B7B7;
-                padding-top: 0.25rem;
-
-            }
+        img {
+            width: .8rem;
+            height: .8rem;
+            border-radius: 50%;
+            float: left;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        .addXin {
-            width: 80%;
-            height: 0.5rem;
-            margin: 0 auto;
-            font-size: 0.3rem;
-            color: #fff;
-            text-align: center;
-            line-height: 0.8rem;
+        div {
+            float: left;
+            padding-left: 0.2rem;
+        }
+
+        div:nth-of-type(1) {
+            color: #808080;
+            font-size: 0.25rem;
+            width: 60%;
+            padding-top: 0.47rem;
+        }
+
+        div:nth-of-type(2) {
+            //color:#BABABA;
+            color: #808080;
+            font-size: 0.25rem;
+            width: 60%;
+            padding-top: 0.2rem;
+        }
+
+        div:nth-of-type(4),
+        div:nth-of-type(3),
+        div:nth-of-type(5) {
+            width: 20%;
+            height: 0.54rem;
             background: #00afc2;
-            border-radius: 0.2rem;
-            margin-top: 0.2rem;
+            border-radius: 0.13rem;
+            text-align: center;
+            line-height: 0.56rem;
+            font-size: 0.22rem;
+            color: #fff;
+            padding-left: 0;
+        }
+
+        div:nth-of-type(3) {
+            position: absolute;
+            right: 0rem;
+            top: 0.3rem;
+        }
+
+        div:nth-of-type(4) {
+            position: absolute;
+            right: 0rem;
+            bottom: 0.3rem;
+        }
+
+        div:nth-of-type(5) {
+            background: #b4b4b4;
+            position: absolute;
+            right: 0rem;
+            bottom: 0.3rem;
+        }
+
+        p {
+            color: #828282;
+            font-size: 0.25rem;
+            float: left;
+            padding-left: 0.2rem;
+            padding-top: 0rem;
+            width: 60%;
         }
     }
 }
