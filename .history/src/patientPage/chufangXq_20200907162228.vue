@@ -384,7 +384,7 @@ export default {
         p.yaofang {
             height: auto;
             float: left;
-            margin-left: .24rem;
+            margin-left: .20rem;
             line-height: .50rem;
         }
 

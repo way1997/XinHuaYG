@@ -168,7 +168,7 @@ export default {
             float: right;
             position: relative;
             top: 50%;
-            transform: translateY(-120%);
+            transform: translateY(-100%);
             opacity: 1;
         }
 

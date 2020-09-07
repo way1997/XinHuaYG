@@ -158,7 +158,7 @@ export default {
             color: #7B7B7B;
             float: left;
             padding-left: 0.2rem;
-            line-height: 0.35rem;
+            line-height: 0.3rem;
             transform: translateY(-100%);
         }
 
@@ -168,7 +168,7 @@ export default {
             float: right;
             position: relative;
             top: 50%;
-            transform: translateY(-120%);
+            transform: translateY(-100%);
             opacity: 1;
         }
 

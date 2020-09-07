@@ -14,7 +14,7 @@
         <p @click="gochufang"><span>处方信息</span><img src="../assets/img/you.png" alt=""></p>
         <p @click="dingdan"><span>订单信息</span><img src="../assets/img/you.png" alt=""></p>
         <p @click="dizhi"><span>地址管理</span><img src="../assets/img/you.png" alt=""></p>
-        <p @click="lxkf" style="padding-bottom:1.2rem"><span>联系客服</span><img src="../assets/img/you.png" alt=""></p>
+        <p @click="lxkf" style="padding-bottom:.9rem"><span>联系客服</span><img src="../assets/img/you.png" alt=""></p>
     </div>
     <!--热线电话-->
     <div class="dianZhe" v-show="dianhua">
@@ -154,11 +154,11 @@ export default {
         padding-bottom: 0.09rem;
 
         span {
-            font-size: 0.3rem;
+            font-size: 0.4rem;
             color: #7B7B7B;
             float: left;
             padding-left: 0.2rem;
-            line-height: 0.35rem;
+            line-height: 0.3rem;
             transform: translateY(-100%);
         }
 
@@ -168,7 +168,7 @@ export default {
             float: right;
             position: relative;
             top: 50%;
-            transform: translateY(-120%);
+            transform: translateY(-100%);
             opacity: 1;
         }
 
