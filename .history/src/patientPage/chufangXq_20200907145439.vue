@@ -350,8 +350,7 @@ export default {
         padding-bottom: 1.4rem;
 
         img {
-            width: .8rem;
-            height: .8rem;
+
             border-radius: 50%;
             float: left;
             margin-top: 0.5rem;
