@@ -42,7 +42,7 @@
                 </div>
             </div>
 
-            <div class="jianhurenBox" v-show="jhrHidden">
+            <!--   <div class="jianhurenBox" v-show="jhrHidden">
                 <div style="height:0.2rem;width:100%;background-color:#f9f9f9;"></div>
                 <div class="tittleBigBox">
                     <div class="jianhuTit">身体状况</div>
@@ -150,7 +150,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="tianjiaBtn" :style="{backgroundColor:backcolor}" @click="insertArchives">保存</div>
         </div>
@@ -567,13 +567,13 @@ input {
 }
 
 .jianhuTishi {
-    font-size: .25rem;
+    font-size: 25px;
     color: #ff5f5f;
     margin-right: .40rem;
 }
 
 .jianhuTishi2 {
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
     margin-right: .40rem;
 }
@@ -586,20 +586,20 @@ input {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    font-size: .25rem;
-    padding: 0 .20rem;
+    font-size: 25px;
+    padding: 0 .40rem;
     border-bottom: 1px solid #f2f2f2;
 }
 
 .tianjiaTit {
     color: #828282;
-    font-size: .25rem;
+    font-size: 25px;
 }
 
 .tianjiaInput {
     text-align: right;
     color: #828282;
-    font-size: .25rem;
+    font-size: 25px;
 }
 
 .choosesex {
@@ -656,7 +656,7 @@ input {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    font-size: .25rem;
+    font-size: 25px;
     margin-top: .20rem;
 }
 
@@ -726,11 +726,11 @@ input {
     justify-content: space-between;
     align-items: flex-start;
     border-bottom: 1px solid #f2f2f2;
-    padding: 0 .20rem;
+    padding: 0 .40rem;
 }
 
 .xinxiTittle2 {
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
     margin-top: .30rem;
 }
@@ -743,7 +743,7 @@ input {
 }
 
 .radio {
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
     margin-left: .20rem;
 }
@@ -753,7 +753,7 @@ input {
 }
 
 .radio-group2 span {
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
 }
 
@@ -804,23 +804,23 @@ input {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #f2f2f2;
-    padding: 0 .20rem;
+    padding: 0 .40rem;
 }
 
 .xinxiTittle {
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
 }
 
 .youjiantou {
     width: 30px;
     height: 30px;
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
 }
 
 input::-webkit-input-placeholder {
     color: #c9c9c9;
-    font-size: .25rem;
+    font-size: 25px;
 }
 </style>

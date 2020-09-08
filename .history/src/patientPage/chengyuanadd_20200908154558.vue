@@ -49,7 +49,7 @@
                     <div class="jianhuTishi2">此项为非必填项</div>
                 </div>
 
-                <div class="xinxiBox" style="border-top:1px solid #dbdbdb;" v-show="tiaozhuanType0001 == 0?true:false" @click="goGai(1)">
+                <!--  <div class="xinxiBox" style="border-top:1px solid #dbdbdb;" v-show="tiaozhuanType0001 == 0?true:false" @click="goGai(1)">
                     <div class="xinxiTittle">慢性病</div>
                     <img src="../assets/img/you.png" class="youjiantou">
                 </div>
@@ -73,19 +73,19 @@
 
                 <div class="tianjiaItem">
                     <div class="tianjiaTit">身高(cm)</div>
-                    <input class="tianjiaInput" v-model="list2.height" type="number" name="tall" placeholder="请输入身高" @input="shenBim">
+                    <input style="margin-right:0.1rem" class="tianjiaInput" v-model="list2.height" type="number" name="tall" placeholder="请输入身高" @input="shenBim">
                 </div>
                 <div class="tianjiaItem">
                     <div class="tianjiaTit">体重(kg)</div>
-                    <input class="tianjiaInput" v-model="list2.weight" type="number" name="weight" placeholder="请输入体重" @input="tiBim">
+                    <input style="margin-right:0.1rem" class="tianjiaInput" v-model="list2.weight" type="number" name="weight" placeholder="请输入体重" @input="tiBim">
                 </div>
                 <div class="tianjiaItem">
                     <div class="tianjiaTit">BMI(kg/㎡)</div>
-                    <input class="tianjiaInput" type="number" name="bmi" disabled="true" v-model="bMI" placeholder="BMI">
+                    <input style="margin-right:0.1rem" class="tianjiaInput" type="number" name="bmi" disabled="true" v-model="bMI" placeholder="BMI">
                 </div>
                 <div class="tianjiaItem">
                     <div class="tianjiaTit">腰围(cm)</div>
-                    <input class="tianjiaInput" v-model="list2.waist" name="yaowei" type="number" placeholder="请输入腰围">
+                    <input style="margin-right:0.1rem" class="tianjiaInput" v-model="list2.waist" name="yaowei" type="number" placeholder="请输入腰围">
                 </div>
 
                 <div style="height:0.1rem;width:100%;background-color:#f9f9f9;"></div>
@@ -149,7 +149,7 @@
                             <span>{{item.name}}</span>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
 
             <div class="tianjiaBtn" :style="{backgroundColor:backcolor}" @click="insertArchives">保存</div>
@@ -567,13 +567,13 @@ input {
 }
 
 .jianhuTishi {
-    font-size: .25rem;
+    font-size: 25px;
     color: #ff5f5f;
     margin-right: .40rem;
 }
 
 .jianhuTishi2 {
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
     margin-right: .40rem;
 }
@@ -586,20 +586,20 @@ input {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    font-size: .25rem;
+    font-size: 25px;
     padding: 0 .20rem;
     border-bottom: 1px solid #f2f2f2;
 }
 
 .tianjiaTit {
     color: #828282;
-    font-size: .25rem;
+    font-size: 25px;
 }
 
 .tianjiaInput {
     text-align: right;
     color: #828282;
-    font-size: .25rem;
+    font-size: 25px;
 }
 
 .choosesex {
@@ -656,7 +656,7 @@ input {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    font-size: .25rem;
+    font-size: 25px;
     margin-top: .20rem;
 }
 
@@ -726,11 +726,11 @@ input {
     justify-content: space-between;
     align-items: flex-start;
     border-bottom: 1px solid #f2f2f2;
-    padding: 0 .20rem;
+    padding: 0 .40rem;
 }
 
 .xinxiTittle2 {
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
     margin-top: .30rem;
 }
@@ -743,7 +743,7 @@ input {
 }
 
 .radio {
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
     margin-left: .20rem;
 }
@@ -753,7 +753,7 @@ input {
 }
 
 .radio-group2 span {
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
 }
 
@@ -804,23 +804,23 @@ input {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #f2f2f2;
-    padding: 0 .20rem;
+    padding: 0 .40rem;
 }
 
 .xinxiTittle {
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
 }
 
 .youjiantou {
     width: 30px;
     height: 30px;
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
 }
 
 input::-webkit-input-placeholder {
     color: #c9c9c9;
-    font-size: .25rem;
+    font-size: 25px;
 }
 </style>

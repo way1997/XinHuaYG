@@ -1,4 +1,4 @@
-<template>
+=<template>
 <div class="addchengyuan">
     <div class="backHome" @click="goBack">返回上一级</div>
     <div class="xian" style="clear:both;"></div>
@@ -488,22 +488,22 @@ export default {
 @import '../assets/less/base.less';
 
 .backHome {
-    width: 81.46%;
-    height: 0.76rem;
+    width: 611px;
+    height: 76px;
     background: #00afc2;
-    border-radius: 0.13rem;
+    border-radius: 13px;
     text-align: center;
-    line-height: 0.76rem;
+    line-height: 76px;
     color: #fff;
-    font-size: 0.25rem;
+    font-size: 25px;
     margin: 0 auto;
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .xian {
     width: 100%;
-    height: .1rem;
+    height: 10px;
     background: #efefef;
     clear: both;
 }
@@ -547,7 +547,6 @@ input {
     border-radius: .16rem;
     box-shadow: .10rem .10rem .20rem #dbdbdb;
     margin: .30rem;
-    margin-left: .18rem;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -567,13 +566,13 @@ input {
 }
 
 .jianhuTishi {
-    font-size: .25rem;
+    font-size: 25px;
     color: #ff5f5f;
     margin-right: .40rem;
 }
 
 .jianhuTishi2 {
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
     margin-right: .40rem;
 }
@@ -586,20 +585,20 @@ input {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    font-size: .25rem;
-    padding: 0 .20rem;
+    font-size: 25px;
+    padding: 0 .40rem;
     border-bottom: 1px solid #f2f2f2;
 }
 
 .tianjiaTit {
     color: #828282;
-    font-size: .25rem;
+    font-size: 25px;
 }
 
 .tianjiaInput {
     text-align: right;
     color: #828282;
-    font-size: .25rem;
+    font-size: 25px;
 }
 
 .choosesex {
@@ -656,7 +655,7 @@ input {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    font-size: .25rem;
+    font-size: 25px;
     margin-top: .20rem;
 }
 
@@ -693,11 +692,11 @@ input {
 }
 
 .jianhuTit {
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
     border-left: 3px solid #00b0c2;
     padding-left: .20rem;
-    margin: .20rem .40rem .20rem .20rem;
+    margin: .20rem .40rem .20rem .40rem;
 }
 
 .tianjiaBtn {
@@ -726,11 +725,11 @@ input {
     justify-content: space-between;
     align-items: flex-start;
     border-bottom: 1px solid #f2f2f2;
-    padding: 0 .20rem;
+    padding: 0 .40rem;
 }
 
 .xinxiTittle2 {
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
     margin-top: .30rem;
 }
@@ -743,7 +742,7 @@ input {
 }
 
 .radio {
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
     margin-left: .20rem;
 }
@@ -753,7 +752,7 @@ input {
 }
 
 .radio-group2 span {
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
 }
 
@@ -804,23 +803,23 @@ input {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #f2f2f2;
-    padding: 0 .20rem;
+    padding: 0 .40rem;
 }
 
 .xinxiTittle {
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
 }
 
 .youjiantou {
     width: 30px;
     height: 30px;
-    font-size: .25rem;
+    font-size: 25px;
     color: #828282;
 }
 
 input::-webkit-input-placeholder {
     color: #c9c9c9;
-    font-size: .25rem;
+    font-size: 25px;
 }
 </style>
