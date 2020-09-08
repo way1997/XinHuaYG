@@ -108,7 +108,7 @@ export default {
 /* pages1/manxingbing/manxingbing.wxss */
 .tishi {
     width: calc(100% - 6.0rem);
-    margin: .20rem;
+    margin: .30rem;
     font-size: .28rem;
     color: #999999;
 }
@@ -124,7 +124,7 @@ export default {
     width: 3.40rem;
     height: .80rem;
     line-height: .80rem;
-    font-size: .24rem;
+    font-size: .249rem;
     border-radius: .10rem;
     border: 1px solid #00b0c2;
     float: left;
@@ -155,7 +155,7 @@ export default {
     height: .80rem;
     text-align: center;
     line-height: .80rem;
-    font-size: .24rem;
+    font-size: .249rem;
     background-color: #00b0c2;
     float: left;
     border-radius: .10rem;

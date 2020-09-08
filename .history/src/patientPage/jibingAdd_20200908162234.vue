@@ -108,7 +108,7 @@ export default {
 /* pages1/manxingbing/manxingbing.wxss */
 .tishi {
     width: calc(100% - 6.0rem);
-    margin: .20rem;
+    margin: .30rem;
     font-size: .28rem;
     color: #999999;
 }
@@ -128,7 +128,7 @@ export default {
     border-radius: .10rem;
     border: 1px solid #00b0c2;
     float: left;
-    padding-left: .12rem;
+
 }
 
 .tu {

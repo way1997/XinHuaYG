@@ -1,8 +1,8 @@
 <template>
 <div class="addBing">
     <HeadTop :title="pageName" :backBlack="true"></HeadTop>
-    <div class="tishi">请添加慢性病症，以方便医生的诊断治疗！</div>
-    <div class="zi" v-for="(item,index) in list" :key="index">
+    <!--<div class="tishi">请添加慢性病症，以方便医生的诊断治疗！</div>
+     <div class="zi" v-for="(item,index) in list" :key="index">
         {{item.chronicName}}
         <img src="../assets/img/shanchu.png" @touchstart='shanchu(item.id)' class="tu2">
     </div>
@@ -11,7 +11,7 @@
         <div class="sure" @touchstart='surew'>确定</div>
         <div class="sure1" @touchstart='quxiao'>取消</div>
     </div>
-    <img src='../assets/img/tian.png' class="tu" @touchstart='tu1'>
+    <img src='../assets/img/tian.png' class="tu" @touchstart='tu1'> -->
 
 </div>
 </template>
@@ -108,7 +108,7 @@ export default {
 /* pages1/manxingbing/manxingbing.wxss */
 .tishi {
     width: calc(100% - 6.0rem);
-    margin: .20rem;
+    margin: .30rem;
     font-size: .28rem;
     color: #999999;
 }

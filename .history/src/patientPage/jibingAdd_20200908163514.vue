@@ -137,7 +137,7 @@ export default {
     height: .60rem;
     float: left;
     margin-top: .48rem;
-    margin-left: .44rem;
+    margin-left: .2rem;
 }
 
 .tu2 {

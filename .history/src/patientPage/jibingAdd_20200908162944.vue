@@ -121,9 +121,9 @@ export default {
 }
 
 .ipu {
-    width: 3.40rem;
+    width: 48%;
     height: .80rem;
-    line-height: .80rem;
+    line-height: .40rem;
     font-size: .24rem;
     border-radius: .10rem;
     border: 1px solid #00b0c2;

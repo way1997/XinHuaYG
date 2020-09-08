@@ -121,7 +121,7 @@ export default {
 }
 
 .ipu {
-    width: 3.40rem;
+    width: 1.40rem;
     height: .80rem;
     line-height: .80rem;
     font-size: .24rem;
@@ -151,7 +151,7 @@ export default {
 }
 
 .sure {
-    width: 1.06rem;
+    width: .9rem;
     height: .80rem;
     text-align: center;
     line-height: .80rem;
@@ -164,7 +164,7 @@ export default {
 }
 
 .sure1 {
-    width: 1.06rem;
+    width: ..9rem;
     height: .80rem;
     text-align: center;
     line-height: .80rem;

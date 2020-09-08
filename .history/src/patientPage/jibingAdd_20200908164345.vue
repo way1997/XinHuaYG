@@ -135,7 +135,10 @@ export default {
     display: block;
     width: .60rem;
     height: .60rem;
-    float: left;
+    position: absolute;
+    ;
+    right: 1rem;
+    bottom: -3rem;
     margin-top: .48rem;
     margin-left: .44rem;
 }

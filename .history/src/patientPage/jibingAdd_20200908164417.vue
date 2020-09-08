@@ -135,7 +135,7 @@ export default {
     display: block;
     width: .60rem;
     height: .60rem;
-    float: left;
+
     margin-top: .48rem;
     margin-left: .44rem;
 }

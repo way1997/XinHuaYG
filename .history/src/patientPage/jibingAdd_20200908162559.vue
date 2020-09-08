@@ -11,7 +11,7 @@
         <div class="sure" @touchstart='surew'>确定</div>
         <div class="sure1" @touchstart='quxiao'>取消</div>
     </div>
-    <img src='../assets/img/tian.png' class="tu" @touchstart='tu1'>
+    <img src='../assets/img/tian.png' class="tu" @touchstart='tu1'> -->
 
 </div>
 </template>

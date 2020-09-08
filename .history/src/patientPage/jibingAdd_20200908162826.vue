@@ -121,7 +121,7 @@ export default {
 }
 
 .ipu {
-    width: 3.40rem;
+    width: 47.46%;
     height: .80rem;
     line-height: .80rem;
     font-size: .24rem;

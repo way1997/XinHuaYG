@@ -6,12 +6,12 @@
         {{item.chronicName}}
         <img src="../assets/img/shanchu.png" @touchstart='shanchu(item.id)' class="tu2">
     </div>
-    <div class="tou" v-if="irritability">
+    <!--<div class="tou" v-if="irritability">
         <input class="ipu" v-model='inputtext' placeholder='输入慢性病(仅限7个字)' :disabled="isdisplay" type='text' maxlength='7'>
         <div class="sure" @touchstart='surew'>确定</div>
         <div class="sure1" @touchstart='quxiao'>取消</div>
     </div>
-    <img src='../assets/img/tian.png' class="tu" @touchstart='tu1'>
+    <img src='../assets/img/tian.png' class="tu" @touchstart='tu1'> -->
 
 </div>
 </template>
@@ -178,7 +178,7 @@ export default {
 }
 
 .zi {
-    width: calc((100% - 9.0rem) / 2);
+    width: calc((90% - 9.0rem) / 2);
     height: .80rem;
     line-height: .80rem;
     text-align: center;

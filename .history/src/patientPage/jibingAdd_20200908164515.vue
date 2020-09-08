@@ -135,9 +135,9 @@ export default {
     display: block;
     width: .60rem;
     height: .60rem;
-    float: left;
+    float: right;
     margin-top: .48rem;
-    margin-left: .44rem;
+    margin-left: -.44rem;
 }
 
 .tu2 {
