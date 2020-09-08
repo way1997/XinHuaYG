@@ -341,9 +341,9 @@ input::-webkit-input-placeholder {
 .quxiao {
     width: 100%;
     text-align: center;
-    font-size: .25rem;
+    font-size: 25px;
     color: #00B0C2;
-    padding-top: .50rem;
+    padding-top: 50px;
 }
 
 .zhezhao {

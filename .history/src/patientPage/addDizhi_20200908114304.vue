@@ -326,7 +326,7 @@ input::-webkit-input-placeholder {
 }
 
 .queren {
-    width: 81.4%;
+    width: 6.11rem;
     height: 0.76rem;
     background: #00B0C2;
     border-radius: 0.13rem;
@@ -341,9 +341,9 @@ input::-webkit-input-placeholder {
 .quxiao {
     width: 100%;
     text-align: center;
-    font-size: .25rem;
+    font-size: 25px;
     color: #00B0C2;
-    padding-top: .50rem;
+    padding-top: 50px;
 }
 
 .zhezhao {

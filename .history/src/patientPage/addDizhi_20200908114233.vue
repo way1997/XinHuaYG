@@ -317,33 +317,33 @@ input::-webkit-input-placeholder {
     }
 
     img {
-        width: 1.01rem;
-        height: 0.53rem;
+        width: 101px;
+        height: 53px;
         position: absolute;
-        right: 0.2rem;
-        top: 0.4rem;
+        right: 20px;
+        top: 40px;
     }
 }
 
 .queren {
-    width: 81.4%;
-    height: 0.76rem;
+    width: 611px;
+    height: 76px;
     background: #00B0C2;
-    border-radius: 0.13rem;
+    border-radius: 13px;
     text-align: center;
-    line-height: 0.76rem;
-    font-size: 0.3rem;
+    line-height: 76px;
+    font-size: 30px;
     color: #fff;
     margin: 0 auto;
-    margin-top: 0.8rem;
+    margin-top: 80px;
 }
 
 .quxiao {
     width: 100%;
     text-align: center;
-    font-size: .25rem;
+    font-size: 25px;
     color: #00B0C2;
-    padding-top: .50rem;
+    padding-top: 50px;
 }
 
 .zhezhao {

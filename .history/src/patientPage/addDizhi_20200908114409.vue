@@ -343,7 +343,7 @@ input::-webkit-input-placeholder {
     text-align: center;
     font-size: .25rem;
     color: #00B0C2;
-    padding-top: .50rem;
+    padding-top: 50px;
 }
 
 .zhezhao {

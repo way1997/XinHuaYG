@@ -271,15 +271,15 @@ export default {
             font-size: 0.25rem;
             color: #828282;
             float: left;
-            width: 24%;
-            padding-left: 0.2rem;
+            width: 1.11rem;
+            padding-left: 0.5rem;
             padding-right: 0.3rem;
         }
 
         input,
         div {
             float: left;
-            width: 52%;
+            width: 4.88rem;
             height: 0.54rem;
             border: 0.01rem solid #dadada;
             font-size: 0.25rem;
@@ -290,7 +290,7 @@ export default {
         }
 
         div {
-            line-height: .54rem;
+            line-height: 54px;
             color: #828282;
         }
     }
@@ -298,52 +298,52 @@ export default {
 
 input::-webkit-input-placeholder {
     color: #c9c9c9;
-    font-size: .25rem;
+    font-size: 25px;
 }
 
 .shezhi {
     position: relative;
 
     p:nth-of-type(1) {
-        font-size: 0.25rem;
+        font-size: 25px;
         color: #797979;
-        padding: 0.38rem 0 0 0.45rem;
+        padding: 38px 0 0 45px;
     }
 
     p:nth-of-type(2) {
-        font-size: 0.25rem;
+        font-size: 25px;
         color: #AFAFAF;
-        padding: 0.2rem 0 0 0.45rem;
+        padding: 20px 0 0 45px;
     }
 
     img {
-        width: 1.01rem;
-        height: 0.53rem;
+        width: 101px;
+        height: 53px;
         position: absolute;
-        right: 0.2rem;
-        top: 0.4rem;
+        right: 20px;
+        top: 40px;
     }
 }
 
 .queren {
-    width: 81.4%;
-    height: 0.76rem;
+    width: 611px;
+    height: 76px;
     background: #00B0C2;
-    border-radius: 0.13rem;
+    border-radius: 13px;
     text-align: center;
-    line-height: 0.76rem;
-    font-size: 0.3rem;
+    line-height: 76px;
+    font-size: 30px;
     color: #fff;
     margin: 0 auto;
-    margin-top: 0.8rem;
+    margin-top: 80px;
 }
 
 .quxiao {
     width: 100%;
     text-align: center;
-    font-size: .25rem;
+    font-size: 25px;
     color: #00B0C2;
-    padding-top: .50rem;
+    padding-top: 50px;
 }
 
 .zhezhao {
