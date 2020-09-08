@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <!-- <meta name="viewport" content="width=1024, height=768,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" /> -->
     <link rel="stylesheet" type="text/css" href="static/css/reset.css">
-    <!-- <script>
+    <script>
       (function () {
           if (
               typeof WeixinJSBridge == "object" &&
@@ -25,17 +25,17 @@
           function handleFontSize() {
               // 设置网页字体为默认大小
               WeixinJSBridge.invoke("setFontSizeCallback", {
-                  fontSize: 0,
+                  fontSize: 200,
               });
               // 重写设置网页字体大小的事件
               WeixinJSBridge.on("menu:setfont", function () {
                   WeixinJSBridge.invoke("setFontSizeCallback", {
-                      fontSize: 0,
+                      fontSize: 200,
                   });
               });
           }
       })();
-      </script> -->
+      </script>
     <script>
 
       (function (doc, win) {

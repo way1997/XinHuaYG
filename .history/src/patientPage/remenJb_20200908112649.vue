@@ -160,16 +160,15 @@ export default {
 
             &:nth-of-type(3) {
                 color: #fff;
-                padding-top: 0.19rem;
+                padding-top: 19px;
 
                 span {
                     float: left;
-                    font-size: 0.22rem;
-                    margin-right: 0.1rem;
-                    padding: 0.08rem 0.12rem;
+                    margin-right: 10px;
+                    padding: 8px 15px;
                     background: #00afc2;
-                    border-radius: 0.3rem;
-                    margin-bottom: 0.1rem;
+                    border-radius: 30px;
+                    margin-bottom: 10px;
                 }
             }
         }

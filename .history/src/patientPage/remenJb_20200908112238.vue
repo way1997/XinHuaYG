@@ -126,7 +126,7 @@ export default {
     >div {
         width: 89.6%;
         margin: 0 auto;
-        height: 4.6rem;
+        height: 4rem;
         border-bottom: 0.01rem solid #e9e9e9;
         font-size: 0.25rem;
 
@@ -136,7 +136,7 @@ export default {
             height: 0.88rem;
             border-radius: 50%;
             margin-top: 0.19rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.19rem;
         }
 
         div {
@@ -146,30 +146,28 @@ export default {
 
             &:nth-of-type(1) {
                 color: #606060;
-                margin-top: 0.19rem;
                 padding-left: 0.2rem;
             }
 
             &:nth-of-type(2) {
                 color: #BABABA;
-                padding-top: 0.16rem;
-                height: 0.9rem;
-                line-height: 0.3rem;
+                padding-top: 16px;
+                height: 25px;
+                line-height: 30px;
                 overflow: hidden;
             }
 
             &:nth-of-type(3) {
                 color: #fff;
-                padding-top: 0.19rem;
+                padding-top: 19px;
 
                 span {
                     float: left;
-                    font-size: 0.22rem;
-                    margin-right: 0.1rem;
-                    padding: 0.08rem 0.12rem;
+                    margin-right: 10px;
+                    padding: 8px 15px;
                     background: #00afc2;
-                    border-radius: 0.3rem;
-                    margin-bottom: 0.1rem;
+                    border-radius: 30px;
+                    margin-bottom: 10px;
                 }
             }
         }

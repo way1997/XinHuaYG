@@ -126,7 +126,7 @@ export default {
     >div {
         width: 89.6%;
         margin: 0 auto;
-        height: 4.6rem;
+        height: 4.7rem;
         border-bottom: 0.01rem solid #e9e9e9;
         font-size: 0.25rem;
 

@@ -126,50 +126,47 @@ export default {
     >div {
         width: 89.6%;
         margin: 0 auto;
-        height: 4.6rem;
+        height: 3rem;
         border-bottom: 0.01rem solid #e9e9e9;
         font-size: 0.25rem;
 
         img {
             float: left;
-            width: 0.88rem;
-            height: 0.88rem;
+            width: 89px;
+            height: 89px;
             border-radius: 50%;
-            margin-top: 0.19rem;
-            margin-bottom: 1rem;
+            margin-top: 19px;
         }
 
         div {
             float: left;
-            width: 73%;
-            padding-left: 0.2rem;
+            width: 80%;
+            padding-left: 20px;
 
             &:nth-of-type(1) {
                 color: #606060;
-                margin-top: 0.19rem;
-                padding-left: 0.2rem;
+                padding-top: 28px;
             }
 
             &:nth-of-type(2) {
                 color: #BABABA;
-                padding-top: 0.16rem;
-                height: 0.9rem;
-                line-height: 0.3rem;
+                padding-top: 16px;
+                height: 25px;
+                line-height: 30px;
                 overflow: hidden;
             }
 
             &:nth-of-type(3) {
                 color: #fff;
-                padding-top: 0.19rem;
+                padding-top: 19px;
 
                 span {
                     float: left;
-                    font-size: 0.22rem;
-                    margin-right: 0.1rem;
-                    padding: 0.08rem 0.12rem;
+                    margin-right: 10px;
+                    padding: 8px 15px;
                     background: #00afc2;
-                    border-radius: 0.3rem;
-                    margin-bottom: 0.1rem;
+                    border-radius: 30px;
+                    margin-bottom: 10px;
                 }
             }
         }

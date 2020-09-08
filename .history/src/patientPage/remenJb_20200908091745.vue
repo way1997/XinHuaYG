@@ -1,11 +1,11 @@
 <template>
 <div class="recordNum">
-    <div class="back" @click="goBack">返回上一级</div>
+    <div class="back" @touchstart="goBack">返回上一级</div>
     <div class="search">当前搜索条件：{{doctorTel}}</div>
     <div class="xian"></div>
     <div class="list">
         <div class="tuijian">
-            <div v-for="(item,index) in yishengList" :key="index" @click="goDetail(item.doctorId)">
+            <div v-for="(item,index) in yishengList" :key="index" @touchstart="goDetail(item.doctorId)">
                 <img :src="item.doctorPhoto" alt="">
                 <div>{{item.doctorName}} {{item.doctorLevelName}}</div>
                 <div>{{item.doctorHospitalName}} {{item.departmentName}} </div>
@@ -95,81 +95,79 @@ export default {
     text-align: center;
     line-height: 0.76rem;
     color: #fff;
-    font-size: 0.23rem;
+    font-size: 0.25rem;
     float: left;
     margin: 0.15rem 0.2rem 0.15rem 0.2rem;
 }
 
 .xian {
     width: 100%;
-    height: .1rem;
+    height: 10px;
     background: #efefef;
     clear: both;
 }
 
 .search {
-    width: 62%;
+    width: 468px;
     float: left;
-    height: 0.76rem;
-    border: 0.01rem solid #d6d6d6;
-    border-radius: 0.1rem;
-    margin-top: 0.15rem;
-    margin-bottom: 0.15rem;
+    height: 76px;
+    border: 1px solid rgba(214, 214, 214, 1);
+    border-radius: 10px;
+    line-height: 76px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     background: #00afc2;
     color: #fff;
     text-align: center;
-    line-height: 0.76rem;
-    font-size: 0.25rem;
+    line-height: 76px;
+    font-size: 25px;
 }
 
 .tuijian {
     >div {
-        width: 89.6%;
+        width: 672px;
         margin: 0 auto;
-        height: 4.6rem;
-        border-bottom: 0.01rem solid #e9e9e9;
-        font-size: 0.25rem;
+        height: 300px;
+        border-bottom: 1px solid #e9e9e9;
+        font-size: 25px;
 
         img {
             float: left;
-            width: 0.88rem;
-            height: 0.88rem;
+            width: 89px;
+            height: 89px;
             border-radius: 50%;
-            margin-top: 0.19rem;
-            margin-bottom: 1rem;
+            margin-top: 19px;
         }
 
         div {
             float: left;
-            width: 73%;
-            padding-left: 0.2rem;
+            width: 80%;
+            padding-left: 20px;
 
             &:nth-of-type(1) {
                 color: #606060;
-                margin-top: 0.19rem;
-                padding-left: 0.2rem;
+                padding-top: 28px;
             }
 
             &:nth-of-type(2) {
                 color: #BABABA;
-                padding-top: 0.16rem;
-                height: 0.9rem;
-                line-height: 0.3rem;
+                padding-top: 16px;
+                height: 25px;
+                line-height: 30px;
                 overflow: hidden;
             }
 
             &:nth-of-type(3) {
                 color: #fff;
-                padding-top: 0.19rem;
+                padding-top: 19px;
 
                 span {
                     float: left;
-                    font-size: 0.22rem;
-                    margin-right: 0.1rem;
-                    padding: 0.08rem 0.12rem;
+                    margin-right: 10px;
+                    padding: 8px 15px;
                     background: #00afc2;
-                    border-radius: 0.3rem;
-                    margin-bottom: 0.1rem;
+                    border-radius: 30px;
+                    margin-bottom: 10px;
                 }
             }
         }

@@ -126,7 +126,7 @@ export default {
     >div {
         width: 89.6%;
         margin: 0 auto;
-        height: 4.6rem;
+        height: 4.7rem;
         border-bottom: 0.01rem solid #e9e9e9;
         font-size: 0.25rem;
 
@@ -164,9 +164,8 @@ export default {
 
                 span {
                     float: left;
-                    font-size: 0.22rem;
                     margin-right: 0.1rem;
-                    padding: 0.08rem 0.12rem;
+                    padding: 0.08rem 0.15rem;
                     background: #00afc2;
                     border-radius: 0.3rem;
                     margin-bottom: 0.1rem;
