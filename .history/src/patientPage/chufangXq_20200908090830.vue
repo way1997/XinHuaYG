@@ -16,7 +16,7 @@
             <p><span>辩证:</span><label>{{lists.symptom}}</label></p>
             <p><span>类型:</span><label v-if="medicineType==1">中药</label></p>
             <p><span>药态:</span><label>{{lists.preShapeName}}</label></p>
-
+            <section style="clear:both;"></section>
             <p class="yaofang"><span>药方:</span><label class="yaoList" v-for="(item,index) in lists.lists_medicine" :key="index">{{item.medicineName}}{{item.howWeight}}</label></p>
             <p class="jiFu"><span>剂量:</span><label>共{{lists.preNum}}剂</label></p>
         </div>

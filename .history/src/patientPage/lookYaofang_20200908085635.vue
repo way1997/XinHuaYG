@@ -9,14 +9,13 @@
             <p><span>开方医生:</span><label>{{list.doctorName}}</label></p>
             <!-- <div class="chakan">查看详情</div> -->
         </div>
-        <h1>药方信息</h1>
+        <!-- <h1>药方信息</h1>
         <div class="info">
             <p><span>辩证:</span><label>{{list.symptom}}</label></p>
             <p><span>类型:</span><label>{{medicineType}}</label></p>
             <p><span>用法用量:</span><label>共{{datas.preNum}}剂,1日{{datas.dayNum}}次，每次{{datas.preOnce}}剂</label>
             </p>
             <p><span>医嘱:</span><label>{{list.preEnjoin}}</label></p>
-            <section style="clear:both;"></section>
             <p class="yaofang"><span>药方:</span><label class="yaoList"><em v-for="(item,index) in datas.detail" :key="index">{{item.name}}{{item.howWeight}}、</em></label></p>
         </div>
         <div class="xian"></div>
@@ -25,7 +24,7 @@
             <p><span>购药前查看药方:</span><label v-if="list.isPayLook==0">不可看</label><label v-if="list.isPayLook==1">可看</label></p>
             <p class="fuyaojinji"><span>服药禁忌:</span><label v-for="(item,index) in list.taboo" :key="index">{{item.tabooName}}、</label></p>
             <p class="buchongshuoming"><span>补充说明:</span><label>{{list.sickName}}</label></p>
-        </div>
+        </div>-->
         <div class="xian"></div>
     </div>
 </div>
@@ -119,7 +118,7 @@ export default {
     width: 100%;
 
     h1 {
-        width: 26%;
+        width: 25.33%;
         height: 0.53rem;
         line-height: 0.53rem;
         text-align: center;
@@ -136,14 +135,14 @@ export default {
         background: #fff;
 
         p {
-            width: 90.93%;
-            height: 0.77rem;
-            border-bottom: 0.01rem solid #f5f5f5;
+            width: 682px;
+            height: 77px;
+            border-bottom: 1px solid #f5f5f5;
             color: #828282;
-            font-size: 0.24rem;
-            line-height: 0.77rem;
+            font-size: 24px;
+            line-height: 77px;
             margin: 0 auto;
-            padding: 0 0.1rem;
+            padding: 0 10px;
 
             span {
                 float: left;
@@ -161,8 +160,8 @@ export default {
         p.yaofang {
             height: auto;
             float: left;
-            margin-left: 0.2rem;
-            line-height: 0.5rem;
+            margin-left: 24px;
+            line-height: 50px;
         }
 
         .yaoList {
@@ -171,15 +170,15 @@ export default {
 
         p.jiFu {
             float: left;
-            margin-left: .34rem;
+            margin-left: 34px;
         }
 
         div {
-            font-size: .25rem;
+            font-size: 25px;
             color: #00afc2;
             width: 100%;
             text-align: center;
-            line-height: .8rem;
+            line-height: 80px;
         }
     }
 }
