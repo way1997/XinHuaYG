@@ -1,8 +1,8 @@
 <template>
 <div class="dangan">
-    <div class="backHome" @click="goBack">返回上一级</div>
+    <div class="backHome" @touchstart="goBack">返回上一级</div>
     <div class="xian" style="clear:both;"></div>
-    <div class="xinxiBox" v-for="(item,index) in danganChengyuan" :key="index" @click="showDeleteButton(item.id)" @touchend="emptyTime">
+    <div class="xinxiBox" v-for="(item,index) in danganChengyuan" :key="index" @touchstart="showDeleteButton(item.id)" @touchend="emptyTime">
         <div class="xinxiLeft">
             <div class="name">{{item.archivesName}}</div>
             <div class="sexBox">
@@ -12,12 +12,12 @@
         </div>
         <img src="../assets/img/zhuangshi01.png" class="zhuangshi">
         <div class="xinxiRight">
-            <img src="../assets/img/chakandangan.png" class="chakan" @click="goDetail(item.id)">
+            <img src="../assets/img/chakandangan.png" class="chakan" @touchstart="goDetail(item.id)">
         </div>
     </div>
 
     <div class="newBankcardBtnBox">
-        <div class="newBankcardBtn" @click="goadd">添加家庭联系人</div>
+        <div class="newBankcardBtn" @touchstart="goadd">添加家庭联系人</div>
     </div>
     <confirm text="确定删除此条成员信息吗" ref="confirm" @cancel="newAnswerGo" @confirm="deleteBTn"></confirm>
 </div>
@@ -162,10 +162,9 @@ page {
 
 /*个人信息*/
 .xinxiBox {
-    width: calc(100% - 6rem);
+    width: calc(94%);
     min-height: 1.20rem;
-    margin: .24rem;
-    margin-left: .20rem;
+    margin: .30rem;
     background-color: #fff;
     border-radius: .16rem;
     -webkit-box-shadow: 0.1rem 0.1rem 0.2rem #dbdbdb;
@@ -186,29 +185,20 @@ page {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+
 }
 
 .xinxiLeft {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
     justify-content: flex-start;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
     align-items: flex-start;
-    margin: .30rem 0 .30rem .26rem;
+    margin: .30rem 0 .30rem .40rem;
 }
 
 .name {
-    font-size: .26rem;
+    font-size: .34rem;
     color: #666666;
     letter-spacing: 2px;
 }
@@ -219,7 +209,7 @@ page {
     flex-wrap: nowrap;
     justify-content: flex-start;
     margin-top: .12rem;
-    font-size: .26rem;
+    font-size: .30rem;
     color: #999999;
 }
 
@@ -228,13 +218,13 @@ page {
 }
 
 .zhuangshi {
-    width: 32%;
-    height: 1.4rem;
+    width: 2.68rem;
+    height: 1.60rem;
 }
 
 .xinxiRight {
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.60rem;
+    height: 1.60rem;
     background-color: #fcbd0e;
     display: flex;
     justify-content: center;
@@ -255,8 +245,7 @@ page {
 /*添加按钮*/
 .newBankcardBtnBox {
     width: calc(100% - 6rem);
-    margin: .26rem;
-    margin-left: .20rem;
+    margin: .30rem;
     background-color: #fff;
     height: 2.60rem;
     display: flex;

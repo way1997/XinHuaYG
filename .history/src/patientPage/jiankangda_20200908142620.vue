@@ -164,8 +164,7 @@ page {
 .xinxiBox {
     width: calc(100% - 6rem);
     min-height: 1.20rem;
-    margin: .24rem;
-    margin-left: .20rem;
+    margin: .26rem;
     background-color: #fff;
     border-radius: .16rem;
     -webkit-box-shadow: 0.1rem 0.1rem 0.2rem #dbdbdb;
@@ -255,8 +254,7 @@ page {
 /*添加按钮*/
 .newBankcardBtnBox {
     width: calc(100% - 6rem);
-    margin: .26rem;
-    margin-left: .20rem;
+    margin: .30rem;
     background-color: #fff;
     height: 2.60rem;
     display: flex;

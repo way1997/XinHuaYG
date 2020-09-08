@@ -256,7 +256,6 @@ page {
 .newBankcardBtnBox {
     width: calc(100% - 6rem);
     margin: .26rem;
-    margin-left: .20rem;
     background-color: #fff;
     height: 2.60rem;
     display: flex;

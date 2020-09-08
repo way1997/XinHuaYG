@@ -2,19 +2,6 @@
 <div class="dangan">
     <div class="backHome" @click="goBack">返回上一级</div>
     <div class="xian" style="clear:both;"></div>
-    <div class="xinxiBox" v-for="(item,index) in danganChengyuan" :key="index" @click="showDeleteButton(item.id)" @touchend="emptyTime">
-        <div class="xinxiLeft">
-            <div class="name">{{item.archivesName}}</div>
-            <div class="sexBox">
-                <div class="sex">{{item.gender==0?'男':'女'}}</div>
-                <div class="age">{{item.age}}岁</div>
-            </div>
-        </div>
-        <img src="../assets/img/zhuangshi01.png" class="zhuangshi">
-        <div class="xinxiRight">
-            <img src="../assets/img/chakandangan.png" class="chakan" @click="goDetail(item.id)">
-        </div>
-    </div>
 
     <div class="newBankcardBtnBox">
         <div class="newBankcardBtn" @click="goadd">添加家庭联系人</div>
@@ -255,8 +242,7 @@ page {
 /*添加按钮*/
 .newBankcardBtnBox {
     width: calc(100% - 6rem);
-    margin: .26rem;
-    margin-left: .20rem;
+    margin: .30rem;
     background-color: #fff;
     height: 2.60rem;
     display: flex;

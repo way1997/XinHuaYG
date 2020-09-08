@@ -16,9 +16,6 @@
         </div>
     </div>
 
-    <div class="newBankcardBtnBox">
-        <div class="newBankcardBtn" @click="goadd">添加家庭联系人</div>
-    </div>
     <confirm text="确定删除此条成员信息吗" ref="confirm" @cancel="newAnswerGo" @confirm="deleteBTn"></confirm>
 </div>
 </template>
@@ -255,8 +252,7 @@ page {
 /*添加按钮*/
 .newBankcardBtnBox {
     width: calc(100% - 6rem);
-    margin: .26rem;
-    margin-left: .20rem;
+    margin: .30rem;
     background-color: #fff;
     height: 2.60rem;
     display: flex;

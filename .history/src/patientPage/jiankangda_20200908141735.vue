@@ -164,8 +164,7 @@ page {
 .xinxiBox {
     width: calc(100% - 6rem);
     min-height: 1.20rem;
-    margin: .24rem;
-    margin-left: .20rem;
+    margin: .30rem;
     background-color: #fff;
     border-radius: .16rem;
     -webkit-box-shadow: 0.1rem 0.1rem 0.2rem #dbdbdb;
@@ -204,11 +203,11 @@ page {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
-    margin: .30rem 0 .30rem .26rem;
+    margin: .30rem 0 .30rem .40rem;
 }
 
 .name {
-    font-size: .26rem;
+    font-size: .34rem;
     color: #666666;
     letter-spacing: 2px;
 }
@@ -219,7 +218,7 @@ page {
     flex-wrap: nowrap;
     justify-content: flex-start;
     margin-top: .12rem;
-    font-size: .26rem;
+    font-size: .30rem;
     color: #999999;
 }
 
@@ -228,13 +227,13 @@ page {
 }
 
 .zhuangshi {
-    width: 32%;
-    height: 1.4rem;
+    width: 35.78%;
+    height: 1.60rem;
 }
 
 .xinxiRight {
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 8%;
+    height: 1.60rem;
     background-color: #fcbd0e;
     display: flex;
     justify-content: center;
@@ -255,8 +254,7 @@ page {
 /*添加按钮*/
 .newBankcardBtnBox {
     width: calc(100% - 6rem);
-    margin: .26rem;
-    margin-left: .20rem;
+    margin: .30rem;
     background-color: #fff;
     height: 2.60rem;
     display: flex;
