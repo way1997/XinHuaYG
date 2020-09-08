@@ -48,7 +48,7 @@
                 <div class="bingshiItem" v-for="(item,index) in jiwangbingshi" :key="index">{{item.sickType}}</div>
             </div>
         </div>
-        <div class="xinxiBox2">
+        <!--<div class="xinxiBox2">
             <div class="xinxiTittle2">家族病史</div>
             <div class="xinxiTextBox">
                 <div class="bingshiItem" v-for="(item,index) in jiazubingshi" :key="index">{{item.name}}</div>
@@ -84,7 +84,7 @@
         <div class="xinxiItemBox">
             <div class="xinxiItemTittle">生育状况</div>
             <div class="xinxiItemText">{{shengyuzhuangkuang == 0?'待完善':(shengyuzhuangkuang == 1?'未生育':(shengyuzhuangkuang == 2?'备孕期':(shengyuzhuangkuang == 3?'怀孕中':'已生育')))}}</div>
-        </div>
+        </div> -->
         <div style="width:100%;height:0.8rem;background-color:#f2f2f2;"></div>
     </div>
 

@@ -27,65 +27,7 @@
             <div class="xinxiItemTittle">体重</div>
             <div class="xinxiItemText">{{chengyuanTizhong}} kg</div>
         </div>
-        <div class="xinxiItemBox">
-            <div class="xinxiItemTittle">BIM</div>
-            <div class="xinxiItemText">{{chengyuanBim}} kg/㎡</div>
-        </div>
-        <div class="xinxiItemBox">
-            <div class="xinxiItemTittle">腰围</div>
-            <div class="xinxiItemText">{{chengyuanYaowei}} cm</div>
-        </div>
-        <div style="width:100%;height:0.1rem;background-color:#f2f2f2;"></div>
-        <div class="xinxiBox2">
-            <div class="xinxiTittle2">慢性病</div>
-            <div class="xinxiTextBox">
-                <div class="bingshiItem" v-for="(item,index) in manxingbing" :key="index">{{item.chronicName}}</div>
-            </div>
-        </div>
-        <div class="xinxiBox2">
-            <div class="xinxiTittle2">既往病史</div>
-            <div class="xinxiTextBox">
-                <div class="bingshiItem" v-for="(item,index) in jiwangbingshi" :key="index">{{item.sickType}}</div>
-            </div>
-        </div>
-        <div class="xinxiBox2">
-            <div class="xinxiTittle2">家族病史</div>
-            <div class="xinxiTextBox">
-                <div class="bingshiItem" v-for="(item,index) in jiazubingshi" :key="index">{{item.name}}</div>
-            </div>
-        </div>
-        <div class="xinxiBox2">
-            <div class="xinxiTittle2">过敏病史</div>
-            <div class="xinxiTextBox">
-                <div class="bingshiItem" v-for="(item,index) in guominbingshi" :key="index">{{item.allergicType}}</div>
-            </div>
-        </div>
-        <div style="width:100%;height:0.1rem;background-color:#f2f2f2;"></div>
-        <div class="xinxiItemBox">
-            <div class="xinxiItemTittle">吸烟史</div>
-            <div class="xinxiItemText">{{xiyanshi == 0?'待完善':(xiyanshi == 1?'无':(xiyanshi ==2?'有':'已戒烟'))}}</div>
-        </div>
-        <div class="xinxiItemBox">
-            <div class="xinxiItemTittle">饮酒史</div>
-            <div class="xinxiItemText">{{yinjiushi == 0?'待完善':(yinjiushi == 1?'无':(yinjiushi == 2?'有':'已戒酒'))}}</div>
-        </div>
-        <div class="xinxiItemBox">
-            <div class="xinxiItemTittle">肝功能</div>
-            <div class="xinxiItemText">{{gangongneng == 0?'待完善':(gangongneng == 1?'正常':'异常')}}</div>
-        </div>
-        <div class="xinxiItemBox">
-            <div class="xinxiItemTittle">肾功能</div>
-            <div class="xinxiItemText">{{shengongneng == 0?'待完善':(shengongneng == 1?'正常':'异常')}}</div>
-        </div>
-        <div class="xinxiItemBox">
-            <div class="xinxiItemTittle">婚姻状况</div>
-            <div class="xinxiItemText">{{hunyinzhuangkuang == 0?'待完善':(hunyinzhuangkuang == 1?'未婚':(hunyinzhuangkuang == 2?'已婚':'其他'))}}</div>
-        </div>
-        <div class="xinxiItemBox">
-            <div class="xinxiItemTittle">生育状况</div>
-            <div class="xinxiItemText">{{shengyuzhuangkuang == 0?'待完善':(shengyuzhuangkuang == 1?'未生育':(shengyuzhuangkuang == 2?'备孕期':(shengyuzhuangkuang == 3?'怀孕中':'已生育')))}}</div>
-        </div>
-        <div style="width:100%;height:0.8rem;background-color:#f2f2f2;"></div>
+        <div c <div style="width:100%;height:0.8rem;background-color:#f2f2f2;"></div>
     </div>
 
 </div>
@@ -312,7 +254,7 @@ export default {
 }
 
 .xinxiItemBox {
-    width: calc(100% - 14rem);
+    width: calc(100% - 8.0rem);
     height: .80rem;
     display: flex;
     flex-direction: row;
@@ -334,7 +276,7 @@ export default {
 }
 
 .xinxiBox2 {
-    width: calc(100% - 17.6rem);
+    width: calc(100% - 8.0rem);
     min-height: .90rem;
     display: flex;
     flex-direction: column;

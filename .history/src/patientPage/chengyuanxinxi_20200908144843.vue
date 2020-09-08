@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <div class="xinxiBigBox">
+    <!--<div class="xinxiBigBox">
         <div class="xinxiTittle">身体状况</div>
         <div class="xinxiItemBox" style="margin-top:0.2rem;border-top:1px dashed #999999;">
             <div class="xinxiItemTittle">身高</div>
@@ -86,7 +86,7 @@
             <div class="xinxiItemText">{{shengyuzhuangkuang == 0?'待完善':(shengyuzhuangkuang == 1?'未生育':(shengyuzhuangkuang == 2?'备孕期':(shengyuzhuangkuang == 3?'怀孕中':'已生育')))}}</div>
         </div>
         <div style="width:100%;height:0.8rem;background-color:#f2f2f2;"></div>
-    </div>
+    </div> -->
 
 </div>
 </template>
@@ -234,7 +234,7 @@ export default {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-left: .28rem;
+    margin-left: .30rem;
     /* margin-bottom: 8rem; */
 }
 
@@ -308,11 +308,11 @@ export default {
     /* padding-bottom: 10rem; */
     margin-bottom: .10rem;
     margin-top: .40rem;
-    margin-left: .30rem;
+    margin-left: .40rem;
 }
 
 .xinxiItemBox {
-    width: calc(100% - 14rem);
+    width: calc(100% - 8.0rem);
     height: .80rem;
     display: flex;
     flex-direction: row;
@@ -320,7 +320,7 @@ export default {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #f2f2f2;
-    padding: 0 .30rem;
+    padding: 0 .40rem;
 }
 
 .xinxiItemTittle {
@@ -334,7 +334,7 @@ export default {
 }
 
 .xinxiBox2 {
-    width: calc(100% - 17.6rem);
+    width: calc(100% - 8.0rem);
     min-height: .90rem;
     display: flex;
     flex-direction: column;

@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <div class="xinxiBigBox">
+    <!--<div class="xinxiBigBox">
         <div class="xinxiTittle">身体状况</div>
         <div class="xinxiItemBox" style="margin-top:0.2rem;border-top:1px dashed #999999;">
             <div class="xinxiItemTittle">身高</div>
@@ -86,7 +86,7 @@
             <div class="xinxiItemText">{{shengyuzhuangkuang == 0?'待完善':(shengyuzhuangkuang == 1?'未生育':(shengyuzhuangkuang == 2?'备孕期':(shengyuzhuangkuang == 3?'怀孕中':'已生育')))}}</div>
         </div>
         <div style="width:100%;height:0.8rem;background-color:#f2f2f2;"></div>
-    </div>
+    </div> -->
 
 </div>
 </template>
@@ -234,7 +234,7 @@ export default {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-left: .28rem;
+    margin-left: .30rem;
     /* margin-bottom: 8rem; */
 }
 
@@ -253,20 +253,20 @@ export default {
 }
 
 .sex {
-    font-size: .23rem;
+    font-size: 25px;
     color: #fff;
 }
 
 .age {
-    font-size: .23rem;
+    font-size: 25px;
     color: #fff;
-    margin-left: .1rem;
+    margin-left: .16rem;
 }
 
 .shengri {
-    font-size: .23rem;
+    font-size: 25px;
     color: #fff;
-    margin-left: .1rem;
+    margin-left: .16rem;
 }
 
 .topRightBox {
@@ -275,18 +275,18 @@ export default {
     flex-wrap: nowrap;
     justify-content: flex-end;
     align-items: center;
-    margin-right: .18rem;
+    margin-right: .30rem;
     padding-top: .50rem;
 }
 
 .chakanTit {
-    font-size: .23rem;
+    font-size: .26rem;
     color: #fff;
 }
 
 .youjiantou {
-    width: .22rem;
-    height: .22rem;
+    width: .30rem;
+    height: .30rem;
     margin-left: .10rem;
 }
 
@@ -301,18 +301,18 @@ export default {
 }
 
 .xinxiTittle {
-    font-size: .23rem;
+    font-size: 25px;
     color: #828282;
     border-left: 4px solid #00b0c2;
     padding-left: .20rem;
     /* padding-bottom: 10rem; */
     margin-bottom: .10rem;
     margin-top: .40rem;
-    margin-left: .30rem;
+    margin-left: .40rem;
 }
 
 .xinxiItemBox {
-    width: calc(100% - 14rem);
+    width: calc(100% - 8.0rem);
     height: .80rem;
     display: flex;
     flex-direction: row;
@@ -320,21 +320,21 @@ export default {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #f2f2f2;
-    padding: 0 .30rem;
+    padding: 0 .40rem;
 }
 
 .xinxiItemTittle {
-    font-size: .23rem;
+    font-size: 25px;
     color: #828282;
 }
 
 .xinxiItemText {
-    font-size: .23rem;
+    font-size: 25px;
     color: #828282;
 }
 
 .xinxiBox2 {
-    width: calc(100% - 17.6rem);
+    width: calc(100% - 8.0rem);
     min-height: .90rem;
     display: flex;
     flex-direction: column;
@@ -346,7 +346,7 @@ export default {
 }
 
 .xinxiTittle2 {
-    font-size: .23rem;
+    font-size: 25px;
     color: #828282;
     margin-top: .30rem;
 }
@@ -366,7 +366,7 @@ export default {
 }
 
 .bingshiItem {
-    font-size: .23rem;
+    font-size: 25px;
     color: #828282;
     padding: .12rem .20rem;
     border: 1px solid #8ed7dd;

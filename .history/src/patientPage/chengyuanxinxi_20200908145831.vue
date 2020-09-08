@@ -23,11 +23,11 @@
             <div class="xinxiItemTittle">身高</div>
             <div class="xinxiItemText">{{chengyuanTall}} cm</div>
         </div>
-        <div class="xinxiItemBox">
+        <!-- <div class="xinxiItemBox">
             <div class="xinxiItemTittle">体重</div>
             <div class="xinxiItemText">{{chengyuanTizhong}} kg</div>
         </div>
-        <div class="xinxiItemBox">
+         <div class="xinxiItemBox">
             <div class="xinxiItemTittle">BIM</div>
             <div class="xinxiItemText">{{chengyuanBim}} kg/㎡</div>
         </div>
@@ -54,7 +54,7 @@
                 <div class="bingshiItem" v-for="(item,index) in jiazubingshi" :key="index">{{item.name}}</div>
             </div>
         </div>
-        <div class="xinxiBox2">
+       <div class="xinxiBox2">
             <div class="xinxiTittle2">过敏病史</div>
             <div class="xinxiTextBox">
                 <div class="bingshiItem" v-for="(item,index) in guominbingshi" :key="index">{{item.allergicType}}</div>
@@ -84,7 +84,7 @@
         <div class="xinxiItemBox">
             <div class="xinxiItemTittle">生育状况</div>
             <div class="xinxiItemText">{{shengyuzhuangkuang == 0?'待完善':(shengyuzhuangkuang == 1?'未生育':(shengyuzhuangkuang == 2?'备孕期':(shengyuzhuangkuang == 3?'怀孕中':'已生育')))}}</div>
-        </div>
+        </div> -->
         <div style="width:100%;height:0.8rem;background-color:#f2f2f2;"></div>
     </div>
 
@@ -312,7 +312,7 @@ export default {
 }
 
 .xinxiItemBox {
-    width: calc(100% - 14rem);
+    width: calc(100% - 15rem);
     height: .80rem;
     display: flex;
     flex-direction: row;
@@ -334,7 +334,7 @@ export default {
 }
 
 .xinxiBox2 {
-    width: calc(100% - 17.6rem);
+    width: calc(100% - 8.0rem);
     min-height: .90rem;
     display: flex;
     flex-direction: column;

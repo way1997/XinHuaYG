@@ -312,7 +312,7 @@ export default {
 }
 
 .xinxiItemBox {
-    width: calc(100% - 14rem);
+    width: calc(100% - 8.0rem);
     height: .80rem;
     display: flex;
     flex-direction: row;
@@ -334,7 +334,7 @@ export default {
 }
 
 .xinxiBox2 {
-    width: calc(100% - 17.6rem);
+    width: calc(100% - 8.0rem);
     min-height: .90rem;
     display: flex;
     flex-direction: column;
