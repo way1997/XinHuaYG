@@ -6,27 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <!-- <meta name="viewport" content="width=1024, height=768,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" /> -->
     <link rel="stylesheet" type="text/css" href="static/css/reset.css">
-
-    <script>
-
-      (function (doc, win) {
-        var docEl = doc.documentElement,
-            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-            recalc = function () {
-                var clientWidth = docEl.clientWidth;
-                if (!clientWidth) return;
-                if(clientWidth>=750){
-                    docEl.style.fontSize = '140px';
-                }else{
-                    docEl.style.fontSize = 140 * (clientWidth / 750) + 'px';
-                }
-            };
-          if (!doc.addEventListener) return;
-          win.addEventListener(resizeEvt, recalc, false);
-          doc.addEventListener('DOMContentLoaded', recalc, false);
-      })(document, window);
-    </script>
-     <script>
+    <!-- <script>
       (function () {
           if (
               typeof WeixinJSBridge == "object" &&
@@ -46,8 +26,7 @@
               // 设置网页字体为默认大小
               WeixinJSBridge.invoke("setFontSizeCallback", {
                   fontSize: 0,
-              });
-              // 重写设置网页字体大小的事件
+              });写设置网页字体大小的事件
               WeixinJSBridge.on("menu:setfont", function () {
                   WeixinJSBridge.invoke("setFontSizeCallback", {
                       fontSize: 0,
@@ -55,7 +34,26 @@
               });
           }
       })();
-      </script>
+      </script> -->
+    <script>
+
+      (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=750){
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 200 * (clientWidth / 750) + 'px';
+                }
+            };
+          if (!doc.addEventListener) return;
+          win.addEventListener(resizeEvt, recalc, false);
+          doc.addEventListener('DOMContentLoaded', recalc, false);
+      })(document, window);
+    </script>
   </head>
   <body>
     <div id="app"></div>
