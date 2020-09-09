@@ -85,7 +85,7 @@ export default {
     }
 
     .confirm-content {
-        width: 5.3rem;
+        width: 530px;
         text-align: center;
         border-radius: 13px;
         background: #fff;
