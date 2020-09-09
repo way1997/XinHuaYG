@@ -15,7 +15,6 @@
             <p><span>辩证:</span><label>{{item.symptom}}</label></p>
             <p><span>类型:</span><label>{{medicineType}}</label></p>
             <p><span>药态:</span><label>{{item.shapeName}}</label></p>
-            <section style="clear:both"></section>
             <p class="yaofang"><span>药方:</span><label class="yaoList"><em v-for="(item,index) in item.medicine" :key="index">{{item.medicineName}}{{item.howWeight||item.medicineHowWeight}}</em></label></p>
         </div>
         <div class="xian"></div>
@@ -108,7 +107,7 @@ export default {
 
 .xian {
     width: 100%;
-    height: .1rem;
+    height: 10px;
     background: #efefef;
     clear: both;
 }
@@ -117,15 +116,15 @@ export default {
     width: 100%;
 
     h1 {
-        width: 1.9rem;
-        height: 0.53rem;
-        line-height: 0.53rem;
+        width: 190px;
+        height: 53px;
+        line-height: 53px;
         text-align: center;
-        font-size: 0.24rem;
+        font-size: 24px;
         color: #fff;
         background: #00afc2;
-        border-radius: 0 0.27rem 0.27rem 0;
-        margin-top: 0.2rem;
+        border-radius: 0px 27px 27px 0px;
+        margin-top: 20px;
     }
 
     .info {
@@ -134,14 +133,14 @@ export default {
         background: #fff;
 
         p {
-            width: 90.93%;
-            height: 0.77rem;
-            border-bottom: 0.01rem solid #f5f5f5;
+            width: 682px;
+            height: 77px;
+            border-bottom: 1px solid #f5f5f5;
             color: #828282;
-            font-size: 0.24rem;
-            line-height: 0.77rem;
+            font-size: 24px;
+            line-height: 77px;
             margin: 0 auto;
-            padding: 0 0.1rem;
+            padding: 0 10px;
 
             span {
                 float: left;
@@ -155,8 +154,8 @@ export default {
         p.yaofang {
             height: auto;
             float: left;
-            margin-left: 0.24rem;
-            line-height: 0.5rem;
+            margin-left: 24px;
+            line-height: 50px;
         }
 
         .yaoList {
@@ -165,15 +164,15 @@ export default {
 
         p.jiFu {
             float: left;
-            margin-left: .34rem;
+            margin-left: 34px;
         }
 
         div {
-            font-size: .25rem;
+            font-size: 25px;
             color: #00afc2;
             width: 100%;
             text-align: center;
-            line-height: .8rem;
+            line-height: 80px;
         }
     }
 
@@ -184,19 +183,19 @@ export default {
 }
 
 .zitidianD {
-    padding-top: .1rem;
+    padding-top: 10px;
 
     >div {
         width: 100%;
-        height: 1.07rem;
-        border-bottom: 0.01rem solid #f8f8f8;
+        height: 107px;
+        border-bottom: 1px solid #f8f8f8;
 
         p {
-            padding: .1rem .4rem;
+            padding: 10px 40px;
         }
 
         p:nth-of-type(1) {
-            font-size: 0.25rem;
+            font-size: 25px;
             color: #828282;
             padding-top: 20px;
 
@@ -206,7 +205,7 @@ export default {
         }
 
         p:nth-of-type(2) {
-            font-size: 0.25rem;
+            font-size: 25px;
             color: #B2B2B2;
 
             span {

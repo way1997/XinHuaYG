@@ -15,7 +15,6 @@
             <p><span>辩证:</span><label>{{item.symptom}}</label></p>
             <p><span>类型:</span><label>{{medicineType}}</label></p>
             <p><span>药态:</span><label>{{item.shapeName}}</label></p>
-            <section style="clear:both"></section>
             <p class="yaofang"><span>药方:</span><label class="yaoList"><em v-for="(item,index) in item.medicine" :key="index">{{item.medicineName}}{{item.howWeight||item.medicineHowWeight}}</em></label></p>
         </div>
         <div class="xian"></div>
@@ -196,7 +195,7 @@ export default {
         }
 
         p:nth-of-type(1) {
-            font-size: 0.25rem;
+            font-size: 25px;
             color: #828282;
             padding-top: 20px;
 
@@ -206,7 +205,7 @@ export default {
         }
 
         p:nth-of-type(2) {
-            font-size: 0.25rem;
+            font-size: 25px;
             color: #B2B2B2;
 
             span {

@@ -127,7 +127,7 @@ export default {
 
     >div {
         width: 100%;
-        height: 1.69rem;
+        height: 1.57rem;
         border-bottom: 0.01rem solid #e4e4e4;
 
         div {
@@ -147,31 +147,29 @@ export default {
         }
 
         div:nth-of-type(1) {
-            font-size: 0.25rem;
+            font-size: 25px;
             color: #757575;
-            text-indent: -.1rem;
-            padding-top: 0.5rem;
+            padding-top: 50px;
         }
 
         div:nth-of-type(2) {
-            font-size: 0.22rem;
-            text-indent: -.1rem;
+            font-size: 25px;
             color: #B7B7B7;
-            padding-top: 0.25rem;
+            padding-top: 25px;
         }
     }
 }
 
 .queren {
-    width: 81.46%;
-    height: 0.76rem;
+    width: 611px;
+    height: 76px;
     background: #00B0C2;
-    border-radius: 0.13rem;
+    border-radius: 13px;
     text-align: center;
-    line-height: 0.76rem;
+    line-height: 76px;
     font-size: .3rem;
     color: #fff;
     margin: 0 auto;
-    margin-top: 0.8rem;
+    margin-top: 80px;
 }
 </style>

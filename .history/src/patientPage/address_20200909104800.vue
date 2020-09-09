@@ -127,7 +127,7 @@ export default {
 
     >div {
         width: 100%;
-        height: 1.69rem;
+        height: 1.66rem;
         border-bottom: 0.01rem solid #e4e4e4;
 
         div {
@@ -163,15 +163,15 @@ export default {
 }
 
 .queren {
-    width: 81.46%;
-    height: 0.76rem;
+    width: 611px;
+    height: 76px;
     background: #00B0C2;
-    border-radius: 0.13rem;
+    border-radius: 13px;
     text-align: center;
-    line-height: 0.76rem;
+    line-height: 76px;
     font-size: .3rem;
     color: #fff;
     margin: 0 auto;
-    margin-top: 0.8rem;
+    margin-top: 80px;
 }
 </style>
