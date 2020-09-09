@@ -138,7 +138,7 @@ export default {
 
         div:nth-of-type(2) {
             color: #00B0C2;
-            font-size: 0.23rem;
+            font-size: 0.24rem;
             padding: 0 0.20rem;
 
             span {

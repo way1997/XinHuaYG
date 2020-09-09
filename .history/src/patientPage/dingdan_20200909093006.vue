@@ -2,7 +2,7 @@
 <div class="dingdan">
     <div class="backHome" @click="goBack">返回上一级</div>
     <div class="xian" style="clear:both;"></div>
-    <div class="list">
+    <!--<div class="list">
         <div v-for="(item,index) in orderlistd" :key="index" @click="goDetail(item.takeWay,item)">
             <div>{{item.doctorName}}医生 的辩证及处方</div>
             <div>取药方式：<em v-if="item.takeWay==0">用户自提</em><em v-if="item.takeWay==1">药店配送</em>
@@ -20,7 +20,7 @@
         </div>
     </div>
     <img src="../assets/img/LODING.gif" alt="" class="loading" v-if="loadUp">
-    <img class="zanwuxinxi" v-show="orderlistd.length == 0" src='../assets/img/zanwuxinxi.png' />
+    <img class="zanwuxinxi" v-show="orderlistd.length == 0" src='../assets/img/zanwuxinxi.png' /> -->
 </div>
 </template>
 
@@ -117,7 +117,7 @@ export default {
 
 .xian {
     width: 100%;
-    height: 0.1rem;
+    height: 10px;
     background: #efefef;
     clear: both;
 }
@@ -127,19 +127,19 @@ export default {
 
     >div {
         width: 100%;
-        height: 1.65rem;
-        border-bottom: 0.01rem solid #E9E9E9;
+        height: 165px;
+        border-bottom: 1px solid #E9E9E9;
 
         div:nth-of-type(1) {
             color: #7E7E7E;
-            font-size: 0.25rem;
-            padding: 0.37rem 0 0.4rem 0.20rem;
+            font-size: 25px;
+            padding: 37px 0 40px 39px;
         }
 
         div:nth-of-type(2) {
             color: #00B0C2;
-            font-size: 0.23rem;
-            padding: 0 0.20rem;
+            font-size: 25px;
+            padding: 0 36px;
 
             span {
                 float: right;
