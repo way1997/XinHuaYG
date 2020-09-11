@@ -1,0 +1,443 @@
+{
+    "layer_cnt": 24,
+    "blob_cnt": 24,
+    "layer_info": [
+        {
+            "layer_type": "Input",
+            "layer_name": "Input_0",
+            "input_blob_cnt": 0,
+            "output_blob_cnt": 1,
+            "input_blobs": [],
+            "output_blobs": [
+                "Input_0_0"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Input",
+            "layer_name": "Input_1",
+            "input_blob_cnt": 0,
+            "output_blob_cnt": 1,
+            "input_blobs": [],
+            "output_blobs": [
+                "Input_1_0"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Convolution",
+            "layer_name": "Convolution_0",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Input_0_0"
+            ],
+            "output_blobs": [
+                "Scale_0_0"
+            ],
+            "layer_param": {
+                "output_channel": 16,
+                "kernel": 3,
+                "stride": 2,
+                "pad": 1,
+                "has_bias": 1,
+                "group": 1,
+                "weight_data_size": 144
+            },
+            "offset_in_bin": 1,
+            "size_in_bin": 160
+        },
+        {
+            "layer_type": "ReLU",
+            "layer_name": "ReLU_0",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Scale_0_0"
+            ],
+            "output_blobs": [
+                "ReLU_0_0"
+            ],
+            "layer_param": {
+                "slope": 0.009999999776482582
+            },
+            "offset_in_bin": 161,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Convolution",
+            "layer_name": "Convolution_1",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "ReLU_0_0"
+            ],
+            "output_blobs": [
+                "Scale_1_0"
+            ],
+            "layer_param": {
+                "output_channel": 8,
+                "kernel": 3,
+                "stride": 2,
+                "pad": 1,
+                "has_bias": 1,
+                "group": 1,
+                "weight_data_size": 1152
+            },
+            "offset_in_bin": 162,
+            "size_in_bin": 1160
+        },
+        {
+            "layer_type": "ReLU",
+            "layer_name": "ReLU_1",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Scale_1_0"
+            ],
+            "output_blobs": [
+                "ReLU_1_0"
+            ],
+            "layer_param": {
+                "slope": 0.009999999776482582
+            },
+            "offset_in_bin": 1322,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Pooling",
+            "layer_name": "Pooling_0",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "ReLU_1_0"
+            ],
+            "output_blobs": [
+                "Pooling_0_0"
+            ],
+            "layer_param": {
+                "pooling_type": 0,
+                "kernel_size": 2,
+                "stride": 2,
+                "pad": 0,
+                "global_pooling": 0
+            },
+            "offset_in_bin": 1322,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Reshape",
+            "layer_name": "Reshape_0",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Pooling_0_0"
+            ],
+            "output_blobs": [
+                "Reshape_0_0"
+            ],
+            "layer_param": {
+                "n": 1,
+                "c": 1,
+                "h": -1,
+                "w": 1
+            },
+            "offset_in_bin": 1322,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Permute",
+            "layer_name": "Permute_0",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Reshape_0_0"
+            ],
+            "output_blobs": [
+                "Permute_0_0"
+            ],
+            "layer_param": {
+                "c_dim": 1,
+                "h_dim": 0,
+                "w_dim": 2
+            },
+            "offset_in_bin": 1322,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Permute",
+            "layer_name": "Permute_1",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Input_1_0"
+            ],
+            "output_blobs": [
+                "Permute_1_0"
+            ],
+            "layer_param": {
+                "c_dim": 1,
+                "h_dim": 0,
+                "w_dim": 2
+            },
+            "offset_in_bin": 1322,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Concat",
+            "layer_name": "Concat_0",
+            "input_blob_cnt": 2,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Permute_0_0",
+                "Permute_1_0"
+            ],
+            "output_blobs": [
+                "Concat_0_0"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 1322,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Permute",
+            "layer_name": "Permute_2",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Concat_0_0"
+            ],
+            "output_blobs": [
+                "Permute_2_0"
+            ],
+            "layer_param": {
+                "c_dim": 1,
+                "h_dim": 0,
+                "w_dim": 2
+            },
+            "offset_in_bin": 1322,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Permute",
+            "layer_name": "Permute_3",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Permute_2_0"
+            ],
+            "output_blobs": [
+                "Permute_3_0"
+            ],
+            "layer_param": {
+                "c_dim": 0,
+                "h_dim": 2,
+                "w_dim": 1
+            },
+            "offset_in_bin": 1322,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Linear",
+            "layer_name": "Linear_0",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Permute_3_0"
+            ],
+            "output_blobs": [
+                "Linear_0_0"
+            ],
+            "layer_param": {
+                "num_input": 84,
+                "num_output": 256
+            },
+            "offset_in_bin": 1322,
+            "size_in_bin": 21760
+        },
+        {
+            "layer_type": "Permute",
+            "layer_name": "Permute_4",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Linear_0_0"
+            ],
+            "output_blobs": [
+                "Permute_4_0"
+            ],
+            "layer_param": {
+                "c_dim": 0,
+                "h_dim": 2,
+                "w_dim": 1
+            },
+            "offset_in_bin": 23082,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "ReLU",
+            "layer_name": "ReLU_2",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Permute_4_0"
+            ],
+            "output_blobs": [
+                "ReLU_2_0"
+            ],
+            "layer_param": {
+                "slope": 0.0
+            },
+            "offset_in_bin": 23082,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Permute",
+            "layer_name": "Permute_5",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "ReLU_2_0"
+            ],
+            "output_blobs": [
+                "Permute_5_0"
+            ],
+            "layer_param": {
+                "c_dim": 0,
+                "h_dim": 2,
+                "w_dim": 1
+            },
+            "offset_in_bin": 23082,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Linear",
+            "layer_name": "Linear_1",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Permute_5_0"
+            ],
+            "output_blobs": [
+                "Linear_1_0"
+            ],
+            "layer_param": {
+                "num_input": 256,
+                "num_output": 128
+            },
+            "offset_in_bin": 23082,
+            "size_in_bin": 32896
+        },
+        {
+            "layer_type": "Permute",
+            "layer_name": "Permute_6",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Linear_1_0"
+            ],
+            "output_blobs": [
+                "Permute_6_0"
+            ],
+            "layer_param": {
+                "c_dim": 0,
+                "h_dim": 2,
+                "w_dim": 1
+            },
+            "offset_in_bin": 55978,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "ReLU",
+            "layer_name": "ReLU_3",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Permute_6_0"
+            ],
+            "output_blobs": [
+                "ReLU_3_0"
+            ],
+            "layer_param": {
+                "slope": 0.0
+            },
+            "offset_in_bin": 55978,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Permute",
+            "layer_name": "Permute_7",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "ReLU_3_0"
+            ],
+            "output_blobs": [
+                "Permute_7_0"
+            ],
+            "layer_param": {
+                "c_dim": 0,
+                "h_dim": 2,
+                "w_dim": 1
+            },
+            "offset_in_bin": 55978,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Linear",
+            "layer_name": "Linear_2",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Permute_7_0"
+            ],
+            "output_blobs": [
+                "Linear_2_0"
+            ],
+            "layer_param": {
+                "num_input": 128,
+                "num_output": 4
+            },
+            "offset_in_bin": 55978,
+            "size_in_bin": 516
+        },
+        {
+            "layer_type": "Permute",
+            "layer_name": "Permute_8",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Linear_2_0"
+            ],
+            "output_blobs": [
+                "Permute_8_0"
+            ],
+            "layer_param": {
+                "c_dim": 0,
+                "h_dim": 2,
+                "w_dim": 1
+            },
+            "offset_in_bin": 56494,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Sigmoid",
+            "layer_name": "Sigmoid_0",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Permute_8_0"
+            ],
+            "output_blobs": [
+                "Sigmoid_0_0"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 56494,
+            "size_in_bin": 0
+        }
+    ]
+}

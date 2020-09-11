@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StringBundle version="1.0">
+	<String id="AppName">
+		サービス名
+	</String>
+	<String id="SYS_MESSAGEBOX_IGNORE">
+		スキップ
+	</String>
+	<String id="SYS_MESSAGEBOX_HELP">
+		ヘルプ
+	</String>
+	<String id="SYS_MESSAGEBOX_CONTINUE">
+		継続
+	</String>
+	<String id="HotKey_DoubleCtrl">
+		Ctrl キーをダブルクリック
+	</String>
+	<String id="SYS_MESSAGEBOX_RETRY">
+		リトライ
+	</String>
+	<String id="HotKey_NoSet">
+		無
+	</String>
+	<String id="Error">
+		エラー
+	</String>
+	<String id="SYS_MESSAGEBOX_ABORT">
+		終了
+	</String>	
+	<String id="Version">
+		バージョン
+	</String>
+	<String id="HotKey_DoubleShift">
+		Shift キーをダブルクリック
+	</String>
+	<String id="SYS_MESSAGEBOX_CANCEL">
+		キャンセル
+	</String>
+	<String id="Close">
+		閉じる
+	</String>
+	<String id="HotKey_DoubleAlt">
+		Alt キーをダブルクリック	</String>
+  <String id="IE_Refresh">
+    リフレッシュ
+  </String>
+	<String id="IE_RetryText">
+		$REFRESH$ をクリックするか、しばらくもう一度試してしてください。
+	</String>
+	<String id="Empty_Menu">
+		(なし)
+	</String>
+	<String id="SYS_MESSAGEBOX_OK">
+		OK
+	</String>
+	<String id="SYS_MESSAGEBOX_YES">
+		はい
+	</String>
+	<String id="SYS_MESSAGEBOX_NO">
+		いいえ
+	</String>
+	<String id="Sunday_Simple">
+		日
+	</String>
+	<String id="Monday_Simple">
+		一
+	</String>
+	<String id="Tuesday_Simple">
+		二
+	</String>
+	<String id="Wednesday_Simple">
+		三
+	</String>
+	<String id="Thursday_Simple">
+		四
+	</String>
+	<String id="Friday_Simple">
+		五
+	</String>
+	<String id="Saturday_Simple">
+		六
+	</String>
+	<String id="Sunday">
+		日曜日
+	</String>
+	<String id="Monday">
+		月曜日
+	</String>
+	<String id="Tuesday">
+		火曜日
+	</String>
+	<String id="Wednesday">
+		水曜日
+	</String>
+	<String id="Thursday">
+		木曜日
+	</String>
+	<String id="Friday">
+		金曜日
+	</String>
+	<String id="Saturday">
+		土曜日
+	</String>
+  <String id="FirstMonth">
+    一月
+  </String>
+  <String id="SecondMonth">
+    二月
+  </String>
+  <String id="ThirdMonth">
+    三月
+  </String>
+  <String id="FourMonth">
+    四月
+  </String>
+  <String id="FiveMonth">
+    五月
+  </String>
+  <String id="SixMonth">
+    六月
+  </String>
+  <String id="SevenMonth">
+    七月
+  </String>
+  <String id="EightMonth">
+    八月
+  </String>
+  <String id="NineMonth">
+    九月
+  </String>
+  <String id="TenMonth">
+    十月
+  </String>
+  <String id="ElevenMonth">
+    十一月
+  </String>
+  <String id="TwelveMonth">
+    十二月
+  </String>
+	<String id="PreYear">
+		前の年(長押ししてデクリメントする)
+	</String>
+	<String id="NextYear">
+		次の年(長押ししてインクリメントする)
+	</String>
+	<String id="PreMonth">
+		前の月(長押ししてデクリメントする)
+	</String>
+	<String id="NextMonth">
+		次の月(長押ししてインクリメントする)
+	</String>
+	<String id="MonthCalCtrl_Help">
+		ヘルプ
+	</String>
+	<String id="MonthCalCtrl_Close">
+		閉じる
+	</String>
+	<String id="LoginPanel_CapslockOpen">
+		キャプスロックキーを解除した
+	</String>
+	<String id="UtilInfo_ElmCount">
+		統計数:$COUNT$個
+	</String>
+	<String id="CloseWindow">
+		閉じる
+	</String>
+	<String id="MaxisizeWindow">
+		最大化
+	</String>
+	<String id="RestoreWindow">
+		復元
+	</String>
+	<String id="MinimizeWindow">
+		最小化
+	</String>
+	<String id="LoginPanel_DelAccount_Tips">
+		アカウント情報を削除する
+	</String>
+	<String id="Flash_ErrorText">
+		flash プレーヤーのバージョンが低すぎるため、正常に表示するには、最新バージョンをダウンロードしてください。
+	</String>
+	<String id="Flash_DownloadUrl">
+		http://ptlogin2.qq.com/flash_plugin
+	</String>
+	<String id="IE_LoadingText">
+		画面を読み込んでいますので、お待ちください…
+	</String>
+	<String id="IE_ErrText">
+		この画面はまだ表示できません
+	</String>
+	<String id="Tips_Backward">
+		次へ
+	</String>
+	<String id="Tips_Forward">
+		戻る
+	</String>
+	<String id="IE_ScriptErrText">
+		現在の画面でスクリプトエラーが発生しました。
+	</String>
+	<String id="Edit_NumberOnlyTips">
+		ここに入力できるのは数字のみ。
+	</String>
+	<String id="Edit_FontSongTi">
+		SimSun
+	</String>
+	<String id="Edit_RButtonMenu_Cancel">
+		取り消し(&amp;U)
+	</String>
+	<String id="Edit_RButtonMenu_Cut">
+		切り取り(&amp;T)
+	</String>
+	<String id="Edit_RButtonMenu_Copy">
+		コピー(&amp;C)
+	</String>
+	<String id="Edit_RButtonMenu_Paste">
+		貼り付け(&amp;P)
+	</String>
+	<String id="Edit_RButtonMenu_Delete">
+		削除(&amp;D)
+	</String>
+	<String id="Edit_RButtonMenu_SelectAll">
+		すべて選択(&amp;A)
+	</String>
+</StringBundle>

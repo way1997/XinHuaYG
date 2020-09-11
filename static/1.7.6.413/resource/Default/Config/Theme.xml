@@ -1,0 +1,1088 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Theme>
+  <!-- 文字颜色 -->
+  <TG name="TextColor" comment="文字颜色分类">
+    <TV name="Text" value="0x000000" type="color" comment="正文颜色"/>
+    <TV name="UI" value="0x001c30" type="color" comment="界面文字颜色"/>
+    <TV name="Disable" value="0xBABABA" type="color" comment="disable"/>
+    <TV name="Reverse" value="0xFFFFFF" type="color" comment="反色"/>
+    <TV name="Gray" value="0x808080" type="color" comment="灰度颜色"/>
+    <TV name="LowLink" value="0x002d4d" type="color" comment="低调链接文字颜色"/>
+    <TV name="HighLink" value="0x0006FF" type="color" comment="强调链接文字颜色，普通"/>
+    <TV name="HighLinkHighlight" value="0x5056FF" type="color" comment="强调链接文字颜色，高亮"/>
+    <TV name="HighLinkPushed" value="0x2F35CD" type="color" comment="强调链接文字颜色，按下"/>
+    <TV name="Menu" value="0x2A2A2A" type="color" comment="菜单文字颜色"/>
+    <TV name="Button" value="0x000000" type="color" comment="按钮文字默认颜色"/>
+    <TV name="ButtonHover" value="0x0006FF" type="color" comment="按钮文字默认颜色"/>
+  </TG>
+  <!-- 边框颜色 -->
+  <TG name="Color" comment="边框颜色">
+    <TV name="MaskColor" value="0xFF00FF" type="color" comment="图片屏蔽色，透明色"/>
+  </TG>
+  <TG name="WeMeetColor" comment="">
+    <TV name="Color_K8" value="0x2D3033" type="color" comment=""/>
+    <TV name="Color_K7" value="0x5E6166" type="color" comment=""/>
+    <TV name="Color_K6" value="0x939699" type="color" comment=""/>
+    <TV name="Color_K5" value="0xCBCACC" type="color" comment=""/>
+    <TV name="Color_K4" value="0xD4D6D9" type="color" comment=""/>
+    <TV name="Color_K3" value="0xE0E2E5" type="color" comment=""/>
+    <TV name="Color_K2" value="0xEDEFF2" type="color" comment=""/>
+    <TV name="Color_K1" value="0xF8F9FB" type="color" comment=""/>
+    <TV name="Color_K0" value="0x000000" type="color" comment=""/>
+
+    <TV name="Color_B5" value="0x002F80" type="color" comment=""/>
+    <TV name="Color_B4" value="0x0054E6" type="color" comment=""/>
+    <TV name="Color_B3" value="0x006FFF" type="color" comment=""/>
+    <TV name="Color_B2" value="0x198cFF" type="color" comment=""/>
+    <TV name="Color_B1" value="0xB3D4FF" type="color" comment=""/>
+
+    <TV name="Color_R1" value="0xFF0000" type="color" comment=""/>
+    <TV name="Color_B0" value="0xB1B1B1" type="color" comment=""/>
+  </TG>
+
+  <TG name="PingFangSC" comment="雅黑对应的苹方字体">  
+    <TV name="Regular-20" type="rich">
+      <Value>
+        <Font height="15" weight="400" facename="Microsoft YaHei" fontSize="15" />
+      </Value>
+    </TV>
+    <TV name="Regular-14" type="rich">
+      <Value>
+        <Font height="10" weight="400" facename="Microsoft YaHei" fontSize="10" />
+      </Value>
+    </TV>
+    <TV name="Medium-14" type="rich">
+      <Value>
+        <Font height="10" weight="700" facename="Microsoft YaHei" fontSize="10" />
+      </Value>
+    </TV>
+	<TV name="Regular-16" type="rich">
+      <Value>
+        <Font height="12" weight="400" facename="Microsoft YaHei" fontSize="12" />
+      </Value>
+    </TV>
+	<TV name="Medium-16" type="rich">
+      <Value>
+        <Font height="12" weight="700" facename="Microsoft YaHei" fontSize="12" />
+      </Value>
+    </TV>
+     <TV name="Regular-12" type="rich">
+      <Value>
+        <Font height="9" weight="400" facename="Microsoft YaHei" fontSize="9" />
+      </Value>
+    </TV>
+  </TG>
+
+  <TG name="Font">
+    <!-- 最小字体 -->
+    <TV name="Smallest" type="rich">
+      <Value>
+        <Font height="8"/>
+      </Value>
+    </TV>
+    <!-- 超小字体 -->
+    <TV name="Tiny" type="rich">
+      <Value>
+        <Font height="9"/>
+      </Value>
+    </TV>
+    <!-- 小字体 -->
+    <TV name="Small" type="rich">
+      <Value>
+        <Font height="10"/>
+      </Value>
+    </TV>
+    <!-- 默认字体 -->
+    <TV name="Normal" type="rich">
+      <Value>
+        <Font height="11"/>
+      </Value>
+    </TV>
+    <!-- 大字体 -->
+    <TV name="Big" type="rich">
+      <Value>
+        <Font height="12"/>
+      </Value>
+    </TV>
+    <!-- 大字体，加粗 -->
+    <TV name="VeryBig" type="rich">
+      <Value>
+        <Font height="13" weight="400" />
+      </Value>
+    </TV>
+    <TV name="Bigger" type="rich">
+      <!-- 超大字体，加粗 -->
+      <Value>
+        <Font height="14" weight="400" />
+      </Value>
+    </TV>
+    <!-- 大字体，加粗 -->
+    <TV name="Logo" type="rich">
+      <Value>
+        <Font height="11" weight="600"/>
+      </Value>
+    </TV>
+    <!-- 界面 Title 字体加粗 -->
+    <TV name="Title" type="rich">
+      <Value>
+        <Font height="18" weight="600"/>
+      </Value>
+    </TV>
+    <!-- 普通链接文字字体 -->
+    <TV name="Link" type="rich">
+      <Value>
+        <Font height="8" underline="true"/>
+      </Value>
+    </TV>
+    <TV name="Bold" type="rich">
+      <!-- 粗体 -->
+      <Value>
+        <Font height="9" weight="600"/>
+      </Value>
+    </TV>
+    <TV name="Logo" type="rich">
+      <!-- 大字体，加粗 -->
+      <Value>
+        <Font height="11" weight="600"/>
+      </Value>
+    </TV>
+    <TV name="Account" type="rich">
+      <!-- 登录帐号字体 -->
+      <Value>
+        <Font height="10"/>
+      </Value>
+    </TV>
+    <TV name="Password" type="rich">
+      <!-- 密码框的字体，为了纵向居中 -->
+      <Value>
+        <Font height="6"/>
+      </Value>
+    </TV>
+    <TV type="rich" name="TitleLink">
+      <Value>
+        <Font weight="600" underline="true"/>
+      </Value>
+    </TV>
+    <TV type="rich" name="BoldLink">
+      <Value>
+        <Font weight="600" underline="true"/>
+      </Value>
+    </TV>
+    <TV type="rich" name="MailFontBold">
+      <Value>
+        <Font weight="600" height="11"/>
+      </Value>
+    </TV>
+    <TV name="BigBold" type="rich">
+      <Value>
+        <Font weight="900" height="11"/>
+      </Value>
+    </TV>
+  </TG>
+
+  <TG name="WeMeetFont">
+    <!-- 超大字体,加粗 -->
+    <TV name="HugeBold" type="rich">
+      <Value>
+        <Font height="40" weight="600">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="15" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="15"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="DIN Condensed" fontSize="14" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="14" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <!-- 大号字体 -->
+    <TV name="VeryBig" type="rich">
+      <Value>
+        <Font height="32" weight="100">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="18" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="18"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="DIN Condensed" fontSize="17" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="17" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <!-- 大号字体 -->
+    <TV name="Big" type="rich">
+      <Value>
+        <Font height="18" weight="400">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="18" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="18"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="DIN Condensed" fontSize="17" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="17" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <!-- 正常字体 -->
+    <TV name="Normal" type="rich">
+      <Value>
+        <Font height="14" weight="400">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="15" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="15"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="DIN Condensed" fontSize="14" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="14" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+
+    <!-- 正常字体 -->
+    <TV name="Little" type="rich">
+      <Value>
+        <Font height="12" weight="400">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="15" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="15"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="14" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="14" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+
+    <TV name="NormalAll" type="rich">
+      <Value>
+        <Font height="14" weight="400">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="14" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="14"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="13" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+
+    <!-- 小一号字体 -->
+    <TV name="Normal2" type="rich">
+      <Value>
+        <Font height="10">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="12" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="12"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="DIN Condensed" fontSize="11" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="11" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <!-- 小一号字体 -->
+    <TV name="Normal11" type="rich">
+      <Value>
+        <Font height="11">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="11" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="11"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="DIN Condensed" fontSize="10" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="10" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <!-- 小一号字体 -->
+    <TV name="Small" type="rich">
+      <Value>
+        <Font height="10">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="10" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="10"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="9" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="9" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <!-- 小一号字体 -->
+    <TV name="NormalSmall" type="rich">
+      <Value>
+        <Font height="9">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="9" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="9"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="8" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="8" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <!-- 正常字体，数字 -->
+    <TV name="NormalNumberDIN" type="rich">
+      <Value>
+        <Font height="14">
+          <fontMap>
+            <fontLink codePage="1252" facename="dinliang" fontSize="14" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="13" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <!-- 正常字体，数字 -->
+    <TV name="NormalNumber" type="rich">
+      <Value>
+        <Font height="14">
+          <fontMap>
+            <fontLink codePage="1252" facename="dinliang" fontSize="14" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="13" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <!-- 小一号字体，数字 -->
+    <TV name="SmallNumber" type="rich">
+      <Value>
+        <Font height="10">
+          <fontMap>
+            <fontLink codePage="1252" facename="dinliang" fontSize="10" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="9" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <!-- 小一号字体 -->
+    <TV name="VerySmall" type="rich">
+      <Value>
+        <Font height="8">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="8" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="8"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="7" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="7" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+  </TG>
+
+  <TG name="HomePageFont">
+    <TV name="ItemSplitHuge" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="30" weight="600" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="15" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="15"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="14" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="ItemVeryBig" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="14" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="14" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="14"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="13" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="ItemBig" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="12" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="12" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="12"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="11" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="ButtonNormal" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="10" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="10" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="10"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="9" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="ItemNormal" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="9" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="9" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="9"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="8" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="ItemButtonNormal" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="8" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="8" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="8"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="7" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+  </TG>
+  <TG name="JoinPageFont">
+    <TV name="Title" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="13" weight="300" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="13" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="13"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="12" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Edit" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="12" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="12" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="12"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="17" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="EditMeetingCode" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="12" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="12" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="12"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="34" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Button" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="12" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="14" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="14"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="13" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="ErrorTips" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="9" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="9" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="9"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="9" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="CheckBox" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="10" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="10" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="10"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="8" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+  </TG>
+  <TG name="SchedulePageFont">
+    <TV name="Title" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="26" weight="300" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="28" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="28"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="27" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Edit" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="11" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="12" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="12"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="12" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+
+    <TV name="EditDate" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="11" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="22" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="22"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="21" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Button" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="12" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="14" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="14"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="13" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="ErrorTips" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="11" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="12" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="12"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="11" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Tips" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="9" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="9" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="9"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="8" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+  </TG>
+  <TG name="ScheduleCompletePageFont">
+    <TV name="Title" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="14" weight="700" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="14" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="14"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="14" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Content" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="13" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="13" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="13"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="12" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="ContentNumber" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="11" facename="dialiang">
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Name" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="11" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="11" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="11"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="10" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Time" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="25" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="25" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="25"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="34" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Button" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="11" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="11" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="11"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="10" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Tips" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="10" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="10" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="10"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="9" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+  </TG>
+  <TG name="MeetingPageFont">
+    <TV name="Title" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="12" weight="400" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="12" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="12"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="11" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="MeetingCode" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="15" facename="DIN Condensed">
+          <fontMap>
+            <fontLink codePage="936" facename="DIN Condensed" fontSize="40" os="vista" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="39" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="MeetingSubject" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="14" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="14" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="14"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="13" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="MeetingDuration" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="14" facename="DIN Condensed">
+          <fontMap>
+            <fontLink codePage="936" facename="DIN Condensed" fontSize="14" os="vista" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="13" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="MeetingDurationSmall" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="11" facename="DIN Condensed">
+          <fontMap>
+            <fontLink codePage="936" facename="DIN Condensed" fontSize="11" os="vista" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="10" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="MeetingInfo" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="11" facename="PingFang SC Medium">
+          <fontMap>
+            <fontLink codePage="936" facename="PingFang SC Medium" fontSize="13" os="vista" lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="12" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="MeetingInfoSmall" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="10" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="10" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="10"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="9" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Name" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="11" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="11" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="11"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="10" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Button" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="11" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="11" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="11"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="10" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Tips" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="10" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="10" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="10"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="9" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+  </TG>
+  <TG name="InvitePageFont">
+    <TV name="Title" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="18" weight="400" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="18" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="18"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="17" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="PasswordTitle" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="11" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="12" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="12"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="11" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="MeetingCode" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="11" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="12" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="12"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="11" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Button" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="12" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="12" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="12"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="11" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+  </TG>
+  <TG name="PstnInvitePageFont">
+    <TV name="Title" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="13" weight="300" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="13" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="13"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="12" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Edit" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="25" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="18" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="18"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="17" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="EditPhoneNumber" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="14" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="14" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="14"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="13" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Button" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="12" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="14" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="14"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="13" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="ErrorTips" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="9" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="9" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="9"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="9" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="BottomTips" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="6" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="9" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="9"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="9" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="Tips" type="rich">
+      <!-- 默认字体 -->
+      <Value>
+        <Font height="10" facename="Microsoft YaHei">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="10" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="10"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Tahoma" fontSize="8" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+  </TG>
+  <TG name="WeMeet">
+    <TV name="Normal_PingFang16" type="rich">
+      <Value>
+        <Font height="11" weight="400">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="11" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="11"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="11" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="SmallFont_10_PingFang14" type="rich">
+      <Value>
+        <Font height="10">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="10" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="10"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="10" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="SmallFont_10_PingFang14_MEDIUM" type="rich">
+      <Value>
+        <Font height="10" weight="500">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="10" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="10"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="10" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="SmallFont_9_PingFang12" type="rich">
+      <Value>
+        <Font height="9">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="9" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="9"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="9" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="SmallFont_8_PingFang10" type="rich">
+      <Value>
+        <Font height="8">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="8" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="8"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="8" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="SmallFont_15_PingFang16_MEDIUM" type="rich">
+      <Value>
+        <Font height="15" weight="800">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="15" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="15"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="15" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="SmallFont_7_PingFang9" type="rich">
+      <Value>
+        <Font height="7">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="7" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="7"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="7" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="wemeet_font_number_1" type="rich">
+      <Value>
+        <Font height="14">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="14" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="14"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="14" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="wemeet_font_number_2" type="rich">
+      <Value>
+        <Font height="18">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="18" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="18"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="18" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="wemeet_font_number_3" type="rich">
+      <Value>
+        <Font height="10">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="10" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="10"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="10" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="wemeet_font_number_4" type="rich">
+      <Value>
+        <Font height="9">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="9" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="9"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="9" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="wemeet_font_number_5" type="rich">
+      <Value>
+        <Font height="10">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="10" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="10"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="10" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+	<TV name="wemeet_font_number_6" type="rich">
+      <Value>
+        <Font height="8">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="8" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="8"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="8" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    	<TV name="wemeet_font_number_7" type="rich">
+      <Value>
+        <Font height="7.5">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="7.5" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="7.5"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="7.5" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+    <TV name="wemeet_font_number_12" type="rich">
+      <Value>
+        <Font height="12">
+          <fontMap>
+            <fontLink codePage="936" facename="Microsoft YaHei" fontSize="12" os="vista" lineSpace="-2"/>
+            <fontLink codePage="936" facename="SimSun" fontSize="12"  lineSpace="-2"/>
+            <fontLink codePage="1252" facename="Microsoft YaHei" fontSize="12" lineSpace="-2"/>
+          </fontMap>
+        </Font>
+      </Value>
+    </TV>
+  </TG>
+</Theme>

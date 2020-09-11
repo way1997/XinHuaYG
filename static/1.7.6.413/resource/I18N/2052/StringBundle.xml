@@ -1,0 +1,1203 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StringBundle version="1.0">
+	<String id="IDS_GUIDE_TITLE_1">
+		多端参与
+	</String>
+	<String id="IDS_GUIDE_TITLE_2">
+		快速接入
+	</String>
+	<String id="IDS_GUIDE_TITLE_3">
+		屏幕共享
+	</String>
+	<String id="IDS_GUIDE_CONTENT_1">
+		支持多端参与，随时随地加入会议
+	</String>
+	<String id="IDS_GUIDE_CONTENT_2">
+		高效快速的接入会议
+	</String>
+	<String id="IDS_GUIDE_CONTENT_3">
+		身临其境的逼真体验
+	</String>
+	<String id="IDS_WEB_LOADING">
+		努力加载中
+	</String>
+	<String id="IDS_WEB_LOAD_ERR">
+		加载失败，点击刷新
+	</String>
+	<String id="IDS_WEB_LOAD_ERR_SHORT">
+		加载失败
+	</String>
+	<String id="IDS_WEB_RELOAD">
+		重新加载
+	</String>
+	<String id="IDS_JOIN_MEETING">
+		加入会议
+	</String>
+	<String id="IDS_NOT_LOGIN">
+		未登录
+	</String>
+	<String id="IDS_JOIN_CONF_WITH_CAMERA">
+		入会时开启摄像头
+	</String>
+	<String id="IDS_JOIN_CONF_WITH_MUTE">
+		入会时开启静音
+	</String>
+	<String id="IDS_CREATE">
+		快速会议
+	</String>
+	<String id="IDS_CREATE_CONFERENCE">
+		创建会议
+	</String>
+	<String id="IDS_UPDATE_LATER">
+		稍后再说
+	</String>
+	<String id="IDS_UPDATE_NOW">
+		立即更新
+	</String>
+	<String id="IDS_SCHEDULE">
+		预定会议
+	</String>
+	<String id="IDS_SCHEDULE_MEETING">
+		预定会议
+	</String>
+	<String id="IDS_SCHEDULE_MODIFY">
+		修改会议预定
+	</String>
+	<String id="IDS_SCHEDULE_CONFIRM">
+		确认修改
+	</String>
+	<String id="IDS_MY_CONF">
+		我的会议
+	</String>
+	<String id="IDS_MIC">
+		已静音
+	</String>
+	<String id="IDS_MIC_OPEN">
+		已开麦
+	</String>
+	<String id="IDS_MIC_PROHIBIT">
+		被静音
+	</String>
+	<String id="IDS_CAMERA">
+		已关闭摄像头
+	</String>
+	<String id="IDS_CAMERA_OPEN">
+		已开启摄像头
+	</String>
+	<String id="IDS_SCREEN_SHARE">
+		屏幕共享
+	</String>
+	<String id="IDS_SHARE_NEW">
+		新的共享
+	</String>
+	<String id="IDS_SHARE_PAUSE">
+		暂停共享
+	</String>
+	<String id="IDS_SHARE_RESUME">
+		继续共享
+	</String>
+	<String id="IDS_SHARE_START_ANNOTATION">
+		开启批注
+	</String>
+	<String id="IDS_SHARE_STOP_ANNOTATION">
+		关闭批注
+	</String>
+	<String id="IDS_FILE">
+		文件
+	</String>
+	<String id="IDS_INVITE_MEMBERS">
+		邀请成员
+	</String>
+	<String id="IDS_MORE">
+		更多
+	</String>
+	<String id="IDS_CONF_CODE">
+		会议号
+	</String>
+	<String id="IDS_ERROR">
+		错误
+	</String>
+	<String id="IDS_QUICK_MEETING_NAME">
+		预定的会议
+	</String>
+	<String id="IDS_SCHEDULE_DEFAULT_MEETING_NAME">
+		会议主题
+	</String>
+	<String id="IDS_SCHEDULE_DEFAULT_INVITE_USER">
+		请输入邀请成员
+	</String>
+	<String id="IDS_SCHEDULE_DEFAULT_MEETING_LOCATION">
+		请输入会议地点（选填）
+	</String>
+	<String id="IDS_SCHEDULE_DEFAULT_MEETING_PASSWORD">
+		请输入4-6位数字密码
+	</String>
+	<String id="IDS_FMT_ERROR_DESC_AND_CODE">
+		$ERROR_DESC$($ERROR_CODE$)
+	</String>
+	<String id="IDS_FMT_UNKNOWN_ERROR_AND_CODE">
+		未知错误($ERROR_CODE$)
+	</String>
+	<String id="IDS_USE_LOCAL_AUDIO_DEVICE">
+		使用电脑的声音采集设备
+	</String>
+	<String id="IDS_USE_PSTN">
+		手机拨打号码加入会议
+	</String>
+	<String id="IDS_STATIC_SCHEDULE_PASSWORD_ILLEGAL_TIP">
+		密码应为4-6位数字
+	</String>
+	<String id="IDS_STATIC_SCHEDULE_DURATION_ERR_FORMAT">
+		输入日期格式有误
+	</String>
+	<String id="IDS_STATIC_SCHEDULE_DURATION_ERR_BEGIN_GT_END">
+		结束时间不能早于开始时间
+	</String>
+	<String id="IDS_STATIC_SCHEDULE_DURATION_ERR_BEGIN_LT_NOW">
+		开始时间不能早于当前时间
+	</String>
+	<String id="IDS_STATIC_SCHEDULE_DURATION_ERR_OVER_ONE_MONTH">
+		只能预定30天内的会议
+	</String>
+	<String id="IDS_STATIC_MEETING_DURATION_OVER_MAX_TIME_ERR">
+		会议持续时长不得超过24小时
+	</String>
+	<String id="IDS_BTN_SCHEDULE">
+		预定会议
+	</String>
+	<String id="IDS_CANCEL_MEETING_ERROR_TITLE">
+		取消会议失败
+	</String>
+	<String id="IDS_CANCEL_MEETING_ERROR_CONTENT">
+		未知错误
+	</String>
+	<String id="IDS_Authorize_Choose_Mode">
+		选择登录方式
+	</String>
+	<String id="IDS_JOIN_INPUT_MEETING_CODE">
+		请输入会议号
+	</String>
+	<String id="IDS_JOIN_INPUT_PASSWORD">
+		请输入会议密码
+	</String>
+	<String id="IDS_JOIN_INPUT_NICK_NAME">
+		请输入您的名称
+	</String>
+	<String id="IDS_JOIN_MEETING_CODE_ERR">
+		会议号错误
+	</String>
+	<String id="IDS_JOIN_MEETING_ERR_EXPIRED">
+		会议已过期
+	</String>
+	<String id="IDS_JOIN_PASSWORD_ERR">
+		密码错误
+	</String>
+	<String id="IDS_AUTHORIZE_WEWORK">
+		企业微信登录
+	</String>
+	<String id="IDS_COMMON_MONTH_FORMAT">
+		%m月
+	</String>
+	<String id="IDS_DISPOSE_NOTIFY">
+		本次会议结束
+	</String>
+	<String id="IDS_DISPOSE_TIPS">
+		1s后全员退出房间
+	</String>
+	<String id="IDS_HOSTCHANGE_TIPS">
+		您已经是主持人
+	</String>
+	<String id="IDS_MUTE_ALL">
+		全体静音
+	</String>
+	<String id="IDS_STOP_MUTE_ALL">
+		解除静音
+	</String>
+	<String id="IDS_HANDSUP">
+		举手
+	</String>
+	<String id="IDS_STOP_HANDSUP">
+		取消举手
+	</String>
+	<String id="IDS_NO_MEDIA_PERMISSION_NOTIFY">
+		主持人已将您静音
+	</String>
+	<String id="IDS_NO_MEDIA_PERMISSION_TIPS">
+		您可以举手请求解除静音
+	</String>
+	<String id="IDS_HAS_MEDIA_PERMISSION_NOTIFY">
+		主持人已解除您的静音状态
+	</String>
+	<String id="IDS_HAS_MEDIA_PERMISSION_TIPS">
+		您可以发言了
+	</String>
+	<String id="IDS_REQUEST_HANDSUP_NOTIFY">
+		请求已发送
+	</String>
+	<String id="IDS_REQUEST_HANDSUP_TIPS">
+		请等待主持人处理
+	</String>
+	<String id="IDS_AGREE_HANDSUP_NOTIFY">
+		主持人已同意您的举手请求
+	</String>
+	<String id="IDS_MUTE">
+		静音
+	</String>
+	<String id="IDS_STOP_MUTE">
+		取消静音
+	</String>
+	<String id="IDS_AGREE_HANDSUP_TIPS">
+		您可以发言了
+	</String>
+	<String id="IDS_DISAGREE_HANDSUP_NOTIFY">
+		主持人已拒绝您的举手请求
+	</String>
+	<String id="IDS_DISAGREE_HANDSUP_TIPS">
+		您可以举手请求解除静音
+	</String>
+	<String id="IDS_DISCONNECTED_NOTIFY">
+		您已经断开链接
+	</String>
+	<String id="IDS_DISCONNECTED_TIPS">
+		请重新登录
+	</String>
+	<String id="IDS_INSTANCE_CONFLICT_NOTIFY">
+		您的帐号在同一台设备登录
+	</String>
+	<String id="IDS_INSTANCE_CONFLICT_TIPS">
+		请重新登录
+	</String>
+	<String id="IDS_MUTE_ALL_MEDIA_NOTIFY">
+		主持人开启全体静音
+	</String>
+	<String id="IDS_MUTE_ALL_MEDIA_TIPS">
+		您可以举手请求解除静音
+	</String>
+	<String id="IDS_JOIN_MEETING_FAILED_NOTIFY">
+		加入会议失败
+	</String>
+	<String id="IDS_JOIN_MEETING_FAILED_TIPS">
+		请重新加入
+	</String>
+	<String id="IDS_KICKOUT_NORMAL_TIPS">
+		请重新加入
+	</String>
+	<String id="IDS_KICKOUT_DISSOLVE_NOTIFY">
+		本次会议结束
+	</String>
+	<String id="IDS_KICKOUT_DISSOLVE_TIPS">
+		全员退出房间
+	</String>
+	<String id="IDS_WATING_JOIN_MEETING_TIPS">
+		正在进入会议...
+	</String>
+	<String id="COMFRIM_BUTTON_TEXT">
+		确定
+	</String>
+	<String id="IDS_COPY_MEETING_LINK_OK">
+		会议链接已复制到剪切板
+	</String>
+	<String id="IDS_COPY_MEETING_INVITE_INFO_OK">
+		会议邀请已复制到剪贴板
+	</String>
+	<String id="IDS_MEETING_CODE_INVALID">
+		会议号无效
+	</String>
+	<String id="IDS_COMMON_KNOWN">
+		知道了
+	</String>
+	<String id="IDS_INMEETING_SHARE_SCREEN_MUTE_TITLE">
+		同时只能有1人共享桌面
+	</String>
+	<String id="IDS_INMEETING_SHARE_SCREEN_MUTE_CONTENT">
+		正在共享桌面中，可要求对方关闭后再次尝试
+	</String>
+	<String id="IDS_MEETING_CONFLICT_TITLE">
+		您已在一个会议中
+	</String>
+	<String id="IDS_MEETING_CONFLICT_CONTENT">
+		请退出当前会议后再次尝试
+	</String>
+	<String id="IDS_IN_MEETINF_MUTE_ALL_TIP">
+		已全体静音
+	</String>
+	<String id="IDS_IN_MEETINF_UNMUTE_ALL_TIP">
+		已解除全体静音
+	</String>
+	<String id="IDS_IN_MEETING_UNMUTE_ALL_TIP_NOT_HOST">
+		主持人已解除全体静音
+	</String>
+	<String id="IDS_NO_DEVICE">
+		未检测到设备
+	</String>
+	<String id="IDS_STOP">
+		停止
+	</String>
+	<String id="IDS_TEST">
+		测试
+	</String>
+	<String id="IDS_IN_MEETING_MORE_MENU_PSTN">
+		拨号接入会议
+	</String>
+	<String id="IDS_IN_MEETING_PSTN_GUIDE_TITLE">
+		电话加入
+	</String>
+	<String id="IDS_INPUT_NICKNAME_TOAST_TITLE">
+		请输入您的名称
+	</String>
+	<String id="IDS_INPUT_PASSWORD_TOAST_TITLE">
+		输入会议密码
+	</String>
+	<String id="IDS_PSTN_GUIDE_PHONE_TITLE">
+		拨打号码
+	</String>
+	<String id="IDS_PSTN_GUIDE_MEETING_CODE_TITLE">
+		输入会议号
+	</String>
+	<String id="IDS_PSTN_GUIDE_PASSWORD_TITLE">
+		输入密码
+	</String>
+	<String id="IDS_IN_MEETING_PSTN_GUIDE_PHONE_CONTENT_PASSWORD">
+		密　码
+	</String>
+	<String id="IDS_IN_MEETING_MAIN_VIDEO_VIEW_TEXT">
+		当前主画面
+	</String>
+	<String id="IDS_SCREEN_BOTTOM_TOOLTIP">
+		共享屏幕
+	</String>
+	<String id="IDS_SCREEN_STOP_TOOLTIP">
+		结束共享
+	</String>
+	<String id="IDS_MEMBER_TOOLTIP">
+		成员
+	</String>
+	<String id="IDS_START_CHAT">
+		聊天
+	</String>
+	<String id="IDS_RECORD_START">
+		录制
+	</String>
+	<String id="IDS_RECORD_STOP">
+		结束录制
+  	</String>
+	<String id="IDS_SAFE_TOOLTIP">
+		安全
+	</String>
+	<String id="IDS_INVITE_TOOLTIP">
+		邀请
+	</String>
+	<String id="IDS_DEVICE_TOOLTIP">
+		设置
+	</String>
+	<String id="IDS_SHOWMORE_TOOLTIP">
+		更多
+	</String>
+	<String id="IDS_DOCUMENT_TOOLTIP">
+		文档(0)
+	</String>
+	<String id="IDS_EMOJI_TOOLTIP">
+		表情
+	</String>
+	<String id="IDS_DOCUMENT_DEFAULT_WORDING">
+		文档
+	</String>
+	<String id="IDS_INVITEE_DEFAULT_WORDING">
+		受邀成员
+	</String>
+	<String id="IDS_MORE_TOOLTIP">
+		更多菜单
+	</String>
+	<String id="IDS_LEAVE_TOOLTIP">
+		离开会议
+	</String>
+	<String id="IDS_SCREEN_SHARE_TIP">
+		正在共享屏幕
+	</String>
+	<String id="IDS_MIC_HOWLING_TIP">
+		检测到回声，已经为您关闭话筒
+	</String>
+	<String id="IDS_SPEAKER_HOWLING_TIP">
+		检测到回声，已经为您关闭免提
+	</String>
+	<String id="IDS_MIC_STATUS_CLOSE">
+		您已关闭麦克风
+	</String>
+	<String id="IDS_MIC_STATUS_OPEN">
+		您当前使用的麦克风为
+	</String>
+	<String id="IDS_MIC_STATUS_MUTE">
+		您已被主持人静音
+	</String>
+	<String id="IDS_CAMERA_STATUS_CLOSE">
+		您已关闭摄像头
+	</String>
+	<String id="IDS_CAMERA_STATUS_OPEN">
+		您当前使用的摄像头为
+	</String>
+	<String id="IDS_NETWORK_BREAKUP">
+		网络异常断开,请检查网络连接
+	</String>
+	<String id="IDS_PASSWORD_ERROR">
+		会议密码错误
+	</String>
+	<String id="IDS_NICKNAME_ALL_SPACE_ERROR">
+		昵称不能全部为空格
+	</String>
+	<String id="IDS_NICKNAME_EMPTY_ERROR">
+		昵称不能为空
+	</String>
+	<String id="IDS_NONE">
+		无
+	</String>
+	<String id="IDS_PSTN_INVITE_TITLE">
+		拨号邀请
+	</String>
+	<String id="IDS_PSTN_INVITE_BOTTOM_TIPS">
+		可在“管理成员”列表中查看呼叫状态
+	</String>
+	<String id="IDS_PSTN_INVITE_CONTENT">
+		请输入正确的电话号码并拨打邀请加入会议
+	</String>
+	<String id="IDS_PSTN_INVITE_NICKNAME_TIP">
+		入会昵称
+	</String>
+	<String id="IDS_PSTN_INVITE_PHONE_NUMBER_TIP">
+		电话号码
+	</String>
+	<String id="IDS_PSTN_INVITE_INPUT_PHONE_COUNTRY_CODE">
+		国家码
+	</String>
+	<String id="IDS_PSTN_INVITE_INPUT_PHONE_NUMBER">
+		输入电话号码或短号
+	</String>
+	<String id="IDS_PSTN_INVITE_MEMBER_ITEM_SHORT_NUMBER">
+		座机号
+	</String>
+	<String id="IDS_PSTN_INVITE_MEMBER_ITEM_PHONE_NUMBER">
+		手机号
+	</String>
+	<String id="IDS_PSTN_INVITE_MEMBER_NICKNAME">
+		邀请成员名称
+	</String>
+	<String id="IDS_PSTN_INVITE_INPUT_NICKNAME">
+		邀请成员的入会名称（选填）
+	</String>
+	<String id="IDS_QRCODE_TIP">
+		请使用企业微信扫码登录
+	</String>
+	<String id="IDS_DEVICE_TITLE">
+		设置
+	</String>
+	<String id="IDS_DEVICE_CAMERA">
+		摄像头
+	</String>
+	<String id="IDS_DEVICE_SPEAKER">
+		扬声器
+	</String>
+	<String id="IDS_DEVICE_MIC">
+		麦克风
+	</String>
+	<String id="IDS_DEVICE_AUDO_MODE_TITLE">
+		语音模式
+	</String>
+	<String id="IDS_DEVICE_AUDO_MODE_CONTENT">
+		停止接收其他成员视频，仅保留屏幕共享
+	</String>
+	<String id="IDS_BUTTON_CONFIRM">
+		确认
+	</String>
+	<String id="IDS_BUTTON_CANCEL">
+		取消
+	</String>
+	<String id="IDS_BUTTON_CONFIG">
+		设置
+	</String>
+	<String id="IDS_STARTUP_PAGE_TIP">
+		随 时 随 地   高 效 会 议
+	</String>
+	<String id="IDS_HOST_TRANSFER_TITLE">
+		设为主持人
+	</String>
+	<String id="IDS_HOST_TRANSFER_NO_MEMBER_TIP">
+		没有登录的成员可以设为主持人，您也可以选择
+	</String>
+	<String id="IDS_HOST_TRANSFER_DISSOLVE_MEETING">
+		结束会议
+	</String>
+	<String id="IDS_HOST_TRANSFER_CONFIRM">
+		移交并离开
+	</String>
+	<String id="IDS_HOST_TRANSFER_CANCEL">
+		返回
+	</String>
+	<String id="IDS_MEMBER_TAB_BUTTON_TEXT">
+		会议中
+	</String>
+	<String id="IDS_INVITE_TAB_BUTTON_TEXT">
+		呼叫中
+	</String>
+	<String id="IDS_JOIN_BUTTON_TEXT">
+		加入会议
+	</String>
+	<String id="IDS_JOINING_BUTTON_TEXT">
+		加入中
+	</String>
+	<String id="IDS_SWITCH_DEBUG_MODE">
+		切换至测试环境，下次启动时生效
+	</String>
+	<String id="IDS_SWITCH_RELEASE_MODE">
+		切换至正式环境，下次启动时生效
+	</String>
+	<String id="IDS_MONITOR">
+		桌面
+	</String>
+	<String id="IDS_NO_CALLING_MEMBER">
+		暂无呼叫中的成员
+	</String>
+	<String id="IDS_MEETING_CODE">
+		会议号：
+	</String>
+	<String id="IDS_PSTN_INVITE_SEARCH_TIP">
+		请输入相关人员信息
+	</String>
+	<String id="IDS_PSTN_INVITE_SEARCH_EDIT_DEFAULT_TEXT">
+		请输入企业微信号
+	</String>
+	<String id="IDS_PSTN_INVITE_SEARCH_NOT_FIND_TIP">
+		找不到""相关记录
+	</String>
+	<String id="IDS_NAME">
+		名字
+	</String>
+	<String id="IDS_NUMBER">
+		号码
+	</String>
+	<String id="IDS_JOIN_MEETING_TITLE">
+		加入会议
+	</String>
+	<String id="IDS_JOIN_MEETING_MEETING_CODE">
+		会议号
+	</String>
+	<String id="IDS_JOIN_MEETING_NICKNAME">
+		您的名称
+	</String>
+	<String id="IDS_JOIN_MEETING_PASSWORD">
+		密码
+	</String>
+	<String id="IDS_JOIN_MEETING_CAMERA_TEXT">
+		入会开启摄像头
+	</String>
+	<String id="IDS_COPY_MEETING_CODE_OK">
+		会议码已经复制到剪切板
+	</String>
+	<String id="IDS_MEETING_INFO_TITILE">
+		会议详情
+	</String>
+	<String id="IDS_LEAVE_MEETING_HOST_TIP">
+		您是主持人，“暂时离开”前可以在“管理成员”中指定主持人，也可以“结束会议”解散当前会议
+	</String>
+	<String id="IDS_LEAVE_MEETING_NORMAL_TIP">
+		确定退出当前会议吗？
+	</String>
+	<String id="IDS_LEAVE_MEETING_HOST_LEAVE">
+		暂时离开
+	</String>
+	<String id="IDS_LEAVE_MEETING_HOST_DISSOLVE">
+		结束会议
+	</String>
+	<String id="IDS_LEAVE_MEETING_NORMAL_LEAVE">
+		退出会议
+	</String>
+	<String id="IDS_MEMBER_TITILE">
+		成员
+	</String>
+	<String id="IDS_COPY_INVITE">
+		复制邀请
+	</String>
+	<String id="IDS_MEMBER_INVITE">
+		拨号邀请
+	</String>
+	<String id="IDS_SIP_INVITE">
+		视频会议室
+	</String>
+	<String id="IDS_GUIDE_TIP">
+		登录后即可发起和预定会议，如需帮助请联系8000
+	</String>
+	<String id="IDS_ABOUT_US_VERSION">
+		内部体验版本(保密)
+	</String>
+	<String id="IDS_ABOUT_US_CHECK_UPGRADE">
+		检查更新
+	</String>
+	<String id="IDS_ABOUT_US_COMPLAIN">
+		意见反馈
+	</String>
+	<String id="IDS_ABOUT_US_LINK_PRIVACY">
+		隐私政策
+	</String>
+	<String id="IDS_ABOUT_US_LINK_TERMS_OF_SERVICE">
+		服务协议
+	</String>
+	<String id="IDS_ABOUT_US_TIP">
+		如需帮助请联系8000
+	</String>
+	<String id="IDS_MEMBER_MENU_REMOVE">
+		移出会议
+	</String>
+	<String id="IDS_MEMBER_MENU_CHANGE_HOST">
+		设为主持人
+	</String>
+	<String id="IDS_MEMBER_MENU_MODIFY_NICKNAME">
+		修改名称
+	</String>
+	<String id="IDS_USE_LOCAL_AUDIO">
+		使用电脑音频
+	</String>
+	<String id="IDS_PSTN_AUDIO_BACK">
+		返回
+	</String>
+	<String id="IDS_LOCAL_AUDIO_TAB">
+		电脑音频
+	</String>
+	<String id="IDS_PSTN_AUDIO_TAB">
+		电话音频
+	</String>
+	<String id="IDS_AUDIO_CONNECT_PSTN_SETTING">
+		分机号或会议室电话号码
+	</String>
+	<String id="IDS_LOCAL_AUDIO_NO_MIC">
+		无法检测到您的麦克风，请确保您的麦克风连接正常
+	</String>
+	<String id="IDS_PSTN_AUDIO_ENTER_NUMBER">
+		会议室电话/个人座机/手机号码
+	</String>
+	<String id="IDS_AUDIO_CONNECT_TITLE">
+		请选择会议音频的接入方式
+	</String>
+	<String id="IDS_AUDIO_MEETING_ROOM_DEFAULT_TEXT">
+		请输入分机号或会议室电话号码
+	</String>
+	<String id="IDS_SCHEDULE_ENTER_MUTE">
+		成员加入会议时自动静音
+	</String>
+	<String id="IDS_SCHEDULE_WATERMARK">
+		开启屏幕共享水印
+	</String>
+	<String id="IDS_SCREEN_SHARE_SELECT">
+		选择共享内容
+	</String>
+	<String id="IDS_SCREEN_SHARE_VIDEO_QUALITY_TEXT">
+		视频流畅度优先
+	</String>
+	<String id="IDS_SCREEN_SHARE_BUTTON_TEXT">
+		确认共享
+	</String>
+	<String id="IDS_IM_SEND_MSG">
+		发送(S)
+	</String>
+	<String id="IDS_IM_REVERT_MSG">
+		撤回
+	</String>
+	<String id="IDS_IM_POPUP_WND">
+		独立弹出
+	</String>
+	<String id="IDS_IM_MERGE_TO_WND">
+		合并到主窗口
+	</String>
+	<String id="IDS_IM_DEFAULT_INPUT_EDIT_TXT">
+		请输入消息...
+	</String>
+	<String id="IDS_IM_ENTER_TO_SEND">
+		按Enter键发送消息
+	</String>
+	<String id="IDS_IM_ENTERWITHCTRL_TO_SEND">
+		按Ctrl+Enter键发送消息
+	</String>
+	<String id="IDS_IM_EMOJILABEL">
+		[表情]
+	</String>
+	<String id="IDS_IM_NEWMSGTIP">
+		条新消息
+	</String>
+	<String id="IDS_IM_COPY">
+		复制
+	</String>
+	<String id="IDS_IM_CUT">
+		剪切
+	</String>
+	<String id="IDS_IM_PASTE">
+		粘贴
+	</String>
+	<String id="IDS_IM_SELALL">
+		全选
+	</String>
+	<String id="IDS_IM_CLOSE">
+		关闭
+	</String>
+	<String id="IDS_INVITE_NICKNAME_TIP">
+		邀请成员
+	</String>
+	<String id="IDS_INVITE_PHONE_NUMBER_TIP">
+		电话号码
+	</String>
+	<String id="IDS_INVITE_TIME_TIP">
+		邀请时间
+	</String>
+	<String id="ENABLE_BACKGROUNDBLUR">
+		背景虚化
+	</String>
+	<String id="BACKGROUNDBLURE_CONTENT">
+		开启后，将您身后的背景虚化模糊
+	</String>
+	<String id="IDS_LOADING_TITLE">
+		加载组件
+	</String>
+	<String id="IDS_LOADING_TEXT">
+		正在初始化文档组件，请稍候
+	</String>
+	<String id="IDS_DOWNLOAD_FAIL_TEXT">
+		文档组件初始化失败，请重试
+	</String>
+	<String id="IDS_WEMEET_WEBVIEW_TITLE_NAME">
+		浏览器
+	</String>
+	<String id="IDS_WEMEET_DOCUMENT_TITLE_NAME">
+		文档
+	</String>
+	<String id="IDS_DOCUMENT_UPDATE_TEXT">
+		允许成员上传文档
+	</String>
+	<String id="IDS_DOCUMENT_STATUS_TEXT">
+		已完成
+	</String>
+	<String id="IDS_DOCUMENT_STATUS_TEXT_INIT">
+		已完成0%
+	</String>
+	<String id="IDS_DOCUMENT_COUNT_INIT">
+		点击添加
+	</String>
+	<String id="IDS_DOCUMENT_WELCOME_TEXT">
+		文档
+	</String>
+	<String id="IDS_DOCUMENT_EDIT_TRUE">
+		参会者可编辑
+	</String>
+	<String id="IDS_FACE_BEAUTY">
+		美颜
+	</String>
+	<String id="IDS_FACE_BEAUTY_CONTENT">
+		请设置美颜强度
+	</String>
+	<String id="IDS_INPUT_TOAST_REQUIRE_PASSWORD">
+		该会议需要密码
+	</String>
+	<String id="IDS_TOAST_JOIN_INPUT_NICKNAME">
+		入会名称
+	</String>
+	<String id="IDS_TOAST_JOIN_INPUT_PASSWORD">
+		入会密码
+	</String>
+	<String id="IDS_TOAST_JOIN_MEETING">
+		进入会议
+	</String>
+	<String id="IDS_TOAST_CLOSE">
+		关闭
+	</String>
+	<String id="IDS_TITLE_SETTING">
+		设置
+	</String>
+	<String id="IDS_SETTING_BUTTON_MEETING">
+		会议设置
+	</String>
+	<String id="IDS_BUTTON_FEEDBACK">
+		意见反馈
+	</String>
+	<String id="IDS_SETTING_BUTTON_AUDIO">
+		音频
+	</String>
+	<String id="IDS_SETTING_BUTTON_LAB">
+		Beta实验室
+	</String>
+	<String id="IDS_SETTING_BUTTON_VIRTUAL_BKG">
+		虚拟背景
+	</String>
+	<String id="IDS_SETTING_BUTTON_VIDEO">
+		视频
+	</String>
+	<String id="IDS_SETTING_TIP_BETA">
+		音视频功能上线，欢迎体验
+	</String>
+	<String id="IDS_SETTING_MEETING_SWITCH_CAMERA">
+		入会开启摄像头
+	</String>
+	<String id="IDS_SETTING_MEETING_SWITCH_AUDIO">
+		入会使用电脑音频
+	</String>
+	<String id="IDS_SETTING_MEETING_SWICH_AUDIOMODE">
+		语音模式
+	</String>
+	<String id="IDS_SETTING_MEETING_SWITCH_SELECTAUDIO">
+		入会自动选择电脑音频
+	</String>
+	<String id="IDS_SETTING_MEETING_TIP_AUDIOMODE">
+		停止接受其他成员视频，仅保留屏幕共享
+	</String>
+	<String id="IDS_SETTING_VIDEO_DEVICE">
+		选择设备
+	</String>
+	<String id="IDS_SETTING_VIDEO_CAMERA">
+		视频画面
+	</String>
+	<String id="IDS_SELECT_VIRTUAL_BG">
+		选择虚拟背景
+	</String>
+	<String id="IDS_SETTING_AUDIO_SPEAKER">
+		扬声器
+	</String>
+	<String id="IDS_SETTING_AUDIO_SPEAKER_TEST">
+		检测扬声器
+	</String>
+	<String id="IDS_SETTING_AUDIO_MIC">
+		麦克风
+	</String>
+	<String id="IDS_SETTING_AUDIO_OUTPUT">
+		输出等级
+	</String>
+	<String id="IDS_SETTING_AUDIO_INPUT">
+		输入等级
+	</String>
+	<String id="IDS_SETTING_AUDIO_VUL">
+		音量
+	</String>
+	<String id="IDS_SETTING_AUDIO_MIC_TEST">
+		检测麦克风
+	</String>
+	<String id="IDS_SETTING_LAB_BACKGROUP">
+		背景虚化
+	</String>
+	<String id="IDS_SETTING_LAB_BEAUTY">
+		美颜
+	</String>
+	<String id="IDS_SETTING_LAB_LOWLIGHT">
+		暗场景增强
+	</String>
+	<String id="IDS_SETTING_LAB_LOWLIGHT_DESC">
+		在视频场景光照不足时，改善视频体验。
+	</String>
+	<String id="IDS_SETTING_LAB_VIDEODENOISE">
+		视频降噪
+	</String>
+	<String id="IDS_SETTING_LAB_VIDEODENOISE_DESC">
+		实时降低视频画面噪声，使画面更清晰。
+	</String>
+	<String id="IDS_SETTING_LAB_AUDIOENOISE">
+		音频降噪
+	</String>
+	<String id="IDS_SETTING_LAB_AUDIOENOISE_DESC">
+		在嘈杂环境中，让对方更清晰地听到您的声音。
+	</String>
+  <String id="IDS_SETTING_LAB_MUSICMODE">
+    音乐模式
+  </String>
+  <String id="IDS_SETTING_LAB_MUSICMODE_DESC">
+    背景音乐更加清晰流畅，适用于将音乐作为主要音频输入类型的场景
+  </String>
+	<String id="IDS_SETTING_LAB_AUDIOBWE">
+		音频超分
+	</String>
+	<String id="IDS_SETTING_LAB_AUDIOBWE_DESC">
+		当对方为窄带电话时，让您听到细节更丰富的宽频语音。
+	</String>
+	<String id="IDS_SETTING_LAB_AUDIOSMART">
+		智能音量
+	</String>
+	<String id="IDS_SETTING_LAB_AUDIOSMART_DESC">
+		智能调节音量，适应不同的声学环境。
+	</String>
+	<String id="IDS_STOP_TEST">
+		停止测试
+	</String>
+	<String id="IDS_FULLSCREEN">
+		进入全屏
+	</String>
+	<String id="IDS_EXIT_FULLSCREEN">
+		退出全屏
+	</String>
+	<String id="IDS_FULLSCREEN_TIPS">
+		进入全屏模式
+	</String>
+	<String id="IDS_EXIT_FULLSCREEN_TIPS">
+		退出全屏模式，会议号：
+	</String>
+	<String id="IDS_FULLSCREEN_TOAST">
+		按ESC键或者点击"退出全屏"按钮退出全屏模式
+	</String>
+	<String id="IDS_STATIC_SCHEDULE_STATIC_CALENDAR_TITLE">
+		选择日历
+	</String>
+	<String id="IDS_STATIC_SCHEDULE_RADIO_BUTTON_OUTLOOK">
+		Outlook
+	</String>
+	<String id="IDS_STATIC_SCHEDULE_RADIO_BUTTON_OTHER">
+		其他日历
+	</String>
+	<String id="IDS_COPYRIGHT">
+		Copyright © 2018 - 2020 Tencent Inc.
+	</String>
+	<String id="IDS_COPYRIGHT_RESERVED">
+		All Rights Reserved.
+	</String>
+	<string id="IDS_COPYRIGHT_AND_IDS_COPYRIGHT_RESERVED">
+		Copyright © 2018 - 2020 Tencent Inc.All Rights Reserved.
+	</string>
+	<String id="IDS_COPY_INVITE_SYNC_DEFAULT_CALENDAR">
+		同步至默认日历
+	</String>
+	<String id="IDS_SCHEDULE_MEETING_SCHEDULING">
+		会议预定中...
+	</String>
+	<String id="IDS_SCHEDULE_MEETING_SCHEDULE_FAILED">
+		预定超时!
+	</String>
+	<String id="IDS_EXPAND_ALL">
+		展开
+	</String>
+	<String id="IDS_COLLAPSE_ALL">
+		收起
+	</String>
+	<String id="IDS_SETTING_FREEZED">
+		已冻结
+	</String>
+	<String id="IDS_UPDATE_GOOD">
+		确定
+	</String>
+	<String id="IDS_UPDATE_ALRTEADY_NEW">
+		当前版本V
+	</String>
+	<String id="IDS_UPDATE_ALRTEADY_NEW_TAIL">
+		已是最新版本
+	</String>
+	<String id="IDS_UPDATE_DOLOADING_INSTALLER">
+		正在下载安装包...
+	</String>
+	<String id="IDS_IN_MEETING_LOCK">
+		会议已锁定
+	</String>
+	<String id="IDS_CONTRACT">
+		收缩
+	</String>
+	<String id="IDS_EXPAND">
+		展开
+	</String>
+	<String id="IDS_OTHER_LOG_IN">
+		其他登录方式
+	</String>
+	<String id="IDS_INVITE_COPY">
+		复制邀请
+	</String>
+	<String id="IDS_SELECT_DIAL_NUMBER">
+		拨号
+	</String>
+	<String id="IDS_SCHEDULEMEETING">
+		预定
+	</String>
+	<String id="IDS_No_Meeting">
+		暂无会议
+	</String>
+	<String id="IDS_Jan">
+		01月
+	</String>
+	<String id="IDS_Feb">
+		02月
+	</String>
+	<String id="IDS_Mar">
+		03月
+	</String>
+	<String id="IDS_Apr">
+		04月
+	</String>
+	<String id="IDS_May">
+		05月
+	</String>
+	<String id="IDS_Jun">
+		06月
+	</String>
+	<String id="IDS_Jul">
+		07月
+	</String>
+	<String id="IDS_Aug">
+		08月
+	</String>
+	<String id="IDS_Oct">
+		09月
+	</String>
+	<String id="IDS_Sept">
+		10月
+	</String>
+	<String id="IDS_Nov">
+		11月
+	</String>
+	<String id="IDS_Dec">
+		12月
+	</String>
+	<String id="IDS_SWITCH_VIEW_MODE">
+		视图切换
+	</String>
+	<String id="IDS_BUTTON_SAVE">
+		保存
+	</String>
+	<String id="IDS_SAVE_WHITEBOARD_IMAGE">
+		保存当前白板
+	</String>
+	<String id="IDS_WHITEBOARD_LOCATION">
+		位置
+	</String>
+	<String id="IDS_WHITEBOARD_NAME">
+		名称
+	</String>
+    <String id="IDS_SWITCH_MIRROR_EFFECT">
+        视频镜像效果
+    </String>
+  <String id="IDS_SEARCH_MEMBERS">
+    搜索成员
+  </String>
+  <String id="IDS_NOT_FOUND_MEMBERS">
+    未找到相关成员
+  </String>
+	<String id="IDS_GOTO_PASSWORD_LOGIN">
+        您可以通过手机号码登录
+    </String>
+  <String id="IDS_HOST">
+  	(主持人)
+  </String> 
+  <String id="IDS_COHOST">
+  	(联席主持人)
+  </String>
+  <String id="IDS_ALLMEMBER">
+    所有人
+  </String>
+  <String id="IDS_SENDTO">
+    发送至：
+  </String>
+  <String id="IDS_PRVIATE_CHAT">
+    私聊
+  </String>
+  <String id="IDS_PRVIATE_CHAT_LABEL">
+    (私聊)
+  </String>
+  <String id="IDS_PRVIATE_CHAT_AUTHORITY">
+    聊天权限
+  </String>
+  <String id="IDS_LOCK_BTN_TITLE">
+    锁定画面
+  </String>
+  <String id="IDS_MEMBER_IN_MEETING_BTN">
+    会议中
+  </String>
+  <String id="IDS_MEMBER_WAITING_MEMBER_BTN">
+    等候中
+  </String>
+  <String id="IDS_MEMBER_ALLOW_IN_BTN">
+    准入
+  </String>
+  <String id="IDS_MEMBER_REMOVE_OUT_BTN">
+    移除
+  </String>
+  <String id="IDS_WAITING_MEMBER_NONE">
+    暂无等候成员
+  </String>
+  <String id="IDS_SETTING_RECORD_OPEN_FOLDER">
+	打开
+  </String>
+  <String id="IDS_SETTING_RECORD_TEXT">
+	将录制的文件保存至：
+  </String>
+  <String id="IDS_RECORD_EXECUTING">
+	录制中
+  </String>
+  <String id="IDS_SIM_TRANSLATOR">
+    同传译员
+  </String>
+  <String id="IDS_NO_INVITED_USERS">
+    未邀请成员，请前往邀请
+  </String>
+  <String id="IDS_SCHEDULE_BUTTON_INVITE_EXTERNAL_USER">
+    邀请企业成员
+  </String>
+  <String id="IDS_SCHEDULE_BUTTON_INVITE_EXTERNAL_USER_DETAILS">
+    查看详情
+  </String>
+  <String id="IDS_INVITE_USER_DETAIL_TITLE">
+    受邀成员
+  </String>
+  <String id="IDS_SELECT_ALL_WEWORK_USER">
+    选择全部
+  </String>
+  <String id="IDS_SEARCH_WEWORK_USER">
+    搜索
+  </String>
+  <String id="IDS_CANCEL">
+    取消
+  </String>
+  <String id="IDS_DELETE">
+    删除
+  </String>
+  <String id="IDS_SHOW">
+    查看
+  </String>
+  <String id="IDS_SIM">
+    同声传译
+  </String>
+  <String id="IDS_ADD_TRANSLATOR">
+    +配置同传译员
+  </String>
+  <String id="IDS_MAX_TRANSLATOR">
+    单场会议最多可添加60名同传译员
+  </String>
+  <String id="IDS_SIM_END">
+    结束同传
+  </String>
+  <String id="IDS_SIM_UPDATE">
+    更新
+  </String>
+  <String id="IDS_SIM_START">
+    开始同传
+  </String>
+  <String id="IDS_SIM_PLEASE_INPUT_NAME">
+    请输入成员名称
+  </String>
+  <String id="IDS_SIM_PLEASE_INPUT_PHONE">
+    请输入手机号码
+  </String>
+  <String id="IDS_SIM_PLEASE_INPUT_RIGHT_PHONE">
+    请输入正确的手机号码
+  </String>
+  <String id="IDS_SIM_PLEASE_SELECT">
+    请选择
+  </String>
+  <String id="IDS_SIM_ALREADY_START">
+    已启用
+  </String>
+  <String id="IDS_IM_DEL_MSGLIST">
+	清空全部
+  </String>
+  <String id="IDS_IM_MSGLIST_TITLE">
+	聊天记录
+  </String>
+  <String id="IDS_RETRY">
+    重试
+  </String>
+  <String id="IDS_GETTING_MESSAGE_LIST">
+    获取消息中...
+  </String>
+  <String id="IDS_CHAT_SAVEMSG_FAIL">
+    聊天消息保存失败
+  </String>
+  <String id="IDS_CHAT_SAVEMSG_FAIL_NOTIPS">
+    不再提醒
+  </String>
+  <String id="IDS_TENCENT">
+    腾讯会议
+  </String>
+</StringBundle>

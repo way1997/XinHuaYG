@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>悦合同</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 头部导航条 -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- logo和折叠按钮 -->
+            <div class="navbar-header">
+                <!-- logo -->
+                <h1>
+                    <a href="">悦合同-合同从此简单</a>
+                </h1>
+                <div class="slogan">
+                    <span></span>
+                    合同从此简单
+                </div>
+            </div>
+
+            <div class="navbar-right ">
+                <!-- 可能一行摆不下 加浮动 让他们一行放得下 -->
+                <div class="list">
+                    <ul>
+                        <li>
+                            <a href="">阅读</a>
+                        </li>
+                        <li>
+                            <a href="">悦活动</a>
+                        </li>
+                        <li>
+                            <a href="">智能合同</a>
+                        </li>
+                        <li>
+                            <a href="">写合同</a>
+                        </li>
+                        <li>
+                            <a href="">审合同</a>
+                        </li>
+                    </ul>
+                    <span></span>
+                </div>
+                <!-- 折叠按钮 -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- 缩小之后会被折叠的元素 -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul>
+                        <li>
+                            <a href="" data-toggle="modal" data-target="#myModal">
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                登陆</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 模态框 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">标题</h4>
+                </div>
+                <div class="modal-body">
+                    内容
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭按钮</button>
+                    <button type="button" class="btn btn-primary">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 模态框 -->
+
+    <section class="soso">
+        <div class="container-fluid">
+            <div class="box col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+                <div class="kk">
+                    <input type="text" placeholder="热门搜索，股票" />
+                </div>
+                <div class="sosobtn">搜索</div>
+            </div>
+        </div>
+    </section>
+    <!-- 智能合同 -->
+    <section class="main">
+        <div class="container">
+            <div class="header">
+                <h2>智能合同</h2>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="container-fluid">
+                    <div class="item item1 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="pic pic1">
+                            <h2 class="ic">股权</h2>
+                        </div>
+                        <div class="inner">
+                            <ul>
+                                <li>
+                                    <a href="#">出资协议</a>
+                                </li>
+                                <li>
+                                    <a href="#">股权转让协议 </a>
+                                </li>
+                                <li>
+                                    <a href="#">股权代持协议</a>
+                                </li>
+                                <li>
+                                    <a href="#">增资协议</a>
+                                </li>
+                                <li class="none">
+                                    <a href="#">资产收购协议</a>
+                                </li>
+                                <li class="none more ">
+                                    <a href="#">...</a>
+                                </li>
+                            </ul>
+                            <!-- <div class="more">
+                                <a href="">...</a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="item item1 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="pic pic2">
+                            <h2 class="ic">知识产权</h2>
+                        </div>
+                        <div class="inner">
+                            <ul>
+                                <li>
+                                    <a href="#">专利技术许可合同</a>
+                                </li>
+                                <li>
+                                    <a href="#"> 专利转让合同</a>
+                                </li>
+                                <li>
+                                    <a href="#">商标许可使用合同</a>
+                                </li>
+                                <li>
+                                    <a href="#">商标转让合同</a>
+                                </li>
+                                <li class="none">
+                                    <a href="#">版权授权协议（一般作品）</a>
+                                </li>
+                                <li class="none more ">
+                                    <a href="#">...</a>
+                                </li>
+                            </ul>
+                            <!-- <div class="more">
+                                <a href="">...</a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="item item1 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="pic pic3">
+                            <h2 class="ic">人事</h2>
+                        </div>
+                        <div class="inner">
+                            <ul>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li class="none">
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li class="none more ">
+                                    <a href="#">...</a>
+                                </li>
+                            </ul>
+                            <!-- <div class="more">
+                                <a href="">更多</a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="item item1 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="pic pic4">
+                            <h2 class="ic">担保</h2>
+                        </div>
+                        <div class="inner">
+                            <ul>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li class="none">
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li class="none more ">
+                                    <a href="#">...</a>
+                                </li>
+                            </ul>
+                            <!-- <div class="more">
+                                <a href="">更多</a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="item item1 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="pic pic5">
+                            <h2 class="ic">房地产</h2>
+                        </div>
+                        <div class="inner">
+                            <ul>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li class="none">
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li class="none more ">
+                                    <a href="#">...</a>
+                                </li>
+                            </ul>
+                            <!-- <div class="more">
+                                <a href="">更多</a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="item item1 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="pic pic6">
+                            <h2 class="ic">婚姻</h2>
+                        </div>
+                        <div class="inner">
+                            <ul>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li class="none">
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li class="none more ">
+                                    <a href="#">...</a>
+                                </li>
+                            </ul>
+                            <!-- <div class="more">
+                                <a href="">更多</a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="item item1 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="pic pic7 ">
+                            <h2 class="ic">买卖</h2>
+                        </div>
+                        <div class="inner">
+                            <ul>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li class="none">
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li class="none more ">
+                                    <a href="#">...</a>
+                                </li>
+                            </ul>
+                            <!-- <div class="more">
+                                <a href="">更多</a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="item item1 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="pic pic8">
+                            <h2 class="ic">服务</h2>
+                        </div>
+                        <div class="inner">
+                            <ul>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li>
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li class="none">
+                                    <a href="#">项目文字</a>
+                                </li>
+                                <li class="none more ">
+                                    <a href="#">...</a>
+                                </li>
+                            </ul>
+                            <!-- <div class="more">
+                                <a href="">更多</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="aside col-lg-3 col-md-3 col-sm-3 hidden-xs">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div> -->
+        </div>
+    </section>
+    <!-- 个性化服务 -->
+    <section class="individuation">
+        <div class="container">
+            <div class="header">
+                <h2>个性化服务</h2>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="thumbnail">
+                                <div class="shangtu p1">
+                                    <i class="fa fa-font" aria-hidden="true"></i>
+                                    <p>你提需求</p>
+                                    <p>我出合同</p>
+                                </div>
+                                <div class="caption">
+                                    <h3>写合同</h3>
+                                    <p>...</p>
+                                    <p>...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="thumbnail">
+                                <div class="shangtu">
+                                    <i class="fa fa-font" aria-hidden="true"></i>
+                                    <p>你提需求</p>
+                                    <p>我出合同</p>
+                                </div>
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p>...</p>
+                                    <p>...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="thumbnail">
+                                <div class="shangtu">
+                                    <i class="fa fa-font" aria-hidden="true"></i>
+                                    <p>你提需求</p>
+                                    <p>我出合同</p>
+                                </div>
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p>...</p>
+                                    <p>...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1185 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StringBundle version="1.0">
+	<String id="IDS_GUIDE_TITLE_1">
+		Across Any Device
+	</String>
+	<String id="IDS_GUIDE_TITLE_2">
+		Quick Access
+	</String>
+	<String id="IDS_GUIDE_TITLE_3">
+		Screen Sharing
+	</String>
+	<String id="IDS_GUIDE_CONTENT_1">
+		Join anywhere, on any device
+	</String>
+	<String id="IDS_GUIDE_CONTENT_2">
+		Start or join a meeting easily
+	</String>
+	<String id="IDS_GUIDE_CONTENT_3">
+		They see what you see
+	</String>
+	<String id="IDS_WEB_LOADING">
+		Loading…
+	</String>
+	<String id="IDS_WEB_LOAD_ERR">
+		Failed to load. Click Refresh.
+	</String>
+	<String id="IDS_WEB_LOAD_ERR_SHORT">
+		Failed to load
+	</String>
+	<String id="IDS_WEB_RELOAD">
+		Reload
+	</String>
+	<String id="IDS_JOIN_MEETING">
+		Join
+	</String>
+	<String id="IDS_NOT_LOGIN">
+		Not Logged In
+	</String>
+	<String id="IDS_JOIN_CONF_WITH_CAMERA">
+		Turn On My Camera
+	</String>
+	<String id="IDS_JOIN_CONF_WITH_MUTE">
+		Mute My Microphone
+	</String>
+	<String id="IDS_CREATE">
+		Start
+	</String>
+	<String id="IDS_CREATE_CONFERENCE">
+		Create Meeting
+	</String>
+	<String id="IDS_UPDATE_LATER">
+		Later
+	</String>
+	<String id="IDS_UPDATE_NOW">
+		Update Now
+	</String>
+	<String id="IDS_SCHEDULE">
+		Schedule
+	</String>
+	<String id="IDS_SCHEDULE_MEETING">
+		Schedule Meeting
+	</String>
+	<String id="IDS_SCHEDULE_MODIFY">
+		Edit Meeting
+	</String>
+	<String id="IDS_SCHEDULE_CONFIRM">
+		Save
+	</String>
+	<String id="IDS_MY_CONF">
+		My Meetings
+	</String>
+	<String id="IDS_MIC">
+		Muted
+	</String>
+	<String id="IDS_MIC_OPEN">
+		Microphone on
+	</String>
+	<String id="IDS_MIC_PROHIBIT">
+		Muted
+	</String>
+	<String id="IDS_CAMERA">
+		Camera turned off
+	</String>
+	<String id="IDS_CAMERA_OPEN">
+		Camera turned on
+	</String>
+	<String id="IDS_SCREEN_SHARE">
+		Screen Share
+	</String>
+	<String id="IDS_SHARE_NEW">
+		New Share
+	</String>
+	<String id="IDS_SHARE_PAUSE">
+		Pause
+	</String>
+	<String id="IDS_SHARE_RESUME">
+		Resume Share
+	</String>
+	<String id="IDS_SHARE_START_ANNOTATION">
+		Annotate
+	</String>
+	<String id="IDS_SHARE_STOP_ANNOTATION">
+		Annotate
+	</String>
+	<String id="IDS_FILE">
+		File
+	</String>
+	<String id="IDS_INVITE_MEMBERS">
+		Add Invitees
+	</String>
+	<String id="IDS_MORE">
+		More
+	</String>
+	<String id="IDS_CONF_CODE">
+		Meeting ID
+	</String>
+	<String id="IDS_ERROR">
+		Error
+	</String>
+	<String id="IDS_QUICK_MEETING_NAME">
+		's Scheduled Meeting
+	</String>
+	<String id="IDS_SCHEDULE_DEFAULT_MEETING_NAME">
+		Meeting Topic
+	</String>
+	<String id="IDS_SCHEDULE_DEFAULT_INVITE_USER">
+		Enter invitee
+	</String>
+	<String id="IDS_SCHEDULE_DEFAULT_MEETING_LOCATION">
+		Enter meeting location (optional)
+	</String>
+	<String id="IDS_SCHEDULE_DEFAULT_MEETING_PASSWORD">
+		Enter a 4-6 digit password
+	</String>
+	<String id="IDS_FMT_ERROR_DESC_AND_CODE">
+		$ERROR_DESC$($ERROR_CODE$)
+	</String>
+	<String id="IDS_FMT_UNKNOWN_ERROR_AND_CODE">
+		Unknown error ($ERROR_CODE$)
+	</String>
+	<String id="IDS_USE_LOCAL_AUDIO_DEVICE">
+		Use computer's sound capture device
+	</String>
+	<String id="IDS_USE_PSTN">
+		Dial in to join the meeting
+	</String>
+	<String id="IDS_STATIC_SCHEDULE_PASSWORD_ILLEGAL_TIP">
+		Password should be a 4-6 digit number
+	</String>
+	<String id="IDS_STATIC_SCHEDULE_DURATION_ERR_FORMAT">
+		Incorrect date format
+	</String>
+	<String id="IDS_STATIC_SCHEDULE_DURATION_ERR_BEGIN_GT_END">
+		End time cannot be earlier than start time
+	</String>
+	<String id="IDS_STATIC_SCHEDULE_DURATION_ERR_BEGIN_LT_NOW">
+		Start time cannot be earlier than current time
+	</String>
+	<String id="IDS_STATIC_SCHEDULE_DURATION_ERR_OVER_ONE_MONTH">
+		You can only schedule meetings 30 days in advance
+	</String>
+	<String id="IDS_STATIC_MEETING_DURATION_OVER_MAX_TIME_ERR">
+		Meeting duration cannot be longer than 24 hours
+	</String>
+	<String id="IDS_BTN_SCHEDULE">
+		Schedule Meeting
+	</String>
+	<String id="IDS_CANCEL_MEETING_ERROR_TITLE">
+		Failed to cancel meeting
+	</String>
+	<String id="IDS_CANCEL_MEETING_ERROR_CONTENT">
+		Unknown error
+	</String>
+	<String id="IDS_Authorize_Choose_Mode">
+		Select Login Method
+	</String>
+	<String id="IDS_JOIN_INPUT_MEETING_CODE">
+		Enter meeting ID
+	</String>
+	<String id="IDS_JOIN_INPUT_PASSWORD">
+		Enter meeting password
+	</String>
+	<String id="IDS_JOIN_INPUT_NICK_NAME">
+		Enter your display name
+	</String>
+	<String id="IDS_JOIN_MEETING_CODE_ERR">
+		Incorrect meeting ID
+	</String>
+	<String id="IDS_JOIN_MEETING_ERR_EXPIRED">
+		Meeting has expired
+	</String>
+	<String id="IDS_JOIN_PASSWORD_ERR">
+		Wrong password
+	</String>
+	<String id="IDS_AUTHORIZE_WEWORK">
+		Login with WeChat Work
+	</String>
+	<String id="IDS_COMMON_MONTH_FORMAT">
+		%m月
+	</String>
+	<String id="IDS_DISPOSE_NOTIFY">
+		The meeting has ended
+	</String>
+	<String id="IDS_DISPOSE_TIPS">
+		All attendees will exit the room in 1s
+	</String>
+	<String id="IDS_HOSTCHANGE_TIPS">
+		You are the host
+	</String>
+	<String id="IDS_MUTE_ALL">
+		Mute All
+	</String>
+	<String id="IDS_STOP_MUTE_ALL">
+		Unmute
+	</String>
+	<String id="IDS_HANDSUP">
+		Raise Hand
+	</String>
+	<String id="IDS_STOP_HANDSUP">
+		Lower Hand
+	</String>
+	<String id="IDS_NO_MEDIA_PERMISSION_NOTIFY">
+		The host has muted you
+	</String>
+	<String id="IDS_NO_MEDIA_PERMISSION_TIPS">
+		You can raise your hand to request to be unmuted
+	</String>
+	<String id="IDS_HAS_MEDIA_PERMISSION_NOTIFY">
+		The host has unmuted you
+	</String>
+	<String id="IDS_HAS_MEDIA_PERMISSION_TIPS">
+		Now you can speak
+	</String>
+	<String id="IDS_REQUEST_HANDSUP_NOTIFY">
+		Request sent
+	</String>
+	<String id="IDS_REQUEST_HANDSUP_TIPS">
+		Please wait for the host to respond.
+	</String>
+	<String id="IDS_AGREE_HANDSUP_NOTIFY">
+		The host has agreed to your request
+	</String>
+	<String id="IDS_MUTE">
+		Mute
+	</String>
+	<String id="IDS_STOP_MUTE">
+		Unmute
+	</String>
+	<String id="IDS_AGREE_HANDSUP_TIPS">
+		Now you can speak
+	</String>
+	<String id="IDS_DISAGREE_HANDSUP_NOTIFY">
+		The host has rejected your request
+	</String>
+	<String id="IDS_DISAGREE_HANDSUP_TIPS">
+		You can raise your hand to request to be unmuted
+	</String>
+	<String id="IDS_DISCONNECTED_NOTIFY">
+		You are disconnected
+	</String>
+	<String id="IDS_DISCONNECTED_TIPS">
+		Log in again
+	</String>
+	<String id="IDS_INSTANCE_CONFLICT_NOTIFY">
+		Your account is logged in on the same device
+	</String>
+	<String id="IDS_INSTANCE_CONFLICT_TIPS">
+		Log in again
+	</String>
+	<String id="IDS_MUTE_ALL_MEDIA_NOTIFY">
+		The host has muted everyone
+	</String>
+	<String id="IDS_MUTE_ALL_MEDIA_TIPS">
+		You can raise your hand to request to be unmuted
+	</String>
+	<String id="IDS_JOIN_MEETING_FAILED_NOTIFY">
+		Failed to join the meeting
+	</String>
+	<String id="IDS_JOIN_MEETING_FAILED_TIPS">
+		Join again
+	</String>
+	<String id="IDS_KICKOUT_NORMAL_TIPS">
+		Join again
+	</String>
+	<String id="IDS_KICKOUT_DISSOLVE_NOTIFY">
+		The meeting has ended
+	</String>
+	<String id="IDS_KICKOUT_DISSOLVE_TIPS">
+		All attendees have exited the room
+	</String>
+	<String id="IDS_WATING_JOIN_MEETING_TIPS">
+		Connecting…
+	</String>
+	<String id="COMFRIM_BUTTON_TEXT">
+		OK
+	</String>
+	<String id="IDS_COPY_MEETING_LINK_OK">
+		Meeting link copied to clipboard
+	</String>
+	<String id="IDS_COPY_MEETING_INVITE_INFO_OK">
+		Meeting invitation copied to clipboard
+	</String>
+	<String id="IDS_MEETING_CODE_INVALID">
+		Invalid meeting ID
+	</String>
+	<String id="IDS_COMMON_KNOWN">
+		Got It
+	</String>
+	<String id="IDS_INMEETING_SHARE_SCREEN_MUTE_TITLE">
+		Only one person can share their screen at a time.
+	</String>
+	<String id="IDS_INMEETING_SHARE_SCREEN_MUTE_CONTENT">
+		is sharing screen. You can ask him/her to close and try again.
+	</String>
+	<String id="IDS_MEETING_CONFLICT_TITLE">
+		You are already in a meeting
+	</String>
+	<String id="IDS_MEETING_CONFLICT_CONTENT">
+		Leave the current meeting and then retry
+	</String>
+	<String id="IDS_IN_MEETINF_MUTE_ALL_TIP">
+		All muted
+	</String>
+	<String id="IDS_IN_MEETINF_UNMUTE_ALL_TIP">
+		All unmuted
+	</String>
+	<String id="IDS_IN_MEETING_UNMUTE_ALL_TIP_NOT_HOST">
+		The host has unmuted all
+	</String>
+	<String id="IDS_NO_DEVICE">
+		No devices detected
+	</String>
+	<String id="IDS_STOP">
+		Stop
+	</String>
+	<String id="IDS_TEST">
+		Test
+	</String>
+	<String id="IDS_IN_MEETING_MORE_MENU_PSTN">
+		Dial Number to Join Meeting
+	</String>
+	<String id="IDS_IN_MEETING_PSTN_GUIDE_TITLE">
+		Phone Call
+	</String>
+	<String id="IDS_INPUT_NICKNAME_TOAST_TITLE">
+		Enter your display name
+	</String>
+	<String id="IDS_INPUT_PASSWORD_TOAST_TITLE">
+		Enter meeting password
+	</String>
+	<String id="IDS_PSTN_GUIDE_PHONE_TITLE">
+		Dial Number
+	</String>
+	<String id="IDS_PSTN_GUIDE_MEETING_CODE_TITLE">
+		Enter meeting ID
+	</String>
+	<String id="IDS_PSTN_GUIDE_PASSWORD_TITLE">
+		Enter password
+	</String>
+	<String id="IDS_IN_MEETING_PSTN_GUIDE_PHONE_CONTENT_PASSWORD">
+		Password
+	</String>
+	<String id="IDS_IN_MEETING_MAIN_VIDEO_VIEW_TEXT">
+		Current main screen
+	</String>
+	<String id="IDS_SCREEN_BOTTOM_TOOLTIP">
+		Share Screen
+	</String>
+	<String id="IDS_SCREEN_STOP_TOOLTIP">
+		Stop Share
+	</String>
+	<String id="IDS_MEMBER_TOOLTIP">
+		Attendees
+	</String>
+	<String id="IDS_START_CHAT">
+		Chat
+	</String>
+	<String id="IDS_RECORD_START">
+		录制
+	</String>
+	<String id="IDS_RECORD_STOP">
+		结束录制
+ 	</String>
+	<String id="IDS_SAFE_TOOLTIP">
+		Security
+	</String>
+	<String id="IDS_INVITE_TOOLTIP">
+		Invite
+	</String>
+	<String id="IDS_DEVICE_TOOLTIP">
+		Settings
+	</String>
+	<String id="IDS_SHOWMORE_TOOLTIP">
+		More
+	</String>
+	<String id="IDS_DOCUMENT_TOOLTIP">
+		File (0)
+	</String>
+	<String id="IDS_EMOJI_TOOLTIP">
+		Emoji
+	</String>
+	<String id="IDS_DOCUMENT_DEFAULT_WORDING">
+		Files
+	</String>
+	<String id="IDS_INVITEE_DEFAULT_WORDING">
+		Invitees
+	</String>
+	<String id="IDS_MORE_TOOLTIP">
+		More menu
+	</String>
+	<String id="IDS_LEAVE_TOOLTIP">
+		Leave Meeting
+	</String>
+	<String id="IDS_SCREEN_SHARE_TIP">
+		Sharing screen…
+	</String>
+	<String id="IDS_MIC_HOWLING_TIP">
+		Echo detected. Microphone has been turned off.
+	</String>
+	<String id="IDS_SPEAKER_HOWLING_TIP">
+		Echo detected. Speaker has been turned off.
+	</String>
+	<String id="IDS_MIC_STATUS_CLOSE">
+		You have turned off the microphone
+	</String>
+	<String id="IDS_MIC_STATUS_OPEN">
+		The microphone you are using is
+	</String>
+	<String id="IDS_MIC_STATUS_MUTE">
+		You have been muted by the host
+	</String>
+	<String id="IDS_CAMERA_STATUS_CLOSE">
+		You have turned off the camera
+	</String>
+	<String id="IDS_CAMERA_STATUS_OPEN">
+		The camera you are using is
+	</String>
+	<String id="IDS_NETWORK_BREAKUP">
+		Network disconnected. Check your network.
+	</String>
+	<String id="IDS_PASSWORD_ERROR">
+		Wrong meeting password
+	</String>
+	<String id="IDS_NICKNAME_ALL_SPACE_ERROR">
+		Display name cannot be all spaces
+	</String>
+	<String id="IDS_NICKNAME_EMPTY_ERROR">
+		Display name is required
+	</String>
+	<String id="IDS_NONE">
+		None
+	</String>
+	<String id="IDS_PSTN_INVITE_TITLE">
+		Invite by Phone
+	</String>
+	<String id="IDS_PSTN_INVITE_BOTTOM_TIPS">
+		You can view the call status in the "Attendees" list
+	</String>
+	<String id="IDS_PSTN_INVITE_CONTENT">
+		Enter a phone number to call and invite an attendee
+	</String>
+	<String id="IDS_PSTN_INVITE_NICKNAME_TIP">
+		Display name
+	</String>
+	<String id="IDS_PSTN_INVITE_PHONE_NUMBER_TIP">
+		Phone
+	</String>
+	<String id="IDS_PSTN_INVITE_INPUT_PHONE_COUNTRY_CODE">
+		Region Code
+	</String>
+	<String id="IDS_PSTN_INVITE_INPUT_PHONE_NUMBER">
+		Enter phone number or short code
+	</String>
+	<String id="IDS_PSTN_INVITE_MEMBER_ITEM_SHORT_NUMBER">
+		Landline
+	</String>
+	<String id="IDS_PSTN_INVITE_MEMBER_ITEM_PHONE_NUMBER">
+		Mobile
+	</String>
+	<String id="IDS_PSTN_INVITE_MEMBER_NICKNAME">
+		Invitee Name
+	</String>
+	<String id="IDS_PSTN_INVITE_INPUT_NICKNAME">
+		Invitee Display Name (Optional)
+	</String>
+	<String id="IDS_QRCODE_TIP">
+		Scan with WeChat Work to Log In
+	</String>
+	<String id="IDS_DEVICE_TITLE">
+		Settings
+	</String>
+	<String id="IDS_DEVICE_CAMERA">
+		Camera
+	</String>
+	<String id="IDS_DEVICE_SPEAKER">
+		Speaker
+	</String>
+	<String id="IDS_DEVICE_MIC">
+		Mic
+	</String>
+	<String id="IDS_DEVICE_AUDO_MODE_TITLE">
+		Audio Mode
+	</String>
+	<String id="IDS_DEVICE_AUDO_MODE_CONTENT">
+		Stop receiving videos and only allow screen shares from others.
+	</String>
+	<String id="IDS_BUTTON_CONFIRM">
+		OK
+	</String>
+	<String id="IDS_BUTTON_CANCEL">
+		Cancel
+	</String>
+	<String id="IDS_BUTTON_CONFIG">
+		Settings
+	</String>
+	<String id="IDS_STARTUP_PAGE_TIP">
+		Stay connected anytime, anywhere
+	</String>
+	<String id="IDS_HOST_TRANSFER_TITLE">
+		Make Host
+	</String>
+	<String id="IDS_HOST_TRANSFER_NO_MEMBER_TIP">
+		Attendees can be made host even if they have not logged in. You can also choose
+	</String>
+	<String id="IDS_HOST_TRANSFER_DISSOLVE_MEETING">
+		End Meeting
+	</String>
+	<String id="IDS_HOST_TRANSFER_CONFIRM">
+		Change Host and Leave
+	</String>
+	<String id="IDS_HOST_TRANSFER_CANCEL">
+		Back
+	</String>
+	<String id="IDS_MEMBER_TAB_BUTTON_TEXT">
+		Meeting in progress
+	</String>
+	<String id="IDS_INVITE_TAB_BUTTON_TEXT">
+		Calling
+	</String>
+	<String id="IDS_JOIN_BUTTON_TEXT">
+		Join Meeting
+	</String>
+	<String id="IDS_JOINING_BUTTON_TEXT">
+		Joining the meeting
+	</String>
+	<String id="IDS_SWITCH_DEBUG_MODE">
+		Switch to the testing environment and put into effect at next start
+	</String>
+	<String id="IDS_SWITCH_RELEASE_MODE">
+		Switch to production environment and put into effect at next start
+	</String>
+	<String id="IDS_MONITOR">
+		Desktop
+	</String>
+	<String id="IDS_NO_CALLING_MEMBER">
+		There are no outgoing calls right now.
+	</String>
+	<String id="IDS_MEETING_CODE">
+		Meeting ID:
+	</String>
+	<String id="IDS_PSTN_INVITE_SEARCH_TIP">
+		Enter invitee info
+	</String>
+	<String id="IDS_PSTN_INVITE_SEARCH_EDIT_DEFAULT_TEXT">
+		Enter WeChat Work ID
+	</String>
+	<String id="IDS_PSTN_INVITE_SEARCH_NOT_FIND_TIP">
+		No results found for "
+	</String>
+	<String id="IDS_NAME">
+		Name
+	</String>
+	<String id="IDS_NUMBER">
+		Number
+	</String>
+	<String id="IDS_JOIN_MEETING_TITLE">
+		Join Meeting
+	</String>
+	<String id="IDS_JOIN_MEETING_MEETING_CODE">
+		Meeting ID
+	</String>
+	<String id="IDS_JOIN_MEETING_NICKNAME">
+		Your Name
+	</String>
+	<String id="IDS_JOIN_MEETING_PASSWORD">
+		Password
+	</String>
+	<String id="IDS_JOIN_MEETING_CAMERA_TEXT">
+		Turn On Video When Joining a Meeting
+	</String>
+	<String id="IDS_COPY_MEETING_CODE_OK">
+		Meeting ID copied to clipboard
+	</String>
+	<String id="IDS_MEETING_INFO_TITILE">
+		Meeting Details
+	</String>
+	<String id="IDS_LEAVE_MEETING_HOST_TIP">
+		You are the host. To keep this meeting running, please assign a host in Attendees before you leave the meeting. Or you can end the meeting.
+	</String>
+	<String id="IDS_LEAVE_MEETING_NORMAL_TIP">
+		Do you want to leave the meeting?
+	</String>
+	<String id="IDS_LEAVE_MEETING_HOST_LEAVE">
+		Leave Meeting
+	</String>
+	<String id="IDS_LEAVE_MEETING_HOST_DISSOLVE">
+		End Meeting
+	</String>
+	<String id="IDS_LEAVE_MEETING_NORMAL_LEAVE">
+		Leave Meeting
+	</String>
+	<String id="IDS_MEMBER_TITILE">
+		Attendees
+	</String>
+	<String id="IDS_COPY_INVITE">
+		Copy Invitation
+	</String>
+	<String id="IDS_MEMBER_INVITE">
+		Invite by Phone
+	</String>
+	<String id="IDS_SIP_INVITE">
+		Video Meeting Room
+	</String>
+	<String id="IDS_GUIDE_TIP">
+		Log in to start or schedule a meeting. For help, contact 8000.
+	</String>
+	<String id="IDS_ABOUT_US_VERSION">
+		Closed beta version (confidential)
+	</String>
+	<String id="IDS_ABOUT_US_CHECK_UPGRADE">
+		Version Update
+	</String>
+	<String id="IDS_ABOUT_US_COMPLAIN">
+		Feedback
+	</String>
+	<String id="IDS_ABOUT_US_LINK_PRIVACY">
+		Privacy Policy
+	</String>
+	<String id="IDS_ABOUT_US_LINK_TERMS_OF_SERVICE">
+		Service Agreement
+	</String>
+	<String id="IDS_ABOUT_US_TIP">
+		For help, contact 8000.
+	</String>
+	<String id="IDS_MEMBER_MENU_REMOVE">
+		Remove
+	</String>
+	<String id="IDS_MEMBER_MENU_CHANGE_HOST">
+		Make Host
+	</String>
+	<String id="IDS_MEMBER_MENU_MODIFY_NICKNAME">
+		Edit Name
+	</String>
+	<String id="IDS_USE_LOCAL_AUDIO">
+		PC Audio
+	</String>
+	<String id="IDS_PSTN_AUDIO_BACK">
+		Back
+	</String>
+	<String id="IDS_LOCAL_AUDIO_TAB">
+		PC Audio
+	</String>
+	<String id="IDS_PSTN_AUDIO_TAB">
+		Phone Audio
+	</String>
+	<String id="IDS_AUDIO_CONNECT_PSTN_SETTING">
+		Extension/Meeting room phone number
+	</String>
+	<String id="IDS_LOCAL_AUDIO_NO_MIC">
+		Unable to detect your microphone. Make sure your microphone is connected properly.
+	</String>
+	<String id="IDS_PSTN_AUDIO_ENTER_NUMBER">
+		Landline/mobile
+	</String>
+	<String id="IDS_AUDIO_CONNECT_TITLE">
+		Select a Method to Connect to Meeting Audio
+	</String>
+	<String id="IDS_AUDIO_MEETING_ROOM_DEFAULT_TEXT">
+		Enter extension or meeting room phone number
+	</String>
+	<String id="IDS_SCHEDULE_ENTER_MUTE">
+		Mute Attendees When They Join
+	</String>
+	<String id="IDS_SCHEDULE_WATERMARK">
+		Add Watermark on Shared Screens
+	</String>
+	<String id="IDS_SCREEN_SHARE_SELECT">
+		Select Content to Share
+	</String>
+	<String id="IDS_SCREEN_SHARE_VIDEO_QUALITY_TEXT">
+		Video fluency preferred
+	</String>
+	<String id="IDS_SCREEN_SHARE_BUTTON_TEXT">
+		Share
+	</String>
+	<String id="IDS_IM_SEND_MSG">
+		Send (S)
+	</String>
+	<String id="IDS_IM_REVERT_MSG">
+		Recall
+	</String>
+	<String id="IDS_IM_POPUP_WND">
+		Pop Out
+	</String>
+	<String id="IDS_IM_MERGE_TO_WND">
+		Merge to Meeting Window
+	</String>
+	<String id="IDS_IM_DEFAULT_INPUT_EDIT_TXT">
+		Enter message…
+	</String>
+	<String id="IDS_IM_ENTER_TO_SEND">
+		Press Enter to send messages
+	</String>
+	<String id="IDS_IM_ENTERWITHCTRL_TO_SEND">
+		Press Ctrl+Enter to send messages
+	</String>
+	<String id="IDS_IM_EMOJILABEL">
+		[Emoji]
+	</String>
+	<String id="IDS_IM_NEWMSGTIP">
+		 unread messages
+	</String>
+	<String id="IDS_IM_COPY">
+		Copy
+	</String>
+	<String id="IDS_IM_CUT">
+		Cut
+	</String>
+	<String id="IDS_IM_PASTE">
+		Paste
+	</String>
+	<String id="IDS_IM_SELALL">
+		Select All
+	</String>
+	<String id="IDS_IM_CLOSE">
+		Close
+	</String>
+	<String id="IDS_INVITE_NICKNAME_TIP">
+		Add Invitees
+	</String>
+	<String id="IDS_INVITE_PHONE_NUMBER_TIP">
+		Phone
+	</String>
+	<String id="IDS_INVITE_TIME_TIP">
+		Time
+	</String>
+	<String id="ENABLE_BACKGROUNDBLUR">
+		Background Blur
+	</String>
+	<String id="BACKGROUNDBLURE_CONTENT">
+		When enabled, blur the video background.
+	</String>
+	<String id="IDS_LOADING_TITLE">
+		Load Components
+	</String>
+	<String id="IDS_LOADING_TEXT">
+		Initializing file components. Please wait.
+	</String>
+	<String id="IDS_DOWNLOAD_FAIL_TEXT">
+		File component initialization failed. Please retry.
+	</String>
+	<String id="IDS_WEMEET_WEBVIEW_TITLE_NAME">
+		Browser
+	</String>
+	<String id="IDS_WEMEET_DOCUMENT_TITLE_NAME">
+		Files
+	</String>
+	<String id="IDS_DOCUMENT_UPDATE_TEXT">
+		Allow Attendees to Upload Files
+	</String>
+	<String id="IDS_DOCUMENT_STATUS_TEXT">
+		Completed
+	</String>
+	<String id="IDS_DOCUMENT_STATUS_TEXT_INIT">
+		0% completed
+	</String>
+	<String id="IDS_DOCUMENT_COUNT_INIT">
+		Add
+	</String>
+	<String id="IDS_DOCUMENT_WELCOME_TEXT">
+		Files
+	</String>
+	<String id="IDS_DOCUMENT_EDIT_TRUE">
+		Attendees can edit
+	</String>
+	<String id="IDS_FACE_BEAUTY">
+		Beauty Filter
+	</String>
+	<String id="IDS_FACE_BEAUTY_CONTENT">
+		Set the strength of the beauty filter
+	</String>
+	<String id="IDS_INPUT_TOAST_REQUIRE_PASSWORD">
+		Password is required to join the meeting.
+	</String>
+	<String id="IDS_TOAST_JOIN_INPUT_NICKNAME">
+		Display name
+	</String>
+	<String id="IDS_TOAST_JOIN_INPUT_PASSWORD">
+		Meeting Password
+	</String>
+	<String id="IDS_TOAST_JOIN_MEETING">
+		Enter Meeting
+	</String>
+	<String id="IDS_TOAST_CLOSE">
+		Close
+	</String>
+	<String id="IDS_TITLE_SETTING">
+		Settings
+	</String>
+	<String id="IDS_SETTING_BUTTON_MEETING">
+		Meeting Settings
+	</String>
+	<String id="IDS_BUTTON_FEEDBACK">
+		Feedback
+	</String>
+	<String id="IDS_SETTING_BUTTON_AUDIO">
+		Audio
+	</String>
+	<String id="IDS_SETTING_BUTTON_LAB">
+		Beta Lab
+	</String>
+	<String id="IDS_SETTING_BUTTON_VIRTUAL_BKG">
+		Virtual Background
+	</String>
+	<String id="IDS_SETTING_BUTTON_VIDEO">
+		Video
+	</String>
+	<String id="IDS_SETTING_TIP_BETA">
+		The audio-video feature is now available. Please give it a try.
+	</String>
+	<String id="IDS_SETTING_MEETING_SWITCH_CAMERA">
+		Turn On Video When Joining a Meeting
+	</String>
+	<String id="IDS_SETTING_MEETING_SWITCH_AUDIO">
+		Use PC Audio by Default
+	</String>
+	<String id="IDS_SETTING_MEETING_SWICH_AUDIOMODE">
+		Audio Mode
+	</String>
+	<String id="IDS_SETTING_MEETING_SWITCH_SELECTAUDIO">
+		Auto-select PC Audio by Default
+	</String>
+	<String id="IDS_SETTING_MEETING_TIP_AUDIOMODE">
+		Stop receiving videos and only allow screen sharing from other attendees.
+	</String>
+	<String id="IDS_SETTING_VIDEO_DEVICE">
+		Device
+	</String>
+	<String id="IDS_SETTING_VIDEO_CAMERA">
+		Video Screen
+	</String>
+	<String id="IDS_SELECT_VIRTUAL_BG">
+		Select a virtual background
+	</String>
+	<String id="IDS_SETTING_AUDIO_SPEAKER">
+		Speaker
+	</String>
+	<String id="IDS_SETTING_AUDIO_SPEAKER_TEST">
+		Test
+	</String>
+	<String id="IDS_SETTING_AUDIO_MIC">
+		Mic
+	</String>
+	<String id="IDS_SETTING_AUDIO_OUTPUT">
+		Output
+	</String>
+	<String id="IDS_SETTING_AUDIO_INPUT">
+		Input
+	</String>
+	<String id="IDS_SETTING_AUDIO_VUL">
+		Volume
+	</String>
+	<String id="IDS_SETTING_AUDIO_MIC_TEST">
+		Test
+	</String>
+	<String id="IDS_SETTING_LAB_BACKGROUP">
+		Background Blur
+	</String>
+	<String id="IDS_SETTING_LAB_BEAUTY">
+		Beauty Filter
+	</String>
+	<String id="IDS_SETTING_LAB_LOWLIGHT">
+		Video Image Quality Enhancement
+	</String>
+	<String id="IDS_SETTING_LAB_LOWLIGHT_DESC">
+		Enhance video quality for dimly lit environments
+	</String>
+	<String id="IDS_SETTING_LAB_VIDEODENOISE">
+		Video Noise Cancellation
+	</String>
+	<String id="IDS_SETTING_LAB_VIDEODENOISE_DESC">
+		Reduce ambient noises for enhanced video conferencing
+	</String>
+	<String id="IDS_SETTING_LAB_AUDIOENOISE">
+		Audio Noise Cancellation
+	</String>
+	<String id="IDS_SETTING_LAB_AUDIOENOISE_DESC">
+		Reduce background noise for improved audio quality
+	</String>
+  <String id="IDS_SETTING_LAB_MUSICMODE">
+    Music Mode
+  </String>
+  <String id="IDS_SETTING_LAB_MUSICMODE_DESC">
+    Use when music is the main audio input for crisp BGM
+  </String>
+	<String id="IDS_SETTING_LAB_AUDIOBWE">
+		High Fidelity
+	</String>
+	<String id="IDS_SETTING_LAB_AUDIOBWE_DESC">
+		Enhance voice quality for clearer communication
+	</String>
+	<String id="IDS_SETTING_LAB_AUDIOSMART">
+		Smart Volume
+	</String>
+	<String id="IDS_SETTING_LAB_AUDIOSMART_DESC">
+		Auto-adjust the volume for different acoustic environments
+	</String>
+	<String id="IDS_STOP_TEST">
+		Stop Test
+	</String>
+	<String id="IDS_FULLSCREEN">
+		Enter Full Screen
+	</String>
+	<String id="IDS_EXIT_FULLSCREEN">
+		Exit Full Screen
+	</String>
+	<String id="IDS_FULLSCREEN_TIPS">
+		Enter Full Screen
+	</String>
+	<String id="IDS_EXIT_FULLSCREEN_TIPS">
+		Exit full screen. Meeting ID:
+	</String>
+	<String id="IDS_FULLSCREEN_TOAST">
+		Press ESC or click Exit Full Screen to exit fullscreen mode
+	</String>
+	<String id="IDS_STATIC_SCHEDULE_STATIC_CALENDAR_TITLE">
+		Select Calendar
+	</String>
+	<String id="IDS_STATIC_SCHEDULE_RADIO_BUTTON_OUTLOOK">
+		Outlook
+	</String>
+	<String id="IDS_STATIC_SCHEDULE_RADIO_BUTTON_OTHER">
+		Other Calendars
+	</String>
+	<String id="IDS_COPYRIGHT">
+		Copyright © 2018-2020 Tencent Inc.
+	</String>
+	<String id="IDS_COPYRIGHT_RESERVED">
+		All Rights Reserved.
+	</String>
+	<string id="IDS_COPYRIGHT_AND_IDS_COPYRIGHT_RESERVED">
+		Copyright © 2018 - 2020&#160;Tencent&#160;Inc.All&#160;Rights&#160;Reserved.
+	</string>
+	<String id="IDS_COPY_INVITE_SYNC_DEFAULT_CALENDAR">
+		Sync to Calendar
+	</String>
+	<String id="IDS_SCHEDULE_MEETING_SCHEDULING">
+		Scheduling meeting…
+	</String>
+	<String id="IDS_SCHEDULE_MEETING_SCHEDULE_FAILED">
+		Scheduling timeout!
+	</String>
+	<String id="IDS_EXPAND_ALL">
+		More
+	</String>
+	<String id="IDS_COLLAPSE_ALL">
+		Hide
+	</String>
+	<String id="IDS_SETTING_FREEZED">
+		Frozen
+	</String>
+	<String id="IDS_UPDATE_GOOD">
+		OK
+	</String>
+	<String id="IDS_UPDATE_ALRTEADY_NEW">
+		Current version
+	</String>
+	<String id="IDS_UPDATE_ALRTEADY_NEW_TAIL">
+		 is the latest version
+	</String>
+	<String id="IDS_UPDATE_DOLOADING_INSTALLER">
+		Downloading…
+	</String>
+	<String id="IDS_IN_MEETING_LOCK">
+		Meeting locked
+	</String>
+	<String id="IDS_CONTRACT">
+		Collapse
+	</String>
+	<String id="IDS_EXPAND">
+		More
+	</String>
+	<String id="IDS_OTHER_LOG_IN">
+		Other login methods
+	</String>
+	<String id="IDS_INVITE_COPY">
+		Copy
+	</String>
+	<String id="IDS_SELECT_DIAL_NUMBER">
+		Dial
+	</String>
+	<String id="IDS_SCHEDULEMEETING">
+		Schedule
+	</String>
+	<String id="IDS_No_Meeting">
+		No meetings
+	</String>
+	<String id="IDS_Jan">
+		Jan
+	</String>
+	<String id="IDS_Feb">
+		Feb
+	</String>
+	<String id="IDS_Mar">
+		Mar
+	</String>
+	<String id="IDS_Apr">
+		Apr
+	</String>
+	<String id="IDS_May">
+		May
+	</String>
+	<String id="IDS_Jun">
+		Jun
+	</String>
+	<String id="IDS_Jul">
+		Jul
+	</String>
+	<String id="IDS_Aug">
+		Aug
+	</String>
+	<String id="IDS_Oct">
+		Sep
+	</String>
+	<String id="IDS_Sept">
+		Oct
+	</String>
+	<String id="IDS_Nov">
+		Nov
+	</String>
+	<String id="IDS_Dec">
+		Dec
+	</String>
+	<String id="IDS_SWITCH_VIEW_MODE">
+		Switch View
+	</String>
+	<String id="IDS_BUTTON_SAVE">
+		Save
+	</String>
+	<String id="IDS_SAVE_WHITEBOARD_IMAGE">
+		Save current whiteboard
+	</String>
+	<String id="IDS_WHITEBOARD_LOCATION">
+		Location
+	</String>
+	<String id="IDS_WHITEBOARD_NAME">
+		Name
+	</String>
+    <String id="IDS_SWITCH_MIRROR_EFFECT">
+        Video Mirroring
+    </String>
+  <String id="IDS_SEARCH_MEMBERS">
+    Search for attendees
+  </String>
+  <String id="IDS_NOT_FOUND_MEMBERS">
+    No attendees found
+  </String>
+	<String id="IDS_GOTO_PASSWORD_LOGIN">
+        You can log in with mobile number
+    </String>
+  <String id="IDS_HOST">
+  	(Host)
+  </String>
+  <String id="IDS_COHOST">
+  	(Co-host)
+  </String>
+  <String id="IDS_ALLMEMBER">
+    Everyone
+  </String>
+  <String id="IDS_SENDTO">
+    Send to:
+  </String>
+  <String id="IDS_PRVIATE_CHAT">
+    Private
+  </String>
+  <String id="IDS_PRVIATE_CHAT_LABEL">
+    (Private)
+  </String>
+  <String id="IDS_PRVIATE_CHAT_AUTHORITY">
+    Settings
+  </String>
+  <String id="IDS_LOCK_BTN_TITLE">
+    Lock Screen
+  </String>
+  <String id="IDS_MEMBER_IN_MEETING_BTN">
+    In Meeting
+  </String>
+  <String id="IDS_MEMBER_WAITING_MEMBER_BTN">
+    Waiting
+  </String>
+  <String id="IDS_MEMBER_ALLOW_IN_BTN">
+    Admit
+  </String>
+  <String id="IDS_MEMBER_REMOVE_OUT_BTN">
+    Remove
+  </String>
+  <String id="IDS_WAITING_MEMBER_NONE">
+    There are no people waiting
+  </String>
+  <String id="IDS_SETTING_RECORD_OPEN_FOLDER">
+	打开
+  </String>
+  <String id="IDS_SETTING_RECORD_TEXT">
+	将录制的文件保存至：
+  </String>
+  <String id="IDS_RECORD_EXECUTING">
+	录制中
+  </String>
+  <String id="IDS_SIM_TRANSLATOR">
+    Interpreter
+  </String>
+  <String id="IDS_NO_INVITED_USERS">
+    There are no invitees. Please invite now.
+  </String>
+  <String id="IDS_SCHEDULE_BUTTON_INVITE_EXTERNAL_USER">
+    Invite Enterprise Users
+  </String>
+  <String id="IDS_SCHEDULE_BUTTON_INVITE_EXTERNAL_USER_DETAILS">
+    View Details
+  </String>
+  <String id="IDS_INVITE_USER_DETAIL_TITLE">
+    Invitees
+  </String>
+  <String id="IDS_SELECT_ALL_WEWORK_USER">
+    Select All
+  </String>
+  <String id="IDS_SEARCH_WEWORK_USER">
+    Search
+  </String>
+  <String id="IDS_CANCEL">
+    Cancel
+  </String>
+  <String id="IDS_DELETE">
+    Delete
+  </String>
+  <String id="IDS_SHOW">
+    View
+  </String>
+  <String id="IDS_SIM">
+    Interpretation
+  </String>
+  <String id="IDS_ADD_TRANSLATOR">
+    + Add Interpreter
+  </String>
+  <String id="IDS_MAX_TRANSLATOR">
+    Up to 60 interpreters can be added for a single meeting
+  </String>
+  <String id="IDS_SIM_END">
+    End
+  </String>
+  <String id="IDS_SIM_UPDATE">
+    Update
+  </String>
+  <String id="IDS_SIM_START">
+    Start
+  </String>
+  <String id="IDS_SIM_PLEASE_INPUT_NAME">
+    Enter the attendee's name
+  </String>
+  <String id="IDS_SIM_PLEASE_INPUT_PHONE">
+    Enter mobile number
+  </String>
+  <String id="IDS_SIM_PLEASE_INPUT_RIGHT_PHONE">
+    Invalid mobile number
+  </String>
+  <String id="IDS_SIM_PLEASE_SELECT">
+    Please select
+  </String>
+  <String id="IDS_SIM_ALREADY_START">
+    Enabled
+  </String>
+  <String id="IDS_TENCENT">
+    腾讯会议
+  </String>
+</StringBundle>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StringBundle version="1.0">
+	<String id="AppName">
+		서비스 이름
+	</String>
+	<String id="SYS_MESSAGEBOX_IGNORE">
+		무시하기
+	</String>
+	<String id="SYS_MESSAGEBOX_HELP">
+		도움말
+	</String>
+	<String id="SYS_MESSAGEBOX_CONTINUE">
+		계속
+	</String>
+	<String id="HotKey_DoubleCtrl">
+		Ctrl키 더블클릭
+	</String>
+	<String id="SYS_MESSAGEBOX_RETRY">
+		재시도
+	</String>
+	<String id="HotKey_NoSet">
+		없음
+	</String>
+	<String id="Error">
+		오류
+	</String>
+	<String id="SYS_MESSAGEBOX_ABORT">
+		종료
+	</String>	
+	<String id="Version">
+		버전
+	</String>
+	<String id="HotKey_DoubleShift">
+		Shift키 더블클릭
+	</String>
+	<String id="SYS_MESSAGEBOX_CANCEL">
+		취소
+	</String>
+	<String id="Close">
+		닫기
+	</String>
+	<String id="HotKey_DoubleAlt">
+		Alt키 더블클릭	</String>
+  <String id="IE_Refresh">
+    새로고침
+  </String>
+	<String id="IE_RetryText">
+		$REFRESH$를 클릭하거나 잠시 후 다시 시도하세요.
+	</String>
+	<String id="Empty_Menu">
+		(null)
+	</String>
+	<String id="SYS_MESSAGEBOX_OK">
+		확인
+	</String>
+	<String id="SYS_MESSAGEBOX_YES">
+		예
+	</String>
+	<String id="SYS_MESSAGEBOX_NO">
+		아니오
+	</String>
+	<String id="Sunday_Simple">
+		일
+	</String>
+	<String id="Monday_Simple">
+		월
+	</String>
+	<String id="Tuesday_Simple">
+		화
+	</String>
+	<String id="Wednesday_Simple">
+		수
+	</String>
+	<String id="Thursday_Simple">
+		목
+	</String>
+	<String id="Friday_Simple">
+		금
+	</String>
+	<String id="Saturday_Simple">
+		토
+	</String>
+	<String id="Sunday">
+		일
+	</String>
+	<String id="Monday">
+		월요일
+	</String>
+	<String id="Tuesday">
+		화요일
+	</String>
+	<String id="Wednesday">
+		수요일
+	</String>
+	<String id="Thursday">
+		목요일
+	</String>
+	<String id="Friday">
+		금요일
+	</String>
+	<String id="Saturday">
+		토요일
+	</String>
+  <String id="FirstMonth">
+    1월
+  </String>
+  <String id="SecondMonth">
+    2월
+  </String>
+  <String id="ThirdMonth">
+    3월
+  </String>
+  <String id="FourMonth">
+    4월
+  </String>
+  <String id="FiveMonth">
+    5월
+  </String>
+  <String id="SixMonth">
+    6월
+  </String>
+  <String id="SevenMonth">
+    7월
+  </String>
+  <String id="EightMonth">
+    8월
+  </String>
+  <String id="NineMonth">
+    9월
+  </String>
+  <String id="TenMonth">
+    10월
+  </String>
+  <String id="ElevenMonth">
+    11월
+  </String>
+  <String id="TwelveMonth">
+    12월
+  </String>
+	<String id="PreYear">
+		이전 해(길게 클릭 시 계속 감소)
+	</String>
+	<String id="NextYear">
+		다음 해(길게 클릭 시 계속 증가)
+	</String>
+	<String id="PreMonth">
+		이전 달(길게 클릭 시 계속 감소)
+	</String>
+	<String id="NextMonth">
+		다음 달(길게 클릭 시 계속 증가)
+	</String>
+	<String id="MonthCalCtrl_Help">
+		도움말
+	</String>
+	<String id="MonthCalCtrl_Close">
+		닫기
+	</String>
+	<String id="LoginPanel_CapslockOpen">
+		CapsLock On
+	</String>
+	<String id="UtilInfo_ElmCount">
+		통계: $COUNT$개
+	</String>
+	<String id="CloseWindow">
+		닫기
+	</String>
+	<String id="MaxisizeWindow">
+		최대화
+	</String>
+	<String id="RestoreWindow">
+		복원
+	</String>
+	<String id="MinimizeWindow">
+		최소화
+	</String>
+	<String id="LoginPanel_DelAccount_Tips">
+		계정 정보 삭제
+	</String>
+	<String id="Flash_ErrorText">
+		flash player plugin 버전이 너무 낮습니다. 정상적으로 구동하려면 최신 버전을 다운로드하세요.
+	</String>
+	<String id="Flash_DownloadUrl">
+		http://ptlogin2.qq.com/flash_plugin
+	</String>
+	<String id="IE_LoadingText">
+		페이지 로딩 중, 잠시만 기다리세요...
+	</String>
+	<String id="IE_ErrText">
+		표시할 수 없는 페이지입니다
+	</String>
+	<String id="Tips_Backward">
+		뒤로
+	</String>
+	<String id="Tips_Forward">
+		앞으로
+	</String>
+	<String id="IE_ScriptErrText">
+		현재 페이지에 스크립트 오류가 있습니다.
+	</String>
+	<String id="Edit_NumberOnlyTips">
+		이 칸에는 숫자만 입력할 수 있습니다.
+	</String>
+	<String id="Edit_FontSongTi">
+		SimSun
+	</String>
+	<String id="Edit_RButtonMenu_Cancel">
+		실행취소(&amp;U)
+	</String>
+	<String id="Edit_RButtonMenu_Cut">
+		잘라내기(&amp;T)
+	</String>
+	<String id="Edit_RButtonMenu_Copy">
+		복사하기(&amp;C)
+	</String>
+	<String id="Edit_RButtonMenu_Paste">
+		붙여넣기(&amp;P)
+	</String>
+	<String id="Edit_RButtonMenu_Delete">
+		삭제하기(&amp;D)
+	</String>
+	<String id="Edit_RButtonMenu_SelectAll">
+		모두 선택(&amp;A)
+	</String>
+</StringBundle>

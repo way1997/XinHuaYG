@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<core-config>
+  <objects path="" path-debug="">
+	<object name="IWMGridPanel" id="D0E48906-686E-4D85-BA8E-09B11FB81DB4" clsid="0BC25439-3350-4ECE-B979-20B017C6F55E" dllname="wemeet.dll"/>
+	<object name="IWMSearchEdit" id="6BCB0F95-C73A-43AE-A955-9A7307D1ED49" clsid="33DDEA50-FFFB-4836-B49C-04E4E67EAB93" dllname="wemeet.dll"/>
+	<object name="IWMTabControl" id="84234C4B-C3E5-44B8-9395-3DBFE98721D5" clsid="BD4FF656-9AFA-40D1-94A3-F86A1E16732B" dllname="wemeet.dll"/>
+	<object name="IWMTabPage" id="D209C1EE-ACC0-4C35-AB7F-FD38CAE605E1" clsid="485F82BE-6DA9-45BA-AE8E-DBB4C2E04C11" dllname="wemeet.dll"/>
+	<object name="IWMTabButton" id="E03DCFC9-C3BE-4E4C-94C2-0573C033EE67" clsid="C2DC1106-027B-411C-BA8E-585F09CA26B2" dllname="wemeet.dll"/>
+	<object name="IGFTBSWebCtrl" id="B0D6B39E-D0A5-4551-8599-196B8D7D627A" clsid="02D09220-5A84-4ADC-A3C7-0D5951AB35CD" dllname="TBSCore.dll"/>
+	<object name="ILoadingFrame" id="E539611C-FC21-4E96-AB5C-8ECC460B4432" clsid="8C615BC7-B2A4-48E7-9194-05DE841D14FC" dllname="wemeet.dll"/>
+	<object name="IWMFlexPanel" id="CDC63D76-582A-44EC-B0BC-1720551E33A9" clsid="7697AE9A-F68F-4F2D-9042-3053B94FBD56" dllname="wemeet.dll"/>
+	<object name="ISafeEdit" id="CE524FE7-F1F5-4694-9B03-45E53B439380" clsid="BC04AFA1-46AA-4592-9299-419A4887C8D6" dllname="wemeet.dll"/>
+  </objects>
+</core-config>

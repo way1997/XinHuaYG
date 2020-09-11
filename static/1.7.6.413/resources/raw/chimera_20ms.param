@@ -1,0 +1,5 @@
+4 4
+Input Input_1 0 1 Input_1 0 0 0
+TorchLstm TorchLstm_2 1 1 Input_1 TorchLstm_2 300 257 1
+TorchLstm TorchLstm_3 1 1 TorchLstm_2 TorchLstm_3 300 300 1
+Linear Linear_4 1 1 TorchLstm_3 Linear_4 300 771

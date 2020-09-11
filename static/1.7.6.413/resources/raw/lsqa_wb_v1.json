@@ -1,0 +1,128 @@
+{
+    "layer_cnt": 6,
+    "blob_cnt": 6,
+    "layer_info": [
+        {
+            "layer_type": "Input",
+            "layer_name": "Input_1",
+            "input_blob_cnt": 0,
+            "output_blob_cnt": 1,
+            "input_blobs": [],
+            "output_blobs": [
+                "Input_1"
+            ],
+            "layer_param": {},
+            "weight_info": []
+        },
+        {
+            "layer_type": "Spectrogram",
+            "layer_name": "Spectrogram_AA",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+	    	"Input_1"
+	    ],
+            "output_blobs": [
+                "Spectrogram_AA"
+            ],
+            "layer_param": {
+	    	"nperseg": 512,
+	    	"noverlap": 256
+	    },
+            "weight_info": [
+	    	0, 
+		512,
+		512
+	    ]
+        },
+        {
+            "layer_type": "Fma",
+            "layer_name": "Fma_BB",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+	    	"Spectrogram_AA"
+	    ],
+            "output_blobs": [
+                "Fma_BB"
+            ],
+            "layer_param": {
+	    	"total": 31868
+	    },
+            "weight_info": [
+	    	512,
+		63736,
+		64248
+	    ]
+        },
+        {
+            "layer_type": "TorchLstm",
+            "layer_name": "TorchLstm_2",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Fma_BB"
+            ],
+            "output_blobs": [
+                "TorchLstm_2"
+            ],
+            "layer_param": {
+                "num_output": 100,
+                "num_input": 257,
+                "direction": 1
+            },
+            "weight_info": [
+	    	64248,
+		102800,
+		167048,
+		40000,
+		207848
+	    ]
+        },
+        {
+            "layer_type": "TorchLstm",
+            "layer_name": "TorchLstm_3",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "TorchLstm_2"
+            ],
+            "output_blobs": [
+                "TorchLstm_3"
+            ],
+            "layer_param": {
+                "num_output": 100,
+                "num_input": 100,
+                "direction": 1
+            },
+            "weight_info": [
+	    	207848,
+		40000,
+		247848,
+		40000,
+		288648
+	    ]
+        },
+        {
+            "layer_type": "Linear",
+            "layer_name": "Linear_4",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "TorchLstm_3"
+            ],
+            "output_blobs": [
+                "Linear_4"
+            ],
+            "layer_param": {
+                "num_input": 100,
+                "num_output": 1
+            },
+            "weight_info": [
+	    	288648,
+		100,
+		288749
+	    ]
+        }
+    ]
+}

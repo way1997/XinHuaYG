@@ -1,0 +1,15 @@
+{
+    "version": "20200710_0bmu12hdc_pc",
+    "name": "model",
+    "width": 288,
+    "height": 160,
+    "gpu_model": "model_metal",
+    "gpu_model_runningmode": [
+		3,
+		4
+	],
+    "output_name": [
+        "Softmax_0",
+        "Softmax_1"
+    ]
+}
