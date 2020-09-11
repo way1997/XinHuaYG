@@ -277,7 +277,7 @@ export default {
         gowenxq(id, item) {
 
             let detailItem = JSON.stringify(item);
-            // console.log('id=' + id + 'item=' + detailItem)
+            console.log('id=' + id + 'item=' + detailItem)
             this.$router.push({
                 name: 'wenzhangXq',
                 params: {

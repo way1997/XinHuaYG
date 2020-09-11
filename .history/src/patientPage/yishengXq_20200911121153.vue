@@ -377,6 +377,7 @@ export default {
 }
 
 .wenzhang {
+
     h1 {
         font-size: 0.25rem;
         padding: 0.3rem 0 0.25rem 0.43rem;

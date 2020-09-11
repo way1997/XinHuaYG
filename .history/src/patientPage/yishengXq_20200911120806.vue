@@ -164,15 +164,8 @@ export default {
       });
     },
     gowenxq(item,id) {
-      let detailItem = JSON.stringify(item);
-      // console.log(detailItem)
-     this.$router.push({
-                name: 'wenzhangXq',
-                params: {
-                    id: id,
-                    item: detailItem
-                }
-            });
+      console.log(item)
+      // this.$router.push({ path: "/wenzhangXq", query: { id: id } });
     },
     getWxConfig() {
       $.ajax({
@@ -377,6 +370,7 @@ export default {
 }
 
 .wenzhang {
+
     h1 {
         font-size: 0.25rem;
         padding: 0.3rem 0 0.25rem 0.43rem;
@@ -390,7 +384,6 @@ export default {
             width: 100%;
             height: 1.57rem;
             border-bottom: 0.01rem solid #f1f1f1;
-            padding-bottom: 1.2rem;
 
             div {
                 font-size: 25px;

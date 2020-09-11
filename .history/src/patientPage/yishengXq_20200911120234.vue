@@ -22,7 +22,7 @@
     <div class="wenzhang" v-if="showWz">
         <h1>相关文章</h1>
         <div class="detailList">
-            <div v-for="(item,index) in lists.list_article" :key="index" @click="gowenxq(item,item.articleId)">
+            <div v-for="(item,index) in lists.list_article" :key="index" @click="gowenxq(item,item.id)">
                 <img src="../assets/img/head1.jpg" alt />
                 <div>{{item.title}}</div>
                 <p>来自：{{lists.doctorName}} {{item.levelName}}</p>
@@ -163,16 +163,9 @@ export default {
         // console.log(res.data.isRelation)
       });
     },
-    gowenxq(item,id) {
-      let detailItem = JSON.stringify(item);
-      // console.log(detailItem)
-     this.$router.push({
-                name: 'wenzhangXq',
-                params: {
-                    id: id,
-                    item: detailItem
-                }
-            });
+    gowenxq(id) {
+      console.log()
+      this.$router.push({ path: "/wenzhangXq", query: { id: id } });
     },
     getWxConfig() {
       $.ajax({
@@ -377,6 +370,7 @@ export default {
 }
 
 .wenzhang {
+
     h1 {
         font-size: 0.25rem;
         padding: 0.3rem 0 0.25rem 0.43rem;
@@ -390,7 +384,6 @@ export default {
             width: 100%;
             height: 1.57rem;
             border-bottom: 0.01rem solid #f1f1f1;
-            padding-bottom: 1.2rem;
 
             div {
                 font-size: 25px;
