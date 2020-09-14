@@ -495,7 +495,7 @@ export default {
     text-align: center;
     line-height: 0.76rem;
     color: #fff;
-    font-size: 0.25rem;
+    font-size: 0.32rem;
     margin: 0 auto;
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
@@ -547,7 +547,7 @@ input {
     border-radius: .16rem;
     box-shadow: .10rem .10rem .20rem #dbdbdb;
     margin: .30rem;
-    margin-left: .18rem;
+    margin-left: .21rem;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -567,13 +567,13 @@ input {
 }
 
 .jianhuTishi {
-    font-size: .25rem;
+    font-size: .2923rem;
     color: #ff5f5f;
     margin-right: .40rem;
 }
 
 .jianhuTishi2 {
-    font-size: .25rem;
+    font-size: .2923rem;
     color: #828282;
     margin-right: .40rem;
 }
@@ -586,20 +586,20 @@ input {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    font-size: .25rem;
+    font-size: .2923rem;
     padding: 0 .20rem;
     border-bottom: 1px solid #f2f2f2;
 }
 
 .tianjiaTit {
     color: #828282;
-    font-size: .25rem;
+    font-size: .2923rem;
 }
 
 .tianjiaInput {
     text-align: right;
     color: #828282;
-    font-size: .25rem;
+    font-size: .2923rem;
 }
 
 .choosesex {
@@ -656,7 +656,7 @@ input {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    font-size: .25rem;
+    font-size: .2923rem;
     margin-top: .20rem;
 }
 
@@ -693,7 +693,7 @@ input {
 }
 
 .jianhuTit {
-    font-size: .25rem;
+    font-size: .2923rem;
     color: #828282;
     border-left: 3px solid #00b0c2;
     padding-left: .20rem;
@@ -730,7 +730,7 @@ input {
 }
 
 .xinxiTittle2 {
-    font-size: .25rem;
+    font-size: .2923rem;
     color: #828282;
     margin-top: .30rem;
 }
@@ -743,7 +743,7 @@ input {
 }
 
 .radio {
-    font-size: .25rem;
+    font-size: .2923rem;
     color: #828282;
     margin-left: .20rem;
 }
@@ -753,7 +753,7 @@ input {
 }
 
 .radio-group2 span {
-    font-size: .25rem;
+    font-size: .2923rem;
     color: #828282;
 }
 
@@ -808,19 +808,19 @@ input {
 }
 
 .xinxiTittle {
-    font-size: .25rem;
+    font-size: .2923rem;
     color: #828282;
 }
 
 .youjiantou {
     width: 30px;
     height: 30px;
-    font-size: .25rem;
+    font-size: .2923rem;
     color: #828282;
 }
 
 input::-webkit-input-placeholder {
     color: #c9c9c9;
-    font-size: .25rem;
+    font-size: .2923rem;
 }
 </style>

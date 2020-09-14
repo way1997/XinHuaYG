@@ -15,19 +15,19 @@
                 </label>
             </div>
             <div class="shijian">{{item.createDate}}</div>
-            <div class="liaotian" @touchstart="goLiaotian(item.patientId2)">聊天</div>
-            <div class="kaifang" @touchstart="showkf(item.patientId2,item.patientName,item.patientSex,item.patientAge)">开方</div>
+            <div class="liaotian" @click="goLiaotian(item.patientId2)">聊天</div>
+            <div class="kaifang" @click="showkf(item.patientId2,item.patientName,item.patientSex,item.patientAge)">开方</div>
         </div>
     </div>
     <!--选择开方-->
-    <div class="zhezhao" v-show="kaifang" @touchstart.stop="hidekf">
+    <div class="zhezhao" v-show="kaifang" @click.stop="hidekf">
         <div class="choose">
             <p>选择开方方式</p>
-            <div @touchstart="goxianshangkf">
+            <div @click="goxianshangkf">
                 <img src="../assets/img/xianshangkf.png" alt="">
                 <span>线上开方</span>
             </div>
-            <div @touchstart="paizhaokf">
+            <div @click="paizhaokf">
                 <img src="../assets/img/paizhaokf.png" alt="">
                 <span>拍照开方</span>
             </div>
@@ -80,10 +80,10 @@ export default {
         creatQrCode() {
             var qrcode = new QRCode(this.$refs.qrCodeUrl, {
                 text: 'https://www.mfzhosp.com/H5/#/indexPage?doctorId=' + this.doctorId, // 需要转换为二维码的内容
-                width: 120,
-                height: 120,
                 colorDark: '#000000',
                 colorLight: '#ffffff',
+                width:160,
+                height:160,
                 correctLevel: QRCode.CorrectLevel.H
             })
         },
@@ -185,7 +185,10 @@ export default {
         transform: translate(-50%, -50%);
         width: 270px;
         height: 270px;
-
+        canvas{
+            width:120px;
+            height:120px;
+        }
         img {
             width: 130px;
             height: 130px;
@@ -194,7 +197,7 @@ export default {
 }
 
 .userList {
-    width: 700px;
+    width: 100%;
     background: rgba(255, 255, 255, 0.5);
     padding: 20px 0 210px 0;
     margin: 0 auto;
@@ -205,7 +208,7 @@ export default {
 .title {
     width: 100%;
     text-align: center;
-    font-size: 27px;
+    font-size: 0.5rem;
     color: #7d7d7d;
 
     span {
@@ -285,7 +288,7 @@ export default {
         color: #fff;
         position: absolute;
         right: 10px;
-        top: 50px;
+        top: 0.85rem;
     }
 
     .kaifang {

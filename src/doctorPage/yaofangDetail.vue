@@ -1,6 +1,6 @@
 <template>
 <div class="detail">
-    <div class="backHome" @touchstart="goBack">返回上一级</div>
+    <div class="backHome" @click="goBack">返回上一级</div>
     <div class="xian" style="clear:both;"></div>
     <div class="full">
         <h1>药方信息</h1>
@@ -17,12 +17,12 @@
         <div class="info">
             <p><span>诊金:</span><label v-for="(item,index) in list_price" :key="index" v-show="item.moneyDescribe==5">￥{{item.money}}</label></p>
             <p><span>购药前查看药方:</span><label v-if="isPayLook==1">可看</label><label v-if="isPayLook==0">不可看</label></p>
-            <p><span>服药禁忌:</span><label v-for="(item,index) in taboo" :key="index">{{item.tabooName}}</label></p>
+            <p class="fuyaojinji"><span>服药禁忌:</span><label v-for="(item,index) in taboo" :key="index">{{item.tabooName}}</label></p>
             <p><span>补充说明:</span><label>{{preEnjoin}}</label></p>
         </div>
     </div>
     <div style="clear:both;"></div>
-    <div class="chexiao" @touchstart="goZaixian">再次开方</div>
+    <div class="chexiao" @click="goZaixian">再次开方</div>
     <confirm :text="tipText" ref="confirm" @cancel="cancel" @confirm="confirm"></confirm>
 </div>
 </template>
@@ -64,7 +64,8 @@ export default {
             symptom: '',
             brandName: '',
             medicineType: 1,
-            tipText: '确定要撤销此药方吗？'
+            tipText: '确定要撤销此药方吗？',
+            tiaozhuanItem: []
         }
     },
     created() {
@@ -91,7 +92,9 @@ export default {
         goZaixian() {
             this.$router.push({
                 path: '/zaixiankf',
-                query: {}
+                query: {
+                    item: JSON.stringify(this.tiaozhuanItem)
+                }
             })
         },
         confirm() {
@@ -115,6 +118,7 @@ export default {
                 prescriptionId: this.prescriptionId
             }
             doctorFindPatientPlan(list).then((res) => {
+                this.tiaozhuanItem = res.map_patient;
                 this.symptom = res.map_patient.symptom;
                 this.preNum = res.map_patient.preNum, //一共多少挤
                     this.preOnce = res.map_patient.preOnce, //每剂多少次服
@@ -190,7 +194,7 @@ export default {
         background: #fff;
 
         p {
-            width: 682px;
+            width: 90%;
             height: 77px;
             border-bottom: 1px solid #f5f5f5;
             color: #828282;
@@ -198,6 +202,7 @@ export default {
             line-height: 77px;
             margin: 0 auto;
             padding: 0 10px;
+            clear: both;
 
             span {
                 float: left;
@@ -206,6 +211,15 @@ export default {
             label {
                 float: right;
             }
+
+            &:last-child {
+                border-top: 0.01rem solid #f5f5f5;
+            }
+        }
+
+        p.fuyaojinji {
+            height: auto;
+            border-bottom: none;
         }
 
         p.yaofang {

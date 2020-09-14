@@ -75,10 +75,12 @@ export default {
         return {
             tab: ['热点', '医学讲堂', '生活', '母婴', '辟谣'],
             botIdx: 0,
-            token: '13121557865:1595277654852:1e7a2d010716874a108ac59e82080baa',
-            patientId: 'ca8a7d342a804116a7f703b4bdc56002',
-            // token: '',
-            // patientId: '',
+            // token: '13121557865:1595277654852:1e7a2d010716874a108ac59e82080baa',
+            // patientId: 'ca8a7d342a804116a7f703b4bdc56002',
+            // openId: 'oTRY10fRZBmepPFQ1V7tqSBprZqg',
+            openId: '',
+            token: '',
+            patientId: '',
             pageNum: 10,
             pageSize: 0,
             quanbuWenzhang: [],
@@ -87,19 +89,18 @@ export default {
             loadUp: true,
             doctorTel: '',
             dingNum: 0,
-            openId: 'oTRY10fRZBmepPFQ1V7tqSBprZqg',
-            // openId: '',
+
             shouqi: true,
             unionId: '',
             doctorId: ''
         }
     },
     created() {
-        // this.openId = this.GetQueryString('openid');
-        cookie.set("token", this.token)
-        cookie.set("patientId", this.patientId)
-        // this.openIdMsg();
-        this.addLogin();
+        this.openId = this.GetQueryString('openid');
+        // cookie.set("token", this.token)
+        // cookie.set("patientId", this.patientId)
+        this.openIdMsg();
+        // this.addLogin();
         // this.findArtcleByType();
         // this.findDoctorBySubject();
         // this.findDoctorHot();
@@ -275,9 +276,7 @@ export default {
             })
         },
         gowenxq(id, item) {
-
             let detailItem = JSON.stringify(item);
-            // console.log('id=' + id + 'item=' + detailItem)
             this.$router.push({
                 name: 'wenzhangXq',
                 params: {
@@ -396,7 +395,7 @@ export default {
     // padding: 44px 42px 50px 0.3125rem;
     width: 98%;
     margin: 0.28rem auto;
-    font-size: 0.24rem;
+    font-size: 0.21rem;
 
     span {
         display: inline-block;
@@ -425,7 +424,7 @@ export default {
         margin-bottom: 0.3125rem;
 
         span {
-            font-size: 0.47rem;
+            font-size: 0.385rem;
             color: #fff;
             float: right;
             width: 80%;
@@ -435,7 +434,7 @@ export default {
         }
 
         em {
-            font-size: 0.28rem;
+            font-size: 0.24rem;
             color: #fff;
             float: right;
             padding-right: 0.3125rem;
@@ -463,7 +462,7 @@ export default {
 
         span {
             color: #fff;
-            font-size: 0.38rem;
+            font-size: 0.35rem;
             float: right;
             padding-right: 0.40625rem;
         }
@@ -482,7 +481,7 @@ export default {
         margin-top: 0.208rem;
 
         span {
-            font-size: 0.38rem;
+            font-size: 0.35rem;
             color: #fff;
             float: right;
             padding-right: 0.406rem;
@@ -495,13 +494,13 @@ export default {
     height: 2.625rem;
 
     h1 {
-        font-size: 0.30rem;
+        font-size: 0.32rem;
         padding: 0.3125rem 0 0.26rem 0.13rem;
         color: #606060;
 
         .gengduo {
             color: #00afc2;
-            font-size: 0.28rem;
+            font-size: 0.26rem;
             float: right;
         }
     }
@@ -531,17 +530,17 @@ export default {
 
 .tuijian {
     h1 {
-        font-size: 0.30rem;
+        font-size: 0.32rem;
         padding: 0.3125rem 0 0.26rem 0.447rem;
         color: #606060;
     }
 
     >div {
         width: 96%;
-        height: 3.125rem;
+        height: 3.3rem;
         border-bottom: 0.02rem solid #e9e9e9;
-        font-size: 0.26rem;
-        padding-bottom: .5rem;
+        font-size: 0.28rem;
+        padding-bottom: .66rem;
 
         img {
             float: left;
@@ -599,7 +598,7 @@ export default {
             text-align: center;
             line-height: 0.63rem;
             color: #b9b9b9;
-            font-size: 0.28rem;
+            font-size: 0.29rem;
             float: left;
         }
 
@@ -612,7 +611,6 @@ export default {
 
 .detailList {
     padding: 0 0.375rem;
-    padding-bottom: .5rem;
 
     >div {
         width: 100%;
@@ -621,20 +619,20 @@ export default {
         border-bottom: 0.02rem solid #f1f1f1;
 
         div {
-            font-size: 0.28rem;
+            font-size: 0.26rem;
             color: #7a7a7a;
             padding-top: 0.33rem;
             float: left;
-            width: 67%;
-            height: 0.8rem;
-            line-height: 0.35rem;
+            width: 70%;
+            height: 0.6rem;
+            line-height: 0.3125rem;
             overflow: hidden;
         }
 
         p {
-            font-size: 0.25rem;
+            font-size: 0.24rem;
             color: #bbbbbb;
-            padding-top: 0.3rem;
+            padding-top: 0.2333rem;
             float: left;
             width: 65%;
         }

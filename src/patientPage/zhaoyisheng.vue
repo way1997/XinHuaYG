@@ -124,7 +124,7 @@ export default {
     text-align: center;
     line-height: 0.73rem;
     color: #fff;
-    font-size: 0.20rem;
+    font-size: 0.26rem;
     float: left;
     margin: 0.15rem 0.2rem 0.15rem 0.2rem;
 }
@@ -157,7 +157,7 @@ export default {
 
     input::-webkit-input-placeholder {
         color: #c9c9c9;
-        font-size: 0.22rem;
+        font-size: 0.24rem;
     }
 }
 
@@ -170,7 +170,7 @@ export default {
     height: 0.4rem;
     line-height: 0.4rem;
     color: #00afc2;
-    font-size: 0.22rem;
+    font-size: 0.24rem;
     text-align: center;
     border: 0.01rem solid #00afc2;
     border-radius: 0.2rem;
@@ -191,7 +191,7 @@ export default {
             height: 0.94rem;
             background: #00afc2;
             color: #fff;
-            font-size: 0.23rem;
+            font-size: 0.26rem;
 
             span {
                 display: block;
@@ -244,15 +244,16 @@ export default {
 
             div:nth-of-type(1) {
                 color: #808080;
-                font-size: 0.22rem;
+                font-size: 0.28rem;
                 width: 60%;
                 padding-top: 0.45rem;
             }
 
             div:nth-of-type(2) {
                 color: #bababa;
-                font-size: 0.23rem;
+                font-size: 0.24rem;
                 width: 60%;
+                line-height: .3rem;
                 padding-top: 0.12rem;
             }
 
@@ -263,7 +264,7 @@ export default {
                 border-radius: 0.19rem;
                 text-align: center;
                 line-height: 0.36rem;
-                font-size: 0.21rem;
+                font-size: 0.24rem;
                 color: #fff;
                 position: absolute;
                 right: -0.1rem;

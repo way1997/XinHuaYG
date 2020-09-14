@@ -1,10 +1,10 @@
 <template>
 <div class="recordNum">
-    <div class="backHome" @touchstart="backHome">返回首页</div>
+    <div class="backHome" @click="backHome">返回首页</div>
     <div class="xian"></div>
     <div class="qitaxinxi">
         <h1>患者信息</h1>
-        <span class="lahei" @touchstart="showPull">拉入黑名单</span>
+        <span class="lahei" @click="showPull">拉入黑名单</span>
         <div class="info">
             <img :src="patientImage" alt="">
             <div>{{patientName}}</div>
@@ -16,25 +16,25 @@
             <p>既往病史:{{medicalHistory}}</p>
             <p>备注信息:{{patientRemarkName}}</p>
         </div>
-        <div class="liaotian" @touchstart="goLiaotian()">聊天</div>
-        <div class="bianji" @touchstart="bianjiBei">编辑</div>
+        <div class="liaotian" @click="goLiaotian()">聊天</div>
+        <div class="bianji" @click="bianjiBei">编辑</div>
     </div>
     <div class="xian"></div>
     <div class="chufang">
         <h1>历史处方</h1>
         <div class="listD" v-for="(item,index) in lists" :key="index">
-            <p>{{item.createDate}} <span @touchstart="lookfangan(item.prescriptionId)">查看</span><span @touchstart="showPull1(item.prescriptionId)">撤销</span></p>
+            <p>{{item.createDate}} <span @click="lookfangan(item.prescriptionId)">查看</span><span @click="showPull1(item.prescriptionId)">撤销</span></p>
             <div><span>辩证:</span>{{item.symptom}}</div>
             <div><span>处方:</span> <label v-for="(item,index) in item.details" :key="index">{{item.medicineName}}{{item.howWeight}}、</label></div>
-            <!-- <div class="chexiao" @touchstart="goZaixian">再次开方</div> -->
+            <!-- <div class="chexiao" @click="goZaixian">再次开方</div> -->
             <img src="../assets/img/lineW.png" alt="">
         </div>
     </div>
     <div class="bjxinxi" v-if="beizhu">
         <div>
             <textarea type="text" v-model="patientRemarkName" placeholder="请输入备注信息" />
-            <div @touchstart="quxiaoBei">取消</div>
-            <div @touchstart="submit">确认</div>
+            <div @click="quxiaoBei">取消</div>
+            <div @click="submit">确认</div>
         </div>
     </div>
     <confirm :text="tipText" ref="confirm" @cancel="cancel" @confirm="confirm"></confirm>
@@ -408,7 +408,7 @@ export default {
     }
 
     .listD {
-        width: 690px;
+        width: 95%;
         height: 326px;
         margin: 20px auto;
         background: rgba(255, 255, 255, 1);
@@ -419,7 +419,7 @@ export default {
         position: relative;
 
         p {
-            width: 650px;
+            width: 95%;
             height: 77px;
             line-height: 77px;
             color: #828282;

@@ -1,6 +1,6 @@
 <template>
 <div class="bukejian">
-    <div class="backHome" @touchstart="goBack">返回上一级</div>
+    <div class="backHome" @click="goBack">返回上一级</div>
     <div class="xian"></div>
     <div v-for="(item,index) in bukejian" :key="index">
         <div class='patient'>
@@ -16,7 +16,7 @@
                 </div>
                 <div class='time'>{{item.createDate}} 设置不可见</div>
             </div>
-            <div class='qu_but' @touchstart="quxiao(item.patientId)">取消不可见</div>
+            <div class='qu_but' @click="quxiao(item.patientId)">取消不可见</div>
         </div>
     </div>
 

@@ -1,12 +1,12 @@
 <template>
 <div class="zaixian">
-    <div class="backHome" @touchstart="goBack">返回上一级</div>
+    <div class="backHome" @click="goBack">返回上一级</div>
     <div class="xian"></div>
 
     <div class='tan_content' style=" white-space: nowrap;">
         <div style='width:100%;height:0px;'></div>
         <div v-for="(item,index) in list2" :key="index">
-            <div class='wrap002' @touchstart='chufang_xq(item.prescriptionId)'>
+            <div class='wrap002' @click='chufang_xq(item.prescriptionId)'>
                 <div class='wrap_tit'>
                     <div class='wrap_tit1'>{{item.patientName}}</div>
                     <div class='wrap_tit1 wrap_tit2' v-if="item.patientSex==2">女</div>

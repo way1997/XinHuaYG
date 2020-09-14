@@ -81,6 +81,23 @@ export function doctorChoosepri(list) {
     })
   })
 }
+
+
+//获取用户openId
+export function getOpendIdString(list) {
+  const url = baseURI + '/mkkMoblie/accessToken/openIdMsg1'
+
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      type: list.type,
+      token: list.token
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+
+
 //手机号关联患者
 export function findPatientByTel(list) {
   const url = baseURI + '/mkkMoblie/prescription/findPatientByTel'
@@ -257,7 +274,7 @@ export function linePrescription(list) {
       isAgent: list.isAgent, //是否待煎
       countPrice: list.countPrice, //总价
       modelPreId: list.modelPreId, //模板ID
-      brandId: list.brandId  //品牌ID
+      brandId: list.brandId //品牌ID
     })).then((res) => {
       resolve(res.data)
     })
@@ -285,7 +302,7 @@ export function saveOnlinePrescribing(list) {
       preEnjoin: list.preEnjoin, //医嘱
       isAgent: list.isAgent, //是否待煎
       countPrice: list.countPrice, //总价
-      photo1: list.photo1,//照片路径
+      photo1: list.photo1, //照片路径
       brandId: list.brandId
     })).then((res) => {
       resolve(res.data)
@@ -951,6 +968,7 @@ export function delChatNum(list) {
     })
   })
 }
+
 //认证-------------------
 //地区查省
 export function regionSlec() {

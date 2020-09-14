@@ -13,10 +13,9 @@ import { Lazyload } from 'mint-ui'
 import { Loadmore } from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import Vant from 'vant';
-import wx from "weixin-js-sdk"
 import 'vant/lib/index.css';
 Vue.prototype.axios = axios
-Vue.prototype.$wx = wx;
+
 fastclick.attach(document.body)
 
 Vue.use(infiniteScroll)

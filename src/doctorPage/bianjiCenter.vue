@@ -6,10 +6,12 @@
             <input ref="input" type="file" accept="image/*" multiple="multiple" @change="handleFileChange">
         </div>
         <p v-if="!ifBianji">更新头像</p>
-        <span class="back" v-if="ifBianji" @touchstart="back">返回</span>
-        <span class="bianji" v-if="ifBianji" @touchstart="bianji"><img src="../assets/img/bianji.png" alt="">编辑</span>
-        <span class="back" v-if="!ifBianji" @touchstart="quxiaoBj">取消编辑</span>
-        <span class="bianji" v-if="!ifBianji" @touchstart="querenXiu"><img src="../assets/img/bianji.png" alt="">确认修改</span>
+        <span class="back" v-if="ifBianji" @click="back">返回</span>
+        <span class="bianji" v-if="ifBianji" @click="bianji">
+            <!-- <img src="../assets/img/bianji.png" alt="">-->编辑</span> 
+        <span class="back" v-if="!ifBianji" @click="quxiaoBj">取消编辑</span>
+        <span class="bianji" v-if="!ifBianji" @click="querenXiu">
+            <!-- <img src="../assets/img/bianji.png" alt="">-->确认修改</span> 
     </div>
     <div class="info">
         <p><span>姓名:</span><input type="text" v-model="name" readonly></p>
@@ -21,7 +23,7 @@
     <div class="xian"></div>
     <div class="tiaoli">
         <h1>擅长调理</h1>
-        <div><span v-for="(item,index) in list_adept" :key="index">{{item.medicineSubjectName}} <img src="../assets/img/delete.png" alt="" v-if="!ifBianji" @touchstart="deletaJb(index)"></span><span class="tianjia" v-if="!ifBianji" @touchstart="showList">+</span></div>
+        <div><span v-for="(item,index) in list_adept" :key="index">{{item.medicineSubjectName}} <img src="../assets/img/delete.png" alt="" v-if="!ifBianji" @click="deletaJb(index)"></span><span class="tianjia" v-if="!ifBianji" @click="showList">+</span></div>
     </div>
     <div class="xian"></div>
     <div class="jianjie">
@@ -30,11 +32,11 @@
         <textarea name="" id="" v-model="remarks" v-if="!ifBianji"></textarea>
     </div>
     <div class="jbList" v-if="jbHide">
-        <span class="quxiaoHide" @touchstart="hideList">取消</span>
+        <span class="quxiaoHide" @click="hideList">取消</span>
         <div v-for="(item,index) in beGood" :key="index">
             <div class="section">
                 <div class="section1">{{item.name}}</div>
-                <div class="text_wrap7" v-for="(item,index) in item.list" :key="index" @touchstart="addBj(item)">{{item.beGoodName}}</div>
+                <div class="text_wrap7" v-for="(item,index) in item.list" :key="index" @click="addBj(item)">{{item.beGoodName}}</div>
             </div>
         </div>
     </div>
@@ -210,7 +212,6 @@ export default {
                 remarks: this.remarks
             }
             doctorEditorIntroduction(list).then((res) => {
-                console.log(res)
                 if (res.type == true) {
                     this.num1 = 1;
                 }
@@ -296,10 +297,13 @@ export default {
     }
 
     span {
-        color: #42cac6;
         font-size: 25px;
         position: absolute;
         top: 35px;
+        padding:10px 20px;
+        background:#00afc2;
+        color:#fff;
+        border-radius: 20px;
     }
 
     .back {

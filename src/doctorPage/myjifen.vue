@@ -1,6 +1,6 @@
 <template>
 <div class="jifen">
-    <div class="backHome" @touchstart="goBack">返回上一级</div>
+    <div class="backHome" @click="goBack">返回上一级</div>
     <div class="xian"></div>
     <div class="jifenZ">
         <p>{{zjifen}}积分</p>
@@ -132,7 +132,7 @@ export default {
     padding-top: 60px;
 
     .detail {
-        width: 100%;
+        width: 90%;
         height: 135px;
         border-bottom: 1px solid #cecece;
         font-size: 25px;

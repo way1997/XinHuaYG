@@ -8,21 +8,21 @@
         <span>药方详情:</span>
         <div class="list">
             <p v-for="(item,index) in arr" :key="index"><label>{{item.medicineName}} </label>
-                <input type="number" v-model='item.howWeight' readonly @input="lengthNum(index)" class="num1" @touchstart="hideYaocai(index)"><em>g</em>
+                <input type="number" v-model='item.howWeight' readonly @input="lengthNum(index)" class="num1" @click="hideYaocai(index)"><em>g</em>
                 <img class='guangbiao1' src='../assets/img/gb.gif' v-if="shuzi==index&&jianpanS">
-                <img src="../assets/img/delete.png" alt="" @touchstart="deleteYao(index)">
+                <img src="../assets/img/delete.png" alt="" @click="deleteYao(index)">
             </p>
-            <div class="addMoban" @touchstart="showList">编辑药材</div>
+            <div class="addMoban" @click="showList">编辑药材</div>
         </div>
     </div>
 
     <div class="nextStep">
-        <div @touchstart="quxiao">取消</div>
-        <div @touchstart="saveModel">完成添加</div>
+        <div @click="quxiao">取消</div>
+        <div @click="saveModel">完成添加</div>
     </div>
 
     <div class="yaocaiList" v-show="medicinalWraphid">
-        <div class="yaocaiselecet" style="">
+        <div class="yaocaiselecet">
             <div class="yaocaiselecets" style="white-space: nowrap;">
                 <div class="gundong_box" ref="yaoList">
                     <div class="medicinalWrap" v-for="(item,index) in yaocaiList" :key="index" @click="addYaocai(item)">
@@ -34,68 +34,68 @@
             </div>
         </div>
         <div class="inputWrap">
-            <input :type="typeInput" ref="yaocai" readonly @input="selcettext" @touchstart="inputclick" v-model="valuess" placeholder="请输入药材简称" style="overflow:visible;position:relative;">
+            <input :type="typeInput" ref="yaocai" readonly @input="selcettext" @click="inputclick" v-model="valuess" placeholder="请输入药材简称" style="overflow:visible;position:relative;">
             <img class='guangbiao1' src='../assets/img/gb.gif' v-if="gbxs1">
-            <span @touchstart="hideYao">取消</span>
+            <span @click="hideYao">取消</span>
         </div>
 
         <!--键盘-->
         <div class='keyboard' :style='{display:k1}'>
             <div class='left number'>
-                <div data-key="1" hover-class='active' hover-stay-time='100' @touchstart='sz1("1")'>1</div>
-                <div data-key="2" hover-class='active' hover-stay-time='100' @touchstart='sz2("2")'>2</div>
-                <div data-key="3" hover-class='active' hover-stay-time='100' @touchstart='sz3("3")'>3</div>
-                <div data-key="4" hover-class='active' hover-stay-time='100' @touchstart='sz4("4")'>4</div>
-                <div data-key="5" hover-class='active' hover-stay-time='100' @touchstart='sz5("5")'>5</div>
-                <div data-key="6" hover-class='active' hover-stay-time='100' @touchstart='sz6("6")'>6</div>
-                <div data-key="7" hover-class='active' hover-stay-time='100' @touchstart='sz7("7")'>7</div>
-                <div data-key="8" hover-class='active' hover-stay-time='100' @touchstart='sz8("8")'>8</div>
-                <div data-key="9" hover-class='active' hover-stay-time='100' @touchstart='sz9("9")'>9</div>
-                <div data-key="X" hover-class='active' hover-stay-time='100' @touchstart='sz10'><img src='../assets/img/sqjp.png' style='width:25px;height:25px;margin-top:12px;'></div>
-                <div data-key="0" hover-class='active' hover-stay-time='100' @touchstart='sz0("0")'>0</div>
-                <div data-key="." hover-class='active' hover-stay-time='100' @touchstart='sz(".")'>.</div>
+                <div data-key="1" hover-class='active' hover-stay-time='100' @click='sz1("1")'>1</div>
+                <div data-key="2" hover-class='active' hover-stay-time='100' @click='sz2("2")'>2</div>
+                <div data-key="3" hover-class='active' hover-stay-time='100' @click='sz3("3")'>3</div>
+                <div data-key="4" hover-class='active' hover-stay-time='100' @click='sz4("4")'>4</div>
+                <div data-key="5" hover-class='active' hover-stay-time='100' @click='sz5("5")'>5</div>
+                <div data-key="6" hover-class='active' hover-stay-time='100' @click='sz6("6")'>6</div>
+                <div data-key="7" hover-class='active' hover-stay-time='100' @click='sz7("7")'>7</div>
+                <div data-key="8" hover-class='active' hover-stay-time='100' @click='sz8("8")'>8</div>
+                <div data-key="9" hover-class='active' hover-stay-time='100' @click='sz9("9")'>9</div>
+                <div data-key="X" hover-class='active' hover-stay-time='100' @click='sz10'><img src='../assets/img/sqjp.png' style='width:25px;height:25px;margin-top:12px;'></div>
+                <div data-key="0" hover-class='active' hover-stay-time='100' @click='sz0("0")'>0</div>
+                <div data-key="." hover-class='active' hover-stay-time='100' @click='sz(".")'>.</div>
             </div>
             <div class='right ctr-btn'>
-                <div class='ctr-btn-item' hover-class='active' hover-stay-time='100' @touchstart='clear'><img src='../assets/img/hs.png' style='width:25px;height:25px;margin-top:35px;'></div>
-                <div class='ctr-btn-item' hover-class='active' hover-stay-time='100' @touchstart='comfromclick'>确认</div>
+                <div class='ctr-btn-item' hover-class='active' hover-stay-time='100' @click='clear'><img src='../assets/img/hs.png' style='width:25px;height:25px;margin-top:35px;'></div>
+                <div class='ctr-btn-item' hover-class='active' hover-stay-time='100' @click='comfromclick'>确认</div>
             </div>
         </div>
 
         <div class='keyboard02' :style='{display:k2}'>
             <div class='left02 number'>
                 <div class='hang'>
-                    <div data-key="q" hover-class='active' hover-stay-time='100' @touchstart='qq("q")'>Q</div>
-                    <div data-key="w" hover-class='active' hover-stay-time='100' @touchstart='ww("w")'>W</div>
-                    <div data-key="e" hover-class='active' hover-stay-time='100' @touchstart='ee("e")'>E</div>
-                    <div data-key="r" hover-class='active' hover-stay-time='100' @touchstart='rr("r")'>R</div>
-                    <div data-key="t" hover-class='active' hover-stay-time='100' @touchstart='tt("t")'>T</div>
-                    <div data-key="y" hover-class='active' hover-stay-time='100' @touchstart='yy("y")'>Y</div>
-                    <div data-key="u" hover-class='active' hover-stay-time='100' @touchstart='uu("u")'>U</div>
-                    <div data-key="i" hover-class='active' hover-stay-time='100' @touchstart='ii("i")'>I</div>
-                    <div data-key="o" hover-class='active' hover-stay-time='100' @touchstart='oo("o")'>O</div>
-                    <div data-key="p" hover-class='active' hover-stay-time='100' @touchstart='pp("p")'>P</div>
+                    <div data-key="q" hover-class='active' hover-stay-time='100' @click='qq("q")'>Q</div>
+                    <div data-key="w" hover-class='active' hover-stay-time='100' @click='ww("w")'>W</div>
+                    <div data-key="e" hover-class='active' hover-stay-time='100' @click='ee("e")'>E</div>
+                    <div data-key="r" hover-class='active' hover-stay-time='100' @click='rr("r")'>R</div>
+                    <div data-key="t" hover-class='active' hover-stay-time='100' @click='tt("t")'>T</div>
+                    <div data-key="y" hover-class='active' hover-stay-time='100' @click='yy("y")'>Y</div>
+                    <div data-key="u" hover-class='active' hover-stay-time='100' @click='uu("u")'>U</div>
+                    <div data-key="i" hover-class='active' hover-stay-time='100' @click='ii("i")'>I</div>
+                    <div data-key="o" hover-class='active' hover-stay-time='100' @click='oo("o")'>O</div>
+                    <div data-key="p" hover-class='active' hover-stay-time='100' @click='pp("p")'>P</div>
                 </div>
                 <div class='hang' style='margin:5px 0 5px 5%;'>
-                    <div data-key="a" hover-class='active' hover-stay-time='100' @touchstart='aa("a")'>A</div>
-                    <div data-key="s" hover-class='active' hover-stay-time='100' @touchstart='ss("s")'>S</div>
-                    <div data-key="d" hover-class='active' hover-stay-time='100' @touchstart='dd("d")'>D</div>
-                    <div data-key="f" hover-class='active' hover-stay-time='100' @touchstart='ff("f")'>F</div>
-                    <div data-key="g" hover-class='active' hover-stay-time='100' @touchstart='gg("g")'>G</div>
-                    <div data-key="h" hover-class='active' hover-stay-time='100' @touchstart='hh("h")'>H</div>
-                    <div data-key="j" hover-class='active' hover-stay-time='100' @touchstart='jj("j")'>J</div>
-                    <div data-key="k" hover-class='active' hover-stay-time='100' @touchstart='kk("k")'>K</div>
-                    <div data-key="l" hover-class='active' hover-stay-time='100' @touchstart='ll("l")'>L</div>
+                    <div data-key="a" hover-class='active' hover-stay-time='100' @click='aa("a")'>A</div>
+                    <div data-key="s" hover-class='active' hover-stay-time='100' @click='ss("s")'>S</div>
+                    <div data-key="d" hover-class='active' hover-stay-time='100' @click='dd("d")'>D</div>
+                    <div data-key="f" hover-class='active' hover-stay-time='100' @click='ff("f")'>F</div>
+                    <div data-key="g" hover-class='active' hover-stay-time='100' @click='gg("g")'>G</div>
+                    <div data-key="h" hover-class='active' hover-stay-time='100' @click='hh("h")'>H</div>
+                    <div data-key="j" hover-class='active' hover-stay-time='100' @click='jj("j")'>J</div>
+                    <div data-key="k" hover-class='active' hover-stay-time='100' @click='kk("k")'>K</div>
+                    <div data-key="l" hover-class='active' hover-stay-time='100' @click='ll("l")'>L</div>
                 </div>
                 <div class='hang'>
-                    <div data-key="sqjp" hover-class='active' hover-stay-time='100' @touchstart='k2xsclick' style='width:55px'><img src='../assets/img/sqjp.png' style='width:25px;height:25px;margin-top:12px;'></div>
-                    <div data-key="z" hover-class='active' hover-stay-time='100' @touchstart='zz("z")'>Z</div>
-                    <div data-key="x" hover-class='active' hover-stay-time='100' @touchstart='xx("x")'>X</div>
-                    <div data-key="c" hover-class='active' hover-stay-time='100' @touchstart='cc("c")'>C</div>
-                    <div data-key="v" hover-class='active' hover-stay-time='100' @touchstart='vv("v")'>V</div>
-                    <div data-key="b" hover-class='active' hover-stay-time='100' @touchstart='bb("b")'>B</div>
-                    <div data-key="n" hover-class='active' hover-stay-time='100' @touchstart='nn("n")'>N</div>
-                    <div data-key="m" hover-class='active' hover-stay-time='100' @touchstart='mm("m")'>M</div>
-                    <div data-key="hs" hover-class='active' hover-stay-time='100' @touchstart='delkey' style='width:50px'><img src='../assets/img/hs.png' style='width:25px;height:25px;margin-top:11px;'></div>
+                    <div data-key="sqjp" hover-class='active' hover-stay-time='100' @click='k2xsclick' style='width:55px'><img src='../assets/img/sqjp.png' style='width:25px;height:25px;margin-top:12px;'></div>
+                    <div data-key="z" hover-class='active' hover-stay-time='100' @click='zz("z")'>Z</div>
+                    <div data-key="x" hover-class='active' hover-stay-time='100' @click='xx("x")'>X</div>
+                    <div data-key="c" hover-class='active' hover-stay-time='100' @click='cc("c")'>C</div>
+                    <div data-key="v" hover-class='active' hover-stay-time='100' @click='vv("v")'>V</div>
+                    <div data-key="b" hover-class='active' hover-stay-time='100' @click='bb("b")'>B</div>
+                    <div data-key="n" hover-class='active' hover-stay-time='100' @click='nn("n")'>N</div>
+                    <div data-key="m" hover-class='active' hover-stay-time='100' @click='mm("m")'>M</div>
+                    <div data-key="hs" hover-class='active' hover-stay-time='100' @click='delkey' style='width:50px'><img src='../assets/img/hs.png' style='width:25px;height:25px;margin-top:11px;'></div>
                 </div>
             </div>
         </div>
@@ -140,8 +140,8 @@ export default {
             yaocaiListkong: false,
             shuzi: 0,
             jianpanS: false,
-            confirmList: [],
-            tipText: ''
+            confirmList:[],
+            tipText:''
         }
     },
     created() {
@@ -164,7 +164,6 @@ export default {
             this.medicinalWraphid = true
             this.yaocaiList = []
             this.valuess = ''
-
             this.k2 = 'block'
             this.k1 = 'none'
         },
@@ -316,7 +315,7 @@ export default {
                 medicineName: data.drugName
             }
             tabooType(list).then((res) => {
-                console.log(res);
+            	console.log(res);
                 if (res.status == 3) {
                     this.arr.push(listArr);
                     this.shuzi = this.arr.length - 1;
@@ -328,10 +327,10 @@ export default {
                     this.$refs.confirm.show();
                     this.tipText = '您选择的药品与已开药品相反，确定开药吗？'
                 } else if (res.status == 1) {
-                    this.$refs.confirm.show();
+                	this.$refs.confirm.show();
                     this.tipText = '您选择的药品与已开药品相畏，确定开药吗？'
                 } else if (res.status == 2) {
-                    this.$refs.confirm.show();
+                	this.$refs.confirm.show();
                     this.tipText = '您选择的药品妊娠禁忌，确定开药吗？'
                 }
             })
@@ -371,7 +370,7 @@ export default {
         },
         sz0(num) {
             // this.jianpanS = false;
-            if (this.arr[this.shuzi].howWeight.length > 2) {
+            if (this.arr[this.shuzi].howWeight.length >= 2) {
                 this.$toast("最高只能输入99")
                 this.arr[this.shuzi].howWeight = this.arr[this.shuzi].howWeight.substring(-1, 2);
             } else {
@@ -381,7 +380,7 @@ export default {
         sz1(num) {
             // this.jianpanS = false;
             //console.log(this.arr[this.shuzi].howWeight.length)
-            if (this.arr[this.shuzi].howWeight.length > 2) {
+            if (this.arr[this.shuzi].howWeight.length >= 2) {
                 this.$toast("最高只能输入99")
                 this.arr[this.shuzi].howWeight = this.arr[this.shuzi].howWeight.substring(-1, 2);
             } else {
@@ -390,7 +389,7 @@ export default {
         },
         sz2(num) {
             // this.jianpanS = false;
-            if (this.arr[this.shuzi].howWeight.length > 2) {
+            if (this.arr[this.shuzi].howWeight.length >= 2) {
                 this.$toast("最高只能输入99")
                 this.arr[this.shuzi].howWeight = this.arr[this.shuzi].howWeight.substring(-1, 2);
             } else {
@@ -399,7 +398,7 @@ export default {
         },
         sz3(num) {
             // this.jianpanS = false;
-            if (this.arr[this.shuzi].howWeight.length > 2) {
+            if (this.arr[this.shuzi].howWeight.length >= 2) {
                 this.$toast("最高只能输入99")
                 this.arr[this.shuzi].howWeight = this.arr[this.shuzi].howWeight.substring(-1, 2);
             } else {
@@ -408,7 +407,7 @@ export default {
         },
         sz4(num) {
             // this.jianpanS = false;
-            if (this.arr[this.shuzi].howWeight.length > 2) {
+            if (this.arr[this.shuzi].howWeight.length >= 2) {
                 this.$toast("最高只能输入99")
                 this.arr[this.shuzi].howWeight = this.arr[this.shuzi].howWeight.substring(-1, 2);
             } else {
@@ -417,7 +416,7 @@ export default {
         },
         sz5(num) {
             // this.jianpanS = false;
-            if (this.arr[this.shuzi].howWeight.length > 2) {
+            if (this.arr[this.shuzi].howWeight.length >= 2) {
                 this.$toast("最高只能输入99")
                 this.arr[this.shuzi].howWeight = this.arr[this.shuzi].howWeight.substring(-1, 2);
             } else {
@@ -426,7 +425,7 @@ export default {
         },
         sz6(num) {
             // this.jianpanS = false;
-            if (this.arr[this.shuzi].howWeight.length > 2) {
+            if (this.arr[this.shuzi].howWeight.length >= 2) {
                 this.$toast("最高只能输入99")
                 this.arr[this.shuzi].howWeight = this.arr[this.shuzi].howWeight.substring(-1, 2);
             } else {
@@ -435,7 +434,7 @@ export default {
         },
         sz7(num) {
             // this.jianpanS = false;
-            if (this.arr[this.shuzi].howWeight.length > 2) {
+            if (this.arr[this.shuzi].howWeight.length >= 2) {
                 this.$toast("最高只能输入99")
                 this.arr[this.shuzi].howWeight = this.arr[this.shuzi].howWeight.substring(-1, 2);
             } else {
@@ -444,7 +443,7 @@ export default {
         },
         sz8(num) {
             // this.jianpanS = false;
-            if (this.arr[this.shuzi].howWeight.length > 2) {
+            if (this.arr[this.shuzi].howWeight.length >= 2) {
                 this.$toast("最高只能输入99")
                 this.arr[this.shuzi].howWeight = this.arr[this.shuzi].howWeight.substring(-1, 2);
             } else {
@@ -453,7 +452,7 @@ export default {
         },
         sz9(num) {
             // this.jianpanS = false;
-            if (this.arr[this.shuzi].howWeight.length > 2) {
+            if (this.arr[this.shuzi].howWeight.length >= 2) {
                 this.$toast("最高只能输入99")
                 this.arr[this.shuzi].howWeight = this.arr[this.shuzi].howWeight.substring(-1, 2);
             } else {
@@ -799,7 +798,7 @@ div.medicinalWrap {
 div.gundong_box {
     width: 100%;
     height: 100%;
-    overflow-x: scroll;
+    overflow-x:scroll;
 }
 
 //键盘

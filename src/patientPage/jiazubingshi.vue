@@ -4,14 +4,14 @@
     <div class="tishi">请添加家族病史，以方便医生的诊断治疗！</div>
     <div class="zi" v-for="(item,index) in list" :key="index">
         {{item.name}}
-        <img src="../assets/img/shanchu.png" @touchstart='shanchu(item.id)' class="tu2">
+        <img src="../assets/img/shanchu.png" @click='shanchu(item.id)' class="tu2">
     </div>
     <div class="tou" v-if="irritability">
         <input class="ipu" v-model='inputtext' placeholder='输入家族病史(仅限7个字)' :disabled="isdisplay" type='text' maxlength='7'>
-        <div class="sure" @touchstart='surew'>确定</div>
-        <div class="sure1" @touchstart='quxiao'>取消</div>
+        <div class="sure" @click='surew'>确定</div>
+        <div class="sure1" @click='quxiao'>取消</div>
     </div>
-    <img src='../assets/img/tian.png' class="tu" @touchstart='tu1'>
+    <img src='../assets/img/tian.png' class="tu" @click='tu1'>
 
 </div>
 </template>

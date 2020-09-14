@@ -1,6 +1,6 @@
 <template>
 <div class="zitidian">
-    <div class="backHome" @touchstart="goBack">返回上一级</div>
+    <div class="backHome" @click="goBack">返回上一级</div>
     <div class="xian"></div>
     <div class="textChu">
         <p>已将调理方案发送给患者</p>

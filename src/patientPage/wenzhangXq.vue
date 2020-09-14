@@ -1,6 +1,6 @@
 <template>
-<div class="wenzhangXq">
-    <div class="backHome" @click="goBack">返回上一级</div>
+<div class="wenzhangXq" id="wenzhangXQ" ref="wenzhangXq">
+    <div class="backHome" @touchstart="goBack">返回上一级</div>
     <div class="xian" style="clear:both;"></div>
     <div class="tuijian" v-if="detailXq.doctorLevelName">
         <div>
@@ -8,7 +8,7 @@
             <div>{{detailXq.sources}} {{detailXq.doctorLevelName}}</div>
             <div>{{detailXq.doctorHospitalName}} {{detailXq.departmentName}}</div>
             <div><span v-for="(item,index) in detailXq.list_adept" :key="index">{{item.medicineSubjectName}}</span></div>
-            <span class="zixun" @click="goDetail(item.doctorId)"><img src="../assets/img/xiaoxi1.png" alt="">立即咨询</span>
+            <span class="zixun" @touchstart="goDetail(item.doctorId)"><img src="../assets/img/xiaoxi1.png" alt="">立即咨询</span>
         </div>
     </div>
     <div class="time">{{time}}</div>
@@ -24,6 +24,7 @@ import {
 import HeadTop from 'base/header/header'
 import router from '../router'
 import cookie from "js-cookie"
+import $ from 'jquery'
 export default {
     name: "wenzhangXq",
     data() {
@@ -36,10 +37,15 @@ export default {
         }
     },
     created() {
+        $('#wenzhangXQ').scrollTop(0);
         this.titleId = this.$route.params.id;
         this.detailXq = JSON.parse(this.$route.params.item);
-        console.log(this.titleId, this.detailXq)
         this.findArticleOne();
+
+    },
+    mounted() {
+        console.log()
+
     },
     computed: {
 
@@ -77,6 +83,10 @@ export default {
 <style lang="less" scoped>
 @import '../assets/less/base.less';
 
+.wenzhangXq {
+    overflow: hidden;
+}
+
 .backHome {
     width: 81.46%;
     height: 0.76rem;
@@ -85,7 +95,7 @@ export default {
     text-align: center;
     line-height: 0.76rem;
     color: #fff;
-    font-size: 0.25rem;
+    font-size: 0.32rem;
     margin: 0 auto;
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
@@ -106,6 +116,7 @@ export default {
         border-bottom: 1px solid #e9e9e9;
         font-size: .25rem;
         position: relative;
+        padding-bottom: 1.6rem;
 
         >img {
             float: left;
@@ -138,7 +149,7 @@ export default {
                 span {
                     float: left;
                     margin-right: .1rem;
-                    padding: .8rem .15rem;
+                    padding: .1rem .15rem;
                     background: #00afc2;
                     border-radius: .3rem;
                     margin-bottom: .1rem;
@@ -164,13 +175,15 @@ export default {
 }
 
 .wenzhang {
-    padding: .1rem 30px;
+    padding: .1rem .5rem;
     font-size: .25rem;
     line-height: .5rem;
 
     section {
         line-height: .3rem;
+
     }
+
 }
 
 .time {

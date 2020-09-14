@@ -122,14 +122,14 @@ export default {
 }
 
 .backHome {
-    width: 88.133%;
+    width: 81.666%;
     height: 0.76rem;
     background: #00afc2;
     border-radius: 0.13rem;
     text-align: center;
     line-height: 0.76rem;
     color: #fff;
-    font-size: 0.25rem;
+    font-size: 0.30rem;
     margin: 0 auto;
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
@@ -147,7 +147,7 @@ export default {
     height: 2.28rem;
     margin: 0 auto;
     color: #828282;
-    font-size: 0.25rem;
+    font-size: 0.28rem;
     text-align: center;
     -webkit-box-shadow: 0.01rem 0.1rem 0.39rem 0.02rem rgba(4, 0, 0, 0.35);
     box-shadow: 0.01rem 0.1rem 0.39rem 0.02rem rgba(4, 0, 0, 0.35);
@@ -158,7 +158,7 @@ export default {
 .top .tu .zi {
     width: 100%;
     color: #828282;
-    font-size: 0.25rem;
+    font-size: 0.28rem;
     text-align: center;
     padding-top: 0.2rem;
 }
@@ -191,6 +191,7 @@ export default {
     margin-bottom: .46rem;
     margin-right: 0.36rem;
     margin-top: 0.2rem;
+    margin-left: .1rem;
 }
 
 .top1 .center .cengter2:nth-of-type(3n) {

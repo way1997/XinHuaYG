@@ -11,7 +11,7 @@
                 <div class="shengri">{{chengyuanBirth}}</div>
             </div>
         </div>
-        <div class="topRightBox" @touchstart="chakanxinxi">
+        <div class="topRightBox" @click="chakanxinxi">
             <div class="chakanTit">修改/完善资料</div>
             <img src="../assets/img/you2.png" class="youjiantou">
         </div>

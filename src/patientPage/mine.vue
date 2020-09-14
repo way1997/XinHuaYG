@@ -131,7 +131,7 @@ export default {
         }
 
         p {
-            font-size: 0.26rem;
+            font-size: 0.32rem;
             color: #606060;
             padding-top: 0.1rem;
             text-align: center;
@@ -152,7 +152,7 @@ export default {
         line-height: 0.875rem;
 
         span {
-            font-size: 0.26rem;
+            font-size: 0.30rem;
             color: #7B7B7B;
             float: left;
             padding-left: 0.208rem;

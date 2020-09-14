@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>悦合同</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/reset.css"> -->
+    <link href="css/read.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <!-- 头部导航条 -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- logo和折叠按钮 -->
+            <div class="navbar-header">
+                <!-- logo -->
+                <h1>
+                    <a href="">悦合同-合同从此简单</a>
+                </h1>
+                <div class="slogan">
+                    <span></span>
+                    合同从此简单
+                </div>
+            </div>
+
+            <div class="navbar-right ">
+                <!-- 可能一行摆不下 加浮动 让他们一行放得下 -->
+                <div class="list">
+                    <ul>
+                        <li>
+                            <a href="">阅读</a>
+                        </li>
+                        <li>
+                            <a href="">悦活动</a>
+                        </li>
+                        <li>
+                            <a href="">智能合同</a>
+                        </li>
+                        <li>
+                            <a href="">写合同</a>
+                        </li>
+                        <li>
+                            <a href="">审合同</a>
+                        </li>
+                    </ul>
+                    <span></span>
+                </div>
+                <!-- 折叠按钮 -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- 缩小之后会被折叠的元素 -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul>
+                        <li>
+                            <a href="" data-toggle="modal" data-target="#myModal">
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                登陆</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="body">
+        <div class="container">
+            <div class="row">
+                <div class="top col-xs-12 col-md-12 col-sm-12">
+                    <h1>悦读 </h1>
+                    <p>接地气的法律原创文章 · 看得懂的法律研究报告</p>
+                </div>
+                <div class="shen col-xs-12 col-md-12 col-sm-12">
+                    <ul>
+                        <script type="text/template" id="template">
+                        <li class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="tou">
+                                <h2>
+                                    <a href="#"><%=title%></a>
+                                </h2>
+                                <div class="new-r-sum"><%=content%></div>
+                            </div>
+                            <div class="xia">
+                                <div class="nei">
+                                    <span>
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                        <%=shijian%>
+                                    </span>
+                                    <span class="ri">
+                                        <i class="glyphicon glyphicon-eye-open"></i>
+                                        <%=comment%>
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    </script>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <div id="pn" class="pn"></div>
+</body>
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/jquery.lazyload.min.js"></script>
+<script src="js/underscore-min.js"></script>
+<script src="js/PageNav.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    var templateStr = $("#template").html();
+    var compiled = _.template(templateStr);
+    var pageNav = null;
+    var a = 0;
+    if (!window.location.hash) {
+        window.location.hash = "1";
+    }
+    var page = parseInt(window.location.hash.substr(1));
+    getStudent(1);
+    getStudent(page);
+    //请求页面
+    function getStudent(pageNumber) {
+        var self = this;
+        $.get("read.php?page=" + pageNumber + "&pagesize=16", function (data) {
+
+            //转为对象
+            var dataobj = typeof data == "object" ? data : eval("(" + data + ")");
+             console.log(data)
+            //数组
+            var list = dataobj.result;
+            //计算总页数
+            var pageAmount = Math.ceil(dataobj.count / 16);
+            //删除之前的所有tr
+             $(".shen ul li").remove();
+            //遍历字典，组建DOM上树
+            _.each(list, function (dictionary) {
+                var str = compiled(dictionary);
+                $(str).appendTo(".shen ul");
+            });
+            $("#pn a").click(function () {
+                $(window).scrollTop(0)
+
+            })
+            //验证导航条是否存在，如果不存在new一个
+            if (pageNav == null) {
+                pageNav = new PageNav({
+                    "boxid": "pn",
+                    "nowpage": page,
+                    "pageAmount": pageAmount,
+                    "change": function (index) {
+                        getStudent(index);
+                        window.location.hash = index;
+                    }
+                })
+            }
+            lazyLoad();
+            $(window).scroll(lazyLoad);
+
+
+            function lazyLoad() {
+
+                //已经卷动的高度
+                var A = $(window).scrollTop();
+                // console.log("scrolltop" + A)
+                //窗口高度
+                var B = $(window).height();
+                // console.log("heighty" + B)
+                //遍历页面上所有有lazy类名的图片，看看它是否在视口中显示
+                $(".lazy").each(function () {
+                    //净位置
+                    var C = $(this).offset().top;
+                    //如果显示了
+                    if (A + B > C - 200) {
+                        //此时遍历到的这个图片设置src属性为自己的data-src属性
+                        $(this).attr("src", $(this).attr("data-src"));
+                        //去掉这个元素的lazy类名
+                        $(this).removeClass("lazy");
+                    }
+                });
+            }
+        });
+    }
+
+</script>
+
+</html>

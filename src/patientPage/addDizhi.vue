@@ -10,8 +10,8 @@
     </div>
     <div class="xinxi">
         <label>所在地区:</label>
-        <!-- <input type="text" placeholder="填写所在地区" @touchstart="chooseDizhi "> -->
-        <div class="picker" @touchstart="chooseDizhi">
+        <!-- <input type="text" placeholder="填写所在地区" @click="chooseDizhi "> -->
+        <div class="picker" @click="chooseDizhi">
             {{shengtext}}{{shitext}}{{qutext}}
         </div>
     </div>
@@ -22,21 +22,21 @@
     <div class="shezhi">
         <p>设置默认地址</p>
         <p>提醒：每次下单默认推荐使用该地址</p>
-        <img :src="kaiguan==0?require('../assets/img/kaiguan.png'):require('../assets/img/kaiguan1.png')" alt="" @touchstart="changeKai">
+        <img :src="kaiguan==0?require('../assets/img/kaiguan.png'):require('../assets/img/kaiguan1.png')" alt="" @click="changeKai">
     </div>
-    <div class="queren" @touchstart="patientAddAdress">
+    <div class="queren" @click="patientAddAdress">
         确认保存
     </div>
-    <div class='quxiao' @touchstart="goBack">取消并返回</div>
+    <div class='quxiao' @click="goBack">取消并返回</div>
 
-    <div class='zhezhao' v-show="yincang" @touchstart="hideAddress"></div>
+    <div class='zhezhao' v-show="yincang" @click="hideAddress"></div>
     <div class='xinti' v-show="yincang">
         <div class='tan_content'>
             <!-- 省 -->
-            <div class='sheng' v-show="sheng1" v-for="(item,index) in sheng" :key="index" @touchstart="getCity(item.id,item.name)">{{item.name}}</div>
+            <div class='sheng' v-show="sheng1" v-for="(item,index) in sheng" :key="index" @click="getCity(item.id,item.name)">{{item.name}}</div>
 
-            <div class='sheng' v-show="shi1" v-for="(item,index) in shi" :key="index+'1'" @touchstart="getArea(item.id,item.name)">{{item.name}}</div>
-            <div class='sheng' v-show="qu1" v-for="(item,index) in qu" :key="index+'2'" @touchstart="chooseXian(item.name,item.id)">{{item.name}}</div>
+            <div class='sheng' v-show="shi1" v-for="(item,index) in shi" :key="index+'1'" @click="getArea(item.id,item.name)">{{item.name}}</div>
+            <div class='sheng' v-show="qu1" v-for="(item,index) in qu" :key="index+'2'" @click="chooseXian(item.name,item.id)">{{item.name}}</div>
         </div>
     </div>
 </div>
@@ -268,7 +268,7 @@ export default {
         line-height: 1.08rem;
 
         label {
-            font-size: 0.25rem;
+            font-size: 0.28rem;
             color: #828282;
             float: left;
             width: 24%;
@@ -282,7 +282,7 @@ export default {
             width: 52%;
             height: 0.54rem;
             border: 0.01rem solid #dadada;
-            font-size: 0.25rem;
+            font-size: 0.27rem;
             padding-left: 0.2rem;
             border-radius: 0.1rem;
             margin-top: 0.25rem;
@@ -298,20 +298,20 @@ export default {
 
 input::-webkit-input-placeholder {
     color: #c9c9c9;
-    font-size: .25rem;
+    font-size: .28rem;
 }
 
 .shezhi {
     position: relative;
 
     p:nth-of-type(1) {
-        font-size: 0.25rem;
+        font-size: .28rem;
         color: #797979;
         padding: 0.38rem 0 0 0.25rem;
     }
 
     p:nth-of-type(2) {
-        font-size: 0.25rem;
+        font-size: 0.28rem;
         color: #AFAFAF;
         padding: 0.2rem 0 0 0.25rem;
     }
@@ -332,7 +332,7 @@ input::-webkit-input-placeholder {
     border-radius: 0.13rem;
     text-align: center;
     line-height: 0.76rem;
-    font-size: 0.3rem;
+    font-size: 0.32rem;
     color: #fff;
     margin: 0 auto;
     margin-top: 0.8rem;
@@ -341,7 +341,7 @@ input::-webkit-input-placeholder {
 .quxiao {
     width: 100%;
     text-align: center;
-    font-size: .25rem;
+    font-size: .28rem;
     color: #00B0C2;
     padding-top: .50rem;
 }

@@ -1,6 +1,6 @@
 <template>
 <div class="liwu">
-    <div class="backHome" @touchstart="goBack">返回个人中心</div>
+    <div class="backHome" @click="goBack">返回个人中心</div>
     <div class="warp">
         <div class="foot">
             <div><img src="../assets/img/hongquan_03.png"> 收到{{numbern}}次答谢</div>

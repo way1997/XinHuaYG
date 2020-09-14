@@ -140,14 +140,14 @@ page {
 }
 
 .backHome {
-    width: 81.4%;
+    width: 81.46%;
     height: 0.76rem;
     background: #00afc2;
     border-radius: 0.13rem;
     text-align: center;
     line-height: 0.76rem;
     color: #fff;
-    font-size: 0.25rem;
+    font-size: 0.32rem;
     margin: 0 auto;
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
@@ -208,7 +208,7 @@ page {
 }
 
 .name {
-    font-size: .26rem;
+    font-size: .28rem;
     color: #666666;
     letter-spacing: 2px;
 }
@@ -219,7 +219,7 @@ page {
     flex-wrap: nowrap;
     justify-content: flex-start;
     margin-top: .12rem;
-    font-size: .26rem;
+    font-size: .27rem;
     color: #999999;
 }
 

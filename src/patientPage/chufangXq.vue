@@ -16,7 +16,6 @@
             <p><span>辩证:</span><label>{{lists.symptom}}</label></p>
             <p><span>类型:</span><label v-if="medicineType==1">中药</label></p>
             <p><span>药态:</span><label>{{lists.preShapeName}}</label></p>
-
             <p class="yaofang"><span>药方:</span><label class="yaoList" v-for="(item,index) in lists.lists_medicine" :key="index">{{item.medicineName}}{{item.howWeight}}</label></p>
             <p class="jiFu"><span>剂量:</span><label>共{{lists.preNum}}剂</label></p>
         </div>
@@ -168,10 +167,17 @@ export default {
             }
             addressList(list).then((res) => {
                 this.shou = res.data;
+                console.log(res)
+                if (res.data.length == 0) {
+                    alert("无收货地址请先添加收货地址！");
+                    this.$router.push('/addDizhi')
+                } else {
+                    this.patientPayPage();
+                }
                 // for (var i = 0; i < res.data.length; i++) {
                 // if (res.data[i].isDefault == "1") {
                 //   this.addressId = res.data[i].recipientId;
-                this.patientPayPage();
+
                 // }
                 //  }
 
@@ -323,14 +329,14 @@ export default {
 @import "../assets/less/base.less";
 
 .backHome {
-    width: 81.46%;
+    width: 81.666%;
     height: 0.76rem;
     background: #00afc2;
     border-radius: 0.13rem;
     text-align: center;
     line-height: 0.76rem;
     color: #fff;
-    font-size: 0.25rem;
+    font-size: 0.32rem;
     margin: 0 auto;
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
@@ -351,7 +357,7 @@ export default {
         height: 0.53rem;
         line-height: 0.53rem;
         text-align: center;
-        font-size: 0.225rem;
+        font-size: .29rem;
         color: #fff;
         background: #00afc2;
         border-radius: 0 0.27rem 0.27rem 0;
@@ -368,7 +374,7 @@ export default {
             height: 0.77rem;
             border-bottom: 0.01rem solid #f5f5f5;
             color: #828282;
-            font-size: 0.22rem;
+            font-size: 0.28rem;
             line-height: 0.77rem;
             margin: 0 auto;
             padding: 0 0.1rem;
@@ -439,7 +445,7 @@ export default {
 
     div:nth-of-type(1) {
         width: 53%;
-        font-size: .23rem;
+        font-size: .26rem;
         color: #828282;
         line-height: 0.31rem;
         padding: 0.36rem 0 0 0.32rem;
@@ -504,13 +510,13 @@ export default {
             }
 
             div:nth-of-type(1) {
-                font-size: 0.25rem;
+                font-size: 0.2666rem;
                 color: #757575;
                 padding-top: 0.5rem;
             }
 
             div:nth-of-type(2) {
-                font-size: 0.25rem;
+                font-size: 0.2666rem;
                 color: #B7B7B7;
                 padding-top: 0.25rem;
 

@@ -253,14 +253,14 @@ export default {
 @import "../assets/less/base.less";
 
 .backHome {
-    width: 88.133%;
+    width: 81.666%;
     height: 0.76rem;
     background: #00afc2;
     border-radius: 0.13rem;
     text-align: center;
     line-height: 0.76rem;
     color: #fff;
-    font-size: 0.25rem;
+    font-size: 0.30rem;
     margin: 0 auto;
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
@@ -283,8 +283,8 @@ export default {
     position: relative;
 
     img {
-        width: .89rem;
-        height: 48%;
+        width: .98rem;
+        height: .98rem;
         border-radius: 50%;
         float: left;
         margin-top: 0.38rem;
@@ -298,7 +298,7 @@ export default {
 
     div:nth-of-type(1) {
         color: #808080;
-        font-size: 0.25rem;
+        font-size: 0.32rem;
         width: 60%;
         padding-top: 0.37rem;
     }
@@ -306,9 +306,10 @@ export default {
     div:nth-of-type(2),
     div:nth-of-type(3) {
         color: #bababa;
-        font-size: 0.23rem;
+        font-size: 0.26rem;
         width: 60%;
         padding-top: 0.1rem;
+        line-height: .3rem;
     }
 
     div:nth-of-type(4) {
@@ -318,7 +319,7 @@ export default {
         border-radius: 0.13rem;
         text-align: center;
         line-height: 0.56rem;
-        font-size: 0.22rem;
+        font-size: 0.28rem;
         color: #fff;
         position: absolute;
         right: 0.1rem;
@@ -335,14 +336,14 @@ export default {
     border-bottom: 0.01rem solid #ececec;
 
     h1 {
-        font-size: 0.23rem;
+        font-size: 0.32rem;
         padding: 0.3rem 0 0.25rem 0.13rem;
         color: #7c7c7c;
     }
 
     div {
         color: #fff;
-        font-size: 0.24rem;
+        font-size: 0.26rem;
 
         span {
             float: left;
@@ -363,22 +364,22 @@ export default {
     border-bottom: 0.01rem solid #ececec;
 
     h1 {
-        font-size: 25px;
-        padding: 30px 0 25px 13px;
+        font-size: 0.32rem;
+        padding: 0.3rem 0 0.25rem 0.13rem;
         color: #7c7c7c;
     }
 
     p {
-        font-size: 24px;
+        font-size: .26rem;
         color: #b4b4b4;
-        line-height: 37px;
-        padding: 0 10px;
+        line-height: .37rem;
+        padding: 0 .1rem;
     }
 }
 
 .wenzhang {
     h1 {
-        font-size: 0.25rem;
+        font-size: 0.32rem;
         padding: 0.3rem 0 0.25rem 0.43rem;
         color: #7c7c7c;
     }
@@ -390,10 +391,10 @@ export default {
             width: 100%;
             height: 1.57rem;
             border-bottom: 0.01rem solid #f1f1f1;
-            padding-bottom: 1.2rem;
+            padding-bottom: 1.666rem;
 
             div {
-                font-size: 25px;
+                font-size: .28rem;
                 color: #7a7a7a;
                 padding-top: 32px;
                 float: left;
@@ -401,7 +402,7 @@ export default {
             }
 
             p {
-                font-size: 22px;
+                font-size: .26rem;
                 color: #bbbbbb;
                 padding-top: 10px;
                 float: left;

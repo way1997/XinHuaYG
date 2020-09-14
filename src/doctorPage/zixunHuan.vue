@@ -16,7 +16,7 @@
                 <img class="zanwuxinxi" :style="{display:display1}" src="../assets/img/zanwuxinxi.png">
                 <!-- 患者列表 -->
                 <div v-for="(item,index) in huanzhe" :key="index" @click="goLiaotian(item.patientId)">
-                    <div class="patient">
+                    <div class="patient" style="padding-bottom: 0.5rem">
                         <img :src="item.patientImgUrl" class="patient_img">
                         <div class="patient_text">
                             <div>{{item.patientName}}</div>
@@ -40,7 +40,7 @@
             <div class="tan_content" style=" white-space: nowrap;">
                 <img class="zanwuxinxi" :style="{display:display2}" src="../assets/img/zanwuxinxi.png">
                 <div v-for="(item,index) in lists" :key="index">
-                    <div class="patient">
+                    <div class="patient" style="padding-top:0.3rem">
                         <div class="patient_left">
                             <img :src="item.patientImg">
                             <div class="patient_left_Te">
@@ -59,15 +59,14 @@
                 </div>
             </div>
         </div>
-
-    </div>
-
-    <div class="wrap" v-if="beijing">
-        <div class="hidden">
-            <img class="jlu" src="../assets/img/mobanwu.png">
-            <div>近期没有{{beijingtext}}的患者</div>
+        <div class="wrap" v-if="beijing" style="position:relative;top:0rem">
+            <div class="hidden">
+                <img class="jlu" src="../assets/img/mobanwu.png">
+                <div>近期没有{{beijingtext}}的患者</div>
+            </div>
         </div>
     </div>
+
     <img src="../assets/img/LODING.gif" alt="" class="loading" v-if="loadUp">
     <confirm :text="tipText" ref="confirm" @cancel="cancel" @confirm="delChatNum"></confirm>
     <TabBar />
@@ -285,6 +284,7 @@ export default {
 .zixun {
     height: 100%;
     background: #f1f1f1;
+    padding-bottom: 100px;
 }
 
 .swiper-tab {
@@ -357,7 +357,7 @@ swiper {
     width: 100%;
     /* height: 1.48rem; */
     background: #fff;
-    padding: .18rem .25rem;
+    padding: .18rem .25rem .5rem;
     box-sizing: border-box;
     margin-top: 1px;
     overflow: hidden;
@@ -499,6 +499,8 @@ swiper {
     width: 87%;
     height: 100%;
     float: right;
+    position: absolute;
+    left: .82rem;
     padding-left: .50rem;
     box-sizing: border-box;
 }
@@ -594,8 +596,8 @@ line-height: .37rem;
     width: 100%;
     height: 100%;
     background: #fff;
-    position: absolute;
-    top: 34%;
+    position: fixed;
+    top: 14%;
     left: 0;
 }
 

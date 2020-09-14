@@ -1,11 +1,11 @@
 <template>
 <div class="mobanList">
-    <div class="back" @touchstart="goBack">返回上一级</div>
-    <div class="search"><input type="text" placeholder="输入药方名称进行搜索" v-model="modelName"><em class="searchEm" @touchstart="findModelByShape">搜索</em></div>
+    <div class="back" @click="goBack">返回上一级</div>
+    <div class="search"><input type="text" placeholder="输入药方名称进行搜索" v-model="modelName"><em class="searchEm" @click="findModelByShape">搜索</em></div>
     <div class="xian" style="clear:both;"></div>
     <div class="detail">
         <div v-for="(item,index) in moban" :key="index">
-            <div><span>名称:</span>{{item.modelName}}　<p><em @touchstart="deleteM(item.modelId)">删除</em><em @touchstart="xiugaiM(item.modelId)">修改</em></p>
+            <div><span>名称:</span>{{item.modelName}}　<p><em @click="deleteM(item.modelId)">删除</em><em @click="xiugaiM(item.modelId)">修改</em></p>
             </div>
             <div>
                 <span>内容:</span>
@@ -13,7 +13,7 @@
             </div>
         </div>
     </div>
-    <div class="add" @touchstart="goAddm">新增药方</div>
+    <div class="add" @click="goAddm">新增药方</div>
     <img src="../assets/img/LODING.gif" alt="" class="loading" v-if="loadUp">
     <confirm :text="tipText" ref="confirm" @cancel="cancel" @confirm="confirm"></confirm>
 </div>
@@ -125,7 +125,7 @@ export default {
 }
 
 .back {
-    width: 200px;
+    width: 95%;
     height: 76px;
     background: #00afc2;
     border-radius: 13px;
@@ -154,7 +154,7 @@ export default {
     margin-bottom: 15px;
 
     input {
-        width: 70%;
+        width: 100%;
         height: 74px;
         border-radius: 38px;
         color: #ccc;
@@ -220,13 +220,13 @@ export default {
 }
 
 .add {
-    width: 748px;
+    width: 100%;
     height: 102px;
     background: #42CAC6;
     text-align: center;
     line-height: 102px;
     color: #fff;
-    font-size: 27px;
+    font-size: 0.5rem;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -243,8 +243,6 @@ export default {
 
 .searchEm {
     position: absolute;
-    right: 40px;
-    top: 30px;
     width: 100px;
     height: 50px;
     line-height: 50px;
@@ -252,7 +250,8 @@ export default {
     font-size: 24px;
     text-align: center;
     border: 1px solid #00afc2;
-    ;
+    margin-top: 0.15rem;
+    margin-left: 0.5rem;
     border-radius: 20px;
 }
 </style>

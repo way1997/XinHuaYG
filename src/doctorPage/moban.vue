@@ -1,6 +1,6 @@
 <template>
 <div class="moban">
-    <div class="backHome" @touchstart="goBack">返回个人中心</div>
+    <div class="backHome" @click="goBack">返回个人中心</div>
     <div class="list">
         <div v-for="(item,index) in medicineManner" :key="index" @click="goDetail(item.shapeId,item.id)">
             <div v-if="item.value==1">T</div>

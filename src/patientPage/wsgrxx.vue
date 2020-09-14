@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="backHome" @touchstart="goBack">返回上一级</div>
+    <div class="backHome" @click="goBack">返回上一级</div>
     <div class="top">
         <div class="herd">
             <img :src=imgUrl class="tu"></image>
@@ -9,7 +9,7 @@
     </div>
     <div class="zi_1">
         <div style="border-top: 1px dashed #d2d2d2;margin:0 auto;">
-            请认真填写你的个人信息以方便医生辨认（仅限于医生可见）
+            请认真填写你的个人信息以方便医生辨认 <br>（仅限于医生可见）
         </div>
     </div>
     <div class="center">
@@ -25,7 +25,7 @@
                     性别
                 </div>
                 <div class='choosesex'>
-                    <div :class="sexCur==index+1? 'check':'' " @touchstart='nan(item,index)' v-for="(item,index) in sexs" :key="item.id" :index='index'>
+                    <div :class="sexCur==index+1? 'check':'' " @click='nan(item,index)' v-for="(item,index) in sexs" :key="item.id" :index='index'>
                         <span>{{item.sex}}</span>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
             </div>
         </div>
     </div>
-    <div class="foot" @touchstart='dibu'>
+    <div class="foot" @click='dibu'>
         完成
     </div>
 </div>
@@ -164,53 +164,55 @@ export default {
 @import '../assets/less/base.less';
 
 .backHome {
-    width: 611px;
-    height: 76px;
+    width: 81.66%;
+    height: 0.76rem;
     background: #00afc2;
-    border-radius: 13px;
+    border-radius: 0.13rem;
     text-align: center;
-    line-height: 76px;
+    line-height: 0.76rem;
     color: #fff;
-    font-size: 25px;
+    font-size: 0.25rem;
     margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
 }
 
 .top {
-    width: 750px;
-    height: 270px;
+    width: 100%;
+    height: 2.7rem;
     background: #fff;
     overflow: hidden;
 
     .herd {
-        width: 708px;
-        height: 212px;
-        margin-left: 24px;
+        width: 94.4%;
+        height: 2.12rem;
+        margin-left: 0.24rem;
 
         .tu {
-            width: 138px;
-            height: 138px;
+            width: 1.38rem;
+            height: 1.38rem;
             display: block;
-            margin-left: 288px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
             border-radius: 50%;
-            margin-top: 20px;
+            margin-top: 0.2rem;
         }
     }
 }
 
 .xxm {
-    margin-top: 32px;
+    margin-top: 0.32rem;
     text-align: center;
     color: #222222;
-    font-size: 28px;
+    font-size: 0.28rem;
 }
 
 .zi_1 {
     width: 100%;
-    height: 96px;
-    line-height: 96px;
-    font-size: 24px;
+    height: 0.96rem;
+    line-height: 0.66rem;
+    font-size: 0.28rem;
     text-align: center;
     background: #fff;
 }
@@ -220,101 +222,103 @@ export default {
     background: #fff;
 
     .center_1 {
-        width: 626px;
-        margin: 0 auto;
+        width: 83.46%;
+        margin: .6rem auto;
 
         .inp {
-            width: 626px;
-            height: 90px;
+            width: 100%;
+            height: .9rem;
+            margin-top: .3rem;
             border-bottom: 1px dashed #d2d2d2;
 
             .inp_1 {
-                width: 190px;
-                height: 90px;
-                line-height: 90px;
-                font-size: 24px;
+                width: 1.6rem;
+                height: 0.9rem;
+                line-height: 0.9rem;
+                font-size: 0.32rem;
                 float: left;
+
             }
 
             .nan {
-                width: 58px;
-                height: 42px;
-                line-height: 42px;
-                font-size: 26px;
+                width: .58rem;
+                height: .42rem;
+                line-height: .42rem;
+                font-size: .26rem;
                 text-align: center;
-                border: 1px solid #cfcece;
+                border: .1rem solid #cfcece;
                 float: left;
-                margin-top: 4px;
-                border-radius: 13px;
+                margin-top: .4rem;
+                border-radius: .13rem;
                 color: #fff;
                 background: #00b0c2;
             }
 
             .nv {
-                width: 58px;
-                height: 42px;
-                line-height: 42px;
-                font-size: 26px;
+                width: .58rem;
+                height: .42rem;
+                line-height: .42rem;
+                font-size: .26rem;
                 text-align: center;
-                border: 1px solid #cfcece;
+                border: .1rem solid #cfcece;
                 float: left;
-                margin-top: 4px;
-                border-radius: 13px;
+                margin-top: .4rem;
+                border-radius: .13rem;
                 color: #9c9c9c;
-                margin-left: 42px;
+                margin-left: .42rem;
             }
 
             .in {
                 position: relative;
-                top: -39px;
-                width: 430px;
-                height: 90px;
-                font-size: 24px;
-                line-height: 90px;
+                top: -0.34rem;
+                width: 3.5rem;
+                height: 0.9rem;
+                font-size: 0.28rem;
+
             }
 
             .nian {
-                width: 430px;
-                height: 90px;
-                font-size: 24px;
-                line-height: 90px;
+                width: 57.33%;
+                height: .9rem;
+                font-size: .26rem;
+                line-height: .9rem;
             }
 
             .int {
                 width: 220px;
-                height: 90px;
-                font-size: 24px;
-                line-height: 90px;
+                height: .9rem;
+                font-size: .26rem;
+                line-height: .9rem;
                 float: left;
             }
 
             .xiu {
-                width: 124px;
-                height: 46px;
-                line-height: 46px;
+                width: 16.53%;
+                height: .46rem;
+                line-height: .46rem;
                 color: #fff;
-                font-size: 20px;
+                font-size: .23rem;
                 float: left;
                 background: #00b0c2;
                 text-align: center;
-                margin-top: 24px;
-                border-radius: 10px;
+                margin-top: .26rem;
+                border-radius: .1rem;
             }
         }
     }
 }
 
 .foot {
-    width: 702px;
-    height: 80px;
-    margin-left: 26px;
+    width: 93.6%;
+    height: 0.8rem;
+    margin-left: 0.26rem;
     background: #00b0c2;
     text-align: center;
-    font-size: 30px;
+    font-size: 0.3rem;
     color: #fff;
-    line-height: 80px;
-    border-radius: 18px;
-    margin-top: 30px;
+    line-height: 0.8rem;
+    border-radius: 0.18rem;
+    margin-top: 0.3rem;
 
 }
 
@@ -322,15 +326,15 @@ export default {
     float: left;
 
     div {
-        width: 58px;
-        height: 42px;
-        line-height: 42px;
-        font-size: 26px;
+        width: 0.58rem;
+        height: 0.42rem;
+        line-height: 0.42rem;
+        font-size: 0.26rem;
         text-align: center;
-        border: 1px solid #cfcece;
+        border: 0.01rem solid #cfcece;
         float: left;
-        margin-top: 12px;
-        border-radius: 13px;
+        margin-top: 0.28rem;
+        border-radius: 0.13rem;
         color: #000000;
     }
 
@@ -339,8 +343,8 @@ export default {
         color: #ffffff;
     }
 
-    .choosesex div:nth-of-type(2) {
-        margin-left: 20px;
+    div:nth-of-type(2) {
+        margin-left: .28rem;
     }
 }
 </style>

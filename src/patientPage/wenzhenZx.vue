@@ -186,7 +186,7 @@
                             <div class='liaotian_ck'>
                                 <img class='ltjt' src='../assets/img/tiaolijt.png'>
                                 <div class='liaotzs_wrap1' bindtap='lookwenzhen'>
-                                    <div class='liaotzs1 tiaoli_bac tiaoli' style='float:left;margin-left:-0.6rem;margin-top:-0.19rem;'>
+                                    <div class='liaotzs1 tiaoli_bac tiaoli' style='float:left;margin-left:-0.6rem;margin-top:-0.19rem;transform: translateX(.65rem);'>
                                         <div class='tiaoli_top'>
                                             <img class='tiaoli_top_img' src='../assets/img/gonggao.png'>
                                             <div class='tiaoli_top_div'>最新公告</div>
@@ -392,8 +392,9 @@ export default {
         this.$nextTick(function () {
             this.token = cookie.get("token");
             this.doctorId = this.$route.query.doctorId;
-            this.doctorImg = this.$route.query.doctorPhoto;
+            this.doctorImg = this.$route.query.doctorImg;
             this.doctorName = this.$route.query.doctorName;
+            this.pageName = this.$route.query.doctorName;
             this.patientId = cookie.get("patientId");
             this.imgUrl = cookie.get("patientImgUrl");
             this.patientName = cookie.get("patientName");
@@ -2038,7 +2039,7 @@ page {
 .liaotzs_wrap1 {
     width: 80%;
     /* float: right; */
-    margin-left: .66rem;
+    margin-left: .41rem;
     margin-top: -.65rem;
 }
 
@@ -2062,6 +2063,7 @@ page {
     border-radius: .10rem;
     color: #565656;
     font-size: .28rem;
+    line-height: .3rem;
     float: left;
     margin-top: -.75rem;
     margin-left: .48rem;
@@ -2079,6 +2081,7 @@ page {
     border-radius: .10rem;
     color: #565656;
     font-size: .28rem;
+    line-height: .4rem;
     float: right;
     margin-right: -0.03rem;
 }
@@ -2097,6 +2100,7 @@ page {
 .tiaoli_bac {
     width: 3.59rem;
     background: #fff;
+
 }
 
 .tiaoli_top_img {

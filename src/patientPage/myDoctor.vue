@@ -113,7 +113,7 @@ export default {
     text-align: center;
     line-height: 0.76rem;
     color: #fff;
-    font-size: 0.28rem;
+    font-size: 0.23rem;
     float: left;
     margin: 0.15rem 0.2rem 0.15rem 0.2rem;
 }
@@ -140,7 +140,7 @@ export default {
         height: 0.74rem;
         border-radius: 0.38rem;
         color: #ccc;
-        font-size: 0.26rem;
+        font-size: 0.25rem;
         float: left;
         text-align: center;
     }
@@ -152,15 +152,13 @@ export default {
 }
 
 .tuijian {
-    padding-bottom: .666rem;
-
     >div {
         width: 89.6%;
         margin: 0 auto;
         height: 3rem;
         border-bottom: 0.01rem solid #e9e9e9;
         font-size: 0.25rem;
-        padding-bottom: 1.2rem;
+        padding-bottom: .9rem;
 
         img {
             float: left;
@@ -180,30 +178,27 @@ export default {
             &:nth-of-type(1) {
                 color: #606060;
                 padding-top: 0.28rem;
-                font-size: .30rem;
             }
 
             &:nth-of-type(2) {
                 color: #bababa;
                 padding-top: 0.16rem;
                 height: 0.8rem;
-                font-size: .26rem;
                 line-height: 0.3rem;
                 overflow: hidden;
             }
 
             &:nth-of-type(3) {
                 color: #fff;
-                padding-top: 0.01rem;
+                padding-top: 0.15rem;
 
                 span {
                     float: left;
                     margin-right: 0.1rem;
-                    font-size: .26rem;
                     padding: 0.08rem 0.15rem;
                     background: #00afc2;
                     border-radius: 0.3rem;
-                    margin-bottom: 0.2rem;
+                    margin-bottom: 0.1rem;
                 }
             }
         }

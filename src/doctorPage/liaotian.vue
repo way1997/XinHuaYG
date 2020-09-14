@@ -1,7 +1,7 @@
 <template>
 <div class="liaotian">
     <HeadTop :title="pageName" :backBlack="true"></HeadTop>
-    <div class="backGo" @touchstart="goBack()"></div>
+    <div class="backGo" @click="goBack()"></div>
     <div class="pages" ref="page" id="pages">
         <div v-for="(item,index) in doctorIdList" :key="index">
             <div class="left_liao">
@@ -14,7 +14,7 @@
                             <div class="liaotzs_wrap">
                                 <div class="liaotzs">{{item.chartComment}}</div>
                             </div>
-                            <div class="lefttime">{{item.sendTime}}</div>
+                            <div class="lefttime1">{{item.sendTime}}</div>
                         </div>
                     </div>
 
@@ -26,7 +26,7 @@
                             <div class="liaotzs_wrap1">
                                 <div class="liaotzs1">{{item.chartComment}}</div>
                             </div>
-                            <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
+                            <div class="lefttime" >{{item.sendTime}}</div>
                         </div>
                     </div>
                 </div>
@@ -37,29 +37,31 @@
                     <div v-if="item.sponsor==0" bindlongtap="delete">
                         <img :src="doctorImgUrl" class="head_pic head_pic1">
                         <div class="liaotian_ck liaotian_ck1">
-                            <div class="liaotzs_wrap2" style="margin-right:0.2rem;">
-                                <img @touchstart="changebig(item.chatPics)" class="picurl" mode="widthFix" :src="item.chatPics">
+                          <img class="ltjt ltjt1" src="../assets/img/ltjt.png">
+                            <div class="liaotzs_wrap2" >
+                                <img @click="changebig(item.chatPics)" class="picurl1" mode="widthFix" :src="item.chatPics">
                             </div>
                             <div style="clear:both;width:100%;"></div>
-                            <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
+                            <div class="lefttime" >{{item.sendTime}}</div>
                         </div>
                     </div>
                     <!-- 患者图片 -->
                     <div v-if="item.sponsor==1">
                         <img :src="patientpic" class="head_pic">
                         <div class="liaotian_ck">
-                            <div class="liaotzs_wrap2" style="margin-right:0.1rem;float:left;margin-left:0.4rem;">
-                                <img @touchstart="changebig(item.chatPics)" class="picurl" mode="widthFix" :src="item.chatPics">
+                          <img class="ltjt" src="../assets/img/ltjt.png">
+                            <div class="liaotzs_wrap3" >
+                                <img @click="changebig(item.chatPics)" class="picurl2" mode="widthFix" :src="item.chatPics">
                             </div>
                             <div style="clear:both;width:100%;"></div>
-                            <div class="lefttime">{{item.sendTime}}</div>
+                            <div class="lefttime1">{{item.sendTime}}</div>
                         </div>
                     </div>
                 </div>
 
                 <div v-if="item.chatType==3">
                     <!-- 医生语音 -->
-                    <div v-if="item.sponsor==0" @touchstart="play(item.chatRoute1)" bindlongtap="delete">
+                    <div v-if="item.sponsor==0" @click="play(item.chatRoute1)" bindlongtap="delete">
                         <img :src="doctorImgUrl" class="head_pic head_pic1">
                         <div class="liaotian_ck liaotian_ck1">
                             <img class="ltjt ltjt1" src="../assets/img/ltjt.png">
@@ -74,7 +76,7 @@
                         </div>
                     </div>
                     <!-- 患者语音 -->
-                    <div v-if="item.sponsor==1" @touchstart="play(item.chatRoute1)">
+                    <div v-if="item.sponsor==1" @click="play(item.chatRoute1)">
                         <img :src="patientpic" class="head_pic">
                         <div class="liaotian_ck">
                             <img class="ltjt" src="../assets/img/ltjt.png">
@@ -83,7 +85,7 @@
                                     <img class="yuyinpic" src="../assets/img/yuyin1.png">
                                     {{item.chartComment}}"
                                 </div>
-                                <div class="lefttime">{{item.sendTime}}</div>
+                                <div class="lefttime1">{{item.sendTime}}</div>
                             </div>
                         </div>
                     </div>
@@ -243,7 +245,7 @@
                 <!-- 开方 -->
                 <div v-if="item.chatType==4">
                     <!-- 医生 -->
-                    <div v-if="item.sponsor==0" @touchstart="tiaoli(item.entityId)">
+                    <div v-if="item.sponsor==0" @click="tiaoli(item.entityId)">
                         <img :src="doctorImgUrl" class="head_pic head_pic1">
                         <div class="liaotian_ck liaotian_ck1">
                             <img class="ltjt ltjt1" src="../assets/img/tiaolijt.png">
@@ -315,14 +317,13 @@
         <form>
             <div class="bottom" catchtouchmove="true">
                 <div class="duihua">
-                    <img :src="yuyinpic" class="bof"><!-- @touchstart="voice" -->
+                    <img :src="yuyinpic" class="bof" @click="voice" >
                     <div class="huihua" v-show="textarea">
-                        <input style="line-height:0.65rem;height:0.65rem;" name="text" v-model="kongtext" auto-height maxlength="-1">
+                        <textarea  class="textmsg" name="text" v-model="kongtext" auto-height maxlength="-1" />
+                        <div @click="addChatContent" class="fasong_but" v-if="textarea">发送</div>
                     </div>
-                    <div>
-                        <div @touchstart="addChatContent" class="fasong_but" v-if="textarea">发送</div>
-                    </div>
-                    <div id="ksly" class="speakbuton" hover-class="speakbuton_1" v-show="speakbuton" @touchstart="mytouchstart" @touchend="mytouchend">按住说话</div>
+
+                    <div id="ksly" class="speakbuton" hover-class="speakbuton_1" v-show="speakbuton" @click="mytouchstart" @touchend="mytouchend">按住说话</div>
                 </div>
             </div>
         </form>
@@ -330,11 +331,11 @@
         <div :class="(n==0 ? 'animate1':'animate')">
             <!-- style="display:{{qingchu}}" -->
             <div class="line tan">
-                <div class="tan_but" @touchstart="bianzhengkaifang">
+                <div class="tan_but" @click="bianzhengkaifang">
                     <img src="../assets/img/l1.png">
                     <div>辩证开方</div>
                 </div>
-                <div class="tan_but" @touchstart="picturekaifang">
+                <div class="tan_but" @click="picturekaifang">
                     <img src="../assets/img/paizhao.png">
                     <div>拍照开方</div>
                 </div>
@@ -429,7 +430,7 @@
     <div class="yuyinT" v-if="yuyinhidden">
         <img class="yuyinTimg" src="../assets/img/huatong.gif">
     </div>
-    <div class="yulanBig" v-if="showbigImg" @touchstart="hideBigPic">
+    <div class="yulanBig" v-if="showbigImg" @click="hideBigPic">
         <img :src="bigPic" alt="">
     </div>
 </div>
@@ -844,13 +845,15 @@ export default {
         goBack() {
             let page = this.$route.query.page;
             this.$router.push({
-                path: '/'+page,
-                query: {patientId: this.patientId}
+                path: '/' + page,
+                query: {
+                    patientId: this.patientId
+                }
             });
         },
         voice() {
-            this.speakbuton = !this.speakbuton;
-            this.textarea = !this.textarea;
+           // this.speakbuton = !this.speakbuton;
+           // this.textarea = !this.textarea;
         },
         getWxConfig() {
             $.ajax({
@@ -1020,6 +1023,13 @@ export default {
     top: 0;
 }
 
+.textmsg{
+  line-height:0.4rem;
+  height:0.7rem;
+  width: 3.5rem;
+  border: none;
+}
+
 .backGo {
     position: fixed;
     left: 0.34rem;
@@ -1109,10 +1119,12 @@ export default {
     height: .95rem;
     border-radius: 50%;
     float: left;
+    margin-top: 0.5rem;
 }
 
 .head_pic1 {
     float: right;
+    margin-top: 0.2rem;
 }
 
 .liaotian_ck {
@@ -1138,13 +1150,19 @@ export default {
 }
 
 .liaotzs_wrap1 {
-    width: 90%;
+    width: 80%;
     float: right;
 }
 
 .liaotzs_wrap2 {
     width: 40%;
     float: right;
+}
+
+.liaotzs_wrap3 {
+    width: 40%;
+    margin-left: 0.4rem;
+    margin-top: -0.65rem;
 }
 
 .ltjt1 {
@@ -1172,6 +1190,7 @@ export default {
 
 .liaotzs1 {
     padding: .19rem .30rem;
+    line-height: 0.38rem;
     box-sizing: border-box;
     background: #b9e4e8;
     border-radius: .10rem;
@@ -1255,13 +1274,14 @@ export default {
     padding: 0 .24rem;
     box-sizing: border-box;
     position: relative;
+    display: inline-flex;
 }
 
 .bof {
     width: .80rem;
     height: .80rem;
     float: left;
-    margin-top: .15rem;
+    margin-top: .25rem;
 }
 
 .huihua {
@@ -1278,8 +1298,6 @@ export default {
 }
 
 .fasong_but {
-    /* width: .64rem; */
-    height: .60rem;
     color: #fff;
     text-align: center;
     background: #00b0c2;
@@ -1294,7 +1312,7 @@ export default {
 
 .tan {
     width: 100%;
-    padding: 0 .23rem;
+    //padding: 0 .23rem;
     box-sizing: border-box;
     background: #fff;
     display: fixed;
@@ -1619,7 +1637,13 @@ export default {
     top: .19rem;
 }
 
-.picurl {
+.picurl1 {
+    width: 100%;
+    border-radius: .15rem;
+    /* margin-left: .20rem; */
+}
+
+.picurl2 {
     width: 100%;
     border-radius: .15rem;
     /* margin-left: .20rem; */
@@ -1825,6 +1849,18 @@ export default {
     font-size: .24rem;
     color: #717171;
     margin-left: .50rem;
+    float: right;
+    margin-right: 0.5rem;
+    margin-top: 0.1rem;
+}
+
+.lefttime1 {
+    font-size: .24rem;
+    color: #717171;
+    margin-left: .50rem;
+    float: left;
+    margin-right: 0.5rem;
+    margin-top: 0.1rem;
 }
 
 .touch-container {

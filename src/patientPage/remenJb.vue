@@ -95,7 +95,7 @@ export default {
     text-align: center;
     line-height: 0.76rem;
     color: #fff;
-    font-size: 0.23rem;
+    font-size: 0.26rem;
     float: left;
     margin: 0.15rem 0.2rem 0.15rem 0.2rem;
 }
@@ -119,7 +119,8 @@ export default {
     color: #fff;
     text-align: center;
     line-height: 0.76rem;
-    font-size: 0.25rem;
+    font-size: 0.28rem;
+    text-indent: -0.2rem
 }
 
 .tuijian {
@@ -128,7 +129,7 @@ export default {
         margin: 0 auto;
         height: 4.6rem;
         border-bottom: 0.01rem solid #e9e9e9;
-        font-size: 0.25rem;
+        font-size: 0.30rem;
 
         img {
             float: left;
@@ -181,7 +182,8 @@ export default {
     height: 4.17rem;
     display: block;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 1rem;
+    font-size: .26rem;
 }
 
 .loading {

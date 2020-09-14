@@ -219,11 +219,8 @@
         <!--- 业务______层        -->
         <!--- 相册弹出层-->
         <van-popup v-model="xcShow" position="bottom" closeable close-icon-position="top-right" :style="{ height: '16%' }">
-            <van-uploader :after-read='afterRead' style="display:block;height:50%">
-                <van-button class='sele_pic' block style="font-size:0.3125rem;width:100%;text-align:center;">相册</van-button>
-            </van-uploader>
-            <van-uploader :after-read='afterRead' style="display:block;height:50%">
-                <van-button class=' sele_pic' block style="font-size:0.3125rem;width:100%;text-align:center;">拍照</van-button>
+            <van-uploader :max-count="1" :after-read='afterRead' :before-read="beforeRead" style="display:block;height:50%">
+                <van-button class='sele_pic' block style="font-size:0.3125rem;width:100%;text-align:center;height:100%;margin-top:.28rem">相册/拍照</van-button>
             </van-uploader>
         </van-popup>
         <!--  地区弹出层 -->
@@ -272,7 +269,7 @@
             </div>
         </van-popup>
         <!--  性别选项弹出层 -->
-        <van-popup v-model="sexShow" position="bottom" closeable close-icon-position="top-right" :style="{ height: '16%' }">
+        <van-popup v-model="sexShow" position="bottom" closeable close-icon-position="top-right" :style="{ height: '23%' }">
             <div class="popup sex-popup">
                 <van-row type="flex" v-for="(item,index) in sext" :key="index" @click="sexSelc(item)" justify="center">
                     <van-col class="list sex-list" style="height:0.6rem;border:0">
@@ -364,6 +361,7 @@
 </template>
 
 <script>
+import Home from '../util/util-sec.js'
 import {
     regionSlec,
     shengSlec,
@@ -404,6 +402,7 @@ export default {
             password: "",
             name: '',
             fileList: false, //上传相册
+            fileDir: '',
             sctouxiang: false,
             touxiang: false,
             shanchang: false,
@@ -472,7 +471,30 @@ export default {
         }
     },
     created() {
+        var that = this
 
+        let token = this.$route.query.token //从首页获取认证权限功能
+        let doctorId = this.$route.query.doctorId //从首页获取认证权限功能
+        // if (token == undefined || doctorId == undefined) {
+        //     token = cookie.get('token')
+        //     doctorId = cookie.get('doctorId')
+        //     this.token = token
+        //     this.doctorId = doctorId
+        // }
+
+        if (token == undefined || doctorId == undefined) {
+            this.toToast();
+            let that = this
+            setTimeout(function () {
+                that.$router.push({
+                    name: 'homePage'
+                })
+            }, 3000)
+        }
+        console.log(token)
+        console.log(doctorId)
+        this.token = token
+        this.doctorId = doctorId
     },
     methods: {
         back() {
@@ -492,10 +514,68 @@ export default {
             this.xcShow = true;
         },
         afterRead(file) {
-            console.log('读取完成')
-            console.log(file)
-            this.fileList = file.content
-            this.xcShow = false;
+            this.uploadImg(file.file)
+            this.xcShow = false
+        },
+        /**
+         * 上传图片之前判断图片是否符合条件
+         */
+        beforeRead(file) {
+            if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
+                Toast('请上传 jpg/png 格式图片');
+                return false;
+            }
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                // 防止重复上传
+                if (that.imgDatas.indexOf(e.target.result) === -1) {
+                    that.imgDatas.push(e.target.result);
+                    that.doctorPhoto = e.target.result;
+                    that.imgcount = 1;
+                }
+            };
+            reader.readAsDataURL(file);
+            // let isLt1M = file.size / 1024 / 1024 <= 1
+            // if (!isLt1M) {
+            //     Toast('图片大小1M以内');
+            //     return false
+            // }
+            return true;
+        },
+        /**
+         * 上传图片
+         */
+        uploadImg(file) {
+            // 创建form对象
+            let formdata1 = new FormData();
+            // 通过append向form对象添加数据,可以通过append继续添加数据
+            //或formdata1.append('file',file);
+            formdata1.append('file', file);
+            //设置请求头
+            let config = {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            };
+            //this.axios 是因为在main.js写在vue实例里
+            const axiosAjax = this.axios.create({
+                timeout: 1000 * 60, //时间
+
+            });
+            axiosAjax.post(Home.home + '/mkkMoblie/uploadFile/picture', formdata1, config).then((res) => { //这里的url为后端接口
+                console.log(res);
+                if (escape(res.data).indexOf("%u") < 0) {
+                    console.log(res);
+                    this.fileDir = Home.home + 'mkkMoblie/' + res.data
+                    this.fileList = this.fileDir
+                    console.log(this.fileDir);
+                } else {
+                    this.$toast.center("该图片路径包含中文，请修改图片名称在上传");
+                    this.fileDir = ''
+                }
+
+                //res 为接口返回值
+            }).catch(() => {})
         },
         //地区弹出层
         addrShowPopup() {
@@ -723,10 +803,14 @@ export default {
         //擅长业务弹窗层开启
         scShowPopup() {
             this.scShow = true
+            // this.jibinselect = true
+            this.arrcur = this.arr
+            console.log(this.beGood)
+            console.log(this.arrcur)
         },
         //擅长业务 选择疾病
         selectjib(item, index) {
-
+            // console.log(item)
             let beGood = this.beGood
             let f_index = item.find
             let select = item.beGoodName
@@ -735,9 +819,7 @@ export default {
             var that = this
             if (arr.length == 10) {
                 var flag = beGood[f_index].list[index].check == false;
-
                 this.beGood = beGood
-
                 this.histwrap = true
 
                 const timer = setTimeout(function () {
@@ -759,20 +841,20 @@ export default {
                 }
             }
             if (arr.length != 10) {
-
                 this.histwrap = false
                 this.jibinselect = true
                 beGood[f_index].list[index].check = !beGood[f_index].list[index].check
                 var flag = beGood[f_index].list[index].check;
 
                 this.beGood = beGood
-                // console.log(flag)
+
                 if (flag == true) {
                     var obj = {}
                     obj.medicineSubjectName = select
                     obj.beGoodId = beGoodId
+
                     arr.push(obj)
-                    // console.log(arr)
+                    console.log(arr)
                     // console.log(beGood)
 
                 } else if (flag == false) {
@@ -851,7 +933,7 @@ export default {
             var levelId = this.levelId; //职称id
             var beGoodIds = this.objss ? this.objss : arrJson; //擅长
             var introduction = this.jianjietext ? this.jianjietext : this.jianjietext; //简介
-            var picurl = this.fileList ? this.fileList : this.picurl; //头像
+            var picurl = this.fileDir ? this.fileDir : this.picurl; //头像
             var shenFz = /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/; //身份证
             if (this.sex1 == '男') {
                 this.sexs = 1
@@ -860,19 +942,19 @@ export default {
                 this.sexs = 2
             }
 
-            // console.log('医生id------' + doctorId)
-            // console.log('token------' + token)
-            // console.log('姓名-----' + name)
-            // console.log('身份证-----' + shenfenzheng)
-            // console.log('地区id------' + yljgid)
-            // console.log('医疗机构id-----' + yljg)
-            // console.log('性别-------' + sexs)
-            // console.log('擅长----' + beGoodIds)
-            // console.log('简介----' + introduction)
-            // console.log('图片-----' + picurl)
-            // console.log('职称------' + levelId)
-            // console.log('年龄-------' + age2)
-            // console.log('证件号-------' + zhengjianhao)
+            console.log('医生id------' + doctorId)
+            console.log('token------' + token)
+            console.log('姓名-----' + name)
+            console.log('身份证-----' + shenfenzheng)
+            console.log('地区id------' + yljgid)
+            console.log('医疗机构id-----' + yljg)
+            console.log('性别-------' + sexs)
+            console.log('擅长----' + beGoodIds)
+            console.log('简介----' + introduction)
+            console.log('图片-----' + picurl)
+            console.log('职称------' + levelId)
+            console.log('年龄-------' + age2)
+            console.log('证件号-------' + zhengjianhao)
 
             if (!name) {
 
@@ -947,16 +1029,17 @@ export default {
                     idCard: shenfenzheng,
                     certificateCoding: zhengjianhao
                 }
-                // console.log(list.doctorId)
+
                 let list2 = {
                     token: this.token,
                     doctorId: this.doctorId
                 }
-                rzSubmitShenghe(list2).then(res => {
-                    console.log(res)
-                }).catch(error => {
-                    console.log(error)
-                })
+                // console.log(list2)
+                // rzSubmitShenghe(list2).then(res => {
+                //     console.log(res)
+                // }).catch(error => {
+                //     console.log(error)
+                // })
                 zenzhengSubmit(list)
                     .then(res => {
                         if (res.type = true) {
@@ -1053,76 +1136,51 @@ export default {
             getAreaUser(list)
                 .then(res => {
                     this.hidden = false
-                    console.log(res.data)
-                    if (res.data.doctorName) {
-                        let photo = this.photo;
-                        this.name = res.data.doctorName,
-                            this.photo = photo,
-                            this.touxiang = true,
-                            this.hidden = false,
-                            this.yljg = res.data.doctorHospitalName,
-                            this.yiyuanid = res.data.doctorHospitalId,
-                            this.zhinametitle = res.data.jobLevelName,
-                            this.keshitext = res.data.doctorDepartmentName,
-                            this.arr = res.data.list_adept,
-                            this.jianjietext = res.data.remarks,
-                            this.idCard = res.data.idCard,
-                            this.areaId = res.data.areaId,
-                            this.departmentId = res.data.doctorDepartmentId,
-                            this.levelId = res.data.jobLevelId,
-                            this.shengtext = res.data.areaProName,
-                            this.shitext = res.data.cityName,
-                            this.qutext = res.data.areaName,
-                            this.yljgid = res.data.areaId,
-                            this.age = res.data.age,
-                            this.picurl = res.data.doctorPhoto,
-                            this.zhengjianNum = res.data.certificateCoding,
-                            this.quCurData = res.data
-                        //console.log(this.picurl)
-                        if (res.data.doctorSex == 1) { //性别
+                    if (res.type) {
+                        if (res.data.doctorName) {
+                            let photo = this.photo;
+                            this.name = res.data.doctorName,
+                                this.photo = photo,
+                                this.touxiang = true,
+                                this.hidden = false,
+                                this.yljg = res.data.doctorHospitalName,
+                                this.yiyuanid = res.data.doctorHospitalId,
+                                this.zhinametitle = res.data.jobLevelName,
+                                this.keshitext = res.data.doctorDepartmentName,
+                                this.arr = res.data.list_adept,
+                                this.jianjietext = res.data.remarks,
+                                this.idCard = res.data.idCard,
+                                this.areaId = res.data.areaId,
+                                this.departmentId = res.data.doctorDepartmentId,
+                                this.levelId = res.data.jobLevelId,
+                                this.shengtext = res.data.areaProName,
+                                this.shitext = res.data.cityName,
+                                this.qutext = res.data.areaName,
+                                this.yljgid = res.data.areaId,
+                                this.age = res.data.age,
+                                this.picurl = res.data.doctorPhoto,
+                                this.zhengjianNum = res.data.certificateCoding,
+                                this.quCurData = res.data
+                            // console.log(this.picurl)
+                            if (res.data.doctorSex == 1) { //性别
 
-                            this.sex1 = '男'
+                                this.sex1 = '男'
 
-                        } else {
+                            } else {
 
-                            this.sex1 = '女'
+                                this.sex1 = '女'
+                            }
                         }
                     }
-
                     // console.log(this.jianjietext)
                 })
                 .catch(err => {
+
                     console.error(err);
                 })
         }
     },
     mounted() {
-        var that = this
-
-        let token = this.$route.params.token //从首页获取认证权限功能
-        let doctorId = this.$route.params.doctorId //从首页获取认证权限功能
-        alert('moutend_token' + token)
-        // if (token == undefined || doctorId == undefined) {
-        //     token = cookie.get('token')
-        //     doctorId = cookie.get('doctorId')
-        //     // this.token = token
-        //     // this.doctorId = doctorId
-        // }
-        // console.log(token)
-        // console.log(doctorId)
-        this.token = token
-        this.doctorId = doctorId
-        if (token == undefined || doctorId == undefined) {
-            this.toToast();
-            let that = this
-            setTimeout(function () {
-                that.$router.push({
-                    name: 'homePage'
-                })
-            }, 3000)
-        }
-        this.token = token
-        this.doctorId = doctorId
         this.getUser();
         this.getArea();
     },
@@ -1284,6 +1342,7 @@ export default {
 //相册弹窗
 /deep/ .van-uploader__input-wrapper {
     position: relative;
+    top: .46rem;
     width: 100%;
 }
 
@@ -1303,6 +1362,11 @@ export default {
     font-size: 16px;
     line-height: 27px;
 
+}
+
+/deep/ .van-popup__close-icon--top-right {
+    top: 12px;
+    right: 16px;
 }
 
 // 弹出层Style共享 [地区，医疗机构,省份证件，职业证件，性别,科室]

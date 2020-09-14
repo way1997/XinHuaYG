@@ -1,0 +1,84 @@
+.top{
+    /* border: 1px solid #000; */
+
+}
+.top h1{
+    margin-bottom: 22.4px;
+    font-size: 22.4px;
+}
+.container {
+  padding-top: 15px;
+}
+.shen ul{
+    padding-left: 0;
+}
+.shen ul li{
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    padding-right: 20px; 
+    
+}
+.shen ul li .tou{
+   background: #fff;
+   padding: 0 20px 20px;
+}
+.shen ul li h2{
+    padding-top: 20px;
+    margin-top: 0;
+    font-size: 18px;
+}
+.shen ul li .xia{
+    background: #e2e2e2;
+    border: 1px solid #e4e4e4;
+}
+.shen ul li .xia .nei{
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #9c9c9c;
+}
+.shen ul li .xia .nei .ri{
+    float: right;
+}
+.pn{
+    margin: 0 auto;
+    position: relative;
+    bottom: -18px;
+    width: 550px;
+    height: 30px;
+    padding: 10px;
+
+}
+.pn a{
+    float: left;
+    width: 33px;
+    height: 36px;
+    background-color: #f8f8f8;
+    line-height: 36px;
+    text-align: center;
+    margin-right: 10px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    cursor: pointer;
+    color: #999;
+    cursor: pointer;
+}
+.pn a.cur{
+    background-color: #ff6767;
+    color: #fff;
+}
+.pn a:hover{
+    border: 1px solid #ff6767;
+}
+.pn a.cBtn{
+    width: 70px;
+}
+.pn a.ellipsis{
+    background:none;
+    box-shadow: none;
+    margin: 0;
+    color:red;
+    position: relative;
+    left: -3px;
+}

@@ -1,14 +1,14 @@
 <template>
 <div class="userAddress">
-    <div class="backHome" @touchstart="goBack">返回上一级</div>
+    <div class="backHome" @click="goBack">返回上一级</div>
     <div class="xian"></div>
     <div class="list">
         <div v-for="(item,index) in shou" :key="index">
-            <div>{{item.recipient}} {{item.repPhone}}<span @touchstart="deleteAdd(item.recipientId)"><img src="../assets/img/delete1.png" alt="">删除</span></div>
-            <div>{{item.address}}<span @touchstart="goDizhi(item)"><img src="../assets/img/bianji.png" alt="">编辑</span></div>
+            <div>{{item.recipient}} {{item.repPhone}}<span @click="deleteAdd(item.recipientId)"><img src="../assets/img/delete1.png" alt="">删除</span></div>
+            <div>{{item.address}}<span @click="goDizhi(item)"><img src="../assets/img/bianji.png" alt="">编辑</span></div>
         </div>
     </div>
-    <div class="queren" @touchstart="goAdd">
+    <div class="queren" @click="goAdd">
         添加新地址
     </div>
     <confirm :text="tipText" ref="confirm" @cancel="cancel" @confirm="confirm"></confirm>
@@ -109,7 +109,7 @@ export default {
     text-align: center;
     line-height: 0.76rem;
     color: #fff;
-    font-size: 0.25rem;
+    font-size: 0.32rem;
     margin: 0 auto;
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
@@ -147,14 +147,14 @@ export default {
         }
 
         div:nth-of-type(1) {
-            font-size: 0.25rem;
+            font-size: 0.30rem;
             color: #757575;
             text-indent: -.1rem;
             padding-top: 0.5rem;
         }
 
         div:nth-of-type(2) {
-            font-size: 0.22rem;
+            font-size: .28rem;
             text-indent: -.1rem;
             color: #B7B7B7;
             padding-top: 0.25rem;
@@ -173,5 +173,6 @@ export default {
     color: #fff;
     margin: 0 auto;
     margin-top: 0.8rem;
+    margin-bottom: .233333rem;
 }
 </style>

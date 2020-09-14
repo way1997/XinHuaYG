@@ -58,7 +58,7 @@ export default {
                 doctorId: this.doctorId
             }
             findAllPatient(list).then((res) => {
-                //console.log(res);
+                  console.log(res);
                 this.list = res.data;
                 this.loadUp = false;
             })
@@ -71,6 +71,7 @@ export default {
                 groupId: ''
             }
             findPatient(list).then((res) => {
+            	console.log(res);
                 if (res.type == true) {
                     this.list = res.data;
                     if (this.list.length != 0) {
@@ -111,7 +112,7 @@ export default {
 }
 
 .search {
-    width: 681px;
+    width: 100%;
     height: 67px;
     font-size: 30px;
     margin: 0 auto;
@@ -128,7 +129,7 @@ export default {
 }
 
 .huanList {
-    width: 700px;
+    width: 100%;
     margin: 0 auto;
     padding-top: 20px;
 

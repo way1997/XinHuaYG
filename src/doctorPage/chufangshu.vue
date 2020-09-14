@@ -1,13 +1,13 @@
 <template>
 <div class="chufangshu">
-    <div class="backHome" @touchstart="goBack">返回上一级</div>
+    <div class="backHome" @click="goBack">返回上一级</div>
     <div class="xian" style="clear:both;"></div>
     <div class="swiper-tab">
-        <div class="swiper-tab-item" :class="{active:currentTab==0}" :data-current="0" v-show="length!=0" @touchstart="quanbu">全部({{length}})</div>
-        <div class="swiper-tab-item" :class="{active:currentTab==1}" :data-current="1" v-show="lengths!=0" @touchstart="yizhifu">已支付({{lengths}})</div>
+        <div class="swiper-tab-item" :class="{active:currentTab==0}" :data-current="0" v-show="length!=0" @click="quanbu">全部({{length}})</div>
+        <div class="swiper-tab-item" :class="{active:currentTab==1}" :data-current="1" v-show="lengths!=0" @click="yizhifu">已支付({{lengths}})</div>
     </div>
     <div class="list">
-        <div class="doctor" v-for="(item,index) in lists" :key="index" @touchstart="goDetail(item.prescriptionId)">
+        <div class="doctor" v-for="(item,index) in lists" :key="index" @click="goDetail(item.prescriptionId)">
             <div>患者：{{item.patientName}}
                 <label :class="{nan:item.patientSex==1}">
                     <img :src="item.patientSex==1?require('../assets/img/sex2.png'):require('../assets/img/sex1.png')" alt="">{{item.age||item.patientAge}}岁

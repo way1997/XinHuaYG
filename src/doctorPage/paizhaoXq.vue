@@ -1,6 +1,6 @@
 <template>
 <div class="recordNum">
-    <div class="backHome" @touchstart="goBack">返回上一级</div>
+    <div class="backHome" @click="goBack">返回上一级</div>
     <div class="xian"></div>
     <!-- 辩证 -->
     <div class='bianzhen'>
@@ -13,7 +13,7 @@
             <span v-if="patientSex==2">女</span> {{patientAge}}岁
         </div>
         <div class='bianzhen_message'>【辩证】{{symptom}}</div>
-        <div class='unfold' v-if="hide" @touchstart='showS' style='display:block'>展开药方</div>
+        <div class='unfold' v-if="hide" @click='showS' style='display:block'>展开药方</div>
     </div>
     <!-- 原照片 -->
     <div class='yuanPhoto' v-if="show">
@@ -169,7 +169,7 @@
     </div>
 
     <div class='fsyfhj' v-if="prescriptionSendStatus ==0&&show">
-        <div @touchstart='fasong' :disabled='disabled'>发送患者</div>
+        <div @click='fasong' :disabled='disabled'>发送患者</div>
     </div>
 </div>
 </template>

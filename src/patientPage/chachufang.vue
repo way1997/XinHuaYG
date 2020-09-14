@@ -98,7 +98,7 @@ export default {
     text-align: center;
     line-height: 0.76rem;
     color: #fff;
-    font-size: 0.25rem;
+    font-size: 0.32rem;
     margin: 0 auto;
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
@@ -118,7 +118,7 @@ export default {
         border-bottom: 0.01rem solid #ececec;
         margin: 0 auto;
         position: relative;
-        padding-bottom: 1.4rem;
+        padding-bottom: .4rem;
 
         img {
             width: .89rem;
@@ -136,7 +136,7 @@ export default {
 
         div:nth-of-type(1) {
             color: #808080;
-            font-size: 0.25rem;
+            font-size: 0.30rem;
             width: 60%;
             padding-top: 0.47rem;
         }
@@ -158,7 +158,7 @@ export default {
             border-radius: 0.13rem;
             text-align: center;
             line-height: 0.56rem;
-            font-size: 0.21rem;
+            font-size: 0.25rem;
             color: #fff;
             padding-left: 0;
         }
@@ -187,7 +187,7 @@ export default {
             font-size: 0.25rem;
             float: left;
             padding-left: 0.08rem;
-            padding-top: 0rem;
+            padding-top: .3rem;
             width: 60%;
         }
     }

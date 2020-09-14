@@ -17,9 +17,9 @@
                     <img src='../assets/img/guanbian.png' ref="yszz01" v-on:click.stop="deleteImg(item,index)"></img>
                 </div>
             </div>
-            <img src="../assets/img/jiahao.png" ref="yszzLod1" @touchstart='addyi' class='jiahao'> </img>
+            <img src="../assets/img/jiahao.png" ref="yszzLod1" @click='addyi' class='jiahao'> </img>
             <img class="touxaing" :src="fileList_yszhiz01?fileList_yszhiz01:''" v-if="fileList_yszhiz01"> </img>
-            <div @touchstart='addyi'>添加第一页</div>
+            <div @click='addyi'>添加第一页</div>
             <progress percent="100" class='jindutiao' v-if="jindutiao" />
         </div>
         <div class="pf_but">
@@ -29,9 +29,9 @@
                     <img src='../assets/img/guanbian.png' v-on:click.stop="deleteImg1(item,index)"></img>
                 </div>
             </div>
-            <img src="../assets/img/jiahao.png" @touchstart='adder' class='jiahao' alt="">
+            <img src="../assets/img/jiahao.png" @click='adder' class='jiahao' alt="">
             <img class="touxaing" :src="fileList_yszhiz02?fileList_yszhiz02:''" v-if="fileList_yszhiz02"> </img>
-            <div @touchstart='adder'>添加第二页</div>
+            <div @click='adder'>添加第二页</div>
             <progress percent="100" class='jindutiao' v-if="jindutiao1" />
         </div>
         <div style='width:100%;height:16px;clear:both'></div>
@@ -53,9 +53,9 @@
                     <img src='../assets/img/guanbian.png' v-on:click.stop='deleteImgpicurl1(item,index)'></img>
                 </div>
             </div>
-            <img src='../assets/img/jiahao.png' @touchstart='picBut' class='jiahao'> </img>
+            <img src='../assets/img/jiahao.png' @click='picBut' class='jiahao'> </img>
             <img class="touxaing" :src="fileList_ysziz01?fileList_ysziz01:''" v-if="fileList_ysziz01"> </img>
-            <div @touchstart='picBut'>添加第一页</div>
+            <div @click='picBut'>添加第一页</div>
             <progress percent="100" class='jindutiao' v-if="jindutiao" />
         </div>
         <div class='pf_but'>
@@ -65,9 +65,9 @@
                     <img src='../assets/img/guanbian.png' v-on:click.stop='deleteImgpicurl2(item,index)'></img>
                 </div>
             </div>
-            <img src='../assets/img/jiahao.png' @touchstart='picBBut' class='jiahao'> </img>
+            <img src='../assets/img/jiahao.png' @click='picBBut' class='jiahao'> </img>
             <img class="touxaing" :src="fileList_ysziz02?fileList_ysziz02:''" v-if="fileList_ysziz02"> </img>
-            <div @touchstart='picBBut'>添加第二页</div>
+            <div @click='picBBut'>添加第二页</div>
             <progress percent="100" class='jindutiao' v-if="jindutiao1" />
         </div>
         <div style='width:100%;height:39rpx;clear:both'></div>
@@ -89,9 +89,9 @@
             </div>
         </div>
         <div class='pf_but' v-if="duoxuanpic">
-            <img src='../assets/img/jiahao.png' class='jiahao' @touchstart='addpic'> </img>
+            <img src='../assets/img/jiahao.png' class='jiahao' @click='addpic'> </img>
             <img class="touxaing" :src="fileList_zjziz01?fileList_zjziz01:''" v-if="fileList_zjziz01"> </img>
-            <div @touchstart='addpic'>添加照片</div>
+            <div @click='addpic'>添加照片</div>
         </div>
         <div style='width:100%;height:16px;clear:both'></div>
 
@@ -113,46 +113,42 @@
 
     </div>
     <div style='width:100%;height:38px;clear:both'></div>
-    <div class='generate' @touchstart='generate'>
+    <div class='generate' @click='generate'>
         <div>完成并提交审核</div>
     </div>
 
-    <div class='zhezhao' v-if="sctouxiangz" @touchstart='scTouxiang1'></div>
+    <div class='zhezhao' v-if="sctouxiangz" @click='scTouxiang1'></div>
     <div class='enter' v-if="sctouxiang">
-        <div class='guanbi' @touchstart=' scTouxiang1'>
+        <div class='guanbi' @click=' scTouxiang1'>
             <img src='../assets/img/bianbia.png'></img>
         </div>
-        <van-uploader :after-read='afterRead_yszyz01' style="display:block;">
-            <van-button class='sele_pic' block>相册</van-button>
-            <van-button class='sele_pic' block>拍照</van-button>
+        <van-uploader :max-count="1" :before-read="beforeRead" :after-read='afterRead_yszyz01' style="display:block;">
+            <van-button class='sele_pic' block style="font-size:0.4rem;width:100%;text-align:center;height:100%;margin-top:.6rem">相册/拍照</van-button>
         </van-uploader>
     </div>
     <div class='enter' v-if="sctouxiang1">
-        <div class='guanbi' @touchstart='scTouxiang1'>
+        <div class='guanbi' @click='scTouxiang1'>
             <img src='../assets/img/bianbia.png'></img>
         </div>
-        <van-uploader :after-read='afterRead_yszyz02' style="display:block;">
-            <van-button class='sele_pic' block>相册</van-button>
-            <van-button class='sele_pic' block>拍照</van-button>
+        <van-uploader :max-count="1" :before-read="beforeRead" :after-read='afterRead_yszyz02' style="display:block;">
+            <van-button class='sele_pic' block style="font-size:0.4rem;width:100%;text-align:center;height:100%;margin-top:.6rem">相册/拍照</van-button>
         </van-uploader>
     </div>
 
     <div class='enter' v-if="sctouxiang2">
-        <div class='guanbi' @touchstart='scTouxiang1'>
+        <div class='guanbi' @click='scTouxiang1'>
             <img src='../assets/img/bianbia.png'></img>
         </div>
-        <van-uploader :after-read='afterRead_yszgz01' style="display:block;">
-            <van-button class='sele_pic' block>相册</van-button>
-            <van-button class='sele_pic' block>拍照</van-button>
+        <van-uploader :max-count="1" :before-read="beforeRead" :after-read='afterRead_yszgz01' style="display:block;">
+            <van-button class='sele_pic' block style="font-size:0.4rem;width:100%;text-align:center;height:100%;margin-top:.6rem">相册/拍照</van-button>
         </van-uploader>
     </div>
     <div class='enter' v-if="picbut">
-        <div class='guanbi' @touchstart='scTouxiang1'>
+        <div class='guanbi' @click='scTouxiang1'>
             <img src='../assets/img/bianbia.png'></img>
         </div>
-        <van-uploader :after-read='afterRead_yszgz02' style="display:block;">
-            <van-button class='sele_pic' block>相册</van-button>
-            <van-button class='sele_pic' block>拍照</van-button>
+        <van-uploader :max-count="1" :before-read="beforeRead" :after-read='afterRead_yszgz02' style="display:block;">
+            <van-button class='sele_pic' block style="font-size:0.4rem;width:100%;text-align:center;height:100%;margin-top:.6rem">相册/拍照</van-button>
         </van-uploader>
     </div>
 
@@ -160,15 +156,15 @@
         <div class='guanbi'>
             <img src='../assets/img/bianbia.png'></img>
         </div>
-        <van-uploader :after-read='afterRead_zjziz01' style="display:block;">
-            <van-button class='sele_pic' block>相册</van-button>
-            <van-button class='sele_pic' block>拍照</van-button>
+        <van-uploader :max-count="1" :before-read="beforeRead" :after-read='afterRead_zjziz01' style="display:block;">
+            <van-button class='sele_pic' block style="font-size:0.4rem;width:100%;text-align:center;height:100%;margin-top:.6rem">相册/拍照</van-button>
         </van-uploader>
     </div>
 </div>
 </template>
 
 <script>
+import Home from '../util/util-sec'
 import {
     zsrzLoad,
     generateData
@@ -194,6 +190,7 @@ export default {
             fileList_zjziz01: false, //上传相册-专业执证01
             picbut13: false,
             picbut: false,
+            fileDir: '',
             imgs: [], //医生执业证书第一页
             imgs1: [], //医生执业证书第二页
             imgs2: [], //医生专业技术资格证书
@@ -303,33 +300,114 @@ export default {
             this.picbut13 = false
         },
         //开始照片上传乱七八糟方法
+        /**
+         * 上传图片之前判断图片是否符合条件
+         */
+        beforeRead(file) {
+            if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
+                Toast('请上传 jpg/png 格式图片');
+                return false;
+            }
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                // 防止重复上传
+                if (that.imgDatas.indexOf(e.target.result) === -1) {
+                    that.imgDatas.push(e.target.result);
+                    that.doctorPhoto = e.target.result;
+                    that.imgcount = 1;
+                }
+            };
+            reader.readAsDataURL(file);
+            // let isLt1M = file.size / 1024 / 1024 <= 1
+            // if (!isLt1M) {
+            //     Toast('图片大小1M以内');
+            //     return false
+            // }
+            return true;
+        },
+        /**
+         * 上传图片
+         */
+        uploadImg(file) {
+            // 创建form对象
+            let formdata1 = new FormData();
+            // 通过append向form对象添加数据,可以通过append继续添加数据
+            //或formdata1.append('file',file);
+            formdata1.append('file', file);
+            //设置请求头
+            let config = {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            };
+            //this.axios 是因为在main.js写在vue实例里
+            const axiosAjax = this.axios.create({
+                timeout: 1000 * 60, //时间
+
+            });
+            axiosAjax.post(Home.home + '/mkkMoblie/uploadFile/picture', formdata1, config).then((res) => { //这里的url为后端接口
+
+                this.fileDir = Home.home + 'mkkMoblie/' + res.data
+                if (escape(res.data).indexOf("%u") < 0) {
+                    console.log(res);
+                    this.fileDir = Home.home + 'mkkMoblie/' + res.data
+                } else {
+                    this.$toast.center("该图片路径包含中文，请修改图片名称在上传");
+                    this.fileDir = ''
+                }
+                //res 为接口返回值
+            }).catch(() => {
+
+                console.log()
+            })
+        },
         // 上传医师执业证书1
         afterRead_yszyz01(file) {
-            this.fileList_yszhiz01 = file.content
+            this.uploadImg(file.file)
+            setTimeout(() => {
+                this.fileList_yszhiz01 = this.fileDir
+                console.log(this.fileList_yszhiz01);
+            }, 900)
             this.sctouxiang = false
             this.sctouxiangz = false
         },
         //上传医师执业证书2
         afterRead_yszyz02(file) {
-            this.fileList_yszhiz02 = file.content
+            this.uploadImg(file.file)
+            setTimeout(() => {
+                this.fileList_yszhiz02 = this.fileDir
+                console.log(this.fileList_yszhiz02);
+            }, 800)
             this.sctouxiang1 = false
             this.sctouxiangz = false
         },
         // 上传资格1
         afterRead_yszgz01(file) {
-            this.fileList_ysziz01 = file.content
+            this.uploadImg(file.file)
+            setTimeout(() => {
+                this.fileList_ysziz01 = this.fileDir
+                console.log(this.fileList_ysziz01);
+            }, 800)
             this.sctouxiang2 = false
             this.sctouxiangz = false
         },
         // 上传资格2
         afterRead_yszgz02(file) {
-            this.fileList_ysziz02 = file.content
+            this.uploadImg(file.file)
+            setTimeout(() => {
+                this.fileList_ysziz02 = this.fileDir
+                console.log(this.fileList_ysziz02);
+            }, 800)
             this.picbut = false
             this.sctouxiangz = false
         },
         // 上传医师资格证书2
         afterRead_zjziz01(file) {
-            this.fileList_zjziz01 = file.content
+            this.uploadImg(file.file)
+            setTimeout(() => {
+                this.fileList_zjziz01 = this.fileDir
+                console.log(this.fileList_zjziz01);
+            }, 820)
             this.picbut13 = false
             this.sctouxiangz = false
         },
@@ -426,6 +504,7 @@ export default {
                 }
                 generateData(list).then(res => {
                     this.hidden = false
+                    this.$toast.center('审核提交成功')
                     this.$router.push({
                         name: 'homePage'
                     })

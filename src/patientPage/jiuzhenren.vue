@@ -1,6 +1,6 @@
 <template>
 <div class="jiuzhen">
-    <div class="backHome" @touchstart="goBack">返回上一级</div>
+    <div class="backHome" @click="goBack">返回上一级</div>
     <div class="xian"></div>
     <div class="list">
         <div v-for="(item,index) in danganChengyuan" :key="index">
@@ -8,7 +8,7 @@
             <p>性别：<em v-if="item.gender==1">男</em><em v-if="item.gender==2">女</em></p>
             <p>年龄：{{item.age}}</p>
             <p>出生日期：{{item.birth}}</p>
-            <span @touchstart="xiugaiXinxi(item)">修改</span><span @touchstart="deleteBTn(item.id)">删除</span>
+            <span @click="xiugaiXinxi(item)">修改</span><span @click="deleteBTn(item.id)">删除</span>
         </div>
     </div>
     <div class="xiugaimima" v-show="xiugai">
@@ -19,21 +19,21 @@
             </div>
             <div class="mima">
                 <span>性别</span>
-                <div @touchstart="showSex">{{sex}}</div>
-                <p v-show="ifsex"><em @touchstart="chooseSex(1,'男')">男</em><em @touchstart="chooseSex(2,'女')">女</em></p>
+                <div @click="showSex">{{sex}}</div>
+                <p v-show="ifsex"><em @click="chooseSex(1,'男')">男</em><em @click="chooseSex(2,'女')">女</em></p>
             </div>
             <div class="mima">
                 <span>年龄</span><input type="text" placeholder="输入年龄" v-model="age">
             </div>
             <div class="mima">
                 <span>出生日期</span>
-                <div @touchstart="showDate">{{date}}</div>
+                <div @click="showDate">{{date}}</div>
             </div>
-            <button @touchstart="quxiao">取消</button>
-            <button @touchstart="insertArchives">{{queren}}</button>
+            <button @click="quxiao">取消</button>
+            <button @click="insertArchives">{{queren}}</button>
         </div>
     </div>
-    <div class="addxin" @touchstart="addxin">
+    <div class="addxin" @click="addxin">
         新增就诊人
     </div>
     <div class="dateTime" v-show="pickerVisible">
