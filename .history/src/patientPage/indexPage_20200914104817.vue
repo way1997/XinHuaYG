@@ -97,10 +97,10 @@ export default {
     },
     created() {
         // this.openId = this.GetQueryString('openid');
-        cookie.set("token", this.token)
-        cookie.set("patientId", this.patientId)
+        // cookie.set("token", this.token)
+        // cookie.set("patientId", this.patientId)
         // this.openIdMsg();
-        this.addLogin();
+        // this.addLogin();
         // this.findArtcleByType();
         // this.findDoctorBySubject();
         // this.findDoctorHot();

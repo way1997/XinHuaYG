@@ -1,6 +1,7 @@
 <template>
 <div class="zhaoYs">
     <div class="back" @click="goBack">返回上一级</div>
+    <img src="../assets/img/LODING.gif" alt class="loading" v-if="loadUp" />
     <div class="search">
         <input type="text" placeholder="输入医生名字" v-model="doctorTel" style="border:1px solid #e9e9e9;" />
         <em class="searchEm" @click="searchYs">搜索</em>
@@ -13,7 +14,7 @@
             </p>
         </div>
         <div class="yisheng">
-            <div style="color:#828282;font-size:14px;padding:30px 0 20px 70px;" v-if="yishengList.length==0">该科室暂无医生</div>
+            <div style="color:#828282;font-size:.28rem;padding:30px 0 20px 70px;" v-if="yishengList.length==0">该科室暂无医生</div>
             <div class="doctor" v-for="(item,index) in yishengList" :key="index" @click="goDetail(item.doctorId)">
                 <img :src="item.doctorPhoto" alt />
                 <div>{{item.doctorName}} {{item.doctorLevelName}}</div>
@@ -45,6 +46,7 @@ export default {
             departmentId: "",
             token: "",
             patientId: "",
+            loadUp: true,
             doctorTel: "",
         };
     },
@@ -81,18 +83,21 @@ export default {
             };
             sectionList(list).then((res) => {
                 //console.log(res);
+                this.loadUp = false
                 this.kemu = res.data;
                 this.departmentId = res.data[0].departmentId;
                 this.getDoctorByTel();
             });
         },
         getDoctorByTel() {
+            this.loadUp = true
             let list = {
                 token: this.token,
                 patientId: this.patientId,
                 doctorTel: this.departmentId,
             };
             getDoctorByTel(list).then((res) => {
+                this.loadUp = false
                 //console.log(res);
                 this.yishengList = res.data;
             });
@@ -114,6 +119,15 @@ export default {
     width: 100%;
     height: 100%;
     position: relative;
+}
+
+.loading {
+    width: 1rem;
+    height: 1rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .back {

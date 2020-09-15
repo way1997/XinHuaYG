@@ -17,8 +17,8 @@
             <div v-show="item.indentStates == 1">完成购买</div>
         </div>
     </div>
-    <!--<img src="../assets/img/LODING.gif" alt class="loading" v-if="loadUp" />
-    <img class="zanwuxinxi" v-show="message.length == 0" src="../assets/img/zanwuxinxi.png" /> -->
+    <img src="../assets/img/LODING.gif" alt class="loading" v-if="loadUp" />
+    <img class="zanwuxinxi" v-show="message.length == 0" src="../assets/img/zanwuxinxi.png" />
 </div>
 </template>
 

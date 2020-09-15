@@ -36,6 +36,7 @@ export default {
             patientId: '',
             doctorId: '',
             doctorName: '',
+            doctorImg: '',
             message: [],
             bohao: false,
             appid: 'wx60af22e8126cde6a',
@@ -48,6 +49,7 @@ export default {
         this.doctorId = this.$route.query.doctorId;
         this.message = JSON.parse(this.$route.query.item);
         this.doctorName = this.$route.query.doctorName;
+        this.doctorImg = this.$route.query.this.doctorImg
     },
     computed: {
 
@@ -55,6 +57,7 @@ export default {
 
     methods: {
         savePresentOrder() {
+            let that = this
             let list = {
                 token: this.token,
                 appid: this.appid,
@@ -78,8 +81,18 @@ export default {
                         if (res.err_msg == "get_brand_wcpay_request:ok") {
                             alert('恭喜您，支付成功！')
                             that.submithid = false;
+                            that.$router.go(-1)
                         } else if (res.err_msg == "get_brand_wcpay_request:cancel") {
                             alert('支付失败！');
+                            // alert(this.doctorId, this.doctorName, this.doctorImg)
+                            // that.$router.push({
+                            //     name: 'daxieYs',
+                            //     query: {
+                            //         doctorId: this.doctorId,
+                            //         doctorName: this.doctorName,
+                            //         doctorImg: this.doctorImg
+                            //     }
+                            // })
                             that.submithid = false;
                         } else if (res.err_msg == "get_brand_wcpay_request:fail") {
                             alert('调起微信支付失败');

@@ -1,6 +1,7 @@
 <template>
 <div class="daxieys">
     <div class="backHome" @click="goBack">返回上一级</div>
+    <img src="../assets/img/LODING.gif" alt class="loading" v-if="loadUp" />
     <div class="top">
         <div class="tu">
             <img :src="doctorImg" class="tu1">
@@ -55,7 +56,7 @@ export default {
             list1: '',
             list2: '',
             message: '',
-            hidden: false
+            loadUp: true,
         }
     },
     created() {
@@ -85,7 +86,7 @@ export default {
                 this.message1 = res.data;
                 this.list1 = res.list_order;
                 this.list2 = res;
-                this.hidden = false;
+                this.loadUp = false;
             })
         },
         giveLiwu(item) {
@@ -94,7 +95,8 @@ export default {
                 query: {
                     doctorId: this.doctorId,
                     item: JSON.stringify(item),
-                    doctorName: this.doctorName
+                    doctorName: this.doctorName,
+                    doctorImg: this.doctorImg
                 }
             })
         }
@@ -133,6 +135,15 @@ export default {
     margin: 0 auto;
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
+}
+
+.loading {
+    width: 1rem;
+    height: 1rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .top {

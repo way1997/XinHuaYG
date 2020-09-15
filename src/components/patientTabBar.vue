@@ -121,10 +121,15 @@
       },
       didClickedItem: function(tag) {
         let doctorName = cookie.get("doctorId");
+        let state = cookie.get("state");
         console.log(doctorName)
         if (doctorName == "undefined" || doctorName==undefined) {
           alert("您还未登陆，请点击头像后登录查看！");
         } else {
+          if (state == undefined || state == '') {
+            this.$toast.center('账号未登录');
+            return false;
+          }
           if (tag === 0) {
             this.actives = this.actives.map(function() {
               return false;

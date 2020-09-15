@@ -1,6 +1,5 @@
 <template>
 <div class="chufangxq">
-    <img src="../assets/img/LODING.gif" alt="" class="loading" v-if="loadUp">
     <div class="backHome" @click="goBack">返回上一级</div>
     <div class="xian" style="clear:both;"></div>
     <div class="four">
@@ -46,11 +45,11 @@
             </div>
         </div>
         <h1 v-if="isAgency == 0">是否代煎</h1>
-        <div style="padding-bottom:1.3rem" class="info" v-if="isAgency == 0">
+        <div style="padding-bottom:.5rem" class="info" v-if="isAgency == 0">
             <div class="chooseWay">
                 <label @click="daijian(index)" v-for="(item,index) in daijian1" :key="index"><img :src="content2==index?require('../assets/img/danxuan.png'):require('../assets/img/danxuang1.png')" class="tu2">{{item.name}}</label>
             </div>
-            <p v-if="content2 == 1"><span>代煎费:</span><label>{{prices.price3}}</label></p>
+            <p><span>代煎费:</span><label>{{prices.price3}}</label></p>
         </div>
         <div class="xian" style="clear:both;"></div>
     </div>
@@ -91,8 +90,6 @@ export default {
             content1: 0,
             content2: 0,
             token: '',
-            nodaijian: 0,
-            yesdaijian: '', //代煎费储存值
             patientId: '',
             doctorId: '',
             indentId: '',
@@ -107,7 +104,6 @@ export default {
             money: '',
             shopId: '',
             zhenjinT: '',
-            loadUp: true,
             total_sum: '',
             addressId: '',
             appid: 'wx60af22e8126cde6a',
@@ -170,7 +166,6 @@ export default {
                 patientId: this.patientId
             }
             addressList(list).then((res) => {
-                this.loadUp = false
                 this.shou = res.data;
                 console.log(res)
                 if (res.data.length == 0) {
@@ -214,23 +209,12 @@ export default {
                         this.zhenjinT = this.money[i].money;
                     }
                 }
-
-                console.log(this.content2)
                 this.prescriptionId = res.data.indentId;
                 this.medicineType = res.data.medicineType
                 this.total_sum = (this.prices.price1 + this.prices.price2 + this.zhenjinT).toFixed(2);
             })
         },
         indentPay() { //去支付
-            //daijian
-            let agencyMoney = 0;
-            // console.log(this.content2)
-            if (this.content2 == 0) {
-                agencyMoney = 0
-            } else {
-                agencyMoney = this.prices.price3;
-            }
-
             let that = this;
             let list = {
                 token: this.token,
@@ -243,8 +227,8 @@ export default {
                 is_dispatching: this.content1,
                 dispatchingMoney: this.prices.price4,
                 is_to_agency: this.content2,
-                agencyMoney: agencyMoney,
-                makeMoney: this.prices.price2,
+                agencyMoney: isAgency == 0 ? this.prices.price3 : 0,
+                makeMoney: this.prices.price3,
                 medicinalMoney: this.prices.price1,
                 addressId: this.addressId,
                 recipient: this.recipient,
@@ -288,9 +272,7 @@ export default {
 
                             })
                             that.submithid = false;
-                            that.$router.push({
-                                name: 'chachufang'
-                            })
+                            that.$router.go(-1)
                         } else if (res.err_msg == "get_brand_wcpay_request:cancel") {
                             alert('支付失败！');
                             that.submithid = false;
@@ -303,10 +285,8 @@ export default {
             })
         },
         daijian(index) {
-
             this.content2 = index;
-            // console.log(this.content1)
-
+            //console.log(this.content1)
             if (this.content2 == 0 && this.content1 == 1) {
                 this.total_sum = (this.prices.price1 + this.prices.price2 + this.prices.price4 + this.zhenjinT).toFixed(2);
             } else if (this.content2 == 1 && this.content1 == 1) {
@@ -317,7 +297,6 @@ export default {
             } else if (this.content2 == 0 && this.content1 == 0) {
                 this.total_sum = (this.prices.price1 + this.prices.price2 + this.zhenjinT).toFixed(2);
             }
-
         },
         peisong(index) {
             this.content1 = index;

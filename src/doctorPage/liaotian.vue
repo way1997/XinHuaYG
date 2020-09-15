@@ -513,6 +513,7 @@ export default {
     created() {
         this.$nextTick(function () {
             if (!cookie.get("token")) {
+                cookie.set("state",'');
                 this.$router.push('/homePage')
             }
             if (this.$route.query.doctorId) {

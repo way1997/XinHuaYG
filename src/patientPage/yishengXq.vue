@@ -1,6 +1,7 @@
 <template>
 <div class="yishengxq">
     <div class="backHome" @click="goBack">返回上一级</div>
+    <img src="../assets/img/LODING.gif" alt class="loading" v-if="loadUp" />
     <div class="xian"></div>
     <div class="doctor">
         <img :src="lists.doctorPhoto" alt />
@@ -51,7 +52,7 @@ style > .btn {
 } < /style> <
 button class = "btn" > 立即咨询 < /button>
 </script>
-                </wx-open-launch-weapp>-->
+        </wx-open-launch-weapp>-->
         </div>
     </div>
     <confirm :text="tipText" ref="confirm" @cancel="cancel" @confirm="confirm"></confirm>
@@ -75,6 +76,7 @@ export default {
       patientId: "",
       doctorId: "",
       lists: [],
+      loadUp: true,
       list3: "",
       showWz: true,
       tipText: "您还没有与此医生建立连接 是否立即建立连接？",
@@ -111,7 +113,7 @@ export default {
           path: "/wenzhenZx",
           query: {
             doctorId: this.doctorId,
-            doctorPhoto: this.lists.doctorPhoto,
+            doctorImg: this.lists.doctorPhoto,
             doctorName: this.lists.doctorName,
             patientIds: "",
           },
@@ -152,6 +154,7 @@ export default {
         doctorId: this.doctorId,
       };
       doctorDetails(list).then((res) => {
+        this.loadUp = false
         this.lists = res.data;
         this.list3 = res.data.list_adept;
         this.isRelation = res.isRelation;
@@ -163,16 +166,16 @@ export default {
         // console.log(res.data.isRelation)
       });
     },
-    gowenxq(item,id) {
+    gowenxq(item, id) {
       let detailItem = JSON.stringify(item);
       // console.log(detailItem)
-     this.$router.push({
-                name: 'wenzhangXq',
-                params: {
-                    id: id,
-                    item: detailItem
-                }
-            });
+      this.$router.push({
+        name: "wenzhangXq",
+        params: {
+          id: id,
+          item: detailItem,
+        },
+      });
     },
     getWxConfig() {
       $.ajax({
@@ -260,10 +263,19 @@ export default {
     text-align: center;
     line-height: 0.76rem;
     color: #fff;
-    font-size: 0.30rem;
+    font-size: 0.3rem;
     margin: 0 auto;
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
+}
+
+.loading {
+    width: 1rem;
+    height: 1rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .xian {
@@ -283,8 +295,8 @@ export default {
     position: relative;
 
     img {
-        width: .98rem;
-        height: .98rem;
+        width: 0.98rem;
+        height: 0.98rem;
         border-radius: 50%;
         float: left;
         margin-top: 0.38rem;
@@ -309,7 +321,7 @@ export default {
         font-size: 0.26rem;
         width: 60%;
         padding-top: 0.1rem;
-        line-height: .3rem;
+        line-height: 0.3rem;
     }
 
     div:nth-of-type(4) {
@@ -370,10 +382,10 @@ export default {
     }
 
     p {
-        font-size: .26rem;
+        font-size: 0.26rem;
         color: #b4b4b4;
-        line-height: .37rem;
-        padding: 0 .1rem;
+        line-height: 0.37rem;
+        padding: 0 0.1rem;
     }
 }
 
@@ -394,7 +406,7 @@ export default {
             padding-bottom: 1.666rem;
 
             div {
-                font-size: .28rem;
+                font-size: 0.28rem;
                 color: #7a7a7a;
                 padding-top: 32px;
                 float: left;
@@ -402,7 +414,7 @@ export default {
             }
 
             p {
-                font-size: .26rem;
+                font-size: 0.26rem;
                 color: #bbbbbb;
                 padding-top: 10px;
                 float: left;
@@ -412,7 +424,7 @@ export default {
 
             img {
                 width: 1rem;
-                height: .7rem;
+                height: 0.7rem;
                 border-radius: 0.13rem;
                 float: right;
                 margin-top: 0.2rem;

@@ -1,6 +1,5 @@
 <template>
 <div class="chufangxq">
-    <img src="../assets/img/LODING.gif" alt="" class="loading" v-if="loadUp">
     <div class="backHome" @click="goBack">返回上一级</div>
     <div class="xian" style="clear:both;"></div>
     <div class="four">
@@ -107,7 +106,6 @@ export default {
             money: '',
             shopId: '',
             zhenjinT: '',
-            loadUp: true,
             total_sum: '',
             addressId: '',
             appid: 'wx60af22e8126cde6a',
@@ -170,7 +168,6 @@ export default {
                 patientId: this.patientId
             }
             addressList(list).then((res) => {
-                this.loadUp = false
                 this.shou = res.data;
                 console.log(res)
                 if (res.data.length == 0) {
@@ -244,7 +241,7 @@ export default {
                 dispatchingMoney: this.prices.price4,
                 is_to_agency: this.content2,
                 agencyMoney: agencyMoney,
-                makeMoney: this.prices.price2,
+                makeMoney: 0,
                 medicinalMoney: this.prices.price1,
                 addressId: this.addressId,
                 recipient: this.recipient,
@@ -288,9 +285,7 @@ export default {
 
                             })
                             that.submithid = false;
-                            that.$router.push({
-                                name: 'chachufang'
-                            })
+                            that.$router.go(-1)
                         } else if (res.err_msg == "get_brand_wcpay_request:cancel") {
                             alert('支付失败！');
                             that.submithid = false;

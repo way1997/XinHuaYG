@@ -343,6 +343,12 @@
       this.findBrandList();
       this.priceList();
       this.taboo();
+      this.pinpaiIdx = 100;
+      this.brandId = '';
+      this.pinpaiType = '';
+      this.yaotaiIdx = 100;
+      this.shapeId = '';
+      this.shopspan = '';
     },
     computed: {
 
@@ -479,13 +485,21 @@
         }
       },
       showMedi() {
-        this.showAdd = true;
-        this.medicinalWraphid = true;
-        this.showMoban = false;
-        this.yaocaiList = []
-        this.valuess = ''
-        this.k1 = 'none';
-        this.k2 = 'block';
+
+        if(this.pinpaiIdx == 100  ||  this.yaotaiIdx == 100)
+        {
+          alert("未选择品牌和药态，不能编辑药品");
+        }
+        else{
+          this.showAdd = true;
+          this.medicinalWraphid = true;
+          this.showMoban = false;
+          this.yaocaiList = []
+          this.valuess = ''
+          this.k1 = 'none';
+          this.k2 = 'block';
+        }
+        
       },
       inputclick() {
         this.medicinalWraphid = true;
@@ -527,6 +541,7 @@
           type: this.modelType
         }
         findModelByShape(list).then((res) => {
+          console.log(res)
           this.moban = res.lists;
         })
       },
@@ -739,14 +754,23 @@
         this.brandId = brandId;
         this.pinpaiType = value;
         //console.log(this.pinpaiIdx)
+        this.yaotaiIdx = 100;
+        this.shapeId = '';
+        this.shopspan = '';
       },
       changeYaotai(index, id, value) {
         if (this.arr.length != 0) {
           return false;
         }
-        this.yaotaiIdx = index;
-        this.shapeId = id;
-        this.shopspan = value;
+        console.log(this.pinpaiIdx)
+        console.log(index)
+        if (index == 1 && this.pinpaiIdx != 2) {
+          return false;
+        } else {
+          this.yaotaiIdx = index;
+          this.shapeId = id;
+          this.shopspan = value;
+        }
       },
       changeChakan(index, value) {
         this.chakanIdx = index;
@@ -776,7 +800,7 @@
           token: this.token
         }
         findBrandList(list).then((res) => {
-          //console.log(res);
+          console.log(res);
           this.medicineManner = res.list;
           this.brandId = res.list[0].id;
           this.pinpaiType = res.list[0].lable;
@@ -1277,7 +1301,7 @@
         float: right;
 
         span {
-          width: 140px;
+          width: 1.6rem;
           height: 57px;
           background: #d4d4d4;
           color: #fff;
@@ -1290,7 +1314,7 @@
         }
 
         span.choose {
-          width: 140px;
+          width: 1.6rem;
           height: 57px;
           background: #42cac6;
           color: #fff;

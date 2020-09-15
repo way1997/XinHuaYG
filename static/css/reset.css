@@ -96,11 +96,13 @@ body {
 .clearfix{zoom:1;}
 /* 图片自适应 */
 img {
+
 max-width: 100%;
 height: auto;
 width:auto\9; /* ie8 */
 -ms-interpolation-mode:bicubic;/*为了照顾ie图片缩放失真*/
 }
+
 em,i{font-style:normal;}
 strong{font-weight: normal;}
 [v-cloak] {
@@ -121,8 +123,6 @@ body,html {  /* IOS禁止微信调整字体大小  */
     text-size-adjust: 100% !important;
     -moz-text-size-adjust: 100% !important;
 }
-
-
 /* input{
     -webkit-appearance: none ;
 } */

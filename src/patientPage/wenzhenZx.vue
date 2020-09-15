@@ -14,7 +14,7 @@
                                 <div class='liaotzs_wrap'>
                                     <div class='liaotzs'>{{item.chartComment}}</div>
                                 </div>
-                                <div class='lefttime'>{{item.sendTime}}</div>
+                                <div class='lefttime' style="margin-top:.15rem">{{item.sendTime}}</div>
                             </div>
                         </div>
                         <!-- 医生文字 -->
@@ -25,7 +25,7 @@
                                 <div class='liaotzs_wrap1'>
                                     <div class='liaotzs1'>{{item.chartComment}}</div>
                                 </div>
-                                <div class='lefttime' style='float:right;margin-right:0.50rem'>{{item.sendTime}}</div>
+                                <div class='lefttime' style='float:right;margin-right:0.55rem;margin-top:.2rem'>{{item.sendTime}}</div>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                                         <img class='yuyinpic1' style='right:5px' src='../assets/img/yuyin1.png'>
                                         {{item.chartComment}}"
                                     </div>
-                                    <div class='lefttime' style='float:right'>{{item.sendTime}}</div>
+                                    <div class='lefttime' style='float:right;margin-top:.2rem;margin-right:-.2rem'>{{item.sendTime}}</div>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class='lefttime' style='float:left;margin-left:0.93rem;'>{{item.sendTime}}</div>
+                            <div class='lefttime' style='float:left;margin-left:1.3rem;margin-top:.2rem'>{{item.sendTime}}</div>
                         </div>
                     </div>
                     <!-- 评价 -->
@@ -175,7 +175,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class='lefttime' style='float:left;margin-left:0.99rem;'>{{item.sendTime}}</div>
+                            <div class='lefttime' style='float:left;margin-left:1.35rem;margin-top:.2rem'>{{item.sendTime}}</div>
                         </div>
                     </div>
 
@@ -2078,9 +2078,13 @@ page {
     padding: .19rem .30rem;
     box-sizing: border-box;
     background: #b9e4e8;
+    max-width: 4rem;
     border-radius: .10rem;
     color: #565656;
     font-size: .28rem;
+    text-align: justify;
+    text-justify: newspaper;
+    word-break: break-all;
     line-height: .4rem;
     float: right;
     margin-right: -0.03rem;
@@ -2089,7 +2093,7 @@ page {
 /* 调理 */
 
 .tiaoli_top {
-    padding: .19rem .30rem;
+    padding: .4rem .30rem 0.2rem .30rem;
     box-sizing: border-box;
 }
 
@@ -2105,6 +2109,7 @@ page {
 
 .tiaoli_top_img {
     width: .56rem;
+    margin-right: .3rem;
     height: .70rem;
     float: left;
 }
