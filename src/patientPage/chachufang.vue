@@ -37,6 +37,7 @@ export default {
             patientId: "",
             message: "",
             loadUp: true,
+
         };
     },
     created() {

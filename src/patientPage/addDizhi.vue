@@ -1,5 +1,6 @@
 <template>
 <div class="addDizhi">
+    <img src="../assets/img/LODING.gif" alt="" class="loading" v-if="loadUp">
     <div class="xinxi">
         <label>收货人:</label>
         <input type="text" placeholder="填写收货人姓名" v-model="sxm">
@@ -59,10 +60,12 @@ export default {
     name: "addDizhi",
     data() {
         return {
+            loadUp: true,
             yincang: false,
             sheng1: true,
             shi1: false,
             qu1: false,
+            loadUp: false,
             sheng: [],
             shi: [],
             qu: [],
@@ -112,6 +115,7 @@ export default {
             this.$router.go(-1)
         },
         addressFindOne() {
+            this.loadUp = true
             let list = {
                 token: this.token,
                 recipientId: this.recipientId
@@ -119,6 +123,8 @@ export default {
             addressFindOne(list).then((res) => {
                 //              	alert(JSON.stringify(res));
                 console.log(res);
+                this.loadUp = false
+
                 this.shengtext = res.provinceName;
                 this.shitext = res.cityName;
                 this.qutext = res.areaName;
@@ -256,6 +262,15 @@ export default {
 
 <style lang="less" scoped>
 @import '../assets/less/base.less';
+
+.loading {
+    width: 1rem;
+    height: 1rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .addDizhi {
     width: 100%;

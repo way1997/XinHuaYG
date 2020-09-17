@@ -75,12 +75,12 @@ export default {
         return {
             tab: ['热点', '医学讲堂', '生活', '母婴', '辟谣'],
             botIdx: 0,
-            token: '13121557865:1595277654852:1e7a2d010716874a108ac59e82080baa',
-            patientId: 'ca8a7d342a804116a7f703b4bdc56002',
-            openId: 'oTRY10fRZBmepPFQ1V7tqSBprZqg',
-            // openId: '',
-            // token: '',
-            // patientId: '',
+            // token: '13121557865:1595277654852:1e7a2d010716874a108ac59e82080baa',
+            // patientId: 'ca8a7d342a804116a7f703b4bdc56002',
+            // openId: 'oTRY10fRZBmepPFQ1V7tqSBprZqg',
+            openId: '',
+            token: '',
+            patientId: '',
             pageNum: 10,
             pageSize: 0,
             quanbuWenzhang: [],
@@ -89,18 +89,17 @@ export default {
             loadUp: true,
             doctorTel: '',
             dingNum: 0,
-
             shouqi: true,
             unionId: '',
             doctorId: ''
         }
     },
     created() {
-        // this.openId = this.GetQueryString('openid');
-        cookie.set("token", this.token)
-        cookie.set("patientId", this.patientId)
-        // this.openIdMsg();
-        this.addLogin();
+        this.openId = this.GetQueryString('openid');
+        // cookie.set("token", this.token)
+        // cookie.set("patientId", this.patientId)
+        this.openIdMsg();
+        // this.addLogin();
         // this.findArtcleByType();
         // this.findDoctorBySubject();
         // this.findDoctorHot();

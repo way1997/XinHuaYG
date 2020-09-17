@@ -1,20 +1,27 @@
 <template>
 <div class="dingdan">
     <div class="backHome" @click="goBack">返回上一级</div>
+    <van-tabs v-model="active" swipeable animated @click="tabEvent">
+        <van-tab v-for="(item, index) in arr" :title="item.name" :key="item.name">
+
+        </van-tab>
+    </van-tabs>
     <div class="xian" style="clear:both;"></div>
     <div class="list">
         <div v-for="(item,index) in orderlistd" :key="index" @click="goDetail(item.takeWay,item)">
             <div>{{item.doctorName}}医生 的辩证及处方</div>
             <div>取药方式：<em v-if="item.takeWay==0">用户自提</em><em v-if="item.takeWay==1">药店配送</em>
-                <span>订单状态：<em v-if="item.indentStatus==5 || item.indentStatus==6">待收货</em>
+                <span>订单状态：
                     <em v-if="item.indentStatus==2">待支付</em>
-                    <em v-if="item.indentStatus==5 && item.takeWay == 1">待配送</em>
+                    <em v-if="item.indentStatus==4 && item.takeWay == 1">待配送</em>
                     <em v-if="item.indentStatus==4 && item.takeWay == 0">待取货</em>
-                    <em v-if="item.indentStatus==7">已完成</em>
+                    <em v-if="item.indentStatus==5 || item.indentStatus==6">待收货</em>
                     <em v-if="item.indentStatus==6">待备药</em>
-                    <em v-if="item.indentStatus==7">配送中</em>
+                    <em v-if="item.indentStatus==7">已完成</em>
+
+                    <!-- <em v-if="item.indentStatus==7">配送中</em>
                     <em v-if="item.indentStatus==8">待评价</em>
-                    <em v-if="item.indentStatus==9">已评价</em>
+                    <em v-if="item.indentStatus==9">已评价</em>-->
                 </span>
             </div>
         </div>
@@ -35,17 +42,46 @@ export default {
     name: "dingdan",
     data() {
         return {
+            dingdanPageQi: 1, // 传输都订单页发送的信号
+            active: '',
+            arr: [{
+                    'name': '待支付',
+                    "num": 0
+                },
+                {
+                    'name': '待取货',
+                    "num": 1
+                }, {
+                    'name': '待配送',
+                    "num": 2
+                }, {
+                    'name': '待收货',
+                    "num": 3
+                }, {
+                    'name': '已完成',
+                    "num": 4
+                }
+            ],
             token: '',
             patientId: '',
             indentStatus: 1,
-            index: 1,
+            index: '', //  0[待支付 ]；1 [待取货] ； 2 [待配送]； 3 [待收货] ；4[已完成]
             orderlistd: [],
             loadUp: true,
         }
     },
     created() {
+        let active = Number(this.$route.params.active)
         this.token = cookie.get("token")
         this.patientId = cookie.get("patientId")
+        this.index = this.$route.params.pageInd ? this.$route.params.pageInd : 1
+        if (active == 0) {
+            this.active = active
+        } else {
+            this.active = active ? active : 1
+        }
+
+        // console.log('this.active:' + this.active)
         this.findOrder();
     },
     computed: {
@@ -61,6 +97,7 @@ export default {
                 index: this.index
             }
             findOrder(list).then((res) => {
+                //console.log(res.data)
                 if (res.type == true) {
                     this.orderlistd = res.data;
                     this.loadUp = false;
@@ -72,24 +109,72 @@ export default {
         },
         goDetail(takeWay, item) {
             let list = JSON.stringify(item)
-            if (takeWay == 0) {
+            // console.log('详情信号值this.index = ' + this.index)
+            let xinhao = this.index
+            if (xinhao == 0) {
+                console.log(item)
+                let prescriptionId = item.prescriptionId
+                let indentId = item.indentId
+                let doctorId = item.doctorId
                 this.$router.push({
-                    path: '/zitidian',
+                    path: "/chufangXq",
                     query: {
-                        item: list
-                    }
-                })
+                        prescriptionId: indentId,
+                        indentId: prescriptionId,
+                        doctorId: doctorId,
+                        dingdanPageQi: this.dingdanPageQi,
+                        pageInd: this.index,
+                        active: this.active
+                    },
+                });
+
             } else {
-                this.$router.push({
-                    path: '/peisongDizhi',
-                    query: {
-                        item: list
-                    }
-                })
+                if (takeWay == 0) {
+                    this.$router.push({
+                        path: '/zitidian',
+                        query: {
+                            item: list,
+                            pageInd: this.index,
+                            active: this.active
+                        }
+                    })
+                } else {
+                    this.$router.push({
+                        path: '/peisongDizhi',
+                        query: {
+                            item: list
+                        }
+                    })
+                }
             }
+
         },
         goBack() {
             this.$router.push('/mine')
+        },
+        tabEvent(index) {
+            this.index = index
+            this.active = index
+            // console.log('已改变' + this.active)
+            let list = {
+                token: this.token,
+                patientId: this.patientId,
+                indentStatus: this.indentStatus,
+                index: this.index
+            }
+            this.loadUp = true
+            findOrder(list).then((res) => {
+                this.loadUp = false
+                console.log(res.data)
+                if (res.type == true) {
+                    this.orderlistd = res.data;
+                    this.loadUp = false;
+                } else {
+                    this.$toast(res.massage)
+                    this.loadUp = false;
+                }
+            })
+
         }
     },
     components: {
@@ -101,6 +186,32 @@ export default {
 <style lang="less" scoped>
 @import '../assets/less/base.less';
 
+/deep/ .van-tabs--line .van-tabs__wrap {
+    height: .5rem;
+}
+
+/deep/ .van-tab--active {
+    color: #00B0C2;
+}
+
+/deep/ .van-tab__text.van-tab__text--ellipsis {
+    font-size: .26rem;
+    display: -webkit-box;
+    overflow: initial;
+
+}
+
+/deep/ .van-tabs__line {
+    position: absolute;
+    bottom: .15rem;
+    left: 0;
+    z-index: 1;
+    width: .8rem;
+    height: .03rem;
+    background-color: #00B0C2;
+    border-radius: 3px;
+}
+
 .backHome {
     width: 81.46%;
     height: 0.76rem;
@@ -109,7 +220,7 @@ export default {
     text-align: center;
     line-height: 0.76rem;
     color: #fff;
-    font-size: 0.25rem;
+    font-size: 0.32rem;
     margin: 0 auto;
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;

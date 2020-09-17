@@ -1,5 +1,5 @@
 <template>
-<div class="zitidian">
+<div class="zitidian" style="padding-bottom:.23333rem">
     <div class="backHome" @click="goBack">返回上一级</div>
     <div class="xian"></div>
     <div class="four">
@@ -20,11 +20,20 @@
             <p class="yaofang"><span>药方:</span><label class="yaoList"><em v-for="(item,index) in datas.detail" :key="index">{{item.name}}{{item.howWeight}}、</em></label></p>
         </div>
         <div class="xian"></div>
+        <section v-if="status">
+            <h1>药店信息</h1>
+            <div class="info">
+                <p style="height:auto"><span>药店地址:</span><label>{{list.data[0].shopName}}</label></p>
+                <section style="clear:both"></section>
+                <p><span>联系电话:</span><label>{{list.data[0].phone}}</label></p>
+            </div>
+        </section>
+        <div class="xian"></div>
         <h1>其他信息</h1>
         <div class="info">
             <p><span>购药前查看药方:</span><label v-if="list.isPayLook==0">不可看</label><label v-if="list.isPayLook==1">可看</label></p>
             <p class="fuyaojinji"><span>服药禁忌:</span><label v-for="(item,index) in list.taboo" :key="index">{{item.tabooName}}、</label></p>
-            <p class="buchongshuoming"><span>补充说明:</span><label>{{list.sickName}}</label></p>
+            <!-- <p class="buchongshuoming"><span>补充说明:</span><label>{{list.sickName}}</label></p> -->
         </div>
         <div class="xian"></div>
     </div>
@@ -47,7 +56,8 @@ export default {
             prescriptionId: '',
             medicineType: '',
             list: '',
-            datas: ''
+            datas: '',
+            status: '',
         }
     },
     created() {
@@ -70,9 +80,16 @@ export default {
                 prescriptionId: this.prescriptionId
             }
             lookPrescription(list).then((res) => {
-                //console.log(res);
+                // console.log(res);
                 this.list = res;
                 this.datas = res.data[0];
+                if (this.datas.status == 1) {
+                    this.status = true
+                    // console.log(this.status)
+                } else {
+                    this.status = false
+                    // console.log(this.status)
+                }
                 if (res.medicineType == 1) {
                     this.medicineType = '中药'
                 }

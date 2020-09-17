@@ -1,5 +1,5 @@
 <template>
-<div class="chufangxq">
+<div class="chufangxq" id="chufangxq">
     <img src="../assets/img/LODING.gif" alt="" class="loading" v-if="loadUp">
     <div class="backHome" @click="goBack">返回上一级</div>
     <div class="xian" style="clear:both;"></div>
@@ -31,18 +31,19 @@
         </div>
         <div class="xian" style="clear:both;"></div>
         <h1>配送信息</h1>
-        <div class="info">
+        <div class="info" style="">
             <div class="chooseWay">
                 <label v-for="(item,index) in peisong1" :key="index" @click="peisong(index)"><img :src="content1==index?require('../assets/img/danxuan.png'):require('../assets/img/danxuang1.png')" class="tu2">{{item.name}}</label>
             </div>
             <p style="padding-bottom:0.9rem;line-height:0.6rem"><span>最近药房:</span><label>{{yaodiantext}}</label></p>
-            <div v-if="content1==1">
+            <div v-if="content1==1" style="padding-bottom:.8rem;line-height:0.6rem">
                 <p><label style="color:#00afc2;" @click="showAdd">更改地址</label></p>
                 <section style="clear: both;"></section>
                 <p><span>收货人:</span><label>{{userAddress.recipient}}</label></p>
                 <p><span>手机号码:</span><label>{{userAddress.tel||userAddress.repPhone}}</label></p>
-                <p><span>收货地址:</span><label>{{userAddress.address}}</label></p>
-                <p v-if="content1==1"><span>快递费:</span><label>{{prices.price4}}</label></p>
+                <p style=" height:auto;"><span>收货地址:</span><label style="line-height:.4rem;margin-top:.18rem">{{userAddress.address}}</label></p>
+                <section style="clear:both"></section>
+                <p v-if="content1==1" style="margin-top:.5rem;padding-bottom:.2rem"><span>快递费:</span><label>{{prices.price4}}</label></p>
             </div>
         </div>
         <h1 v-if="isAgency == 0">是否代煎</h1>
@@ -84,6 +85,7 @@ import HeadTop from 'base/header/header'
 import router from '../router'
 import cookie from "js-cookie"
 import wx from "weixin-js-sdk"
+import $ from 'jquery'
 export default {
     name: "chufangxq",
     data() {
@@ -129,15 +131,23 @@ export default {
             shou: '',
             huanDizhi: false,
             userAddress: '',
-            medicineType: '1'
+            medicineType: '1',
+            dingdanPageQi: 0, // 传输都订单页发送的信号
+            pageInd: '',
+            active: ''
         }
     },
     created() {
+        $('#chufangxq').scrollTop(0);
         this.token = cookie.get('token');
         this.patientId = cookie.get('patientId');
         this.doctorId = this.$route.query.doctorId;
         this.indentId = this.$route.query.indentId;
         this.prescriptionId = this.$route.query.prescriptionId;
+        this.dingdanPageQi = this.$route.query.dingdanPageQi //定向传输信号
+        this.pageInd = this.$route.query.pageInd
+        this.active = this.$route.query.active
+        console.log(this.pageInd, this.active)
         this.addressList();
 
     },
@@ -147,7 +157,17 @@ export default {
 
     methods: {
         goBack() {
-            this.$router.go(-1)
+            if (this.dingdanPageQi == 1) {
+                this.$router.push({
+                    name: 'dingdan',
+                    params: {
+                        pageInd: this.pageInd,
+                        active: this.active
+                    }
+                })
+            } else {
+                this.$router.go(-1)
+            }
         },
         goAdd() {
             this.$router.push('/addDizhi')
@@ -159,10 +179,28 @@ export default {
             this.huanDizhi = false;
         },
         changeAddress(item) {
+
             this.receiptPlace = item.address;
             this.userAddress = item;
             this.huanDizhi = false;
             this.addressId = item.recipientId;
+            console.log('this.addressId=' + this.addressId)
+            // this.patientPayPage();
+            let list = {
+                token: this.token,
+                patientId: this.patientId,
+                indentId: this.indentId,
+                doctorId: this.doctorId,
+                addressId: this.addressId
+            }
+            patientPayPage(list).then((res) => {
+                this.loadUp = false
+                this.lists = res.data;
+                console.log(res.data);
+                this.yaodiantext = res.map_return_money.shopName;
+                console.log(this.yaodiantext);
+            })
+
         },
         addressList() {
             let list = {
@@ -196,6 +234,7 @@ export default {
                 doctorId: this.doctorId,
                 addressId: this.addressId
             }
+            // console.log('list.addressId=' + list.addressId)
             patientPayPage(list).then((res) => {
                 this.lists = res.data;
                 console.log(res.data);
@@ -215,7 +254,7 @@ export default {
                     }
                 }
 
-                console.log(this.content2)
+                // console.log(this.content2)
                 this.prescriptionId = res.data.indentId;
                 this.medicineType = res.data.medicineType
                 this.total_sum = (this.prices.price1 + this.prices.price2 + this.zhenjinT).toFixed(2);
@@ -230,7 +269,11 @@ export default {
             } else {
                 agencyMoney = this.prices.price3;
             }
+            //peisong
 
+            let dispatchingMoney = 0;
+            // console.log(this.content2)
+            dispatchingMoney = this.content1 == 0 ? 0 : this.prices.price4;
             let that = this;
             let list = {
                 token: this.token,
@@ -241,7 +284,7 @@ export default {
                 shopId: this.shopId,
                 money: this.total_sum,
                 is_dispatching: this.content1,
-                dispatchingMoney: this.prices.price4,
+                dispatchingMoney: dispatchingMoney,
                 is_to_agency: this.content2,
                 agencyMoney: agencyMoney,
                 makeMoney: this.prices.price2,
@@ -349,6 +392,10 @@ export default {
 <style lang="less" scoped>
 @import "../assets/less/base.less";
 
+.chufangxq {
+    overflow: hidden;
+}
+
 .backHome {
     width: 81.666%;
     height: 0.76rem;
@@ -393,7 +440,7 @@ export default {
         p {
             width: 90%;
             height: 0.77rem;
-            border-bottom: 0.01rem solid #f5f5f5;
+            border-bottom: 0.02rem solid #f5f5f5;
             color: #828282;
             font-size: 0.28rem;
             line-height: 0.77rem;

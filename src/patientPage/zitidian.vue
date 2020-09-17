@@ -1,6 +1,7 @@
 <template>
 <div class="zitidian">
     <div class="backHome" @click="goBack">返回上一级</div>
+
     <div class="xian"></div>
     <div class="four">
         <h1>处方信息</h1>
@@ -24,14 +25,14 @@
             <p class="fuyaojinji"><span>服药禁忌:</span><label v-for="(item,index) in item.taboo" :key="index">{{item.tabooName}}、</label></p>
             <p style="clear:both;border-top:1px solid #f5f5f5;"><span>补充说明:</span><label>{{item.sickName}}</label></p>
         </div>
-        <div class="xian"></div>
+        <!--<div class="xian"></div>
         <h1>自提点展示</h1>
         <div class="zitidianD">
             <div>
                 <p>{{item.shopName}}<span></span></p>
                 <p>距离当前位置米<span>查看地图/导航</span></p>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 </template>
@@ -50,14 +51,18 @@ export default {
             indentId: '',
             index: 2,
             item: '',
-            medicineType: ''
+            medicineType: '',
+            pageInd: '',
         }
     },
     created() {
         this.token = cookie.get("token")
         this.patientId = cookie.get("patientId")
+        this.pageInd = this.$route.query.pageInd
+        this.active = this.$route.query.active
+        // console.log(this.active)
         this.item = JSON.parse(this.$route.query.item)
-        //console.log(this.item)
+        // console.log(this.item)
         if (this.item.medicineType == 1) {
             this.medicineType = '中药'
         }
@@ -74,7 +79,13 @@ export default {
 
     methods: {
         goBack() {
-            this.$router.go(-1)
+            this.$router.push({
+                name: 'dingdan',
+                params: {
+                    pageInd: this.pageInd,
+                    active: this.active
+                }
+            })
         },
 
     },
@@ -99,7 +110,7 @@ export default {
     text-align: center;
     line-height: 0.76rem;
     color: #fff;
-    font-size: 0.25rem;
+    font-size: 0.32rem;
     margin: 0 auto;
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;

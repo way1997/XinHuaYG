@@ -87,7 +87,12 @@ export default {
             this.$router.push('/chachufang')
         },
         dingdan() {
-            this.$router.push('/dingdan')
+            this.$router.push({
+                name: 'dingdan',
+                params: {
+                    pageInd: 1
+                }
+            })
         },
         dizhi() {
             this.$router.push('/address')

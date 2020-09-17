@@ -52,7 +52,8 @@ export default {
             prescriptionId: '',
             medicineType: '',
             list: '',
-            item: ''
+            item: '',
+            pageInd: '',
         }
     },
     created() {
@@ -79,39 +80,40 @@ export default {
 @import '../assets/less/base.less';
 
 .backHome {
-    width: 611px;
-    height: 76px;
+    width: 81.46%;
+    height: 0.76rem;
     background: #00afc2;
-    border-radius: 13px;
+    border-radius: 0.13rem;
     text-align: center;
-    line-height: 76px;
+    line-height: 0.76rem;
     color: #fff;
-    font-size: 25px;
+    font-size: 0.25rem;
     margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
 }
 
 .xian {
     width: 100%;
-    height: 10px;
+    height: 0.1rem;
     background: #efefef;
     clear: both;
 }
 
 .four {
     width: 100%;
+    padding-bottom: .233333rem;
 
     h1 {
-        width: 190px;
-        height: 53px;
-        line-height: 53px;
+        width: 1.9rem;
+        height: 0.53rem;
+        line-height: 0.53rem;
         text-align: center;
-        font-size: 24px;
+        font-size: 0.24rem;
         color: #fff;
         background: #00afc2;
-        border-radius: 0px 27px 27px 0px;
-        margin-top: 20px;
+        border-radius: 0 0.27rem 0.27rem 0;
+        margin-top: 0.2rem;
     }
 
     .info {
@@ -120,14 +122,14 @@ export default {
         background: #fff;
 
         p {
-            width: 682px;
-            height: 77px;
-            border-bottom: 1px solid #f5f5f5;
+            width: 90.93%;
+            height: 0.77rem;
+            border-bottom: 0.01rem solid #f5f5f5;
             color: #828282;
-            font-size: 24px;
-            line-height: 77px;
+            font-size: 0.24rem;
+            line-height: 0.77rem;
             margin: 0 auto;
-            padding: 0 10px;
+            padding: 0 0.1rem;
 
             span {
                 float: left;
@@ -141,8 +143,8 @@ export default {
         p.yaofang {
             height: auto;
             float: left;
-            margin-left: 34px;
-            line-height: 50px;
+            margin-left: 0.34rem;
+            line-height: 0.5rem;
         }
 
         .yaoList {
@@ -151,15 +153,15 @@ export default {
 
         p.jiFu {
             float: left;
-            margin-left: 34px;
+            margin-left: 0.34rem;
         }
 
         div {
-            font-size: 25px;
+            font-size: .25rem;
             color: #00afc2;
             width: 100%;
             text-align: center;
-            line-height: 80px;
+            line-height: .8rem;
         }
     }
 }
