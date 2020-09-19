@@ -56,9 +56,13 @@
 
       <div class="addYao" v-if="showAdd">
         <div id="scrolldIV">
-          <p v-for="(item,index) in arr" :key="index"><label>{{item.medicineName}}</label><input type="number" readonly
-              v-model='item.howWeight' @input="lengthNum(index)" @click="hideYaocai(index)"><em>g</em>
+          <p v-for="(item,index) in arr" :key="index">
+            <label>{{item.medicineName}}</label>
             <img class='guangbiao1' src='../assets/img/gb.gif' v-if="shuzi==index&&jianpanS">
+            <input type="number" readonly
+              v-model='item.howWeight' @input="lengthNum(index)" @click="hideYaocai(index)">
+              <em>g</em>
+            
             <img src="../assets/img/delete.png" alt="" @click="deleteYao(index)">
           </p>
         </div>
@@ -473,6 +477,7 @@
           }
           this.step1 = 3;
         }
+        window.scrollTo(0,0);
       },
       backstep() {
         this.step1--;
@@ -483,6 +488,7 @@
           this.total = 0.00
           this.total1 = 0.00
         }
+        window.scrollTo(0,0);
       },
       showMedi() {
 
@@ -499,7 +505,7 @@
           this.k1 = 'none';
           this.k2 = 'block';
         }
-        
+
       },
       inputclick() {
         this.medicinalWraphid = true;
@@ -753,7 +759,8 @@
         this.pinpaiIdx = index;
         this.brandId = brandId;
         this.pinpaiType = value;
-        //console.log(this.pinpaiIdx)
+        console.log(this.brandId)
+        console.log(this.pinpaiType)
         this.yaotaiIdx = 100;
         this.shapeId = '';
         this.shopspan = '';
@@ -765,7 +772,12 @@
         console.log(this.pinpaiIdx)
         console.log(index)
         if (index == 1 && this.pinpaiIdx != 2) {
-          return false;
+          this.pinpaiIdx = 2;
+          this.brandId = 'e3da571c41a641aea32vfvn931b89ea98ce';
+          this.pinpaiType = "新华社区";
+          this.yaotaiIdx = index;
+          this.shapeId = id;
+          this.shopspan = value;
         } else {
           this.yaotaiIdx = index;
           this.shapeId = id;

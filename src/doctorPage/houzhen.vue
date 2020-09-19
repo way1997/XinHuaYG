@@ -176,6 +176,8 @@
       getWxConfig() {
         var d1=cookie.get("doctorId");
         var d2=cookie.get("doctorName");
+        var d3=cookie.get("doctorImgUrl");
+        var d4=cookie.get("token");
         $.ajax({
           url: "https://www.mfzhosp.com/mkkMoblie/accessToken/getWxConfig",
           type: 'post',
@@ -204,19 +206,19 @@
                   // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
                   if (res.errMsg == "checkJsApi:ok") {
                     wx.updateAppMessageShareData({
-                      title: '我的二维码', // 分享标题
-                      desc: '关注我的二维码，享受线上医疗', // 分享描述
-                      link: 'https://www.mfzhosp.com/H6/#/myevm?doctorId='+d1+"&doctorName="+d2, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                      imgUrl: 'https://www.mfzhosp.com//img/logo.png', // 分享图标
+                      title: d2+'医生的邀请|新华医馆', // 分享标题
+                      desc: '这是我的二维码名片，如有需要可随时线上咨询', // 分享描述
+                      link: 'https://www.mfzhosp.com/H5/#/myevm?doctorId='+d1+"&doctorName="+d2+"&token="+d4, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                      imgUrl: d3, // 分享图标
                       success: function() {
                         // 设置成功
                         console.log(123)
                       }
                     })
                     wx.updateTimelineShareData({
-                      title: '我的二维码', // 分享标题
-                      link: 'https://www.mfzhosp.com/H6/#/myevm?doctorId='+d1+"&doctorName="+d2, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                      imgUrl: 'https://www.mfzhosp.com//img/logo.png', // 分享图标
+                      title: d2+'医生的邀请|新华医馆'+'这是我的二维码名片，如有需要可随时线上咨询', // 分享标题
+                      link: 'https://www.mfzhosp.com/H5/#/myevm?doctorId='+d1+"&doctorName="+d2+"&token="+d4, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                      imgUrl: d3, // 分享图标
                       success: function() {
                         // 设置成功
                         console.log(456)

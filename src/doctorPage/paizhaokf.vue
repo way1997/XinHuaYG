@@ -12,10 +12,10 @@
         <p><span>患者年龄:</span><label>{{age}}</label></p>
       </div>
       <div class="xian"></div>
-      <div class="bianz">
+      <!--   <div class="bianz">
         <p>编写辩证内容</p>
         <textarea name="" id="" cols="" rows="" placeholder="请输入辩证内容" v-model="sickName"></textarea>
-      </div>
+      </div>-->
     </div>
     <div class="xian"></div>
     <div class="second">
@@ -31,8 +31,11 @@
         <p><span @click="changeYaotai(index,item.shapeId,item.shapeName)" v-for="(item,index) in yaotaiList" :key="index"
             :class="{choose:yaotaiIdx==index}">{{item.shapeName}}</span></p>
       </div>
-      <div class="yaofang"><label>药方:</label>
-        <img src="https://www.mfzhosp.com/mkkMoblie/images/cf.jpg" class="img1"/>
+      <div class="yaofang"><label>药方:</label> 
+        <p>    
+          <img v-image-preview src="../assets/img/cfxx.png" class="img1" />
+          <span style="position: absolute;margin-top: 0.5rem;margin-left: 0.1rem;">药方范例</span>
+        </p>
         <p>
           <img :src="uploadImg">
           <input ref="input" type="file" accept="image/*" @change="handleFileChange">
@@ -52,12 +55,12 @@
           <label>购药前查看药方:</label>
           <p><span v-for="(item,index) in chakan" :key="index" @click="changeChakan(index,item.name)" :class="{choose:chakanIdx==index}">{{item.name}}</span></p>
         </div>
-        <div class="jinji">
+        <!--      <div class="jinji">
           <p><label>服药禁忌:</label><em @click="hideList">({{textJinji}})</em></p>
           <div class="list" v-show="hidejinji">
             <span v-for='(item,index) in list' :key="index" :class="{chooseJin:selectIndex[index].sureid}" @click="xuanJinji(index,item.tabooName,item.tabooId)">{{item.tabooName}}</span>
           </div>
-        </div>
+        </div>-->
         <div class="buchong">
           <span>补充说明:</span>
           <textarea name="" id="" cols="" rows="" placeholder="输入文字内容" v-model="preEnjoin"></textarea>
@@ -85,6 +88,9 @@
   import router from '../router'
   import cookie from "js-cookie"
   import baseURI from 'api/env'
+  import VueDirectiveImagePreviewer from 'vue-directive-image-previewer'
+  import 'vue-directive-image-previewer/dist/assets/style.css'
+
   export default {
     name: "paizhaokf",
     data() {
@@ -145,7 +151,8 @@
         imgDatas: [],
         photo1: '',
         countPrice: 0.00,
-        medicineType: 1
+        medicineType: 1,
+        imgcount: 0
       }
     },
     created() {
@@ -168,6 +175,12 @@
       this.findBrandList();
       this.priceList();
       this.taboo();
+      this.pinpaiIdx = 100;
+      this.brandId = '';
+      this.pinpaiType = '';
+      this.yaotaiIdx = 100;
+      this.shapeId = '';
+      this.shopspan = '';
     },
     computed: {
 
@@ -185,10 +198,11 @@
         } else {
           sexb = 2
         }
-        if (this.sickName == '') {
-          this.$toast("请填写辩证内容");
-          return false
-        }
+
+        // if (this.sickName == '') {
+        //   this.$toast("请填写辩证内容");
+        //   return false
+        // }
         that.json.forEach(function(item, index) {
           that.taboos.push(item.tabooId);
           //console.log(item)
@@ -196,7 +210,18 @@
         if (this.preEnjoin == '') {
           this.preEnjoin = '无';
         }
+        console.log(this.shapeId)
+        console.log(this.brandId)
+        if (this.shapeId == '') {
+          alert("未选择药态");
+          return false
+        }
+        if (this.brandId == '') {
+          alert("未选择品牌");
+          return false
+        }
         if (this.imgcount == 0) {
+          alert("请上传图片");
           this.$toast("请上传图片");
           return false
         }
@@ -288,14 +313,36 @@
         this.yaofangspan = value;
       },
       changePinpai(index, brandId, value) {
+        if (this.arr.length != 0) {
+          return false;
+        }
         this.pinpaiIdx = index;
         this.brandId = brandId;
         this.pinpaiType = value;
+        console.log(this.brandId)
+        console.log(this.pinpaiType)
+        this.yaotaiIdx = 100;
+        this.shapeId = '';
+        this.shopspan = '';
       },
       changeYaotai(index, id, value) {
-        this.yaotaiIdx = index;
-        this.shapeId = id;
-        this.shopspan = value;
+        if (this.arr.length != 0) {
+          return false;
+        }
+        console.log(this.pinpaiIdx)
+        console.log(index)
+        if (index == 1 && this.pinpaiIdx != 2) {
+          this.pinpaiIdx = 2;
+          this.brandId = 'e3da571c41a641aea32vfvn931b89ea98ce';
+          this.pinpaiType = "新华社区";
+          this.yaotaiIdx = index;
+          this.shapeId = id;
+          this.shopspan = value;
+        } else {
+          this.yaotaiIdx = index;
+          this.shapeId = id;
+          this.shopspan = value;
+        }
       },
       changeChakan(index, value) {
         this.chakanIdx = index;
@@ -320,8 +367,8 @@
         findBrandList(list).then((res) => {
           //console.log(res);
           this.medicineManner = res.list;
-          this.brandId = res.list[0].id;
-          this.pinpaiType = res.list[0].lable;
+          // this.brandId = res.list[0].id;
+          // this.pinpaiType = res.list[0].lable;
           //console.log(res.list)
         })
       },
@@ -332,8 +379,8 @@
         modelType(list).then((res) => {
           //console.log(res);
           this.yaotaiList = res.data;
-          this.shapeId = this.yaotaiList[0].shapeId;
-          this.shopspan = this.yaotaiList[0].shapeName;
+          //this.shapeId = this.yaotaiList[0].shapeId;
+          // this.shopspan = this.yaotaiList[0].shapeName;
         })
       },
       priceList() { //诊金列表
@@ -396,9 +443,9 @@
   @import '../assets/less/base.less';
 
   .img1 {
-        width: 1.12rem;
-            height: 1.12rem;
-            margin-left: 1.9rem;
+    width: 1.12rem;
+    height: 1.12rem;
+    margin-left: 1.9rem;
   }
 
   .paizhaokf {
@@ -754,7 +801,7 @@
         float: left;
         padding-top: 20px;
         clear: both;
-            margin-bottom: 1rem;
+        margin-bottom: 1rem;
 
         span {
           float: left;

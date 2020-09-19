@@ -126,6 +126,11 @@ export default new Router({
       name: 'paizhaoXq',
       component: (paizhaoXq) => require(['@/doctorPage/paizhaoXq'], paizhaoXq)
     },
+    {
+      path: '/myevm',
+      name: 'myevm',
+      component: (myevm) => require(['@/doctorPage/myevm'], myevm)
+    },
     //患者端
     // {
     //   path: '/indexPage',

@@ -3,19 +3,7 @@
     <div class="search">
         <input type="text" placeholder="输入患者姓名" v-model="names" @input="findPatient" @keyup="shuru">
     </div>
-    <div class="huanList">
-        <div class="detail" v-for="(item,index) in list" :key="index" @click="gohuan(item.patientId,item.patientId2)">
-            <img :src="item.imgUrl||item.patientImgUrl" alt="">
-            <div class="name">{{item.patientName}}</div>
-            <div class="phone">{{item.patientPhone||item.phone}}</div>
-            <div class="sexs">
-                <img :src="item.patientSex==1?require('../assets/img/sex2.png'):require('../assets/img/sex1.png')" alt="">{{item.age||item.patientAge}}岁
-            </div>
-        </div>
-    </div>
-    <img src="../assets/img/LODING.gif" alt="" class="loading" v-if="loadUp">
-    <img class="zanwuxinxi" v-show="display3" src='../assets/img/zanwuxinxi.png' />
-    <tabBar />
+
 </div>
 </template>
 
@@ -194,7 +182,6 @@ export default {
             font-size: 24px;
             line-height: 41px;
             color: #fff;
-            margin-right: 10px;
 
             img {
                 width: 29px;

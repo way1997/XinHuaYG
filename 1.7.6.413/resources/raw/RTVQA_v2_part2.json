@@ -1,0 +1,1225 @@
+{
+    "layer_cnt": 64,
+    "blob_cnt": 80,
+    "layer_info": [
+        {
+            "layer_type": "Input",
+            "layer_name": "Input_0",
+            "input_blob_cnt": 0,
+            "output_blob_cnt": 1,
+            "input_blobs": [],
+            "output_blobs": [
+                "Input_0_0"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Split",
+            "layer_name": "Split_0",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 11,
+            "input_blobs": [
+                "Input_0_0"
+            ],
+            "output_blobs": [
+                "Split_0_0",
+                "Split_0_1",
+                "Split_0_2",
+                "Split_0_3",
+                "Split_0_4",
+                "Split_0_5",
+                "Split_0_6",
+                "Split_0_7",
+                "Split_0_8",
+                "Split_0_9",
+                "Split_0_10"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Slice",
+            "layer_name": "Slice_0",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Split_0_0"
+            ],
+            "output_blobs": [
+                "Slice_0_0"
+            ],
+            "layer_param": {
+                "start": 0,
+                "end": 1
+            },
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Split",
+            "layer_name": "Split_1",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 2,
+            "input_blobs": [
+                "Slice_0_0"
+            ],
+            "output_blobs": [
+                "Split_1_0",
+                "Split_1_1"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Slice",
+            "layer_name": "Slice_1",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Split_0_1"
+            ],
+            "output_blobs": [
+                "Slice_1_0"
+            ],
+            "layer_param": {
+                "start": 1,
+                "end": 2
+            },
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Split",
+            "layer_name": "Split_4",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 2,
+            "input_blobs": [
+                "Slice_1_0"
+            ],
+            "output_blobs": [
+                "Split_4_0",
+                "Split_4_1"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Slice",
+            "layer_name": "Slice_2",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Split_0_2"
+            ],
+            "output_blobs": [
+                "Slice_2_0"
+            ],
+            "layer_param": {
+                "start": 2,
+                "end": 3
+            },
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Slice",
+            "layer_name": "Slice_3",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Split_0_3"
+            ],
+            "output_blobs": [
+                "Slice_3_0"
+            ],
+            "layer_param": {
+                "start": 3,
+                "end": 4
+            },
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Slice",
+            "layer_name": "Slice_4",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Split_0_4"
+            ],
+            "output_blobs": [
+                "Slice_4_0"
+            ],
+            "layer_param": {
+                "start": 4,
+                "end": 5
+            },
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Split",
+            "layer_name": "Split_2",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 2,
+            "input_blobs": [
+                "Slice_4_0"
+            ],
+            "output_blobs": [
+                "Split_2_0",
+                "Split_2_1"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Slice",
+            "layer_name": "Slice_5",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Split_0_5"
+            ],
+            "output_blobs": [
+                "Slice_5_0"
+            ],
+            "layer_param": {
+                "start": 5,
+                "end": 6
+            },
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Split",
+            "layer_name": "Split_5",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 2,
+            "input_blobs": [
+                "Slice_5_0"
+            ],
+            "output_blobs": [
+                "Split_5_0",
+                "Split_5_1"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Slice",
+            "layer_name": "Slice_6",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Split_0_6"
+            ],
+            "output_blobs": [
+                "Slice_6_0"
+            ],
+            "layer_param": {
+                "start": 6,
+                "end": 7
+            },
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Slice",
+            "layer_name": "Slice_7",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Split_0_7"
+            ],
+            "output_blobs": [
+                "Slice_7_0"
+            ],
+            "layer_param": {
+                "start": 7,
+                "end": 8
+            },
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Slice",
+            "layer_name": "Slice_8",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Split_0_8"
+            ],
+            "output_blobs": [
+                "Slice_8_0"
+            ],
+            "layer_param": {
+                "start": 8,
+                "end": 9
+            },
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Split",
+            "layer_name": "Split_3",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 2,
+            "input_blobs": [
+                "Slice_8_0"
+            ],
+            "output_blobs": [
+                "Split_3_0",
+                "Split_3_1"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Slice",
+            "layer_name": "Slice_9",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Split_0_9"
+            ],
+            "output_blobs": [
+                "Slice_9_0"
+            ],
+            "layer_param": {
+                "start": 9,
+                "end": 10
+            },
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Split",
+            "layer_name": "Split_6",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 2,
+            "input_blobs": [
+                "Slice_9_0"
+            ],
+            "output_blobs": [
+                "Split_6_0",
+                "Split_6_1"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Concat",
+            "layer_name": "Concat_0",
+            "input_blob_cnt": 5,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Split_1_0",
+                "Slice_2_0",
+                "Split_2_0",
+                "Slice_6_0",
+                "Split_3_0"
+            ],
+            "output_blobs": [
+                "Concat_0_0"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Concat",
+            "layer_name": "Concat_1",
+            "input_blob_cnt": 5,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Split_4_0",
+                "Slice_3_0",
+                "Split_5_0",
+                "Slice_7_0",
+                "Split_6_0"
+            ],
+            "output_blobs": [
+                "Concat_1_0"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Concat",
+            "layer_name": "Concat_2",
+            "input_blob_cnt": 3,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Split_1_1",
+                "Split_2_1",
+                "Split_3_1"
+            ],
+            "output_blobs": [
+                "Concat_2_0"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Concat",
+            "layer_name": "Concat_3",
+            "input_blob_cnt": 3,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Split_4_1",
+                "Split_5_1",
+                "Split_6_1"
+            ],
+            "output_blobs": [
+                "Concat_3_0"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Reshape",
+            "layer_name": "Reshape_0",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Split_0_10"
+            ],
+            "output_blobs": [
+                "Reshape_0_0"
+            ],
+            "layer_param": {
+                "n": 1,
+                "c": 10,
+                "h": 16,
+                "w": 16
+            },
+            "offset_in_bin": 0,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "ConvolutionReLU",
+            "layer_name": "ConvolutionReLU_0",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Reshape_0_0"
+            ],
+            "output_blobs": [
+                "ReLU_0_0"
+            ],
+            "layer_param": {
+                "output_channel": 4,
+                "kernel": 1,
+                "stride": 1,
+                "pad": 0,
+                "has_bias": 1,
+                "group": 1,
+                "weight_data_size": 40,
+                "slope": 0.0
+            },
+            "offset_in_bin": 1,
+            "size_in_bin": 44
+        },
+        {
+            "layer_type": "Pooling",
+            "layer_name": "Pooling_0",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "ReLU_0_0"
+            ],
+            "output_blobs": [
+                "Pooling_0_0"
+            ],
+            "layer_param": {
+                "pooling_type": 0,
+                "kernel_size": 2,
+                "stride": 2,
+                "pad": 0,
+                "global_pooling": 0
+            },
+            "offset_in_bin": 45,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Reshape",
+            "layer_name": "Reshape_1",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Pooling_0_0"
+            ],
+            "output_blobs": [
+                "Reshape_1_0"
+            ],
+            "layer_param": {
+                "n": -2,
+                "c": -1,
+                "h": 1,
+                "w": 1
+            },
+            "offset_in_bin": 45,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Permute",
+            "layer_name": "Permute_0",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Reshape_1_0"
+            ],
+            "output_blobs": [
+                "Permute_0_0"
+            ],
+            "layer_param": {
+                "c_dim": 2,
+                "h_dim": 1,
+                "w_dim": 0
+            },
+            "offset_in_bin": 45,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Linear",
+            "layer_name": "Linear_0",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Permute_0_0"
+            ],
+            "output_blobs": [
+                "Linear_0_0"
+            ],
+            "layer_param": {
+                "num_input": 256,
+                "num_output": 5
+            },
+            "offset_in_bin": 45,
+            "size_in_bin": 1285
+        },
+        {
+            "layer_type": "Permute",
+            "layer_name": "Permute_1",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Linear_0_0"
+            ],
+            "output_blobs": [
+                "Permute_1_0"
+            ],
+            "layer_param": {
+                "c_dim": 2,
+                "h_dim": 1,
+                "w_dim": 0
+            },
+            "offset_in_bin": 1330,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Softmax",
+            "layer_name": "Softmax_0",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Permute_1_0"
+            ],
+            "output_blobs": [
+                "Softmax_0_0"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 1330,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Reshape",
+            "layer_name": "Reshape_2",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Softmax_0_0"
+            ],
+            "output_blobs": [
+                "Reshape_2_0"
+            ],
+            "layer_param": {
+                "n": 1,
+                "c": 1,
+                "h": 5,
+                "w": 1
+            },
+            "offset_in_bin": 1330,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Reshape",
+            "layer_name": "Reshape_3",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Concat_0_0"
+            ],
+            "output_blobs": [
+                "Reshape_3_0"
+            ],
+            "layer_param": {
+                "n": 1,
+                "c": 5,
+                "h": 16,
+                "w": 16
+            },
+            "offset_in_bin": 1330,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "ConvolutionReLU",
+            "layer_name": "ConvolutionReLU_1",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Reshape_3_0"
+            ],
+            "output_blobs": [
+                "ReLU_1_0"
+            ],
+            "layer_param": {
+                "output_channel": 4,
+                "kernel": 1,
+                "stride": 1,
+                "pad": 0,
+                "has_bias": 1,
+                "group": 1,
+                "weight_data_size": 20,
+                "slope": 0.0
+            },
+            "offset_in_bin": 1331,
+            "size_in_bin": 24
+        },
+        {
+            "layer_type": "Pooling",
+            "layer_name": "Pooling_1",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "ReLU_1_0"
+            ],
+            "output_blobs": [
+                "Pooling_1_0"
+            ],
+            "layer_param": {
+                "pooling_type": 0,
+                "kernel_size": 2,
+                "stride": 2,
+                "pad": 0,
+                "global_pooling": 0
+            },
+            "offset_in_bin": 1355,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Reshape",
+            "layer_name": "Reshape_4",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Pooling_1_0"
+            ],
+            "output_blobs": [
+                "Reshape_4_0"
+            ],
+            "layer_param": {
+                "n": 1,
+                "c": 1,
+                "h": 1,
+                "w": 256
+            },
+            "offset_in_bin": 1355,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Reshape",
+            "layer_name": "Reshape_5",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Concat_1_0"
+            ],
+            "output_blobs": [
+                "Reshape_5_0"
+            ],
+            "layer_param": {
+                "n": 1,
+                "c": 5,
+                "h": 16,
+                "w": 16
+            },
+            "offset_in_bin": 1355,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "ConvolutionReLU",
+            "layer_name": "ConvolutionReLU_2",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Reshape_5_0"
+            ],
+            "output_blobs": [
+                "ReLU_2_0"
+            ],
+            "layer_param": {
+                "output_channel": 4,
+                "kernel": 1,
+                "stride": 1,
+                "pad": 0,
+                "has_bias": 1,
+                "group": 1,
+                "weight_data_size": 20,
+                "slope": 0.0
+            },
+            "offset_in_bin": 1356,
+            "size_in_bin": 24
+        },
+        {
+            "layer_type": "Pooling",
+            "layer_name": "Pooling_2",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "ReLU_2_0"
+            ],
+            "output_blobs": [
+                "Pooling_2_0"
+            ],
+            "layer_param": {
+                "pooling_type": 0,
+                "kernel_size": 2,
+                "stride": 2,
+                "pad": 0,
+                "global_pooling": 0
+            },
+            "offset_in_bin": 1380,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Reshape",
+            "layer_name": "Reshape_6",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Pooling_2_0"
+            ],
+            "output_blobs": [
+                "Reshape_6_0"
+            ],
+            "layer_param": {
+                "n": 1,
+                "c": 1,
+                "h": 1,
+                "w": 256
+            },
+            "offset_in_bin": 1380,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Concat",
+            "layer_name": "Concat_4",
+            "input_blob_cnt": 2,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Reshape_4_0",
+                "Reshape_6_0"
+            ],
+            "output_blobs": [
+                "Concat_4_0"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 1380,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Convolution",
+            "layer_name": "Convolution_3",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Concat_4_0"
+            ],
+            "output_blobs": [
+                "Convolution_3_0"
+            ],
+            "layer_param": {
+                "output_channel": 1,
+                "kernel": 1,
+                "stride": 1,
+                "pad": 0,
+                "has_bias": 1,
+                "group": 1,
+                "weight_data_size": 2
+            },
+            "offset_in_bin": 1381,
+            "size_in_bin": 3
+        },
+        {
+            "layer_type": "Reshape",
+            "layer_name": "Reshape_7",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Convolution_3_0"
+            ],
+            "output_blobs": [
+                "Reshape_7_0"
+            ],
+            "layer_param": {
+                "n": -2,
+                "c": -1,
+                "h": 1,
+                "w": 1
+            },
+            "offset_in_bin": 1384,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Permute",
+            "layer_name": "Permute_2",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Reshape_7_0"
+            ],
+            "output_blobs": [
+                "Permute_2_0"
+            ],
+            "layer_param": {
+                "c_dim": 2,
+                "h_dim": 1,
+                "w_dim": 0
+            },
+            "offset_in_bin": 1384,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Linear",
+            "layer_name": "Linear_1",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Permute_2_0"
+            ],
+            "output_blobs": [
+                "Linear_1_0"
+            ],
+            "layer_param": {
+                "num_input": 256,
+                "num_output": 5
+            },
+            "offset_in_bin": 1384,
+            "size_in_bin": 1285
+        },
+        {
+            "layer_type": "Permute",
+            "layer_name": "Permute_3",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Linear_1_0"
+            ],
+            "output_blobs": [
+                "Permute_3_0"
+            ],
+            "layer_param": {
+                "c_dim": 2,
+                "h_dim": 1,
+                "w_dim": 0
+            },
+            "offset_in_bin": 2669,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Softmax",
+            "layer_name": "Softmax_1",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Permute_3_0"
+            ],
+            "output_blobs": [
+                "Softmax_1_0"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 2669,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Reshape",
+            "layer_name": "Reshape_8",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Softmax_1_0"
+            ],
+            "output_blobs": [
+                "Reshape_8_0"
+            ],
+            "layer_param": {
+                "n": 1,
+                "c": 1,
+                "h": 5,
+                "w": 1
+            },
+            "offset_in_bin": 2669,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Reshape",
+            "layer_name": "Reshape_9",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Concat_2_0"
+            ],
+            "output_blobs": [
+                "Reshape_9_0"
+            ],
+            "layer_param": {
+                "n": 1,
+                "c": 3,
+                "h": 16,
+                "w": 16
+            },
+            "offset_in_bin": 2669,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "ConvolutionReLU",
+            "layer_name": "ConvolutionReLU_3",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Reshape_9_0"
+            ],
+            "output_blobs": [
+                "ReLU_3_0"
+            ],
+            "layer_param": {
+                "output_channel": 4,
+                "kernel": 1,
+                "stride": 1,
+                "pad": 0,
+                "has_bias": 1,
+                "group": 1,
+                "weight_data_size": 12,
+                "slope": 0.0
+            },
+            "offset_in_bin": 2670,
+            "size_in_bin": 16
+        },
+        {
+            "layer_type": "Pooling",
+            "layer_name": "Pooling_3",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "ReLU_3_0"
+            ],
+            "output_blobs": [
+                "Pooling_3_0"
+            ],
+            "layer_param": {
+                "pooling_type": 0,
+                "kernel_size": 2,
+                "stride": 2,
+                "pad": 0,
+                "global_pooling": 0
+            },
+            "offset_in_bin": 2686,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Reshape",
+            "layer_name": "Reshape_10",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Pooling_3_0"
+            ],
+            "output_blobs": [
+                "Reshape_10_0"
+            ],
+            "layer_param": {
+                "n": 1,
+                "c": 1,
+                "h": 1,
+                "w": 256
+            },
+            "offset_in_bin": 2686,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Reshape",
+            "layer_name": "Reshape_11",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Concat_3_0"
+            ],
+            "output_blobs": [
+                "Reshape_11_0"
+            ],
+            "layer_param": {
+                "n": 1,
+                "c": 3,
+                "h": 16,
+                "w": 16
+            },
+            "offset_in_bin": 2686,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "ConvolutionReLU",
+            "layer_name": "ConvolutionReLU_4",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Reshape_11_0"
+            ],
+            "output_blobs": [
+                "ReLU_4_0"
+            ],
+            "layer_param": {
+                "output_channel": 4,
+                "kernel": 1,
+                "stride": 1,
+                "pad": 0,
+                "has_bias": 1,
+                "group": 1,
+                "weight_data_size": 12,
+                "slope": 0.0
+            },
+            "offset_in_bin": 2687,
+            "size_in_bin": 16
+        },
+        {
+            "layer_type": "Pooling",
+            "layer_name": "Pooling_4",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "ReLU_4_0"
+            ],
+            "output_blobs": [
+                "Pooling_4_0"
+            ],
+            "layer_param": {
+                "pooling_type": 0,
+                "kernel_size": 2,
+                "stride": 2,
+                "pad": 0,
+                "global_pooling": 0
+            },
+            "offset_in_bin": 2703,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Reshape",
+            "layer_name": "Reshape_12",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Pooling_4_0"
+            ],
+            "output_blobs": [
+                "Reshape_12_0"
+            ],
+            "layer_param": {
+                "n": 1,
+                "c": 1,
+                "h": 1,
+                "w": 256
+            },
+            "offset_in_bin": 2703,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Concat",
+            "layer_name": "Concat_5",
+            "input_blob_cnt": 2,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Reshape_10_0",
+                "Reshape_12_0"
+            ],
+            "output_blobs": [
+                "Concat_5_0"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 2703,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Convolution",
+            "layer_name": "Convolution_6",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Concat_5_0"
+            ],
+            "output_blobs": [
+                "Convolution_6_0"
+            ],
+            "layer_param": {
+                "output_channel": 1,
+                "kernel": 1,
+                "stride": 1,
+                "pad": 0,
+                "has_bias": 1,
+                "group": 1,
+                "weight_data_size": 2
+            },
+            "offset_in_bin": 2704,
+            "size_in_bin": 3
+        },
+        {
+            "layer_type": "Reshape",
+            "layer_name": "Reshape_13",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Convolution_6_0"
+            ],
+            "output_blobs": [
+                "Reshape_13_0"
+            ],
+            "layer_param": {
+                "n": -2,
+                "c": -1,
+                "h": 1,
+                "w": 1
+            },
+            "offset_in_bin": 2707,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Permute",
+            "layer_name": "Permute_4",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Reshape_13_0"
+            ],
+            "output_blobs": [
+                "Permute_4_0"
+            ],
+            "layer_param": {
+                "c_dim": 2,
+                "h_dim": 1,
+                "w_dim": 0
+            },
+            "offset_in_bin": 2707,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Linear",
+            "layer_name": "Linear_2",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Permute_4_0"
+            ],
+            "output_blobs": [
+                "Linear_2_0"
+            ],
+            "layer_param": {
+                "num_input": 256,
+                "num_output": 5
+            },
+            "offset_in_bin": 2707,
+            "size_in_bin": 1285
+        },
+        {
+            "layer_type": "Permute",
+            "layer_name": "Permute_5",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Linear_2_0"
+            ],
+            "output_blobs": [
+                "Permute_5_0"
+            ],
+            "layer_param": {
+                "c_dim": 2,
+                "h_dim": 1,
+                "w_dim": 0
+            },
+            "offset_in_bin": 3992,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Softmax",
+            "layer_name": "Softmax_2",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Permute_5_0"
+            ],
+            "output_blobs": [
+                "Softmax_2_0"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 3992,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Reshape",
+            "layer_name": "Reshape_14",
+            "input_blob_cnt": 1,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Softmax_2_0"
+            ],
+            "output_blobs": [
+                "Reshape_14_0"
+            ],
+            "layer_param": {
+                "n": 1,
+                "c": 1,
+                "h": 5,
+                "w": 1
+            },
+            "offset_in_bin": 3992,
+            "size_in_bin": 0
+        },
+        {
+            "layer_type": "Concat",
+            "layer_name": "Concat_6",
+            "input_blob_cnt": 3,
+            "output_blob_cnt": 1,
+            "input_blobs": [
+                "Reshape_2_0",
+                "Reshape_8_0",
+                "Reshape_14_0"
+            ],
+            "output_blobs": [
+                "Concat_6_0"
+            ],
+            "layer_param": {},
+            "offset_in_bin": 3992,
+            "size_in_bin": 0
+        }
+    ]
+}

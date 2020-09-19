@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<i18n>	
+	<locale id="1042"/>
+	<StringBundle>
+		<configfile name="GFStringBundle.xml"/>		
+		<configfile name="StringBundle.xml"/>
+		<configfile name="UrlBundle.xml"/>
+	</StringBundle>
+</i18n>
