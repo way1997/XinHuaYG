@@ -135,19 +135,22 @@ export default {
         },
         patientAddAdress() {
 
+            let addressStr = this.address.replace(/\s+/g, "")
+            //console.log(addressStr)
             if (this.test()) {
                 if (this.$route.query.item) {
+
                     let list = {
                         recipient: this.sxm,
                         area: this.area,
-                        adress: this.address,
+                        adress: addressStr,
                         id: this.recipientId,
                         phone: this.sjh,
                         token: this.token,
                         isDefault: Number(this.kaiguan),
                         kaiguan: Number(this.kaiguan)
                     }
-
+                    // console.log(list.adress)
                     console.log(list);
                     //                       alert(JSON.stringify(list));
                     patientUpdAdress(list).then((res) => {

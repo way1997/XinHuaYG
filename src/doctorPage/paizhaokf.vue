@@ -31,8 +31,8 @@
         <p><span @click="changeYaotai(index,item.shapeId,item.shapeName)" v-for="(item,index) in yaotaiList" :key="index"
             :class="{choose:yaotaiIdx==index}">{{item.shapeName}}</span></p>
       </div>
-      <div class="yaofang"><label>药方:</label> 
-        <p>    
+      <div class="yaofang"><label>药方:</label>
+        <p>
           <img v-image-preview src="../assets/img/cfxx.png" class="img1" />
           <span style="position: absolute;margin-top: 0.5rem;margin-left: 0.1rem;">药方范例</span>
         </p>
@@ -46,9 +46,9 @@
     <div class="third">
       <h1>其他信息</h1>
       <div class="fenlei">
-        <div class="qianF" style="height:70px;padding-top:20px">
+        <div class="qianF" style="height:100px;">
           <label style="color:red;">诊金:</label>
-          <p><span @click="showJin">{{zhenjinte}}元(点击选择诊金)</span><label v-show="chooseZhen"><em v-for="(item,index) in kekzhenjinana"
+          <p><span>{{zhenjinte}}元</span></p><p><span @click="showJin">点击选择诊金</span><label v-show="chooseZhen"><em v-for="(item,index) in kekzhenjinana"
                 :key="index" @click="choosePrice(item.price)">{{item.price}}</em></label></p>
         </div>
         <div class="qianF">
@@ -62,8 +62,8 @@
           </div>
         </div>-->
         <div class="buchong">
-          <span>补充说明:</span>
-          <textarea name="" id="" cols="" rows="" placeholder="输入文字内容" v-model="preEnjoin"></textarea>
+          <span>医嘱:</span>
+          <textarea name="" id="" cols="" rows="" placeholder="输入文字内容,如填写服用方法等内容." v-model="preEnjoin"></textarea>
         </div>
       </div>
     </div>
@@ -127,7 +127,7 @@
         brandId: '',
         yaotaiList: '',
         kekzhenjinana: '',
-        zhenjinte: '0.00',
+        zhenjinte: '0',
         total1: 0.00,
         total: 0.00,
         list: [],
@@ -181,6 +181,7 @@
       this.yaotaiIdx = 100;
       this.shapeId = '';
       this.shopspan = '';
+      window.scrollTo(0,0);
     },
     computed: {
 

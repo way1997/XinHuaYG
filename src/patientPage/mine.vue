@@ -11,9 +11,11 @@
     <div class="list">
         <p @click="gojiuzhen"><span>健康档案</span><img src="../assets/img/you.png" alt=""></p>
         <p @click="gochufang"><span>处方信息</span><img src="../assets/img/you.png" alt=""></p>
+        <p @click="gowanshanxx"><span>完善信息</span><img src="../assets/img/you.png" alt=""></p>
         <p @click="dingdan"><span>订单信息</span><img src="../assets/img/you.png" alt=""></p>
         <p @click="dizhi"><span>地址管理</span><img src="../assets/img/you.png" alt=""></p>
         <p @click="lxkf"><span>联系客服</span><img src="../assets/img/you.png" alt=""></p>
+
     </div>
     <!--热线电话-->
     <div class="dianZhe" v-show="dianhua">
@@ -50,6 +52,7 @@ export default {
     created() {
         this.token = cookie.get("token")
         this.patientId = cookie.get("patientId")
+        // console.log(this.token, this.patientId)
         this.findPatient()
     },
     computed: {
@@ -68,7 +71,9 @@ export default {
                 token: this.token,
                 patientId: this.patientId
             }
+
             findPatient(list).then((res) => {
+                console.log(res)
                 this.patientName = res.patientName;
                 this.imgUrl = res.imgUrl;
                 if (!res.imgUrl) {
@@ -85,6 +90,16 @@ export default {
         },
         gochufang() {
             this.$router.push('/chachufang')
+        },
+        gowanshanxx() {
+            let doctorId = cookie.get('doctorId')
+            // console.log(doctorId)
+            this.$router.push({
+                name: 'gerenxinxi',
+                params: {
+                    doctorId: doctorId
+                }
+            })
         },
         dingdan() {
             this.$router.push({

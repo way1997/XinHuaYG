@@ -198,7 +198,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class='lefttime' style='float:left;margin-left:0.94rem;'>{{item.sendTime}}</div>
+                        <div class='lefttime' style='float:left;margin-left:1.35rem;margin-top:.2rem'>{{item.sendTime}}</div>
                     </div>
 
                     <!-- 问诊单 -->

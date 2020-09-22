@@ -131,6 +131,11 @@ export default new Router({
       name: 'myevm',
       component: (myevm) => require(['@/doctorPage/myevm'], myevm)
     },
+    {
+      path: '/zhanghu',
+      name: 'zhanghu',
+      component: (zhanghu) => require(['@/doctorPage/zhanghu'], zhanghu)
+    },
     //患者端
     // {
     //   path: '/indexPage',
@@ -276,6 +281,11 @@ export default new Router({
       path: '/zhengshurenzheng',
       name: 'zhengshurenzheng',
       component: (zhengshurenzheng) => require(['@/doctorPage/zhengshurenzheng'], zhengshurenzheng)
+    },
+    { //完善个人信息
+      path: '/gerenxinxi',
+      name: 'gerenxinxi',
+      component: (gerenxinxi) => require(['@/patientPage/gerenxinxi'], gerenxinxi)
     }
   ]
 })

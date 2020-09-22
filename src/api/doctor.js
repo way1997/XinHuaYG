@@ -1122,3 +1122,27 @@ export function generateData(list){
     })
   })
 }
+//账户总金额
+export function accountPage(list) {
+  const url = baseURI + '/mkkMoblie/doctorAccount/accountPage'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      doctorId: list.doctorId,
+      token: list.token
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+//账户明细
+export function doctorMoneyMsg(list) {
+  const url = baseURI + '/mkkMoblie/doctorAccount/doctorMoneyMsg'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      doctorId: list.doctorId,
+      token: list.token
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}

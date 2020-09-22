@@ -499,6 +499,7 @@ export default {
                 float: left;
                 width: 32%;
                 padding-left: 0.4rem;
+                font-size: .3rem;
 
                 &:nth-of-type(2) {
                     padding-left: 1rem;

@@ -62,7 +62,7 @@
             <input type="number" readonly
               v-model='item.howWeight' @input="lengthNum(index)" @click="hideYaocai(index)">
               <em>g</em>
-            
+
             <img src="../assets/img/delete.png" alt="" @click="deleteYao(index)">
           </p>
         </div>
@@ -156,9 +156,9 @@
         <span>费用:{{total.toFixed(2)}}元(药费)+{{zhenjinte}}元(诊金)</span><label></br>合计:{{total1.toFixed(2)}}元</label>
       </div>
       <div class="fenlei">
-        <div class="qianF" style="height:70px;padding-top:20px">
+        <div class="qianF" style="height:100px;">
           <label style="color:red">诊金:</label>
-          <p><span @click="showJin">{{zhenjinte}}元(点击选择)</span><label v-show="chooseZhen"><em v-for="(item,index) in kekzhenjinana"
+          <p><span>{{zhenjinte}}元</span></p><p><span @click="showJin">点击选择</span><label v-show="chooseZhen"><em v-for="(item,index) in kekzhenjinana"
                 :key="index" @click="choosePrice(item.price)">{{item.price}}</em></label></p>
         </div>
         <div class="qianF">
@@ -281,7 +281,7 @@
         brandId: '',
         yaotaiList: '',
         kekzhenjinana: '',
-        zhenjinte: '0.00',
+        zhenjinte: '0',
         total1: 0.00,
         total: 0.00,
         list: [],
@@ -353,6 +353,7 @@
       this.yaotaiIdx = 100;
       this.shapeId = '';
       this.shopspan = '';
+      window.scrollTo(0,0);
     },
     computed: {
 
@@ -1602,6 +1603,7 @@
         border-bottom: 1px solid #eeeeee;
         line-height: 80px;
         margin-left: 0.2rem;
+        margin-bottom: 0.5rem;
 
         >label {
           font-size: 24px;

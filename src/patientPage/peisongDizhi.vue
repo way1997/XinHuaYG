@@ -7,7 +7,7 @@
         <div class="info">
             <p><span>开方时间:</span><label>{{item.createDate}}</label></p>
             <p><span>开方医生:</span><label>{{item.doctorName}}</label></p>
-            <p><span>开方金额:</span><label></label></p>
+            <p><span>开方金额:</span><label>{{item.totalMoney}}</label></p>
             <!-- <div class="chakan">查看详情</div> -->
         </div>
         <h1>药方信息</h1>

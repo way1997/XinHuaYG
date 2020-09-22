@@ -155,9 +155,9 @@ export default {
             token: "",
             doctorId: '',
             openId: '',
-            //doctorId: 'ca8a7d342a804116a7f703b4bdc56002',
-            //token: '13121557865:1595277654852:1e7a2d010716874a108ac59e82080baa',
-            //openId: 'oTRY10ZEpUXI-gXGX9RstWxKultI',
+            // doctorId: 'ca8a7d342a804116a7f703b4bdc56002',
+            // token: '13121557865:1595277654852:1e7a2d010716874a108ac59e82080baa',
+            // openId: 'oTRY10ZEpUXI-gXGX9RstWxKultI',
             state: '',
             doctorName: '点击登录',
             renzhengtate: '去认证 >',
@@ -221,7 +221,7 @@ export default {
         openIdMsg() {
             if (this.openId == '' || this.openId == null || this.openId == 'null' || this.openId == 'undefined') {
                 window.location.href =
-                    'https://www.mfzhosp.com/mkkMoblie/accessToken/openIdMsg?type=2&token=123456&id=123456&uri=https://www.mfzhosp.com/H6/@/homePage';
+                    'https://www.mfzhosp.com/mkkMoblie/accessToken/openIdMsg?type=2&token=123456&id=123456&uri=https://www.mfzhosp.com/H5/@/homePage';
 
             }
         },

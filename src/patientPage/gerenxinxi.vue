@@ -1,10 +1,10 @@
 <template>
 <div>
     <div class="backHome" @click="goBack">返回上一级</div>
+    <img src="../assets/img/LODING.gif" alt="" class="loading" v-if="loadUp">
     <div class="top">
         <div class="herd">
             <img :src=imgUrl class="tu"></image>
-            <div class="xxm">{{patientName}}</div>
         </div>
     </div>
     <div class="zi_1">
@@ -16,13 +16,13 @@
         <div class="center_1">
             <div class="inp">
                 <div class="inp_1">
-                    姓名
+                    患者姓名
                 </div>
                 <input class="in" v-model="name" name="mz" placeholder='请输入姓名'></input>
             </div>
             <div class="inp">
                 <div class="inp_1">
-                    性别
+                    患者性别
                 </div>
                 <div class='choosesex'>
                     <div :class="sexCur==index+1? 'check':'' " @click='nan(item,index)' v-for="(item,index) in sexs" :key="item.id" :index='index'>
@@ -32,34 +32,35 @@
             </div>
             <div class="inp">
                 <div class="inp_1">
-                    年龄
+                    患者年龄
                 </div>
                 <input class="in" type='number' v-model="age" name="niam" placeholder='请输入年龄'></input>
             </div>
             <div class="inp" style='border:none'>
-                <div class="inp_1">
-                    手机号
+                <div class="inp_1" style="width:1.8rem">
+                    患者手机号
                 </div>
                 <input class="int" type='number' v-model="phone_num" placeholder='请输入手机号' name="sjh"></input>
             </div>
         </div>
     </div>
-    <div class="foot" @click='dibu'>
-        完成
+    <div class="foot" @click='dibu' style="margin-bottom:.2333rem">
+        保存
     </div>
 </div>
 </template>
 
 <script>
 import {
-    patientAddInfo,
-    relation
+    findPatient,
+    patientUpdInfo
 } from "api/patient"
 import cookie from "js-cookie"
 export default {
     name: 'wsgrxx',
     data() {
         return {
+            loadUp: true,
             patientName: '',
             sexs: [{
                 sex: '男',
@@ -85,11 +86,45 @@ export default {
             imgUrl: '',
             nick: '',
             doctorId: '',
+            patientId: '',
+            token: '',
+            list: ''
+
         }
+    },
+    created() {
+        this.token = cookie.get("token")
+        this.patientId = cookie.get("patientId")
+        this.findPatient()
     },
     methods: {
         goBack() {
             this.$router.go(-1)
+        },
+        findPatient() {
+            let list = {
+                token: this.token,
+                patientId: this.patientId
+            }
+            findPatient(list).then((res) => {
+                // console.log(res)
+                this.loadUp = false
+                this.list = res
+                this.patientName = res.patientName;
+                this.phone_num = res.phone
+                this.name = this.patientName
+                this.imgUrl = res.imgUrl;
+                if (!res.imgUrl) {
+                    this.imgUrl = 'https://www.mfzhosp.com/imges/f1ae4c6f0cd444787a911a666796e58.png'
+                }
+                this.age = res.age;
+                if (res.patientSex == 1) {
+                    this.patientSex = '男'
+                } else {
+                    this.patientSex = '女'
+                }
+
+            })
         },
         nan(item, index) {
             this.sexCur = index + 1
@@ -104,56 +139,77 @@ export default {
             console.log(this.phone_num)
             if (name == '') {
                 this.$toast.center('请填写姓名')
-            } else if (sex == '') {
+            }
+            if (sex == '') {
                 sex = '1'
-            } else if (age == '') {
+            }
+            if (age == '') {
                 this.$toast.center('请填写年龄')
-            } else if (age.length > 2) {
+            }
+            if (age.length > 2) {
                 this.$toast.center('请填写正确的年龄')
-            } else if (phone_num == '') {
+            }
+            if (phone_num == '') {
                 this.$toast.center('请填写手机号')
-            } else if (phone_num.length != 11) {
-                this.$toast.center('请输入正确的手机号')
-            } else if (!(/^1[34578]\d{9}$/.test(phone_num))) {
+            }
+            if (phone_num.length != 11) {
                 this.$toast.center('请输入正确的手机号')
             }
+            if (!(/^1[34578]\d{9}$/.test(phone_num))) {
+                this.$toast.center('请输入正确的手机号')
+            }
+            // if (name == '') {
+            //     this.$toast.center('请填写姓名')
+            // } else if (sex == '') {
+            //     sex = '1'
+            // } else if (age == '') {
+            //     this.$toast.center('请填写年龄')
+            // } else if (age.length > 2) {
+            //     this.$toast.center('请填写正确的年龄')
+            // } else if (phone_num == '') {
+            //     this.$toast.center('请填写手机号')
+            // } else if (phone_num.length != 11) {
+            //     this.$toast.center('请输入正确的手机号')
+            // } else if (!(/^1[34578]\d{9}$/.test(phone_num))) {
+            //     this.$toast.center('请输入正确的手机号')
+            // }
             let list1 = {
-                openId: this.openId,
-                // openId: 'oTRY10fRZBmepPFQ1V7tqSBprZqg',
+                patientId: this.patientId,
                 patientName: this.name,
                 patientSex: this.sexCur,
                 age: this.age,
-                nick: this.nick,
                 phone: this.phone_num,
-                imgUrl: this.imgUrl,
-                doctorId: this.doctorId
+                token: this.token
             }
             // console.log(list1)
-            patientAddInfo(list1).then((res) => {
+            this.loadUp = true
+            patientUpdInfo(list1).then((res) => {
+                this.loadUp = false
                 console.log(res);
                 var token = cookie.get("token");;
                 var patientId = res.patientId;
                 cookie.set(
-                    'patientId', res.patientId
+                    'list', this.list
                 )
-                if (res.massage == "该手机号码已经存在，如有疑问请联系管理员") {
-                    this.$toast('该手机号码已经存在，如有疑问请联系管理员')
-                }
+                var message = cookie.get("list")
+                console.log(message);
+                this.$toast.center('保存成功')
                 setTimeout(function () {
                     that.$router.push({
                         path: 'indexPage'
                     })
+
                 }, 2000)
             })
         },
     },
     mounted() {
-        console.log(cookie.get("imgUrl"))
+        // console.log(cookie.get("imgUrl"))
         this.openId = cookie.get("openId");
         this.unionId = cookie.get("unionId");
         this.imgUrl = cookie.get("patientImgUrl");
         this.nick = cookie.get("patientName");
-        console.log(this.nick)
+        // console.log(this.nick)
         this.doctorId = this.$route.params.doctorId;
     }
 }
@@ -161,6 +217,15 @@ export default {
 
 <style lang="less" scoped>
 @import '../assets/less/base.less';
+
+.loading {
+    width: 1rem;
+    height: 1rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .backHome {
     width: 81.66%;
@@ -289,19 +354,6 @@ export default {
                 font-size: .26rem;
                 line-height: .9rem;
                 float: left;
-            }
-
-            .xiu {
-                width: 16.53%;
-                height: .46rem;
-                line-height: .46rem;
-                color: #fff;
-                font-size: .23rem;
-                float: left;
-                background: #00b0c2;
-                text-align: center;
-                margin-top: .26rem;
-                border-radius: .1rem;
             }
         }
     }

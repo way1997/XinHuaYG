@@ -69,6 +69,7 @@ import HeadTop from 'base/header/header'
 import router from '../router'
 import cookie from "js-cookie"
 import tabBar from '../components/tabBar'
+import $ from 'jquery'
 export default {
     name: "indexPage",
     data() {
@@ -79,8 +80,8 @@ export default {
             // patientId: 'ca8a7d342a804116a7f703b4bdc56002',
             // openId: 'oTRY10fRZBmepPFQ1V7tqSBprZqg',
 
-            // patientId: 'baec56f2c12848a3b6f1bdbac12772c1',
-            // openId: 'oTRY10R3HT5cOG3q91OxAT5RusR8',
+            // patientId: 'baec56f2c12848a3b6f1bdbac12772c1', //测试员 [梁小娟]账号测试号
+            // openId: 'oTRY10R3HT5cOG3q91OxAT5RusR8', //测试员 [梁小娟]账号测试号
 
             openId: '',
             token: '',
@@ -113,9 +114,7 @@ export default {
     computed: {
 
     },
-    montued: {
-
-    },
+    montued() {},
     methods: {
         openIdMsg() {
             if (this.$route.query.doctorId) {
@@ -124,7 +123,7 @@ export default {
             }
             if (this.openId == '' || this.openId == null || this.openId == undefined) {
                 window.location.href =
-                    'https://www.mfzhosp.com/mkkMoblie/accessToken/openIdMsg?type=2&token=123456&id=123456&uri=https://www.mfzhosp.com/H6/#/indexPage';
+                    'https://www.mfzhosp.com/mkkMoblie/accessToken/openIdMsg?type=2&token=123456&id=123456&uri=https://www.mfzhosp.com/H5/#/indexPage';
             } else {
                 this.addLogin();
             }
