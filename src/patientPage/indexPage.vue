@@ -69,7 +69,6 @@ import HeadTop from 'base/header/header'
 import router from '../router'
 import cookie from "js-cookie"
 import tabBar from '../components/tabBar'
-import $ from 'jquery'
 export default {
     name: "indexPage",
     data() {
@@ -77,6 +76,7 @@ export default {
             tab: ['热点', '医学讲堂', '生活', '母婴', '辟谣'],
             botIdx: 0,
             // token: '13121557865:1595277654852:1e7a2d010716874a108ac59e82080baa',
+            // token: '15555208228:1601001477873:37643b6cecbf97397736a9cd66da7778',
             // patientId: 'ca8a7d342a804116a7f703b4bdc56002',
             // openId: 'oTRY10fRZBmepPFQ1V7tqSBprZqg',
 
@@ -245,7 +245,7 @@ export default {
         },
         findDoctorBySubject() { //热门疾病
             findDoctorBySubject().then((res) => {
-                console.log(res);
+                //console.log(res);
                 for (var i = 0; i < 8; i++) {
                     this.remenJb.push(res.list[i]);
                     this.shouqi = true;
@@ -270,7 +270,7 @@ export default {
                 patientId: this.patientId
             }
             findDoctorHot(list).then((res) => {
-                console.log(res);
+                // console.log(res);
                 for (var i = 0; i < 5; i++) {
                     this.tuijianYs.push(res.data[i]);
                     this.loadUp = false;

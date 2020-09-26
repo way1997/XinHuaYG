@@ -61,7 +61,7 @@ export default {
         allergicList() {
             let list = {
                 token: this.token,
-                patientId: this.patientId
+                patientId: this.id
             }
             allergicList(list).then((res) => {
                 //console.log(res);
@@ -71,7 +71,7 @@ export default {
         surew() {
             let list = {
                 token: this.token,
-                patientId: this.patientId,
+                patientId: this.id,
                 sickName: this.inputtext
             }
             saveAllergic(list).then((res) => {

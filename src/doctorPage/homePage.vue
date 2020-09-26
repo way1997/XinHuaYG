@@ -204,8 +204,8 @@ export default {
         // this.doctorId = cookie.get('doctorId')
         // console.log(this.token, this.doctorId)
         this.openIdMsg();
-        //cookie.set("token", this.token)
-        //cookie.set("doctorId", this.doctorId)
+        // cookie.set("token", this.token)
+        // cookie.set("doctorId", this.doctorId)
 
         if (!cookie.get('token') && !cookie.get('doctorId')) {
             this.ifToken = true;

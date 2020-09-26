@@ -33,8 +33,9 @@
       </div>
       <div class="yaofang"><label>药方:</label>
         <p>
-          <img v-image-preview src="../assets/img/cfxx.png" class="img1" />
-          <span style="position: absolute;margin-top: 0.5rem;margin-left: 0.1rem;">药方范例</span>
+          <img src="../assets/img/cfxx.png" class="img1"  @click="changjianwenti"/>
+          <span style="position: absolute;margin-top: 1.4rem;margin-left: 0.4rem;background-color: darkgray;width: 1.6rem;
+height: 0.4rem;text-align: center;vertical-align: middle;color: white;line-height: 0.4rem;">常见问题</span>
         </p>
         <p>
           <img :src="uploadImg">
@@ -190,6 +191,9 @@
     methods: {
       backHome() {
         this.$router.go(-1)
+      },
+      changjianwenti(){
+        this.$router.push('/changjianwenti')
       },
       saveOnlinePrescribing() {
         let that = this;
@@ -566,7 +570,7 @@
 
     .yaofang {
       width: 90%;
-      height: 140px;
+      height: 2.5rem;
       border: none;
       margin: 0 auto;
       margin-top: 35px;
@@ -575,25 +579,26 @@
 
       p {
         position: relative;
-        width: 111px;
-        height: 111px;
+        width: 2rem;
+        height: 2rem;
         float: right;
         padding: 20px;
+        margin-top: 0.4rem;
 
         img {
           position: absolute;
           right: 0;
           top: 0;
-          width: 111px;
-          height: 111px;
+          width: 2rem;
+          height: 2rem;
         }
 
         input {
           position: absolute;
           right: 0;
           top: 0;
-          width: 111px;
-          height: 111px;
+          width: 2rem;
+          height: 2rem;
           opacity: 0;
         }
       }

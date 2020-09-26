@@ -61,7 +61,7 @@ export default {
         selectByIdArchivesAttribute() {
             let list = {
                 token: this.token,
-                patientId: this.patientId
+                patientId: this.id
             }
             selectByIdArchivesAttribute(list).then((res) => {
                 //console.log(res);
@@ -71,7 +71,7 @@ export default {
         surew() {
             let list = {
                 token: this.token,
-                patientId: this.patientId,
+                patientId: this.id,
                 sickName: this.inputtext
             }
             insertArchivesAttribute(list).then((res) => {

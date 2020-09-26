@@ -4,7 +4,7 @@
     <!--pages1/jiankangdangan/chengyuanxinxi.wxml-->
     <div class="topXinxiBox">
         <div class="topLeftBox">
-            <div class="name">{{chengyuanName}}<span style="font-size:0.26rem;">（{{chengyuanGuanxi == '自 己'?'自己':(chengyuanGuanxi == '父 母'?'父母':(chengyuanGuanxi == '子 女'?'子女':(chengyuanGuanxi == '爱 人'?'爱人':'其他')))}}）</span></div>
+            <div class="name">{{chengyuanName}}<span style="font-size:0.26rem;">（{{chengyuanGuanxi == 1 ?'自己':(chengyuanGuanxi == 2?'父母':(chengyuanGuanxi == 3?'子女':(chengyuanGuanxi == 4?'爱人':'其他')))}}）</span></div>
             <div class="sexBox">
                 <div class="sex">{{chengyuanSex == 1?'男':'女'}}</div>
                 <div class="age">{{chengyuanAge}}岁</div>
@@ -146,6 +146,7 @@ export default {
                 id: this.id
             }
             selectById(list).then((res) => {
+                console.log(res)
                 if (res.archives.height) {
                     this.chengyuanTall = res.archives.height;
                 }
@@ -178,6 +179,7 @@ export default {
                 }
 
                 this.chengyuanName = res.archives.archivesName;
+
                 this.chengyuanGuanxi = res.archives.relationship;
                 this.chengyuanSex = res.archives.gender;
                 this.chengyuanAge = res.archives.age;

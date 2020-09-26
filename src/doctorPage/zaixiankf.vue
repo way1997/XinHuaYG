@@ -58,10 +58,10 @@
         <div id="scrolldIV">
           <p v-for="(item,index) in arr" :key="index">
             <label>{{item.medicineName}}</label>
+
+            <input type="number" readonly v-model='item.howWeight' @input="lengthNum(index)" @click="hideYaocai(index)">
             <img class='guangbiao1' src='../assets/img/gb.gif' v-if="shuzi==index&&jianpanS">
-            <input type="number" readonly
-              v-model='item.howWeight' @input="lengthNum(index)" @click="hideYaocai(index)">
-              <em>g</em>
+            <em>g</em>
 
             <img src="../assets/img/delete.png" alt="" @click="deleteYao(index)">
           </p>
@@ -158,7 +158,8 @@
       <div class="fenlei">
         <div class="qianF" style="height:100px;">
           <label style="color:red">诊金:</label>
-          <p><span>{{zhenjinte}}元</span></p><p><span @click="showJin">点击选择</span><label v-show="chooseZhen"><em v-for="(item,index) in kekzhenjinana"
+          <p><span>{{zhenjinte}}元</span></p>
+          <p><span @click="showJin">点击选择</span><label v-show="chooseZhen"><em v-for="(item,index) in kekzhenjinana"
                 :key="index" @click="choosePrice(item.price)">{{item.price}}</em></label></p>
         </div>
         <div class="qianF">
@@ -353,7 +354,7 @@
       this.yaotaiIdx = 100;
       this.shapeId = '';
       this.shopspan = '';
-      window.scrollTo(0,0);
+      window.scrollTo(0, 0);
     },
     computed: {
 
@@ -478,7 +479,7 @@
           }
           this.step1 = 3;
         }
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
       },
       backstep() {
         this.step1--;
@@ -489,15 +490,13 @@
           this.total = 0.00
           this.total1 = 0.00
         }
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
       },
       showMedi() {
 
-        if(this.pinpaiIdx == 100  ||  this.yaotaiIdx == 100)
-        {
+        if (this.pinpaiIdx == 100 || this.yaotaiIdx == 100) {
           alert("未选择品牌和药态，不能编辑药品");
-        }
-        else{
+        } else {
           this.showAdd = true;
           this.medicinalWraphid = true;
           this.showMoban = false;

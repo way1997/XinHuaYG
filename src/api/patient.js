@@ -752,3 +752,17 @@ export function sendMsg7 (list){
 		})
 	})
 }
+
+//患者端咨询页面 =>找医生api
+export function findChatDoctor(list) {
+	const url = baseURI + '/mkkMoblie/patientDoctorGroups/findChatDoctor'
+  
+	return new Promise((resolve, reject) => {
+	  axios.post(url, qs.stringify({
+		patientId: list.patientId,
+		token: list.token
+	  })).then((res) => {
+		resolve(res.data)
+	  })
+	})
+  }

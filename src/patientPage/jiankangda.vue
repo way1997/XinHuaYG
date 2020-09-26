@@ -65,9 +65,11 @@ export default {
                 patientId: this.patientId
             }
             selectByIdArchives(list).then((res) => {
+
                 this.danganChengyuan = res.archives;
                 for (var i = 0; i < res.archives.length; i++) {
-                    if (res.archives[i].relationship == '自 己') {
+                    //console.log(res.archives[i].relationship)
+                    if (res.archives[i].relationship == 1) {
                         //console.log(res.archives.relationship[i])
                         this.ifMyself = true;
                         return false;

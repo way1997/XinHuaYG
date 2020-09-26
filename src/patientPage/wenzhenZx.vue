@@ -1,5 +1,6 @@
 <template>
 <div class="liaotian">
+    <img src="../assets/img/LODING.gif" alt="" class="loading" v-if="loadUp">
     <HeadTop :title="pageName" :backBlack="true"></HeadTop>
     <div class='page' ref="page">
         <div class='pages'>
@@ -34,7 +35,7 @@
                         <!-- 医生图片 -->
                         <div v-if="item.sponsor==1">
                             <img :src='imgUrl' class='head_pic head_pic1'>
-                            <img class='ltjt ltjt1' src='../assets/img/ltjt.png'>
+                            <section style="transform:translateX(.13rem)"><img class='ltjt ltjt1' src='../assets/img/ltjt.png'></section>
                             <div class='liaotian_ck liaotian_ck1'>
                                 <div class='liaotzs_wrap2' style='margin-right:20px;'>
                                     <img class='picurl' mode="widthFix" :src='item.chatPics' @click="changebig(item.chatPics)">
@@ -335,6 +336,7 @@ export default {
     name: "liaotian",
     data() {
         return {
+            loadUp: false,
             pageName: "聊天",
             token: "",
             doctorId: "",
@@ -539,6 +541,7 @@ export default {
                 socket.send(JSON.stringify({
                     testEvent
                 }));
+
                 addChatContent(list).then((res) => {
                     //console.log(res);
                     if (res.massage == 'ok') {
@@ -624,8 +627,10 @@ export default {
             socket.send(JSON.stringify({
                 testEvent
             }));
+            this.loadUp = true
             addChatContent(list).then((res) => {
                 //console.log(res);
+                this.loadUp = false
                 if (res.massage == 'ok') {
                     this.getChatContent();
                     let date = new Date();

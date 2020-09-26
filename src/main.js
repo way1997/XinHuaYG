@@ -20,6 +20,7 @@ import Vant from 'vant';
 import 'vant/lib/index.css';
 import VueDirectiveImagePreviewer from 'vue-directive-image-previewer';
 import 'vue-directive-image-previewer/dist/assets/style.css';
+import VueRouter from 'vue-router'
 Vue.prototype.axios = axios
 
 fastclick.attach(document.body)
@@ -46,6 +47,11 @@ Vue.config.ignoredElements = ['wx-open-launch-weapp']
 
 Vue.use(VueDirectiveImagePreviewer) 
 
+const originalPush = VueRouter.prototype.push
+
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 // 过滤器
 import filter from "assets/js/filter"
 

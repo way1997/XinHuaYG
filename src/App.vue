@@ -11,14 +11,14 @@
 
 <script>
 // import info from './components/info.vue'
+
 import axios from 'axios'
+
 export default {
     name: 'app',
     components: {
         // info
     },
-    mounted() {},
-    methods: {}
 }
 </script>
 

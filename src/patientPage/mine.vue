@@ -9,9 +9,9 @@
         </div>
     </div>
     <div class="list">
+        <p @click="gowanshanxx"><span>完善信息</span><img src="../assets/img/you.png" alt=""></p>
         <p @click="gojiuzhen"><span>健康档案</span><img src="../assets/img/you.png" alt=""></p>
         <p @click="gochufang"><span>处方信息</span><img src="../assets/img/you.png" alt=""></p>
-        <p @click="gowanshanxx"><span>完善信息</span><img src="../assets/img/you.png" alt=""></p>
         <p @click="dingdan"><span>订单信息</span><img src="../assets/img/you.png" alt=""></p>
         <p @click="dizhi"><span>地址管理</span><img src="../assets/img/you.png" alt=""></p>
         <p @click="lxkf"><span>联系客服</span><img src="../assets/img/you.png" alt=""></p>

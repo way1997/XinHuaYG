@@ -136,6 +136,11 @@ export default new Router({
       name: 'zhanghu',
       component: (zhanghu) => require(['@/doctorPage/zhanghu'], zhanghu)
     },
+    {
+      path: '/changjianwenti',
+      name: 'changjianwenti',
+      component: (changjianwenti) => require(['@/doctorPage/changjianwenti'], changjianwenti)
+    },
     //患者端
     // {
     //   path: '/indexPage',
@@ -286,6 +291,11 @@ export default new Router({
       path: '/gerenxinxi',
       name: 'gerenxinxi',
       component: (gerenxinxi) => require(['@/patientPage/gerenxinxi'], gerenxinxi)
+    }, 
+    { //患者端咨询模块
+      path: '/zixunDoctor',
+      name: 'zixunDoctor',
+      component: (zixunDoctor) => require(['@/patientPage/zixunDoctor'], zixunDoctor)
     }
   ]
 })

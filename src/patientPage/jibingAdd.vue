@@ -64,7 +64,7 @@ export default {
                 archivesId: this.id
             }
             selectByIdChronicDisease(list).then((res) => {
-                //console.log(res);
+                console.log(res);
                 this.list = res.chronicDiseases;
             })
         },

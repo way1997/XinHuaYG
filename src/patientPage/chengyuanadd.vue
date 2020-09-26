@@ -11,7 +11,7 @@
             </div>
 
             <div class="tianjiaItem" style="border-top:1px solid #dbdbdb;">
-                <div class="tianjiaTit">关　系</div>
+                <div class="tianjiaTit">关　系 </div>
                 <div class="guanxiRightBox">
                     <div class="tianjiaInput" @click="showGuanxi">
                         {{guanxi}}
@@ -19,6 +19,7 @@
                     <img src="../assets/img/you.png" class="youjiantouImg">
                 </div>
             </div>
+
             <div class="tianjiaItem">
                 <div class="tianjiaTit">姓　名</div>
                 <input class="tianjiaInput" name="peopleName" v-model="name" type="text" placeholder="请输入真实姓名">
@@ -33,7 +34,7 @@
             </div>
             <div class="tianjiaItem">
                 <div class="tianjiaTit">年　龄</div>
-                <input class="tianjiaInput" name="peopleAge" v-model="age" type="number" placeholder="请输入年龄">
+                <input class="tianjiaInput" name="peopleAge" v-model="age" type="number" placeholder="请输入年龄" @input="ageZz">
             </div>
             <div class="tianjiaItem">
                 <div class="tianjiaTit">出生日期</div>
@@ -73,11 +74,11 @@
 
                 <div class="tianjiaItem">
                     <div class="tianjiaTit">身高(cm)</div>
-                    <input class="tianjiaInput" v-model="list2.height" type="number" name="tall" placeholder="请输入身高" @input="shenBim">
+                    <input class="tianjiaInput" v-model="height" type="number" name="tall" placeholder="请输入身高" @input="shenBim">
                 </div>
                 <div class="tianjiaItem">
                     <div class="tianjiaTit">体重(kg)</div>
-                    <input class="tianjiaInput" v-model="list2.weight" type="number" name="weight" placeholder="请输入体重" @input="tiBim">
+                    <input class="tianjiaInput" v-model="weight" type="number" name="weight" placeholder="请输入体重" @input="tiBim">
                 </div>
                 <div class="tianjiaItem">
                     <div class="tianjiaTit">BMI(kg/㎡)</div>
@@ -85,7 +86,7 @@
                 </div>
                 <div class="tianjiaItem">
                     <div class="tianjiaTit">腰围(cm)</div>
-                    <input class="tianjiaInput" v-model="list2.waist" name="yaowei" type="number" placeholder="请输入腰围">
+                    <input class="tianjiaInput" v-model="waist" name="yaowei" type="number" placeholder="请输入腰围" @input="waistZz">
                 </div>
 
                 <div style="height:0.1rem;width:100%;background-color:#f9f9f9;"></div>
@@ -187,7 +188,7 @@ export default {
             name: '',
             age: '',
             jhrHidden: true,
-            list2: '',
+            list2: {},
             height: '',
             bMI: '',
             backcolor: '',
@@ -199,6 +200,7 @@ export default {
                 values: ['选择成员关系', '自 己', '父 母', '子 女', '爱 人', '其 他']
             }],
             chooseR: false,
+            valueIdx: '',
             index: 0,
             sexs: [{
                 sex: '男'
@@ -293,12 +295,16 @@ export default {
             hunyin1: '',
             shengyu1: '',
             idCheng: '',
-            chengyuanId: ''
+            chengyuanId: '',
+            waist: '', //腰围,
+            ifMyself: '',
         }
     },
     created() {
         this.token = cookie.get("token");
         this.patientId = cookie.get("patientId");
+        this.ifMyself = this.$route.query.ifMyself
+        console.log(this.ifMyself)
         if (this.$route.query.id) {
             this.idCheng = this.$route.query.id;
             this.tiaozhuanType0001 = 0;
@@ -318,19 +324,20 @@ export default {
             this.$router.push('/jiankangda')
         },
         insertArchives() {
+
             let list = {
                 token: this.token,
                 patientId: this.patientId,
                 id: this.idCheng,
-                relationship: this.guanxi,
+                relationship: this.valueIdx,
                 archivesName: this.name,
                 gender: this.sexN,
                 age: this.age,
                 birthDate: this.date,
-                height: this.list2.height,
-                weight: this.list2.weight,
+                height: this.height,
+                weight: this.weight,
                 bmi: this.bMI,
-                waist: this.list2.waist,
+                waist: this.waist,
                 smoke: this.xiyan1,
                 wine: this.yinjiu1,
                 liver: this.gangongn1,
@@ -338,6 +345,7 @@ export default {
                 marriage: this.hunyin1,
                 birth: this.shengyu1,
             }
+            console.log(list)
             insertArchives(list).then((res) => {
                 if (res.type == true) {
                     if (this.$route.query.id) {
@@ -359,12 +367,19 @@ export default {
                 id: this.idCheng
             }
             selectById(list).then((res) => {
-                if (res.archives.relationship == 1) {
-                    this.guanxi = '自己'
-                } else {
-                    this.guanxi = res.archives.relationship;
+                //console.log(res)
+                this.valueIdx = res.archives.relationship;
+                if (this.valueIdx == 1) {
+                    this.guanxi = '自 己'
+                } else if (this.valueIdx == 2) {
+                    this.guanxi = '父 母'
+                } else if (this.valueIdx == 3) {
+                    this.guanxi = '子 女'
+                } else if (this.valueIdx == 4) {
+                    this.guanxi = '爱 人'
+                } else if (this.valueIdx == 5) {
+                    this.guanxi = '其 他'
                 }
-
                 this.name = res.archives.archivesName
                 this.sexN = res.archives.gender
                 this.age = res.archives.age
@@ -375,7 +390,17 @@ export default {
                     this.date = '选择日期';
                 }
                 this.bMI = res.archives.bmi
+                this.height = res.archives.height
+                this.weight = res.archives.weight
+                this.waist = res.archives.waist
                 this.list2 = res.archives
+                this.xiyan1 = res.archives.smoke
+                this.yinjiu1 = res.archives.wine
+                this.gangongn1 = res.archives.liver
+                this.shengongn1 = res.archives.kidney
+                this.hunyin1 = res.archives.marriage
+                this.shengyu1 = res.archives.birth
+
             })
         },
         xiyan(value) {
@@ -436,13 +461,36 @@ export default {
 
         },
         onValuesChange(picker, values) {
-            if (this.$route.query.ifMyself == true && this.guanxi != '自 己' && values == '自 己') {
-                this.$toast('不能重复建立自己的健康档案');
+
+            // console.log("values== 自 己?" + values == '自 己')
+            let xinhao = false
+            if (values == '自 己') {
+                this.valueIdx = 1
+                xinhao = true
+
+            } else if (values == '父 母') {
+                this.valueIdx = 2
+            } else if (values == '子 女') {
+                this.valueIdx = 3
+            } else if (values == '爱 人') {
+                this.valueIdx = 4
+            } else if (values == '其 他') {
+                this.valueIdx = 5
+            }
+            // console.log('this.$route.query.ifMyself===' + this.$route.query.ifMyself)
+            // console.log('this.guanxi===' + this.guanxi != '自 己')
+            // console.log('values===' + values)
+            // console.log(this.valueIdx)
+            // alert('目标触发-values=' + this.$route.query.ifMyself == 'true')
+            if (this.$route.query.ifMyself == 'true' && this.guanxi != '自 己' && this.valueIdx == 1) {
+
+                this.$toast.center('不能重复建立自己的健康档案，请重新选择成员关系！');
                 return false;
             }
             this.guanxi = values[0];
             this.chooseR = false;
         },
+
         handleConfirm(data) {
             this.date = this.getdate(data);
             this.pickerVisible = false;
@@ -464,17 +512,56 @@ export default {
             this.sexN = index + 1;
         },
         shenBim() {
-            if (this.list2.weight != '') {
-                this.bMI = (this.list2.weight * 50 / this.list2.height).toFixed(2);
-                //console.log(this.list2.weight , this.list2.weight)
+            let height = this.height
+            let reg = /^[1-9]\d{0,2}$/
+            ///console.log('height')
+            if (this.height >= 0 && this.height <= 230 && reg.test(height)) {
+                if (this.weight != '') {
+                    this.bMI = (this.weight * 50 / this.height).toFixed(2);
+                    // console.log(this.list2.weight, this.list2.weight)
+                }
+            } else {
+                this.height = ''
+                this.$toast.center('请输入正确的身高（1~230cm） ^_^')
+                // return
             }
+
         },
         tiBim() {
-            if (this.list2.height != '') {
-                this.bMI = (this.list2.weight * 50 / this.list2.height).toFixed(2);
-                //console.log(this.list2.weight,this.list2.weight)
+            let weight = this.weight
+            let reg = /^[1-9]\d{0,2}$/
+            if (this.weight >= 1 && this.weight <= 200 && reg.test(weight)) {
+                if (this.height != '') {
+                    this.bMI = (this.weight * 50 / this.height).toFixed(2);
+                    // console.log(this.list2.weight, this.list2.weight)
+                }
+            } else {
+                this.weight = ''
+                this.$toast.center('请输入正确的体重（1~230kg） ^_^')
+                // return
+            }
+
+        },
+        ageZz() {
+            let age = this.age
+            let reg = /^[1-9]\d{0,2}$/
+            if (this.age >= 0 && this.age <= 130 && reg.test(age)) {
+
+            } else {
+                this.age = ''
+                this.$toast.center('请输入正确的年龄（1~130） ^_^')
+            }
+
+        },
+        waistZz() {
+            let waist = this.waist
+            let reg = /^[1-9]\d{0,2}$/
+            if (this.waist >= 0 && this.waist <= 300 && reg.test(waist)) {} else {
+                this.waist = ''
+                this.$toast.center('请输入正确的腰围（30~300） ^_^')
             }
         }
+
     },
     components: {
         HeadTop,

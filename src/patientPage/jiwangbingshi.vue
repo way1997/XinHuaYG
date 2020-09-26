@@ -61,7 +61,7 @@ export default {
         sickList() {
             let list = {
                 token: this.token,
-                patientId: this.patientId
+                patientId: this.id
             }
             sickList(list).then((res) => {
                 //console.log(res);
@@ -71,7 +71,7 @@ export default {
         surew() {
             let list = {
                 token: this.token,
-                patientId: this.patientId,
+                patientId: this.id,
                 sickName: this.inputtext
             }
             saveSick(list).then((res) => {
