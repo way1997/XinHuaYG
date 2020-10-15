@@ -192,57 +192,57 @@ export default {
     overflow-y: scroll;
 
     .doctor {
-        width: 693px;
-        height: 179px;
-        border-bottom: 1px solid #ececec;
+        width: 100%;
+        height: 1.79rem;
+        border-bottom: 0.01rem solid #ececec;
         margin: 0 auto;
         position: relative;
 
         label {
-            width: 134px;
-            height: 41px;
+            width: 1.34rem;
+            height: 0.41rem;
             display: inline-block;
-            background: rgba(247, 124, 124, 1);
-            border-radius: 21px;
-            line-height: 41px;
+            background: #f77c7c;
+            border-radius: 0.21rem;
+            line-height: 0.41rem;
             color: #fff;
         }
 
         label img {
-            width: 29px;
-            height: 29px;
-            margin: 0 10px 0 10px;
+            width: 0.29rem;
+            height: 0.29rem;
+            margin: 0 0.1rem 0 0.1rem;
             vertical-align: middle;
         }
 
         label.nan {
-            width: 134px;
-            height: 41px;
+            width: 1.34rem;
+            height: 0.41rem;
             background: #2eb0d5;
-            border-radius: 21px;
-            line-height: 41px;
+            border-radius: 0.21rem;
+            line-height: 0.41rem;
             color: #fff;
         }
 
         div {
             float: left;
-            padding-left: 20px;
+            padding-left: 0.2rem;
             color: #808080;
-            font-size: 25px;
+            font-size: 0.25rem;
             width: 60%;
-            padding-top: 27px;
+            padding-top: 0.27rem;
         }
 
         div.wrap_tit7 {
             width: auto;
             text-align: center;
-            line-height: 56px;
-            font-size: 25px;
+            line-height: 0.56rem;
+            font-size: 0.25rem;
             color: #00afc2;
             padding-left: 0;
             position: absolute;
-            right: 20px;
-            bottom: 45px;
+            right: 0.2rem;
+            bottom: 0.45rem;
         }
     }
 }

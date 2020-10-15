@@ -304,18 +304,15 @@ export default {
          * 上传图片之前判断图片是否符合条件
          */
         beforeRead(file) {
+          var that=this;
             if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
                 Toast('请上传 jpg/png 格式图片');
                 return false;
             }
             var reader = new FileReader();
             reader.onload = function (e) {
-                // 防止重复上传
-                if (that.imgDatas.indexOf(e.target.result) === -1) {
-                    that.imgDatas.push(e.target.result);
                     that.doctorPhoto = e.target.result;
                     that.imgcount = 1;
-                }
             };
             reader.readAsDataURL(file);
             // let isLt1M = file.size / 1024 / 1024 <= 1

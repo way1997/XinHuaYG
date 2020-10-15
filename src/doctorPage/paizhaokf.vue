@@ -254,7 +254,7 @@ height: 0.4rem;text-align: center;vertical-align: middle;color: white;line-heigh
           brandId: this.brandId
         }
         saveOnlinePrescribing(list).then((res) => {
-          //console.log(res);
+          console.log(res);
           let that = this;
           if (res.type == true) {
             this.$toast('开方成功')

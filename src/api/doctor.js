@@ -1146,3 +1146,118 @@ export function doctorMoneyMsg(list) {
     })
   })
 }
+//银行卡列表
+export function cardList(list) {
+  const url = baseURI + '/mkkMoblie/doctorAccount/cardList'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      doctorId: list.doctorId,
+      token: list.token
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+//银行列表
+export function findAllBankNumber(list) {
+  const url = baseURI + '/mkkMoblie/bankNumber/findAllBankNumber'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      doctorId: list.doctorId,
+      token: list.token
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+//添加银行卡
+export function bindCard(list) {
+  const url = baseURI + '/mkkMoblie/doctorAccount/bindCard'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      doctorId: list.doctorId,
+      token: list.token,
+      realName:list.realName,
+      bankName:list.bankName,
+      bankCard:list.bankCard,
+      bankDeposit:list.bankDeposit
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+//删除银行卡
+export function deleteCard(list) {
+  const url = baseURI + '/mkkMoblie/doctorAccount/deleteCard'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      cardId: list.cardId,
+      token: list.token,
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+//删除银行卡
+export function cardListOK(list) {
+  const url = baseURI + '/mkkMoblie/doctorAccount/cardListOK'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      doctorId: list.doctorId,
+      token: list.token
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+//公告列表
+export function proclamationList(list) {
+  const url = baseURI + '/mkkMoblie/doctorSupplyTwo/proclamationList'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      doctorId: list.doctorId,
+      token: list.token
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+//保存公告
+export function saveProclamation(list) {
+  const url = baseURI + '/mkkMoblie/doctorSupplyTwo/saveProclamation'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      doctorId: list.doctorId,
+      token: list.token,
+      proclamationId:list.proclamationId,
+      image:list.image,
+      content:list.content
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+//删除公告
+export function deleteProclamation(list) {
+  const url = baseURI + '/mkkMoblie/doctorSupplyTwo/deleteProclamation'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      token: list.token,
+      proclamationId:list.proclamationId
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+//删除公告
+export function proclamation(list) {
+  const url = baseURI + '/mkkMoblie/doctorSupplyTwo/proclamation'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      token: list.token,
+      proclamationId:list.proclamationId
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}

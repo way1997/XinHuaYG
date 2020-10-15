@@ -521,6 +521,7 @@ export default {
          * 上传图片之前判断图片是否符合条件
          */
         beforeRead(file) {
+          var that=this;
             if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
                 Toast('请上传 jpg/png 格式图片');
                 return false;
@@ -1326,7 +1327,7 @@ export default {
 
         .name {
             color: #222222;
-            font-size: 0.31rem;
+            font-size: 0.25rem;
             line-height: 0.93rem;
             text-align: left;
             position: relative;
@@ -1334,6 +1335,7 @@ export default {
             height: 0.9rem;
             word-break: normal;
             overflow: hidden;
+
         }
     }
 }
@@ -1442,6 +1444,7 @@ export default {
     border-top: 1px dashed #d2d2d2;
     padding-top: 0.25rem;
     box-sizing: border-box;
+    margin-left: 0.1rem;
 }
 
 .text_wrap6 {

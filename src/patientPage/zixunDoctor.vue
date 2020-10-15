@@ -90,8 +90,7 @@ export default {
         this.token = cookie.get("token");
         this.patientId = cookie.get("patientId");
         this.findChatDoctor();
-        // this.findChatPatient();
-        //this.getWxConfig();
+
     },
     computed: {
 
@@ -99,20 +98,20 @@ export default {
 
     methods: {
         findChatDoctor() {
+
             let list = {
                 token: this.token,
                 patientId: this.patientId
             }
-
+            console.log(list);
             findChatDoctor(list).then((res) => {
                 console.log(res);
+                this.loadUp = false;
                 if (res.data.length == 0) {
                     this.beijing = true;
-                    this.loadUp = false;
                     this.lists = []
                 } else {
                     this.doctor = res.data;
-                    this.loadUp = false;
                     console.log(this.doctor)
                     // for(var i=0;i<res.data.length;i++){
                     //   this.totalNum += (res.data[i].sum)*1

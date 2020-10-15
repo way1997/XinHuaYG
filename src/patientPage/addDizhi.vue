@@ -243,7 +243,7 @@ export default {
             } else if (this.sjh == '') {
                 this.$toast('请输入手机号')
                 return false;
-            } else if (!(/^1[3|4|5|7|8|6]\d{9}$/.test(this.sjh))) {
+            } else if (!(/^1[3|4|5|7|8|6|9]\d{9}$/.test(this.sjh))) {
                 this.$toast('手机号码格式不正确');
                 return false;
             } else if (this.area == '' && !this.$route.query.item) {
@@ -301,6 +301,7 @@ export default {
             height: 0.54rem;
             border: 0.01rem solid #dadada;
             font-size: 0.27rem;
+            line-height: .27rem;
             padding-left: 0.2rem;
             border-radius: 0.1rem;
             margin-top: 0.25rem;

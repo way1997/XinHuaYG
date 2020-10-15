@@ -105,7 +105,7 @@ export default {
         doctorId: cookie.get("doctorId"),
       };
       findPhotoPrescription(list).then((res) => {
-        console.log(res);
+        // console.log(res);
         let numArr = [];
         for (var i = 0; i < res.data.length; i++) {
           if (res.data[i].sendStatus == 0) {
@@ -121,7 +121,7 @@ export default {
         doctorId: cookie.get("doctorId"),
       };
       findChatPatient(list).then((res) => {
-        console.log(res);
+        // console.log(res);
         if (res.data.length == 0) {
           this.totalNum = 0;
         } else {

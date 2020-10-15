@@ -10,6 +10,10 @@
         <div>服务{{lists.countServer}}人 {{lists.subDiagnoseRate}}%复诊率 {{lists.countComment}}条评论</div>
         <div @click="godaxie">答谢医生</div>
     </div>
+    <div class="gonggao">
+        <h1>医生公告</h1>
+        <div @click="gogonggaolist">查看公告</div>
+    </div>
     <div class="tiaoli">
         <h1>擅长调理</h1>
         <div>
@@ -89,6 +93,7 @@ export default {
     this.doctorId = this.$route.query.doctorId;
     this.doctorDetails();
     this.getWxConfig();
+    // console.log(this.doctorId)
   },
 
   computed: {},
@@ -106,6 +111,16 @@ export default {
           doctorName: this.lists.doctorName,
         },
       });
+    },
+    gogonggaolist(){
+      let doctorId = this.doctorId
+      //console.log(doctorId)
+      this.$router.push({
+        name:"proclamationlist",
+        query:{
+          doctorId:doctorId
+        }
+      })
     },
     goLiaotian() {
       if (this.isRelation == 1) {
@@ -334,8 +349,40 @@ export default {
         font-size: 0.28rem;
         color: #fff;
         position: absolute;
-        right: 0.1rem;
+        right: 0.24rem;
         top: 0.25rem;
+        padding-left: 0;
+    }
+
+}
+
+.gonggao {
+    width: 92.4%;
+    margin: 0 auto;
+    height: .4rem;
+    padding-bottom: 0.82rem;
+    border-bottom: 0.01rem solid #ececec;
+    position: relative;
+
+    h1 {
+        font-size: 0.32rem;
+        color: #7c7c7c;
+        position: relative;
+        top: .4rem;
+    }
+
+    div {
+        width: 22%;
+        height: 0.56rem;
+        background: #00afc2;
+        border-radius: 0.13rem;
+        text-align: center;
+        line-height: 0.56rem;
+        font-size: 0.28rem;
+        color: #fff;
+        position: absolute;
+        right: 0rem;
+        top: .25rem;
         padding-left: 0;
     }
 }
@@ -349,7 +396,7 @@ export default {
 
     h1 {
         font-size: 0.32rem;
-        padding: 0.3rem 0 0.25rem 0.13rem;
+        padding: 0.3rem 0 0.25rem 0rem;
         color: #7c7c7c;
     }
 
@@ -370,14 +417,14 @@ export default {
 
 .jianjie {
     //height:196px;
-    width: 100%;
+    width: 92.4%;
     padding-bottom: 2rem;
     margin: 0 auto;
     border-bottom: 0.01rem solid #ececec;
 
     h1 {
         font-size: 0.32rem;
-        padding: 0.3rem 0 0.25rem 0.13rem;
+        padding: 0.3rem 0 0.25rem 0rem;
         color: #7c7c7c;
     }
 
@@ -390,14 +437,18 @@ export default {
 }
 
 .wenzhang {
+    width: 92.4%;
+    padding-bottom: 1rem;
+    margin: 0 auto;
+
     h1 {
         font-size: 0.32rem;
-        padding: 0.3rem 0 0.25rem 0.43rem;
+        padding: 0.3rem 0 0.25rem 0rem;
         color: #7c7c7c;
     }
 
     .detailList {
-        padding: 0 0.36rem;
+        padding: 0 .1rem;
 
         >div {
             width: 100%;
@@ -410,6 +461,7 @@ export default {
                 color: #7a7a7a;
                 padding-top: 32px;
                 float: left;
+                line-height: .32rem;
                 width: 67%;
             }
 

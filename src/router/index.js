@@ -6,8 +6,7 @@ Vue.use(Router)
 
 export default new Router({
   // mode: 'history',
-  routes: [
-    {
+  routes: [{
       path: '/',
       redirect: 'indexPage'
     },
@@ -141,6 +140,41 @@ export default new Router({
       name: 'changjianwenti',
       component: (changjianwenti) => require(['@/doctorPage/changjianwenti'], changjianwenti)
     },
+    {
+      path: '/jiaoyi',
+      name: 'jiaoyi',
+      component: (jiaoyi) => require(['@/doctorPage/jiaoyi'], jiaoyi)
+    },
+    {
+      path: '/addcard',
+      name: 'addcard',
+      component: (addcard) => require(['@/doctorPage/addcard'], addcard)
+    },
+    {
+      path: '/addcarddetial',
+      name: 'addcarddetial',
+      component: (addcarddetial) => require(['@/doctorPage/addcarddetial'], addcarddetial)
+    },
+    {
+      path: '/cardlist',
+      name: 'cardlist',
+      component: (cardlist) => require(['@/doctorPage/cardlist'], cardlist)
+    },
+    {
+      path: '/gonggaolist',
+      name: 'gonggaolist',
+      component: (gonggaolist) => require(['@/doctorPage/gonggaolist'], gonggaolist)
+    },
+    {
+      path: '/gonggaodetail',
+      name: 'gonggaodetail',
+      component: (gonggaodetail) => require(['@/doctorPage/gonggaodetail'], gonggaodetail)
+    },
+    {
+      path: '/gonggaoedit',
+      name: 'gonggaoedit',
+      component: (gonggaoedit) => require(['@/doctorPage/gonggaoedit'], gonggaoedit)
+    },
     //患者端
     // {
     //   path: '/indexPage',
@@ -272,7 +306,7 @@ export default new Router({
       name: 'wenzhenZx',
       component: (wenzhenZx) => require(['@/patientPage/wenzhenZx'], wenzhenZx)
     },
-		  {
+    {
       path: '/wsgrxx',
       name: 'wsgrxx',
       component: (wsgrxx) => require(['@/patientPage/wsgrxx'], wsgrxx)
@@ -291,11 +325,21 @@ export default new Router({
       path: '/gerenxinxi',
       name: 'gerenxinxi',
       component: (gerenxinxi) => require(['@/patientPage/gerenxinxi'], gerenxinxi)
-    }, 
+    },
     { //患者端咨询模块
       path: '/zixunDoctor',
       name: 'zixunDoctor',
       component: (zixunDoctor) => require(['@/patientPage/zixunDoctor'], zixunDoctor)
+    },
+    { //患者端公告列表模块
+      path: '/proclamationlist',
+      name: 'proclamationlist',
+      component: (proclamationlist) => require(['@/patientPage/proclamationlist'], proclamationlist)
+    },
+    { //患者端公告模块
+      path: '/proclamation',
+      name: 'proclamation',
+      component: (proclamation) => require(['@/patientPage/proclamation'], proclamation)
     }
   ]
 })
