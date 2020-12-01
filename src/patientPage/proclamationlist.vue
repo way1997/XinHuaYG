@@ -20,9 +20,9 @@
 
 <script>
 import {
-    proclamationList,
-    deleteProclamation
-} from "api/doctor";
+    proclamationList
+} from "api/patient";
+
 import HeadTop from 'base/header/header'
 import router from '../router'
 import $ from 'jquery'
@@ -42,21 +42,21 @@ export default {
         //$('html').css('font-size', '15px');
         this.doctorId = this.$route.query.doctorId
         this.showgonggao();
-        //console.log(this.doctorId)
+        console.log(this.doctorId)
     },
     methods: {
         goBack() {
             this.$router.go(-1);
         },
         showgonggao() {
-            let token = cookie.get("token");
+            let token = this.$route.query.token;
             let doctorId = this.doctorId
             //console.log(this.doctorId)
             let list = {
                 token: token,
                 doctorId: doctorId,
             };
-            //console.log(list)
+            console.log(list)
             proclamationList(list).then((res) => {
                 console.log(res)
                 this.list = res.data;

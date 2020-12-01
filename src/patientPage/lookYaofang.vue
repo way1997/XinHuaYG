@@ -31,7 +31,6 @@
         <div class="xian"></div>
         <h1>其他信息</h1>
         <div class="info">
-            <p><span>购药前查看药方:</span><label v-if="list.isPayLook==0">不可看</label><label v-if="list.isPayLook==1">可看</label></p>
             <p class="fuyaojinji"><span>服药禁忌:</span><label v-for="(item,index) in list.taboo" :key="index">{{item.tabooName}}、</label></p>
             <!-- <p class="buchongshuoming"><span>补充说明:</span><label>{{list.sickName}}</label></p> -->
         </div>

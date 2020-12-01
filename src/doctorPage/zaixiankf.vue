@@ -1,5 +1,9 @@
 <template>
-<div class="zaixiankf">
+<div class="zaixiankf" ref="zaixiankf">
+    <div class="zhezhao2" v-if="loadUp2">
+        <!-- 处理消息撤回 发送消息-->
+        <img src="../assets/img/LODING.gif" alt="" class="loading">
+    </div>
     <div class="buzhou">
         <img src="../assets/img/buzhou1.png" alt="" v-show="step1==0">
         <img src="../assets/img/buzhou2.png" alt="" v-show="step1==1">
@@ -54,7 +58,7 @@
                 <p v-for="(item,index) in arr" :key="index">
                     <label>{{item.medicineName}}</label>
 
-                    <input type="number" readonly v-model='item.howWeight' @input="lengthNum(index)" @click="hideYaocai(index)">
+                    <input id=index type="number" readonly v-model='item.howWeight' @input="lengthNum(index)" @click="hideYaocai(index)">
                     <img class='guangbiao1' src='../assets/img/gb.gif' v-if="shuzi==index&&jianpanS">
                     <em>g</em>
 
@@ -251,6 +255,7 @@ export default {
             pinpaiType: '',
             shopspan: '',
             pinpaiIdx: 0,
+            loadUp2: false,
             yaotaiIdx: 0,
             chakan: [{
                     name: '不可看'
@@ -505,12 +510,13 @@ export default {
             this.jianpanS = false;
         },
         hideYaocai(index) {
-            this.gundong2()
+            this.gundong2();
             this.shuzi = index;
             this.jianpanS = true;
             this.medicinalWraphid = true;
-            this.k1 = 'block'
-            this.k2 = 'none'
+            this.k1 = 'block';
+            this.k2 = 'none';
+            window.scrollTo(0, (index / 6) * 50 + 200);
             //console.log(this.shuzi,this.arr[this.shuzi])
         },
         quxiaoMo() {
@@ -549,9 +555,10 @@ export default {
                     shapId: this.shapeId,
                     brandId: this.brandId
                 }
-
+                console.log(list)
                 doctorSelAllDrug(list).then((res) => {
                     this.gbxs1 = false;
+                    console.log(res)
                     if (res.type == true) {
                         if (res.list.length == 0) {
                             this.yaocaiList = []
@@ -564,6 +571,7 @@ export default {
                     } else if (res.type == false) {
                         this.$toast(res.massage)
                         this.medicinalWraphid = false;
+                        this.showAdd = false;
                     }
                 })
             } else {
@@ -686,8 +694,11 @@ export default {
                 modelPreId: this.modelId, //模板ID
                 brandId: this.brandId //品牌ID
             }
+            this.loadUp2 = true
             linePrescription(list).then((res) => {
                 //console.log(res);
+                
+                this.loadUp2 = false
                 let that = this;
                 if (res.type == true) {
                     this.$toast('开方成功');
@@ -1136,6 +1147,23 @@ export default {
     padding-bottom: 170px;
 }
 
+.zhezhao2 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.loading {
+    width: 1rem;
+    height: 1rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .addYao {
     width: 100%;
     height: 70%;
@@ -1171,7 +1199,7 @@ export default {
             float: left;
             padding-top: 20px;
             text-align: -webkit-center;
-
+            margin-left: -0.3rem;
         }
 
         input {
@@ -1199,11 +1227,11 @@ export default {
         }
 
         .guangbiao1 {
-            width: 0.01rem;
+            width: 0.03rem;
             height: 0.3rem;
             position: absolute;
             margin-top: 0.7rem;
-            margin-left: 1.89rem;
+            margin-left: 1.93rem;
 
         }
     }
@@ -1379,6 +1407,7 @@ export default {
                     //margin-left:170px;
                     margin-right: 10px;
                     text-align: center;
+                    margin-top: 0.08rem;
                 }
 
                 em {
@@ -1395,11 +1424,12 @@ export default {
                 }
 
                 .guangbiao1 {
-                    width: 1px;
-                    height: 20px;
+                    width: 0.03rem;
+                    height: 0.3rem;
                     position: absolute;
-                    left: 66%;
-                    top: 5px;
+                    margin-left: 1.7rem;
+                    margin-top: 0.04rem;
+
                 }
             }
         }

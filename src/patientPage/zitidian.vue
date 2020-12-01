@@ -8,7 +8,14 @@
         <div class="info">
             <p><span>开方时间:</span><label>{{item.createDate}}</label></p>
             <p><span>开方医生:</span><label>{{item.doctorName}}</label></p>
-            <p><span>开方金额:</span><label>{{item.totalMoney}}</label></p>
+            <p>
+                <span>开方金额:</span>
+                <label v-if="item.isPatientPrescription == 0">{{item.totalMoneyTrue}}</label>
+                <label v-if="item.isPatientPrescription == 1" style="color:rgb(113 105 105);font-size:.25rem;font-weight: 600;">折扣价:{{item.totalMoneyTrue}}</label>
+                <label v-if="item.isPatientPrescription == 1" style="text-decoration:line-through;margin-right:.2rem;font-size:.24rem;color:#8a8a8a">
+                    <span>原价:</span>{{item.totalMoney}}
+                </label>
+            </p>
             <!-- <div class="chakan">查看详情</div> -->
         </div>
         <h1>药方信息</h1>
@@ -59,6 +66,8 @@ export default {
             item: '',
             medicineType: '',
             pageInd: '',
+            isPatientPrescription:"",//折扣状态显示
+            totalMoneyTrue:'',//原价
         }
     },
     created() {

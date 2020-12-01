@@ -123,8 +123,7 @@ export default {
             addressFindOne(list).then((res) => {
                 //              	alert(JSON.stringify(res));
                 console.log(res);
-                this.loadUp = false
-
+                this.loadUp = false;
                 this.shengtext = res.provinceName;
                 this.shitext = res.cityName;
                 this.qutext = res.areaName;

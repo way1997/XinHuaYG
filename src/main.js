@@ -51,7 +51,8 @@ Vue.component(Loadmore.name, Loadmore);
 Vue.config.productionTip = false
 Vue.config.ignoredElements = ['wx-open-launch-weapp']
 
-Vue.use(VueDirectiveImagePreviewer) 
+Vue.use(VueDirectiveImagePreviewer)
+
 
 const originalPush = VueRouter.prototype.push
 

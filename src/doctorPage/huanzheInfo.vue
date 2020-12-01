@@ -88,6 +88,7 @@ export default {
             this.patientId = this.$route.query.patientId2;
         }
         this.patientArchives();
+        window.scrollTo(0, 0);
     },
     computed: {
 
@@ -99,7 +100,7 @@ export default {
                 path: '/liaotian',
                 query: {
                     patientId: this.patientId,
-                    page:'huanzheInfo'
+                    page: 'huanzheInfo'
                 }
             })
         },
@@ -213,9 +214,25 @@ export default {
                     if (res.dMsg == '删除诊断成功！') {
                         this.$toast('撤销成功');
                         this.$refs.confirm.hide();
-                        this.$router.go(-1)
+
+                        const u = navigator.userAgent;
+                        const isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+                        if (isiOS) {
+                            // alert('ios')
+                            window.location.reload()
+                            console.log("ios");
+                        } else {
+                            this.$router.go(0)
+                            console.log("andriod");
+                        }
+
                     } else {
-                        this.$toast(res.massage);
+                        if (res.massage) {
+                            this.$toast(res.massage);
+                        } else {
+                            this.$toast('撤销失败，此处方已支付成功，无法撤销');
+                        }
+
                     }
 
                 })
@@ -364,12 +381,12 @@ export default {
     }
 
     .bianji {
-        width:150px;
-        height:50px;
+        width: 150px;
+        height: 50px;
         text-align: center;
         line-height: 50px;
-        color:#fff;
-        background:#00afc2;
+        color: #fff;
+        background: #00afc2;
         font-size: 30px;
         float: right;
         margin-top: 150px;
@@ -378,12 +395,12 @@ export default {
     }
 
     .liaotian {
-        width:150px;
-        height:50px;
+        width: 150px;
+        height: 50px;
         text-align: center;
         line-height: 50px;
-        color:#fff;
-        background:#00afc2;
+        color: #fff;
+        background: #00afc2;
         position: absolute;
         right: 30px;
         bottom: 170px;
@@ -431,14 +448,14 @@ export default {
                 float: right;
                 color: #42CAC6;
                 margin-right: 20px;
-                width:100px;
-                height:40px;
-                background:#00afc2;
+                width: 100px;
+                height: 40px;
+                background: #00afc2;
                 border-radius: 20px;
-                color:#fff;
+                color: #fff;
                 text-align: center;
                 line-height: 40px;
-                margin-top:20px;
+                margin-top: 20px;
             }
         }
 

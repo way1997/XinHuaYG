@@ -22,7 +22,7 @@
         </div>
     </div>
     <div style="clear:both;"></div>
-    <div class="chexiao" @click="goZaixian">再次开方</div>
+    <div class="chexiao" v-if="zaikaif" @click="goZaixian">再次开方</div>
     <confirm :text="tipText" ref="confirm" @cancel="cancel" @confirm="confirm"></confirm>
 </div>
 </template>
@@ -43,6 +43,7 @@ export default {
             token: "",
             doctorId: "",
             doctorHiden: false,
+            zaikaif:false,
             patientIds: [],
             prescriptionId: '',
             patientId: '',
@@ -118,6 +119,8 @@ export default {
                 prescriptionId: this.prescriptionId
             }
             doctorFindPatientPlan(list).then((res) => {
+                console.log(res)
+                if (res.status == 1){this.zaikaif = true}
                 this.tiaozhuanItem = res.map_patient;
                 this.symptom = res.map_patient.symptom;
                 this.preNum = res.map_patient.preNum, //一共多少挤

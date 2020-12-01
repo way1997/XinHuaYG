@@ -1,27 +1,52 @@
 <template>
-<div class="TabBar">
+  <div class="TabBar">
     <div class="bottom-tab">
-        <div class="tab-item" @click="didClickedItem(0)">
-            <img :src="'/houzhen' === $route.path? tabBarImgArr[0].selected: tabBarImgArr[0].normal" alt="在线咨询" />
-            <span :class="{ active: '/houzhen' === $route.path }" style="font-size: 0.3rem">候诊区</span>
-        </div>
-        <div class="tab-item" @click="didClickedItem(1)">
-            <img :src="
+      <div class="tab-item" @click="didClickedItem(0)">
+        <img
+          :src="
+            '/houzhen' === $route.path
+              ? tabBarImgArr[0].selected
+              : tabBarImgArr[0].normal
+          "
+          alt="在线咨询"
+        />
+        <span
+          :class="{ active: '/houzhen' === $route.path }"
+          style="font-size: 0.3rem"
+          >候诊区</span
+        >
+      </div>
+      <div class="tab-item" @click="didClickedItem(1)">
+        <img
+          :src="
             '/huanzhe' === $route.path
               ? tabBarImgArr[1].selected
               : tabBarImgArr[1].normal
-          " alt="处方信息" />
-            <span :class="{ active: '/huanzhe' === $route.path }" style="font-size: 0.3rem">我的患者</span>
-        </div>
-        <div class="tab-item" @click="didClickedItem(2)">
-            <img :src="
+          "
+          alt="处方信息"
+        />
+        <span
+          :class="{ active: '/huanzhe' === $route.path }"
+          style="font-size: 0.3rem"
+          >我的患者</span
+        >
+      </div>
+      <div class="tab-item" @click="didClickedItem(2)">
+        <img
+          :src="
             '/zixunHuan' === $route.path
               ? tabBarImgArr[2].selected
               : tabBarImgArr[2].normal
-          " alt="处方信息" />
-            <span :class="{ active: '/zixunHuan' === $route.path }" style="font-size: 0.3rem">咨询</span>
-        </div>
-        <!-- <div class="tab-item">
+          "
+          alt="处方信息"
+        />
+        <span
+          :class="{ active: '/zixunHuan' === $route.path }"
+          style="font-size: 0.3rem"
+          >咨询</span
+        >
+      </div>
+      <!-- <div class="tab-item">
             <img :src="tabBarImgArr[2].normal" alt="咨询" style="margin-bottom:-0.06rem;">
             <span>
                 <wx-open-launch-weapp
@@ -42,18 +67,25 @@ style > .btn {
                 </wx-open-launch-weapp>
             </span>
         </div> -->
-        <div class="tab-item" @click="didClickedItem(3)">
-            <img :src="
+      <div class="tab-item" @click="didClickedItem(3)">
+        <img
+          :src="
             '/homePage' === $route.path
               ? tabBarImgArr[3].selected
               : tabBarImgArr[3].normal
-          " alt="我的信息" />
-            <span :class="{ active: '/homePage' === $route.path }" style="font-size: 0.3rem">个人中心</span>
-        </div>
+          "
+          alt="我的信息"
+        />
+        <span
+          :class="{ active: '/homePage' === $route.path }"
+          style="font-size: 0.3rem"
+          >个人中心</span
+        >
+      </div>
     </div>
     <div class="tabNums" v-if="tabBarnum != 0">{{ tabBarnum }}</div>
     <div class="totalNum" v-show="totalNum != 0">{{ totalNum }}</div>
-</div>
+  </div>
 </template>
 
 <script>
@@ -96,8 +128,13 @@ export default {
     this.findPhotoPrescription();
     this.findChatPatient();
   },
+  beforeRouteLeave(to, form, next) {
+    if (window.history.length < 1) {
+      this.hasReturn = false;
+    }
+  },
   computed: {},
-
+  destroyed() {},
   methods: {
     findPhotoPrescription() {
       let list = {
@@ -107,11 +144,14 @@ export default {
       findPhotoPrescription(list).then((res) => {
         // console.log(res);
         let numArr = [];
-        for (var i = 0; i < res.data.length; i++) {
-          if (res.data[i].sendStatus == 0) {
-            numArr.push(res.data[i]);
+        if (res.data) {
+          for (var i = 0; i < res.data.length; i++) {
+            if (res.data[i].sendStatus == 0) {
+              numArr.push(res.data[i]);
+            }
           }
         }
+
         this.tabBarnum = numArr.length;
       });
     },
@@ -121,25 +161,32 @@ export default {
         doctorId: cookie.get("doctorId"),
       };
       findChatPatient(list).then((res) => {
-        // console.log(res);
-        if (res.data.length == 0) {
-          this.totalNum = 0;
-        } else {
-          for (var i = 0; i < res.data.length; i++) {
-            this.totalNum += res.data[i].sum * 1;
+        console.log(res);
+        if (res.data) {
+          if (res.data.length == 0) {
+            this.totalNum = 0;
+          } else {
+            for (var i = 0; i < res.data.length; i++) {
+              this.totalNum += res.data[i].sum * 1;
+            }
+            //console.log(this.totalNum)
           }
-          //console.log(this.totalNum)
         }
       });
     },
     didClickedItem: function (tag) {
       let doctorName = cookie.get("doctorId");
       let state = cookie.get("state");
+      let token = cookie.get("token");
       console.log(doctorName);
       if (doctorName == "undefined" || doctorName == undefined) {
         alert("您还未登陆，请点击头像后登录查看！");
       } else {
         if (state == undefined || state == "") {
+          this.$toast.center("账号未登录");
+          return false;
+        }
+        if (token == undefined || token == "") {
           this.$toast.center("账号未登录");
           return false;
         }
@@ -246,63 +293,63 @@ export default {
 @import "../assets/less/base.less";
 
 .bottom-tab {
-    width: 100%;
-    height: 1.2rem;
-    background-color: #fff;
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-    display: flex;
-    z-index: 999;
+  width: 100%;
+  height: 1.2rem;
+  background-color: #fff;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+  z-index: 999;
 }
 
 .tab-item {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.12rem;
-    color: #979797;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.12rem;
+  color: #979797;
 }
 
 img {
-    width: 35%;
-    margin-bottom: 0.08rem;
+  width: 35%;
+  margin-bottom: 0.08rem;
 }
 
 .active {
-    color: #3acbc8;
-    font-size: 0.12rem;
+  color: #3acbc8;
+  font-size: 0.12rem;
 }
 
 .tabNums {
-    position: fixed;
-    bottom: 70px;
-    right: 50px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    color: #fff;
-    background: red;
-    font-size: 22px;
-    text-align: center;
-    line-height: 30px;
-    z-index: 999;
+  position: fixed;
+  bottom: 70px;
+  right: 50px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  background: red;
+  font-size: 22px;
+  text-align: center;
+  line-height: 30px;
+  z-index: 999;
 }
 
 .totalNum {
-    width: 0.3rem;
-    height: 0.3rem;
-    position: fixed;
-    bottom: 0.7rem;
-    right: 31%;
-    background: red;
-    color: #fff;
-    font-size: 22px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 0.3rem;
-    z-index: 999;
+  width: 0.3rem;
+  height: 0.3rem;
+  position: fixed;
+  bottom: 0.7rem;
+  right: 31%;
+  background: red;
+  color: #fff;
+  font-size: 22px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 0.3rem;
+  z-index: 999;
 }
 </style>

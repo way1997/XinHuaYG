@@ -1,164 +1,170 @@
 <template>
-<div class="page">
-    <img src="../assets/img/LODING.gif" class="loading" alt="" v-if="hidden">
-    <div class='select_pharmacy'>
-        <img src='../assets/img/sanjiaox.png'></img>
-        <div>请上传
-            <div>医师执业证书</div>
-        </div>
-    </div>
-    <div class='shangp'>
-        <div style='width:100%;height:16px;clear:both'></div>
-        <div class='pf_but'>
+<div>
+    <div class="backHome" @click="goBack">返回上一级</div>
+    <div class="xian" style="clear:both;"></div>
+    <div class="page">
+        <img src="../assets/img/LODING.gif" class="loading" alt="" v-if="hidden">
 
-            <div class="img" v-for="(item,index) in imgs" :key="index">
-                <img class='touxaing' :src="item" />
-                <div class="guanbian" v-on:click.stop="deleteImg(item,index)">
-                    <img src='../assets/img/guanbian.png' ref="yszz01" v-on:click.stop="deleteImg(item,index)"></img>
+        <div class="zhezhao" v-if="loadUp">
+            <img src="../assets/img/LODING.gif" alt="" class="loading">
+        </div>
+        <div class='select_pharmacy'>
+            <img src='../assets/img/sanjiaox.png'></img>
+            <div>请上传
+                <div>医师执业证书</div>
+            </div>
+        </div>
+        <div class='shangp'>
+            <div style='width:100%;height:16px;clear:both'></div>
+            <div class='pf_but'>
+
+                <div class="img" v-for="(item,index) in imgs" :key="index">
+                    <img class='touxaing' :src="item" />
+                    <div class="guanbian" v-on:click.stop="deleteImg(item,index)">
+                        <img src='../assets/img/guanbian.png' ref="yszz01" v-on:click.stop="deleteImg(item,index)"></img>
+                    </div>
+                </div>
+                <van-uploader :max-count="1" :before-read="beforeRead" :after-read='afterRead_yszyz01' style="display:block;" v-if="ffileList_yszhiz01">
+                    <div v-if="fileList_yszhiz01" class="neiceng-box">
+                        <img src='../assets/img/guanbian.png' class="neiceng-del" style="z-index:11" ref="yszz01" v-on:click.stop="deleteImgN(fileList_yszhiz01)"></img>
+                        <img class="touxaing" style="z-index:10" :src="fileList_yszhiz01?fileList_yszhiz01:''" v-if="fileList_yszhiz01"> </img>
+                    </div>
+                    <div style="padding-top:.25rem">
+                        <img src="../assets/img/jiahao.png" ref="yszzLod1" @click='addyi' v-if="ffileList_yszhiz01" class='jiahao'> </img>
+                        <div v-if="ffileList_yszhiz01">添加第一页</div>
+                    </div>
+                </van-uploader>
+                <progress percent="100" class='jindutiao' v-if="jindutiao" />
+            </div>
+            <div class="pf_but">
+                <div class="img" v-for="(item,index) in imgs1" :key="index">
+                    <img :src="item" class='touxaing' />
+                    <div class="guanbian" v-on:click.stop="deleteImg1(item,index)">
+                        <img src='../assets/img/guanbian.png' v-on:click.stop="deleteImg1(item,index)"></img>
+                    </div>
+                </div>
+                <van-uploader :max-count="1" :before-read="beforeRead" :after-read='afterRead_yszyz02' style="display:block;" v-if="ffileList_yszhiz02">
+                    <div v-if="fileList_yszhiz02" class="neiceng-box">
+                        <img src='../assets/img/guanbian.png' class="neiceng-del" style="z-index:11" ref="yszz01" v-on:click.stop="deleteImg1N()"></img>
+                        <img class="touxaing" style="z-index:10" :src="fileList_yszhiz02?fileList_yszhiz02:''" v-if="fileList_yszhiz02"> </img>
+                    </div>
+
+                    <div style="padding-top:.25rem">
+                        <img src="../assets/img/jiahao.png" ref="yszzLod1" v-if="ffileList_yszhiz02" class='jiahao'> </img>
+                        <div v-if="ffileList_yszhiz02">添加第二页</div>
+                    </div>
+                </van-uploader>
+
+                <progress percent="100" class='jindutiao' v-if="jindutiao1" />
+            </div>
+            <div style='width:100%;height:16px;clear:both'></div>
+        </div>
+
+        <!-- 资格证书 -->
+        <div class='select_pharmacy'>
+            <img src='../assets/img/sanjiaox.png'></img>
+            <div>请上传
+                <div>医师资格证书</div>
+            </div>
+        </div>
+        <div class='shangp'>
+            <div style='width:100%;height:16px;clear:both'></div>
+            <div class='pf_but'>
+                <div class="img" v-for="(item,index) in picurl1" :key="index">
+                    <img :src="item? item:''" class='touxaing' />
+                    <div class="guanbian" v-on:click.stop='deleteImgpicurl1(item,index)'>
+                        <img src='../assets/img/guanbian.png' v-on:click.stop='deleteImgpicurl1(item,index)'></img>
+                    </div>
+                </div>
+                <van-uploader :max-count="1" :before-read="beforeRead" :after-read='afterRead_yszgz01' style="display:block;" v-if="ffileList_ysziz01">
+                    <div v-if="fileList_ysziz01" class="neiceng-box">
+                        <img src='../assets/img/guanbian.png' class="neiceng-del" style="z-index:11" ref="yszz01" v-on:click.stop="deleteImgpicurl1N()"></img>
+                        <img class="touxaing" style="z-index:10" :src="fileList_ysziz01?fileList_ysziz01:''" v-if="fileList_ysziz01"> </img>
+                    </div>
+
+                    <div style="padding-top:.25rem">
+                        <img src='../assets/img/jiahao.png' class='jiahao'> </img>
+                        <div>添加第一页</div>
+                    </div>
+                </van-uploader>
+                <progress percent="100" class='jindutiao' v-if="jindutiao" />
+            </div>
+            <div class='pf_but'>
+                <div class="img" v-for="(item,index) in picurl22" :key="index">
+                    <img :src="item" class='touxaing' />
+                    <div class="guanbian" v-on:click.stop='deleteImgpicurl2(item,index)'>
+                        <img src='../assets/img/guanbian.png' v-on:click.stop='deleteImgpicurl2(item,index)'></img>
+                    </div>
+                </div>
+                <van-uploader :max-count="1" :before-read="beforeRead" :after-read='afterRead_yszgz02' style="display:block;" v-if="ffileList_ysziz02">
+                    <div v-if="fileList_ysziz02" class="neiceng-box">
+                        <img src='../assets/img/guanbian.png' class="neiceng-del" style="z-index:11" ref="yszz02" v-on:click.stop="deleteImgpicurl2N()"></img>
+                        <img class="touxaing" style="z-index:10" :src="fileList_ysziz02?fileList_ysziz02:''" v-if="fileList_ysziz02"> </img>
+                    </div>
+                    <div style="padding-top:.25rem">
+                        <img src='../assets/img/jiahao.png' class='jiahao'> </img>
+                        <div>添加第二页</div>
+                    </div>
+                </van-uploader>
+                <progress percent="100" class='jindutiao' v-if="jindutiao1" />
+            </div>
+            <div style='width:100%;height:39rpx;clear:both'></div>
+        </div>
+        <!-- 专业资格证书 -->
+        <div class='select_pharmacy' style="height:1.2rem">
+            <img src='../assets/img/sanjiaox.png'></img>
+            <div style="width:95%;line-height: .5rem;margin-top:.14rem">请上传
+                <div>专业技术资格证书 </div> 即职称证书</br>（选填）
+            </div>
+        </div>
+        <div class='shangp'>
+            <div style='width:100%;height:16px;clear:both'></div>
+
+            <div class="img touxaing1" v-for="(item,index) in imgs2" :key="index">
+
+                <img :src="item" class='touxaing1' />
+                <div class="guanbian" v-on:click.stop="deleteImg2(item,index)">
+                    <img src='../assets/img/guanbian.png' v-on:click.stop="deleteImg2(item,index)"></img>
                 </div>
             </div>
-            <img src="../assets/img/jiahao.png" ref="yszzLod1" @click='addyi' class='jiahao'> </img>
-            <img class="touxaing" :src="fileList_yszhiz01?fileList_yszhiz01:''" v-if="fileList_yszhiz01"> </img>
-            <div @click='addyi'>添加第一页</div>
-            <progress percent="100" class='jindutiao' v-if="jindutiao" />
-        </div>
-        <div class="pf_but">
-            <div class="img" v-for="(item,index) in imgs1" :key="index">
-                <img :src="item" class='touxaing' />
-                <div class="guanbian" v-on:click.stop="deleteImg1(item,index)">
-                    <img src='../assets/img/guanbian.png' v-on:click.stop="deleteImg1(item,index)"></img>
-                </div>
+            <div class='pf_but' v-if="duoxuanpic">
+                <van-uploader :max-count="1" :before-read="beforeRead" :after-read='afterRead_zjziz01' style="display:block;" v-if="ffileList_zjziz01">
+                    <div v-if="fileList_zjziz01" class="neiceng-box">
+                        <img src='../assets/img/guanbian.png' class="neiceng-del" style="z-index:11" ref="yszz01" v-on:click.stop="deleteImg2N()"></img>
+                        <img class="touxaing" style="z-index:10" :src="fileList_zjziz01?fileList_zjziz01:''" v-if="fileList_zjziz01"> </img>
+                    </div>
+                    <div style="padding-top:.25rem">
+                        <img src='../assets/img/jiahao.png' class='jiahao'> </img>
+                        <div>添加照片</div>
+                    </div>
+                </van-uploader>
+
             </div>
-            <img src="../assets/img/jiahao.png" @click='adder' class='jiahao' alt="">
-            <img class="touxaing" :src="fileList_yszhiz02?fileList_yszhiz02:''" v-if="fileList_yszhiz02"> </img>
-            <div @click='adder'>添加第二页</div>
-            <progress percent="100" class='jindutiao' v-if="jindutiao1" />
-        </div>
-        <div style='width:100%;height:16px;clear:both'></div>
-    </div>
+            <div style='width:100%;height:16px;clear:both'></div>
 
-    <!-- 资格证书 -->
-    <div class='select_pharmacy'>
-        <img src='../assets/img/sanjiaox.png'></img>
-        <div>请上传
-            <div>医师资格证书</div>
         </div>
-    </div>
-    <div class='shangp'>
-        <div style='width:100%;height:16px;clear:both'></div>
-        <div class='pf_but'>
-            <div class="img" v-for="(item,index) in picurl1" :key="index">
-                <img :src="item? item:''" class='touxaing' />
-                <div class="guanbian" v-on:click.stop='deleteImgpicurl1(item,index)'>
-                    <img src='../assets/img/guanbian.png' v-on:click.stop='deleteImgpicurl1(item,index)'></img>
-                </div>
+        <!-- 案例 -->
+        <div class='case'>
+            <div class='zssl'>
+                证书示例
             </div>
-            <img src='../assets/img/jiahao.png' @click='picBut' class='jiahao'> </img>
-            <img class="touxaing" :src="fileList_ysziz01?fileList_ysziz01:''" v-if="fileList_ysziz01"> </img>
-            <div @click='picBut'>添加第一页</div>
-            <progress percent="100" class='jindutiao' v-if="jindutiao" />
-        </div>
-        <div class='pf_but'>
-            <div class="img" v-for="(item,index) in picurl22" :key="index">
-                <img :src="item" class='touxaing' />
-                <div class="guanbian" v-on:click.stop='deleteImgpicurl2(item,index)'>
-                    <img src='../assets/img/guanbian.png' v-on:click.stop='deleteImgpicurl2(item,index)'></img>
-                </div>
+            <div class='zssl_tit'>* 确保姓名、照片、编号、执业范围、签发机关等清晰可见 </div>
+            <div class='zssl_tit'>* 需上传证书第一、第二页，确保包含执业地点以及变更记录</div>
+            <div class='zsspic'>
+                <!-- <img src='../assets/img/touxiang.jpg'></img> -->
             </div>
-            <img src='../assets/img/jiahao.png' @click='picBBut' class='jiahao'> </img>
-            <img class="touxaing" :src="fileList_ysziz02?fileList_ysziz02:''" v-if="fileList_ysziz02"> </img>
-            <div @click='picBBut'>添加第二页</div>
-            <progress percent="100" class='jindutiao' v-if="jindutiao1" />
-        </div>
-        <div style='width:100%;height:39rpx;clear:both'></div>
-    </div>
-    <!-- 专业资格证书 -->
-    <div class='select_pharmacy'>
-        <img src='../assets/img/sanjiaox.png'></img>
-        <div>请上传
-            <div>专业技术资格证书</div>即职称证书（选填）
-        </div>
-    </div>
-    <div class='shangp'>
-        <div style='width:100%;height:16px;clear:both'></div>
-
-        <div class="img touxaing1" v-for="(item,index) in imgs2" :key="index">
-            <img :src="item" class='touxaing1' />
-            <div class="guanbian" v-on:click.stop="deleteImg2(item,index)">
-                <img src='../assets/img/guanbian.png' v-on:click.stop="deleteImg2(item,index)"></img>
+            <div class='zsspic zsspic1'>
+                <!-- <img src='../assets/img/touxiang.jpg'></img> -->
             </div>
-        </div>
-        <div class='pf_but' v-if="duoxuanpic">
-            <img src='../assets/img/jiahao.png' class='jiahao' @click='addpic'> </img>
-            <img class="touxaing" :src="fileList_zjziz01?fileList_zjziz01:''" v-if="fileList_zjziz01"> </img>
-            <div @click='addpic'>添加照片</div>
-        </div>
-        <div style='width:100%;height:16px;clear:both'></div>
+            <div style='width:100%;clear:both'></div>
 
-    </div>
-    <!-- 案例 -->
-    <div class='case'>
-        <div class='zssl'>
-            证书示例
         </div>
-        <div class='zssl_tit'>* 确保姓名、照片、编号、执业范围、签发机关等清晰可见 </div>
-        <div class='zssl_tit'>* 需上传证书第一、第二页，确保包含执业地点以及变更记录</div>
-        <div class='zsspic'>
-            <!-- <img src='../assets/img/touxiang.jpg'></img> -->
+        <div style='width:100%;height:38px;clear:both'></div>
+        <div class='generate' @click='generate'>
+            <div>完成并提交审核</div>
         </div>
-        <div class='zsspic zsspic1'>
-            <!-- <img src='../assets/img/touxiang.jpg'></img> -->
-        </div>
-        <div style='width:100%;clear:both'></div>
 
-    </div>
-    <div style='width:100%;height:38px;clear:both'></div>
-    <div class='generate' @click='generate'>
-        <div>完成并提交审核</div>
-    </div>
-
-    <div class='zhezhao' v-if="sctouxiangz" @click='scTouxiang1'></div>
-    <div class='enter' v-if="sctouxiang">
-        <div class='guanbi' @click=' scTouxiang1'>
-            <img src='../assets/img/bianbia.png'></img>
-        </div>
-        <van-uploader :max-count="1" :before-read="beforeRead" :after-read='afterRead_yszyz01' style="display:block;">
-            <van-button class='sele_pic' block style="font-size:0.4rem;width:100%;text-align:center;height:100%;margin-top:.6rem">相册/拍照</van-button>
-        </van-uploader>
-    </div>
-    <div class='enter' v-if="sctouxiang1">
-        <div class='guanbi' @click='scTouxiang1'>
-            <img src='../assets/img/bianbia.png'></img>
-        </div>
-        <van-uploader :max-count="1" :before-read="beforeRead" :after-read='afterRead_yszyz02' style="display:block;">
-            <van-button class='sele_pic' block style="font-size:0.4rem;width:100%;text-align:center;height:100%;margin-top:.6rem">相册/拍照</van-button>
-        </van-uploader>
-    </div>
-
-    <div class='enter' v-if="sctouxiang2">
-        <div class='guanbi' @click='scTouxiang1'>
-            <img src='../assets/img/bianbia.png'></img>
-        </div>
-        <van-uploader :max-count="1" :before-read="beforeRead" :after-read='afterRead_yszgz01' style="display:block;">
-            <van-button class='sele_pic' block style="font-size:0.4rem;width:100%;text-align:center;height:100%;margin-top:.6rem">相册/拍照</van-button>
-        </van-uploader>
-    </div>
-    <div class='enter' v-if="picbut">
-        <div class='guanbi' @click='scTouxiang1'>
-            <img src='../assets/img/bianbia.png'></img>
-        </div>
-        <van-uploader :max-count="1" :before-read="beforeRead" :after-read='afterRead_yszgz02' style="display:block;">
-            <van-button class='sele_pic' block style="font-size:0.4rem;width:100%;text-align:center;height:100%;margin-top:.6rem">相册/拍照</van-button>
-        </van-uploader>
-    </div>
-
-    <div class='enter' v-if="picbut13">
-        <div class='guanbi'>
-            <img src='../assets/img/bianbia.png'></img>
-        </div>
-        <van-uploader :max-count="1" :before-read="beforeRead" :after-read='afterRead_zjziz01' style="display:block;">
-            <van-button class='sele_pic' block style="font-size:0.4rem;width:100%;text-align:center;height:100%;margin-top:.6rem">相册/拍照</van-button>
-        </van-uploader>
+        <div class='zhezhao' v-if="sctouxiangz" @click='scTouxiang1'></div>
     </div>
 </div>
 </template>
@@ -179,15 +185,21 @@ export default {
     name: 'zhengshurenzheng',
     data() {
         return {
+            loadUp: false,
             hidden: false,
             img1: [],
             doctorId: '',
             token: '',
             fileList_yszhiz01: false, //上传相册-医师执证01
+            ffileList_yszhiz01: false,
             fileList_yszhiz02: false, //上传相册-医师执证01
-            fileList_ysziz01: false, //上传相册-医师资格证01
+            ffileList_yszhiz02: false,
+            ffileList_ysziz01: false, //上传相册-医师资格证01
+            fileList_ysziz01: false,
             fileList_ysziz02: false, //上传相册-医师资格执证01
+            ffileList_ysziz02: false,
             fileList_zjziz01: false, //上传相册-专业执证01
+            ffileList_zjziz01: false,
             picbut13: false,
             picbut: false,
             fileDir: '',
@@ -207,6 +219,7 @@ export default {
         }
     },
     created: function () {
+        // console.log(this.ffileList_yszhiz01)
         var that = this;
         let token = this.$route.params.token //从首页获取认证权限功能
         let doctorId = this.$route.params.doctorId //从首页获取认证权限功能
@@ -231,45 +244,68 @@ export default {
             doctorId: doctorId,
             token: token
         }
-        // console.log(list)
-        zsrzLoad(list).then(res => {
-            // console.log(res)
-            if (res.type == true) {
-                var imgs = this.imgs;
-                var imgs1 = this.imgs1;
-                var picurl1 = this.picurl1;
-                var picurl22 = this.picurl22;
-                var imgs2 = this.imgs2;
-                imgs.push(res.occPic1)
-                imgs1.push(res.occPic2)
-                picurl1.push(res.quaPic1)
-                picurl22.push(res.quaPic2)
-                imgs2.push(res.docHonorPic)
-
-                this.imgs = imgs,
-                    this.imgs1 = imgs1,
-                    this.picurl1 = picurl1,
-                    this.picurl22 = picurl22,
-                    this.imgs2 = imgs2,
-                    this.duoxuanpic = false,
-                    this.pho1 = res.occPic1,
-                    this.pho2 = res.occPic2,
-                    this.picurl1text = res.quaPic1,
-                    this.picurl2text = res.quaPic2,
-                    this.picurl = res.docHonorPic
-
-                // console.log(this.picurl1)
-
-            }
-        })
+        console.log(list)
+        this.zsrzLoad(list)
     },
     methods: {
+        goBack() {
+            if (this.dingdanPageQi == 1) {
+                this.$router.push({
+                    name: 'dingdan',
+                    params: {
+                        pageInd: this.pageInd,
+                        active: this.active
+                    }
+                })
+            } else {
+                this.$router.go(-1)
+            }
+        },
         toToast() {
             // 警告通知
             Notify({
                 type: 'warning',
                 message: '当前页面为获取到用户认证权限'
             });
+        },
+        zsrzLoad(list) {
+            zsrzLoad(list).then(res => {
+                console.log(res)
+                if (res.type == true) {
+                    var imgs = this.imgs;
+                    var imgs1 = this.imgs1;
+                    var picurl1 = this.picurl1;
+                    var picurl22 = this.picurl22;
+                    var imgs2 = this.imgs2;
+                    imgs.push(res.occPic1)
+                    imgs1.push(res.occPic2)
+                    picurl1.push(res.quaPic1)
+                    picurl22.push(res.quaPic2)
+                    imgs2.push(res.docHonorPic)
+
+                    this.imgs = imgs,
+                        this.imgs1 = imgs1,
+                        this.picurl1 = picurl1,
+                        this.picurl22 = picurl22,
+                        this.imgs2 = imgs2,
+                        this.duoxuanpic = false,
+                        this.pho1 = res.occPic1,
+                        this.pho2 = res.occPic2,
+                        this.picurl1text = res.quaPic1,
+                        this.picurl2text = res.quaPic2,
+                        this.picurl = res.docHonorPic
+
+                    // console.log(this.picurl1)
+
+                }
+                if (res.type == false) {
+                    this.ffileList_yszhiz01 = true
+                    this.ffileList_yszhiz02 = true
+                    this.ffileList_ysziz01 = true
+                    this.ffileList_ysziz02 = true
+                    this.ffileList_zjziz01 = true
+                }
+            })
         },
         addyi() {
             this.sctouxiang = true
@@ -304,15 +340,15 @@ export default {
          * 上传图片之前判断图片是否符合条件
          */
         beforeRead(file) {
-          var that=this;
+            var that = this;
             if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
                 Toast('请上传 jpg/png 格式图片');
                 return false;
             }
             var reader = new FileReader();
             reader.onload = function (e) {
-                    that.doctorPhoto = e.target.result;
-                    that.imgcount = 1;
+                that.doctorPhoto = e.target.result;
+                that.imgcount = 1;
             };
             reader.readAsDataURL(file);
             // let isLt1M = file.size / 1024 / 1024 <= 1
@@ -411,6 +447,8 @@ export default {
 
         // 删除图片
         deleteImg(e, index) {
+            console.log('业务触发')
+            this.ffileList_yszhiz01 = true
             var imgs = this.imgs;
             var index = index;
             imgs.splice(index, 1);
@@ -420,13 +458,16 @@ export default {
             this.backgroundcolor = '#979797'
 
         },
+
         // 删除图片
         deleteImg1(e, index) {
             var imgs1 = this.imgs1;
+            this.ffileList_yszhiz02 = true
             var index1 = index;
             imgs1.splice(index1, 1);
             this.imgs1 = imgs1
             this.backgroundcolor = '#979797'
+
         },
         // 删除图片
         deleteImgpicurl1(e, index) {
@@ -436,6 +477,7 @@ export default {
             this.picurl1 = imgs
             this.jindutiao = false
             this.backgroundcolor = '#979797'
+            this.ffileList_ysziz01 = true
         },
         // 删除图片
         deleteImgpicurl2(e, index) {
@@ -445,6 +487,7 @@ export default {
             this.picurl22 = imgs
             this.jindutiao = false
             this.backgroundcolor = '#979797'
+            this.ffileList_ysziz02 = true
         },
         // 删除图片
         deleteImg2(e, index) {
@@ -453,6 +496,28 @@ export default {
             imgs2.splice(index2, 1);
             this.imgs2 = imgs2
             this.duoxuanpic = true
+            this.ffileList_zjziz01 = true
+        },
+        // 删除二次上传图片
+        deleteImgN(val) {
+            console.log(val)
+            this.fileList_yszhiz01 = false
+        },
+        deleteImg1N(val) {
+            console.log(val)
+            this.fileList_yszhiz02 = false
+        },
+        deleteImgpicurl1N(val) {
+            console.log(val)
+            this.fileList_ysziz01 = false
+        },
+        deleteImgpicurl2N(val) {
+            console.log(val)
+            this.fileList_ysziz02 = false
+        },
+        deleteImg2N(val) {
+            console.log(val)
+            this.fileList_zjziz01 = false
         },
 
         generate() {
@@ -463,6 +528,7 @@ export default {
 
             let picurl1text = this.fileList_ysziz01 ? this.fileList_ysziz01 : this.picurl1[0];
             let picurl2text = this.fileList_ysziz02 ? this.fileList_ysziz02 : this.picurl22[0];
+            let docHonorPic = this.fileList_zjziz01 ? this.fileList_zjziz01 : this.imgs2[0];
 
             let picurl = ''
 
@@ -497,8 +563,10 @@ export default {
                     img2: img2,
                     picurl1text: picurl1text,
                     picurl2text: picurl2text,
-                    picurl: picurl
+                    picurl: picurl,
+                    docHonorPic: docHonorPic
                 }
+                console.log(list)
                 generateData(list).then(res => {
                     this.hidden = false
                     this.$toast.center('审核提交成功')
@@ -521,6 +589,44 @@ export default {
     position: relative;
     height: 100%;
     background: #f1f1f1;
+}
+
+.xian {
+    width: 100%;
+    height: 0.15rem;
+    background: #efefef;
+    clear: both;
+}
+
+.backHome {
+    width: 81.666%;
+    height: 0.76rem;
+    background: #00afc2;
+    border-radius: 0.13rem;
+    text-align: center;
+    line-height: 0.76rem;
+    color: #fff;
+    font-size: 0.32rem;
+    margin: 0 auto;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.zhezhao {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.loading {
+    width: 1rem;
+    height: 1rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .select_pharmacy {
@@ -569,7 +675,7 @@ export default {
     width: 138px;
     height: 138px;
     background: #d0d1d0;
-    padding-top: 30px;
+    // padding-top: 30px;
     box-sizing: border-box;
     float: left;
     margin-right: 12%;
@@ -599,6 +705,28 @@ export default {
     color: #fff;
     text-align: center;
     line-height: 50px;
+}
+
+.pf_but div.img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+}
+
+.neiceng-box {
+    position: relative;
+}
+
+.neiceng-box img.neiceng-del {
+    width: 0.43rem;
+    height: 0.41rem;
+    position: absolute;
+    top: -0.14rem;
+    left: -0.21em;
 }
 
 .case {
@@ -829,6 +957,15 @@ export default {
 }
 
 /* -----------------------vant-业务层  style----------*/
+/deep/ .van-uploader {
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: 1.38rem;
+    height: 1.38rem;
+}
+
 /deep/ .van-uploader__input-wrapper {
     position: relative;
     width: 100%;
@@ -839,8 +976,7 @@ export default {
     /* position: absolute; */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 200%;
+    z-index: 9;
     overflow: hidden;
     cursor: pointer;
     opacity: 0;
@@ -851,7 +987,7 @@ export default {
     display: -webkit-flex;
     display: flex;
     height: 100%;
-    overflow: hidden;
+    // overflow: hidden;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
 }

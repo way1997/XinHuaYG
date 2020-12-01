@@ -1,313 +1,313 @@
 <template>
-<div class="liaotian">
+  <div class="liaotian">
     <HeadTop :title="pageName" :backBlack="true"></HeadTop>
     <div class="zhezhao2" v-if="loadUp2">
-        <!-- 处理消息撤回 发送消息-->
-        <img src="../assets/img/LODING.gif" alt="" class="loading">
+      <!-- 处理消息撤回 发送消息-->
+      <img src="../assets/img/LODING.gif" alt="" class="loading">
     </div>
     <div class="backGo" @click="goBack()"></div>
     <div class="pages" ref="page" id="pages">
-        <div v-for="(item,index) in doctorIdList" :key="index">
-            <div class="left_liao">
-                <!-- 患者文字 -->
-                <div v-if="item.chatType==1">
-                    <div v-if="item.sponsor==1">
-                        <img :src="patientpic" class="head_pic">
-                        <div class="liaotian_ck">
-                            <img class="ltjt" src="../assets/img/ltjt.png">
-                            <div class="liaotzs_wrap">
-                                <div class="liaotzs">{{item.chartComment}}</div>
-                            </div>
-                            <div class="lefttime1">{{item.sendTime}}</div>
-                        </div>
-                    </div>
-
-                    <!-- 医生文字 -->
-                    <div v-if="item.sponsor==0" bindlongtap="delete">
-                        <img :src="doctorImgUrl" class="head_pic head_pic1">
-                        <div class="liaotian_ck liaotian_ck1">
-                            <img class="ltjt ltjt1" src="../assets/img/ltjt.png">
-                            <div class="liaotzs_wrap1" v-longTap="{methods: liaoBack,arg:{item:item}}">
-                                <div class="liaotzs1">{{item.chartComment}}</div>
-                            </div>
-                            <div class="lefttime">{{item.sendTime}}</div>
-                        </div>
-                    </div>
+      <div v-for="(item,index) in doctorIdList" :key="index">
+        <div class="left_liao">
+          <!-- 患者文字 -->
+          <div v-if="item.chatType==1">
+            <div v-if="item.sponsor==1">
+              <img :src="patientpic" class="head_pic">
+              <div class="liaotian_ck">
+                <img class="ltjt" src="../assets/img/ltjt.png">
+                <div class="liaotzs_wrap">
+                  <div class="liaotzs" style="word-break:break-all">{{item.chartComment}}</div>
                 </div>
-
-                <!-- 图片 -->
-                <div v-if="item.chatType==2">
-                    <!-- 医生图片 -->
-                    <div v-if="item.sponsor==0" bindlongtap="delete">
-                        <img :src="doctorImgUrl" class="head_pic head_pic1">
-                        <div class="liaotian_ck liaotian_ck1">
-                            <img class="ltjt ltjt1" src="../assets/img/ltjt.png">
-                            <div class="liaotzs_wrap2" v-longTap="{methods: liaoBack,arg:{item:item}}">
-                                <img @click="changebig(item.chatPics)" class="picurl1" mode="widthFix" :src="item.chatPics">
-                            </div>
-                            <div style="clear:both;width:100%;"></div>
-                            <div class="lefttime">{{item.sendTime}}</div>
-                        </div>
-                    </div>
-                    <!-- 患者图片 -->
-                    <div v-if="item.sponsor==1">
-                        <img :src="patientpic" class="head_pic">
-                        <div class="liaotian_ck">
-                            <img class="ltjt" src="../assets/img/ltjt.png">
-                            <div class="liaotzs_wrap3">
-                                <img @click="changebig(item.chatPics)" class="picurl2" mode="widthFix" :src="item.chatPics">
-                            </div>
-                            <div style="clear:both;width:100%;"></div>
-                            <div class="lefttime1">{{item.sendTime}}</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div v-if="item.chatType==3">
-                    <!-- 医生语音 -->
-                    <div v-if="item.sponsor==0" @click="play(item.chatRoute1)" bindlongtap="delete">
-                        <img :src="doctorImgUrl" class="head_pic head_pic1">
-                        <div class="liaotian_ck liaotian_ck1">
-                            <img class="ltjt ltjt1" src="../assets/img/ltjt.png">
-                            <div class="liaotzs_wrap1">
-                                <div class="liaotzs liaotzspi2" style="float:right;margin-top:0.03rem;margin-right:-0.04rem;text-aling:left;">
-                                    <img class="yuyinpic1" style="right:0.05rem" src="../assets/img/yuyin1.png">
-                                    {{item.chartComment}}"
-                                </div>
-                                <div>{{yuyinru}}</div>
-                                <div class="lefttime" style="float:right;margin-top:0.73rem;margin-right:-38%;">{{item.sendTime}}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 患者语音 -->
-                    <div v-if="item.sponsor==1" @click="play(item.chatRoute1)">
-                        <img :src="patientpic" class="head_pic">
-                        <div class="liaotian_ck">
-                            <img class="ltjt" src="../assets/img/ltjt.png">
-                            <div class="liaotzs_wrap">
-                                <div class="liaotzs liaotzspi">
-                                    <img class="yuyinpic" src="../assets/img/yuyin1.png">
-                                    {{item.chartComment}}"
-                                </div>
-                                <div class="lefttime1">{{item.sendTime}}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 文章 -->
-                <div v-if="item.chatType==9||item.chatType==13">
-                    <!-- 医生 -->
-                    <div v-if="item.sponsor==0" bindtap="article">
-                        <img :src="doctorImgUrl" class="head_pic head_pic1">
-                        <div class="liaotian_ck liaotian_ck1">
-                            <img class="ltjt ltjt1" src="../assets/img/tiaolijt.png">
-                            <div class="liaotzs_wrap1 tiaoli">
-                                <div class="liaotzs1 tiaoli_bac tiaoli">
-                                    <div class="tiaoli_top">
-                                        <img class="tiaoli_top_img" src="../assets/img/l12.png">
-                                        <div class="tiaoli_top_div">已为您制定专属药方，请查收</div>
-                                    </div>
-                                    <div class="tiaoli_bot">
-                                        文章
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
-                        </div>
-                    </div>
-                    <!-- 患者 -->
-                    <div v-if="item.sponsor==1">
-                        <img :src="patientpic" class="head_pic">
-                        <div class="liaotian_ck">
-                            <img class="ltjt" src="../assets/img/tiaolijt.png">
-                            <div class="liaotzs_wrap1">
-                                <div class="liaotzs1 tiaoli_bac tiaoli" style="float:left;margin-left:-0.06rem;margin-top:-0.19rem;">
-                                    <div class="tiaoli_top">
-                                        <img class="tiaoli_top_img" src="../assets/img/l12.png">
-                                        <div class="tiaoli_top_div">文章</div>
-                                    </div>
-                                    <div class="tiaoli_bot">
-                                        文章
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
-                    </div>
-                </div>
-                <!-- 患者查询问诊单 -->
-                <div v-if="item.chatType==11">
-                    <div v-if="item.sponsor==1" bindtap="lookwenzhen">
-                        <img :src="patientpic" class="head_pic">
-                        <div class="liaotian_ck">
-                            <img class="ltjt" src="../assets/img/tiaolijt.png">
-                            <div class="liaotzs_wrap1">
-                                <div class="liaotzs1 tiaoli_bac tiaoli" style="float:left;margin-left:-0.06rem;margin-top:-0.19rem;">
-                                    <div class="tiaoli_top">
-                                        <img class="tiaoli_top_img" src="../assets/img/l6.png" style="height:0.3rem;margin-top:0.04rem;">
-                                        <div class="tiaoli_top_div" style="line-height:0.35rem;">{{patientName}}问诊单</div>
-                                    </div>
-                                    <div class="tiaoli_bot">
-                                        已提交问诊单请查看
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="lefttime" style="float:left;margin-left:0.97rem;">{{item.sendTime}}</div>
-                    </div>
-                </div>
-
-                <!-- 评价 -->
-                <div v-if="item.chatType==7">
-                    <!-- 医生 -->
-                    <div v-if="item.sponsor==0">
-                        <img :src="doctorImgUrl" class="head_pic head_pic1">
-                        <div class="liaotian_ck liaotian_ck1">
-                            <img class="ltjt ltjt1" src="../assets/img/tiaolijt.png">
-                            <div class="liaotzs_wrap1 tiaoli">
-                                <div class="liaotzs1 tiaoli_bac tiaoli">
-                                    <div class="tiaoli_top">
-                                        <img class="tiaoli_top_img" src="../assets/img/l8.png" style="height:0.3rem;margin-top:0.04rem;">
-                                        <div class="tiaoli_top_div">欢迎对服务进行评价</div>
-                                    </div>
-                                    <div class="tiaoli_bot">
-                                        邀请评价
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
-                        </div>
-                    </div>
-                    <!-- 患者 -->
-                    <div v-if="item.sponsor==1">
-                        <img :src="patientpic" class="head_pic">
-                        <div class="liaotian_ck">
-                            <img class="ltjt" src="../assets/img/tiaolijt.png">
-                            <div class="liaotzs_wrap1">
-                                <div class="liaotzs1 tiaoli_bac tiaoli" style="float:left;margin-left:-0.06rem;margin-top:-0.19rem;">
-                                    <div class="tiaoli_top">
-                                        <img class="tiaoli_top_img" src="../assets/img/l8.png" style="height:0.3rem;margin-top:0.04rem;">
-                                        <div class="tiaoli_top_div">欢迎对服务进行评价</div>
-                                    </div>
-                                    <div class="tiaoli_bot">
-                                        邀请评价
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
-                    </div>
-                </div>
-
-                <!-- 坐诊 -->
-                <div v-if="item.chatType==8">
-                    <!-- 医生 -->
-                    <div v-if="item.sponsor==0" bindtap="visit">
-                        <img :src="doctorImgUrl" class="head_pic head_pic1">
-                        <div class="liaotian_ck liaotian_ck1">
-                            <img class="ltjt ltjt1" src="../assets/img/tiaolijt.png">
-                            <div class="liaotzs_wrap1 tiaoli">
-                                <div class="liaotzs1 tiaoli_bac tiaoli">
-                                    <div class="tiaoli_top">
-                                        <img class="tiaoli_top_img" src="../assets/img/xt2.jpg">
-                                        <div class="tiaoli_top_div">请关注我的坐诊信息</div>
-                                    </div>
-                                    <div class="tiaoli_bot">
-                                        关注坐诊信息
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div v-if="item.chatType==12">
-                    <!-- 医生 -->
-                    <div v-if="item.sponsor==0">
-                        <img :src="doctorImgUrl" class="head_pic head_pic1">
-                        <div class="liaotian_ck liaotian_ck1">
-                            <img class="ltjt ltjt1" src="../assets/img/tiaolijt.png">
-                            <div class="liaotzs_wrap1 tiaoli">
-                                <div class="liaotzs1 tiaoli_bac tiaoli">
-                                    <div class="tiaoli_top">
-                                        <img class="tiaoli_top_img" src="../assets/img/gonggao.png">
-                                        <div class="tiaoli_top_div" style="line-height:35px;">最新公告</div>
-                                    </div>
-                                    <div class="tiaoli_bot">
-                                        请查看我的公告
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 开方 -->
-                <div v-if="item.chatType==4">
-                    <!-- 医生 -->
-                    <div v-if="item.sponsor==0" @click="tiaoli(item.entityId)">
-                        <img :src="doctorImgUrl" class="head_pic head_pic1">
-                        <div class="liaotian_ck liaotian_ck1">
-                            <img class="ltjt ltjt1" src="../assets/img/tiaolijt.png">
-                            <div class="liaotzs_wrap1 tiaoli">
-                                <div class="liaotzs1 tiaoli_bac tiaoli">
-                                    <div class="tiaoli_top">
-                                        <img class="tiaoli_top_img" src="../assets/img/tiaoli.jpg">
-                                        <div class="tiaoli_top_div">已为您制定专属药方，请查收</div>
-                                    </div>
-                                    <div class="tiaoli_bot">
-                                        查看调理方案
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
-                        </div>
-                    </div>
-                    <!-- 患者 -->
-                    <div v-if="item.sponsor==1">
-                        <img :src="patientpic" class="head_pic">
-                        <div class="liaotian_ck">
-                            <img class="ltjt" src="../assets/img/tiaolijt.png">
-                            <div class="liaotzs_wrap1">
-                                <div class="liaotzs1 tiaoli_bac tiaoli" style="float:left;margin-left:-0.06rem;margin-top:-0.19rem;">
-                                    <div class="tiaoli_top">
-                                        <img class="tiaoli_top_img" src="../assets/img/tiaoli.jpg">
-                                        <div class="tiaoli_top_div">已为您制定专属药方，请查收</div>
-                                    </div>
-                                    <div class="tiaoli_bot">
-                                        查看调理方案
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
-                    </div>
-                </div>
-
-                <div style="width:100%;clear:both;"></div>
+                <div class="lefttime1">{{item.sendTime}}</div>
+              </div>
             </div>
 
-            <div class="hist" v-if="item.chatType==6&&item.sponsor==0">
-                {{item.chartComment}}
-            </div>
-            <div class="hist" v-if="item.chatType==0&&item.sponsor==0">
-                {{item.chartComment}}
-            </div>
-            <div v-if="item.chatType==5||item.chatType==10&&item.sponsor==0">
-                <div class="lefttime" style="text-align:center;margin-left:0;">{{item.sendTime}}</div>
-                <div class="hist">
-                    已将问诊单发送给患者
+            <!-- 医生文字 -->
+            <div v-if="item.sponsor==0" bindlongtap="delete">
+              <img :src="doctorImgUrl" class="head_pic head_pic1">
+              <div class="liaotian_ck liaotian_ck1">
+                <img class="ltjt ltjt1" src="../assets/img/ltjt.png">
+                <div class="liaotzs_wrap1" v-longTap="{methods: liaoBack,arg:{item:item}}">
+                  <div class="liaotzs1" style="width:100%;word-break:break-all"><span>{{item.chartComment}}</span></div>
                 </div>
+                <div class="lefttime">{{item.sendTime}}</div>
+              </div>
             </div>
-            <div style="width:100%;clear:both;"></div>
+          </div>
+
+          <!-- 图片 -->
+          <div v-if="item.chatType==2">
+            <!-- 医生图片 -->
+            <div v-if="item.sponsor==0" bindlongtap="delete">
+              <img :src="doctorImgUrl" class="head_pic head_pic1">
+              <div class="liaotian_ck liaotian_ck1">
+                <img class="ltjt ltjt1" src="../assets/img/ltjt.png">
+                <div class="liaotzs_wrap2" v-longTap="{methods: liaoBack,arg:{item:item}}">
+                  <img @click="changebig(item.chatPics)" class="picurl1" mode="widthFix" :src="item.chatPics">
+                </div>
+                <div style="clear:both;width:100%;"></div>
+                <div class="lefttime">{{item.sendTime}}</div>
+              </div>
+            </div>
+            <!-- 患者图片 -->
+            <div v-if="item.sponsor==1">
+              <img :src="patientpic" class="head_pic">
+              <div class="liaotian_ck">
+                <img class="ltjt" src="../assets/img/ltjt.png">
+                <div class="liaotzs_wrap3">
+                  <img @click="changebig(item.chatPics)" class="picurl2" mode="widthFix" :src="item.chatPics">
+                </div>
+                <div style="clear:both;width:100%;"></div>
+                <div class="lefttime1">{{item.sendTime}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="item.chatType==3">
+            <!-- 医生语音 -->
+            <div v-if="item.sponsor==0" @click="play(item.chatRoute1)" bindlongtap="delete">
+              <img :src="doctorImgUrl" class="head_pic head_pic1">
+              <div class="liaotian_ck liaotian_ck1">
+                <img class="ltjt ltjt1" src="../assets/img/ltjt.png">
+                <div class="liaotzs_wrap1">
+                  <div class="liaotzs liaotzspi2" style="float:right;margin-top:0.03rem;margin-right:-0.04rem;text-aling:left;">
+                    <img class="yuyinpic1" style="right:0.05rem" src="../assets/img/yuyin1.png">
+                    {{item.chartComment}}"
+                  </div>
+                  <div>{{yuyinru}}</div>
+                  <div class="lefttime" style="float:right;margin-top:0.73rem;margin-right:-38%;">{{item.sendTime}}</div>
+                </div>
+              </div>
+            </div>
+            <!-- 患者语音 -->
+            <div v-if="item.sponsor==1" @click="play(item.chatRoute1)">
+              <img :src="patientpic" class="head_pic">
+              <div class="liaotian_ck">
+                <img class="ltjt" src="../assets/img/ltjt.png">
+                <div class="liaotzs_wrap">
+                  <div class="liaotzs liaotzspi">
+                    <img class="yuyinpic" src="../assets/img/yuyin1.png">
+                    {{item.chartComment}}"
+                  </div>
+                  <div class="lefttime1">{{item.sendTime}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 文章 -->
+          <div v-if="item.chatType==9||item.chatType==13">
+            <!-- 医生 -->
+            <div v-if="item.sponsor==0" bindtap="article">
+              <img :src="doctorImgUrl" class="head_pic head_pic1">
+              <div class="liaotian_ck liaotian_ck1">
+                <img class="ltjt ltjt1" src="../assets/img/tiaolijt.png">
+                <div class="liaotzs_wrap1 tiaoli">
+                  <div class="liaotzs1 tiaoli_bac tiaoli">
+                    <div class="tiaoli_top">
+                      <img class="tiaoli_top_img" src="../assets/img/l12.png">
+                      <div class="tiaoli_top_div">已为您制定专属药方，请查收</div>
+                    </div>
+                    <div class="tiaoli_bot">
+                      文章
+                    </div>
+                  </div>
+                </div>
+                <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
+              </div>
+            </div>
+            <!-- 患者 -->
+            <div v-if="item.sponsor==1">
+              <img :src="patientpic" class="head_pic">
+              <div class="liaotian_ck">
+                <img class="ltjt" src="../assets/img/tiaolijt.png">
+                <div class="liaotzs_wrap1">
+                  <div class="liaotzs1 tiaoli_bac tiaoli" style="float:left;margin-left:-0.06rem;margin-top:-0.19rem;">
+                    <div class="tiaoli_top">
+                      <img class="tiaoli_top_img" src="../assets/img/l12.png">
+                      <div class="tiaoli_top_div">文章</div>
+                    </div>
+                    <div class="tiaoli_bot">
+                      文章
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
+            </div>
+          </div>
+          <!-- 患者查询问诊单 -->
+          <div v-if="item.chatType==11">
+            <div v-if="item.sponsor==1" bindtap="lookwenzhen">
+              <img :src="patientpic" class="head_pic">
+              <div class="liaotian_ck">
+                <img class="ltjt" src="../assets/img/tiaolijt.png">
+                <div class="liaotzs_wrap1">
+                  <div class="liaotzs1 tiaoli_bac tiaoli" style="float:left;margin-left:-0.06rem;margin-top:-0.19rem;">
+                    <div class="tiaoli_top">
+                      <img class="tiaoli_top_img" src="../assets/img/l6.png" style="height:0.3rem;margin-top:0.04rem;">
+                      <div class="tiaoli_top_div" style="line-height:0.35rem;">{{patientName}}问诊单</div>
+                    </div>
+                    <div class="tiaoli_bot">
+                      已提交问诊单请查看
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="lefttime" style="float:left;margin-left:0.97rem;">{{item.sendTime}}</div>
+            </div>
+          </div>
+
+          <!-- 评价 -->
+          <div v-if="item.chatType==7">
+            <!-- 医生 -->
+            <div v-if="item.sponsor==0">
+              <img :src="doctorImgUrl" class="head_pic head_pic1">
+              <div class="liaotian_ck liaotian_ck1">
+                <img class="ltjt ltjt1" src="../assets/img/tiaolijt.png">
+                <div class="liaotzs_wrap1 tiaoli">
+                  <div class="liaotzs1 tiaoli_bac tiaoli">
+                    <div class="tiaoli_top">
+                      <img class="tiaoli_top_img" src="../assets/img/l8.png" style="height:0.3rem;margin-top:0.04rem;">
+                      <div class="tiaoli_top_div">欢迎对服务进行评价</div>
+                    </div>
+                    <div class="tiaoli_bot">
+                      邀请评价
+                    </div>
+                  </div>
+                </div>
+                <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
+              </div>
+            </div>
+            <!-- 患者 -->
+            <div v-if="item.sponsor==1">
+              <img :src="patientpic" class="head_pic">
+              <div class="liaotian_ck">
+                <img class="ltjt" src="../assets/img/tiaolijt.png">
+                <div class="liaotzs_wrap1">
+                  <div class="liaotzs1 tiaoli_bac tiaoli" style="float:left;margin-left:-0.06rem;margin-top:-0.19rem;">
+                    <div class="tiaoli_top">
+                      <img class="tiaoli_top_img" src="../assets/img/l8.png" style="height:0.3rem;margin-top:0.04rem;">
+                      <div class="tiaoli_top_div">欢迎对服务进行评价</div>
+                    </div>
+                    <div class="tiaoli_bot">
+                      邀请评价
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
+            </div>
+          </div>
+
+          <!-- 坐诊 -->
+          <div v-if="item.chatType==8">
+            <!-- 医生 -->
+            <div v-if="item.sponsor==0" bindtap="visit">
+              <img :src="doctorImgUrl" class="head_pic head_pic1">
+              <div class="liaotian_ck liaotian_ck1">
+                <img class="ltjt ltjt1" src="../assets/img/tiaolijt.png">
+                <div class="liaotzs_wrap1 tiaoli">
+                  <div class="liaotzs1 tiaoli_bac tiaoli">
+                    <div class="tiaoli_top">
+                      <img class="tiaoli_top_img" src="../assets/img/xt2.jpg">
+                      <div class="tiaoli_top_div">请关注我的坐诊信息</div>
+                    </div>
+                    <div class="tiaoli_bot">
+                      关注坐诊信息
+                    </div>
+                  </div>
+                </div>
+                <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="item.chatType==12">
+            <!-- 医生 -->
+            <div v-if="item.sponsor==0">
+              <img :src="doctorImgUrl" class="head_pic head_pic1">
+              <div class="liaotian_ck liaotian_ck1">
+                <img class="ltjt ltjt1" src="../assets/img/tiaolijt.png">
+                <div class="liaotzs_wrap1 tiaoli">
+                  <div class="liaotzs1 tiaoli_bac tiaoli">
+                    <div class="tiaoli_top">
+                      <img class="tiaoli_top_img" src="../assets/img/gonggao.png">
+                      <div class="tiaoli_top_div" style="line-height:35px;">最新公告</div>
+                    </div>
+                    <div class="tiaoli_bot">
+                      请查看我的公告
+                    </div>
+                  </div>
+                </div>
+                <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 开方 -->
+          <div v-if="item.chatType==4">
+            <!-- 医生 -->
+            <div v-if="item.sponsor==0" @click="tiaoli(item.entityId)">
+              <img :src="doctorImgUrl" class="head_pic head_pic1">
+              <div class="liaotian_ck liaotian_ck1">
+                <img class="ltjt ltjt1" src="../assets/img/tiaolijt.png">
+                <div class="liaotzs_wrap1 tiaoli">
+                  <div class="liaotzs1 tiaoli_bac tiaoli">
+                    <div class="tiaoli_top">
+                      <img class="tiaoli_top_img" src="../assets/img/tiaoli.jpg">
+                      <div class="tiaoli_top_div">已为您制定专属药方，请查收</div>
+                    </div>
+                    <div class="tiaoli_bot">
+                      查看调理方案
+                    </div>
+                  </div>
+                </div>
+                <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
+              </div>
+            </div>
+            <!-- 患者 -->
+            <div v-if="item.sponsor==1">
+              <img :src="patientpic" class="head_pic">
+              <div class="liaotian_ck">
+                <img class="ltjt" src="../assets/img/tiaolijt.png">
+                <div class="liaotzs_wrap1">
+                  <div class="liaotzs1 tiaoli_bac tiaoli" style="float:left;margin-left:-0.06rem;margin-top:-0.19rem;">
+                    <div class="tiaoli_top">
+                      <img class="tiaoli_top_img" src="../assets/img/tiaoli.jpg">
+                      <div class="tiaoli_top_div">已为您制定专属药方，请查收</div>
+                    </div>
+                    <div class="tiaoli_bot">
+                      查看调理方案
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lefttime" style="float:right;margin-right:0.5rem;">{{item.sendTime}}</div>
+            </div>
+          </div>
+
+          <div style="width:100%;clear:both;"></div>
         </div>
-        <div class="loding" :style="{height:lodingH+'px'}">
-            <img src="../assets/img/LODING.gif" v-if="loding">
+
+        <div class="hist" v-if="item.chatType==6&&item.sponsor==0">
+          {{item.chartComment}}
         </div>
+        <div class="hist" v-if="item.chatType==0&&item.sponsor==0">
+          {{item.chartComment}}
+        </div>
+        <div v-if="item.chatType==5||item.chatType==10&&item.sponsor==0">
+          <div class="lefttime" style="text-align:center;margin-left:0;">{{item.sendTime}}</div>
+          <div class="hist">
+            已将问诊单发送给患者
+          </div>
+        </div>
+        <div style="width:100%;clear:both;"></div>
+      </div>
+      <div class="loding" :style="{height:lodingH+'px'}">
+        <img src="../assets/img/LODING.gif" v-if="loding">
+      </div>
 
     </div>
 
@@ -316,18 +316,18 @@
     <div :style="'width:100%;height:100%;display:'+none+';position:fixed;top:0;left:0'">
     </div>
     <div class="dibu_bot">
-        <!-- 弹窗 -->
+      <!-- 弹窗 -->
 
-        <form>
-            <div class="bottom" catchtouchmove="true">
-                <div class="duihua">
-                    <img :src="yuyinpic" class="bof" @click="voice">
-                    <div class="huihua" v-show="textarea">
-                        <textarea class="textmsg" name="text" v-model="kongtext" auto-height maxlength="-1" />
-                        <div @click="addChatContent" class="fasong_but" v-if="textarea">发送</div>
+      <form>
+        <div class="bottom" catchtouchmove="true">
+          <div class="duihua">
+            <img :src="yuyinpic" class="bof" @click="voice">
+            <div class="huihua" v-show="textarea">
+              <textarea class="textmsg" name="text" v-model="kongtext" auto-height maxlength="-1" />
+              <div @click="addChatContent" class="fasong_but" v-if="textarea">发送</div>
                     </div>
 
-                    <div id="ksly" class="speakbuton" hover-class="speakbuton_1" v-show="speakbuton" @click="mytouchstart" @touchend="mytouchend">按住说话</div>
+                    <input typ="button" id="ksly" onselectstart="javascript:return false;" :style="{backgroundColor: color}" class="speakbuton" hover-class="speakbuton_1" v-show="speakbuton" v-longTap="{methods: mytouchstart,arg:{}}"  @touchend="mytouchend" value="按住说话"></input>
                 </div>
             </div>
         </form>
@@ -518,14 +518,21 @@ export default {
             serverId: '',
             timeS: 0,
             timer: null,
-            loadUp2: false
+            loadUp2: false,
+            loop0: false,
+            recordstatue:true,
+            color:'#fff'
         }
     },
     created() {
         this.$nextTick(function () {
             if (!cookie.get("token")) {
                 cookie.set("state", '');
-                this.$router.push('/homePage')
+                this.$toast.center('该用户尚未登录，稍后会自动进入登录页登录')
+                clearTimeout(this.loop0); //再次清空定时器，防止重复注册定时器
+                this.loop0 = setTimeout(() => {
+                    this.$router.push('/homePage')
+                }, 2000);
             }
             if (this.$route.query.doctorId) {
                 cookie.set('doctorId', this.$route.query.doctorId)
@@ -750,7 +757,10 @@ export default {
             cookie.set('age', this.age);
             this.$router.push({
                 path: "/paizhaokf",
-                query: {}
+                query: {
+                    token:this.token,
+                    doctorId:this.doctorId
+                }
             });
         },
         handleFileChange(event) { //上传图片
@@ -864,8 +874,9 @@ export default {
             });
         },
         voice() {
-            // this.speakbuton = !this.speakbuton;
-            // this.textarea = !this.textarea;
+            console.log("111");
+           //  this.speakbuton = !this.speakbuton;
+           //  this.textarea = !this.textarea;
         },
         getWxConfig() {
             $.ajax({
@@ -908,38 +919,35 @@ export default {
             });
         },
         mytouchstart() {
-            setTimeout(() => {
-                this.longPress();
-            }, 500)
-        },
-        longPress() {
+          if(this.recordstatue==true)
+          {
+            this.color='#F0F8FF';
             wx.startRecord();
+            this.recordstatue=false;
             this.yuyinhidden = true;
-            setTimeout(function () {
-                this.timeS += 1;
-            }, 1000);
+          }
         },
         mytouchmove() {
-            wx.stopRecord({
-                success: function (res) {
-                    this.localId = res.localId;
-                }
-            });
-            this.yuyinhidden = false;
 
         },
         mytouchend() {
+          if(this.recordstatue==false)
+          {
+            this.color='#fff';
             wx.stopRecord({
                 success: function (res) {
                     this.localId = res.localId;
-                    alert(res.localId, '正常结束录音成功了')
+                    console.log(this.localId);
                     this.wxUpload();
                     this.myArticle();
                 }
             });
             this.yuyinhidden = false;
+            this.recordstatue=true;
+          }
         },
         wxUpload() {
+          console.log(this.localId);
             wx.uploadVoice({
                 localId: this.localId, // 需要上传的音频的本地ID，由stopRecord接口获得
                 isShowProgressTips: 1, // 默认为1，显示进度提示
@@ -1069,7 +1077,7 @@ export default {
                     clearTimeout(this.loop2); //再次清空定时器，防止重复注册定时器
                     this.loop2 = setTimeout(() => {
                         console.log("页面刷新");
-                        this.$router.go(0)
+                        window.location.reload()
                     }, 2000);
                 }
             }).catch(error => {
@@ -1359,7 +1367,7 @@ export default {
     width: .80rem;
     height: .80rem;
     float: left;
-    margin-top: .25rem;
+    margin-top: .15rem;
 }
 
 .huihua {
@@ -1729,16 +1737,16 @@ export default {
 
 .speakbuton {
     float: left;
-    width: 5.24rem;
-    margin: .10rem 0;
+    width: 4.5rem;
     margin-left: .58rem;
     border: 1px solid #d0d1d0;
-    font-size: .29rem;
+    font-size: 0.48rem;
     padding: .2rem 0;
     box-sizing: border-box;
     color: #717171;
     text-align: center;
     user-select: none;
+    margin-top: 0.06rem;
 }
 
 .speakbuton_1 {

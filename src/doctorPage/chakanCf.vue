@@ -20,6 +20,7 @@
             <p><span>辩证:</span><label>{{symptom}}</label></p>
             <p><span>类型:</span><label>{{medicineType}}</label></p>
             <p><span>药态:</span><label>{{shopName}}</label></p>
+            <section style="clear：both"></section>
             <p class="yaofang"><span>药方:</span><label class="yaoList"><em v-for="(item,index) in lists_pd" :key="index">{{item.medicineName}}{{item.medicineNum}}、</em></label></p>
             <p class="jiliang">
                 <span>剂量:</span><label>共{{preNum}}剂,每日{{preOnce}}剂,1剂分{{dayNum}}次服用</label>
@@ -53,6 +54,7 @@
             <p><span>总计:</span><label>¥{{total}}</label></p>
         </div>
     </div>
+    <van-divider style="padding-top:.5rem">已到底</van-divider>
 </div>
 </template>
 
@@ -94,8 +96,8 @@ export default {
             token: "",
             prescriptionId: '',
             medicineType: '',
-            shopName:'',
-            indentStatus:0
+            shopName: '',
+            indentStatus: 0
         }
     },
     created() {
@@ -164,17 +166,17 @@ export default {
 @import '../assets/less/base.less';
 
 .backHome {
-    width: 611px;
-    height: 76px;
+    width: 81.666%;
+    height: 0.76rem;
     background: #00afc2;
-    border-radius: 13px;
+    border-radius: 0.13rem;
     text-align: center;
-    line-height: 76px;
+    line-height: 0.76rem;
     color: #fff;
-    font-size: 25px;
+    font-size: 0.32rem;
     margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
 }
 
 .xian {
@@ -185,33 +187,32 @@ export default {
 }
 
 .textChu {
-    width: 480px;
-    height: 100px;
+    width: 77%;
+    height: 1rem;
     margin: 0 auto;
-    border: 1px dashed #dd0017;
+    border: 0.01rem dashed #dd0017;
     color: #dd0017;
-    font-size: 24px;
-    line-height: 45px;
+    font-size: 0.24rem;
+    line-height: 0.45rem;
     text-align: center;
-    border-radius: 20px;
-    padding: 10px 20px;
-    margin-top: 30px;
+    border-radius: 0.2rem;
+    padding: 0.1rem 0.2rem;
+    margin-top: 0.3rem;
 }
 
 .four {
-    width: 100%;
-    padding-top: 30px;
+    padding-top: 0.3rem;
 
     h1 {
-        width: 190px;
-        height: 53px;
-        line-height: 53px;
+        width: 1.9rem;
+        height: 0.53rem;
+        line-height: 0.53rem;
         text-align: center;
-        font-size: 24px;
+        font-size: 0.24rem;
         color: #fff;
         background: #00afc2;
-        border-radius: 0px 27px 27px 0px;
-        margin-top: 20px;
+        border-radius: 0 0.27rem 0.27rem 0;
+        margin-top: 0.2rem;
     }
 
     .info {
@@ -220,7 +221,7 @@ export default {
         background: #fff;
 
         p {
-            width: 682px;
+            width: 93%;
             height: 77px;
             border-bottom: 1px solid #f5f5f5;
             color: #828282;
@@ -241,8 +242,8 @@ export default {
         p.yaofang {
             height: auto;
             float: left;
-            margin-left: 24px;
-            line-height: 50px;
+            margin-left: 0.123rem;
+            line-height: 0.5rem;
         }
 
         p.jiFu {

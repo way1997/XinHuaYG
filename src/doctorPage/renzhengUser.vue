@@ -11,15 +11,26 @@
             <div class="head_cont">
                 <van-row>
                     <van-col span="6">
-                        <div class="pf_but" @click="showPopup">
-
-                            <img src='../assets/img/jiahao.png' v-model="fileList"> </img>
-                            <img class="touxaing" :src="fileList?fileList:picurl" v-if="fileList"> </img>
-                            <img class="touxaing" :src="fileList?fileList:picurl" v-if="picurl"> </img>
-                            <div>上传头像</div>
-                        </div>
-
+                        <van-uploader :max-count="1" :after-read='afterRead' :before-read="beforeRead" style="display:block;height:50%">
+                            <div class="pf_but">
+                                <img src='../assets/img/jiahao.png' v-model="fileList"> </img>
+                                <img class="touxaing" :src="fileList?fileList:picurl" v-if="fileList"> </img>
+                                <img class="touxaing" :src="fileList?fileList:picurl" v-if="picurl"> </img>
+                                <div>上传头像</div>
+                            </div>
+                        </van-uploader>
                     </van-col>
+                    <!-- 效果-点击图片出现弹窗层 -->
+                    <!--<van-col span="6">  
+                    <div class="pf_but" @click="showPopup">
+                        <img src='../assets/img/jiahao.png' v-model="fileList"> </img>
+                        <img class="touxaing" :src="fileList?fileList:picurl" v-if="fileList"> </img>
+                        <img class="touxaing" :src="fileList?fileList:picurl" v-if="picurl"> </img>
+                        <div>上传头像</div>
+                    </div>
+                    <van-uploader :max-count="1" :after-read='afterRead' :before-read="beforeRead" style="display:block;height:50%">
+                    </van-uploader>
+                    </van-col>-->
                     <van-col offset="1" span="3">
                         <div class="cont_tit">
                             头像示例
@@ -66,6 +77,18 @@
                     </template>
 
                 </van-cell>
+                <!-- 性别 -->
+                <van-cell center class='text_wrap' is-link @click="sexSelcS">
+                    <template #title>
+                        <span class="custom-title text_wrap_tit">性别</span>
+                    </template>
+                    <template #default>
+                        <div class='name'>{{sex1}}</div>
+                    </template>
+                    <template #right-icon>
+                        <van-icon name="arrow" class="arrow2-icon" />
+                    </template>
+                </van-cell>
                 <!-- age -->
                 <van-cell center class='text_wrap' is-link>
                     <template #title>
@@ -73,6 +96,18 @@
                     </template>
                     <template #default>
                         <input class="name" type="text" v-model="age" maxlength='2' placeholder='年龄' name="" id="" style="padding-right:1rem">
+                    </template>
+                    <template #right-icon>
+                        <van-icon name="arrow" class="arrow0-icon" />
+                    </template>
+                </van-cell>
+                <!-- 身份证号码 -->
+                <van-cell center class='text_wrap' is-link>
+                    <template #title>
+                        <span class="custom-title text_wrap_tit">身份证号码</span>
+                    </template>
+                    <template #default>
+                        <input class="name" type="text" v-model="idCard" placeholder='身份证号码' name="" id="" style="padding-right:1rem">
                     </template>
                     <template #right-icon>
                         <van-icon name="arrow" class="arrow0-icon" />
@@ -102,16 +137,16 @@
                         <van-icon name="arrow" class="arrow2-icon" />
                     </template>
                 </van-cell>
-                <!-- 身份证号码 -->
-                <van-cell center class='text_wrap' is-link>
+                <!-- 职称 -->
+                <van-cell center class='text_wrap' is-link @click="zcSelcS">
                     <template #title>
-                        <span class="custom-title text_wrap_tit">身份证号码</span>
+                        <span class="custom-title text_wrap_tit">职称</span>
                     </template>
                     <template #default>
-                        <input class="name" type="text" v-model="idCard" placeholder='身份证号码' name="" id="" style="padding-right:1rem">
+                        <div class='name'>{{zhinametitle}}</div>
                     </template>
                     <template #right-icon>
-                        <van-icon name="arrow" class="arrow0-icon" />
+                        <van-icon name="arrow" class="arrow2-icon" />
                     </template>
                 </van-cell>
                 <!-- 执业证件号 -->
@@ -126,30 +161,7 @@
                         <van-icon name="arrow" class="arrow0-icon" />
                     </template>
                 </van-cell>
-                <!-- 性别 -->
-                <van-cell center class='text_wrap' is-link @click="sexSelcS">
-                    <template #title>
-                        <span class="custom-title text_wrap_tit">性别</span>
-                    </template>
-                    <template #default>
-                        <div class='name'>{{sex1}}</div>
-                    </template>
-                    <template #right-icon>
-                        <van-icon name="arrow" class="arrow2-icon" />
-                    </template>
-                </van-cell>
-                <!-- 职称 -->
-                <van-cell center class='text_wrap' is-link @click="zcSelcS">
-                    <template #title>
-                        <span class="custom-title text_wrap_tit">职称</span>
-                    </template>
-                    <template #default>
-                        <div class='name'>{{zhinametitle}}</div>
-                    </template>
-                    <template #right-icon>
-                        <van-icon name="arrow" class="arrow2-icon" />
-                    </template>
-                </van-cell>
+
                 <!-- 备注 -->
                 <van-cell center class='text_wrap'>
                     <template #default>
@@ -295,7 +307,7 @@
             </div>
         </van-popup>
         <!-- 科室弹出层 -->
-        <van-popup v-model="ksShow" position="bottom" closeable close-icon-position="top-right" :style="{ height: '80%' }">
+        <van-popup v-model="ksShow" position="bottom" closeable close-icon-position="top-right" :style="{ height: '80%' }" @close="ksCloseSave">
             <div class="popup ks-popup">
                 <van-row>
                     <div class='top'>请选择您所在科室或最擅长科室</div>
@@ -319,7 +331,7 @@
             </div>
         </van-popup>
         <!-- 擅长弹出层 -->
-        <van-popup v-model="scShow" position="bottom" closeable close-icon-position="top-right" :style="{ height: '80%' }">
+        <van-popup v-model="scShow" position="bottom" closeable close-icon-position="top-right" :style="{ height: '80%' }" @close="scCloseSave">
             <div class="popup sc-popup">
                 <van-row>
                     <div class='top'>请选择擅长治疗疾病
@@ -475,6 +487,8 @@ export default {
 
         let token = this.$route.query.token //从首页获取认证权限功能
         let doctorId = this.$route.query.doctorId //从首页获取认证权限功能
+        this.token = token
+        this.doctorId = doctorId
         // if (token == undefined || doctorId == undefined) {
         //     token = cookie.get('token')
         //     doctorId = cookie.get('doctorId')
@@ -521,7 +535,7 @@ export default {
          * 上传图片之前判断图片是否符合条件
          */
         beforeRead(file) {
-          var that=this;
+            var that = this;
             if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
                 Toast('请上传 jpg/png 格式图片');
                 return false;
@@ -801,13 +815,16 @@ export default {
         keshisave() {
             this.ksShow = false
         },
+        // 科室关闭保存
+        ksCloseSave() {
+            console.log('科室关闭保存')
+            this.keshisave()
+        },
         //擅长业务弹窗层开启
         scShowPopup() {
             this.scShow = true
-            // this.jibinselect = true
-            this.arrcur = this.arr
-            console.log(this.beGood)
-            console.log(this.arrcur)
+            this.jibinselect = true
+            // console.log(this.arrcur)
         },
         //擅长业务 选择疾病
         selectjib(item, index) {
@@ -853,9 +870,8 @@ export default {
                     var obj = {}
                     obj.medicineSubjectName = select
                     obj.beGoodId = beGoodId
-
                     arr.push(obj)
-                    console.log(arr)
+                    // console.log(arr)
                     // console.log(beGood)
 
                 } else if (flag == false) {
@@ -868,7 +884,7 @@ export default {
                         }
 
                     }
-                    console.log(arr.length)
+                    // console.log(arr.length)
                     if (arr.length == 0) {
                         this.jibinselect = false
                     }
@@ -884,24 +900,36 @@ export default {
         skilled() {
             var list = this.arrcur
             // console.log(list.length + " **-*-**-*-*-*-*-*-*-*-*-*-*");
-            // console.log(this.beGood)
+            // console.log(this.list)
             this.keshi = false
             this.jianjiehidden = true
 
             this.arr = list
             var objs = []
-            for (var i = 0; i < list.length; i++) {
-                // console.log(list[i].beGoodId)
-                var jss = {
-                    "medicineSubjectId": list[i].beGoodId
+            console.log(list)
+            list.map((item, index) => {
+                let jss = {
+                    "medicineSubjectId": item.beGoodId
                 }
                 objs.push(jss);
-            }
-            console.log(objs)
-            var obj = JSON.stringify(objs)
+            })
+            // for (var i = 0; i < list.length; i++) {
+            //     // console.log(list[i].beGoodId)
+            //     var jss = {
+            //         "medicineSubjectId": list[i].beGoodId
+            //     }
+            //     objs.push(jss);
+            // }
+
+            let obj = JSON.stringify(objs)
             this.objss = obj
             this.scShow = false
-            // console.log(this.objss)
+            console.log(this.objss)
+        },
+        // 擅长关闭保存
+        scCloseSave() {
+            console.log('擅长关闭保存')
+            this.skilled()
         },
         zhengshurenzheng() {},
         //表单提交
@@ -1010,7 +1038,7 @@ export default {
                 this.$toast.center('请选择头像')
 
             } else {
-                var doctorId = cookie.get('doctorId')
+                var doctorId = this.doctorId
                 var token = cookie.get('token');
 
                 this.hidden = true
@@ -1041,6 +1069,8 @@ export default {
                 // }).catch(error => {
                 //     console.log(error)
                 // })
+                console.log(list)
+                console.log(list.doctorId)
                 zenzhengSubmit(list)
                     .then(res => {
                         if (res.type = true) {
@@ -1344,7 +1374,7 @@ export default {
 //相册弹窗
 /deep/ .van-uploader__input-wrapper {
     position: relative;
-    top: .46rem;
+    top: .06rem;
     width: 100%;
 }
 
@@ -1502,11 +1532,14 @@ export default {
         box-sizing: border-box;
         position: absolute;
         bottom: 0;
+        bottom: -.4rem;
         left: 0;
         background: #fff;
 
         .list_text {
             border-bottom: 1px solid #d0d1d0;
+            margin-top: .2rem;
+            padding-bottom: 1rem;
 
             div {
                 color: #00b0c2;
@@ -1521,6 +1554,9 @@ export default {
             background: #fff;
             padding: 0.1rem 0.23rem;
             box-sizing: border-box;
+            position: fixed;
+            left: 0;
+            bottom: 0;
 
             div {
                 color: #fff;

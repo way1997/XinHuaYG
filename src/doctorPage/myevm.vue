@@ -8,6 +8,9 @@
           <img :src="lists.doctorPhoto"  ref="logoimg" />
         </div>
       </div>
+      <div>
+        <h2></h2>
+      </div>
       <div class="flex f-white ml-10" style="width: 20rem;">
         <div class="f-1 mb-10">
           {{doctorName}} -
@@ -78,9 +81,9 @@
       }
     },
     created() {
-      this.doctorId = this.$route.query.doctorId;
-      this.doctorName = this.$route.query.doctorName;
-      this.token = this.$route.query.token;
+      this.doctorId = cookie.get('doctorId');
+      this.doctorName = cookie.get('doctorName');
+      this.token = cookie.get('token');
       console.log(this.doctorId)
       this.doctorDetails();
 
@@ -115,7 +118,8 @@
       },
       goRenzheng() {
         console.log(111111)
-        window.open("https://www.mfzhosp.com/H5/#/indexPage?doctorId=' + this.doctorId", "_blank");
+        console.log(this.doctorId)
+        window.open("https://www.mfzhosp.com/H6/#/indexPage?doctorId=" + this.doctorId+ ",_blank");
       },
       doctorDetails() {
         let list = {

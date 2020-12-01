@@ -10,7 +10,7 @@
                 <img src="../assets/img/xiaoxi_wuxiaoxi.jpg" alt="">
             </div>
             <div class="flex flex__justify flex__center bg-white" v-for="(value,index) in listAudit3" :key="index">
-                <div class="ms num" :class="[value.auditStatus=='0'?'isAuditEmmbg':value.auditStatus=='1'?'':value.auditStatus=='2'?'isnoAuditbg':value.auditStatus=='3'?'isAuditEmOkbg':'']"><span>¥{{value.accountMoney}}</span></div>
+                <div class="ms num" :class="[value.auditStatus=='0'?'isAuditEmmbg':value.auditStatus=='1'?'':value.auditStatus=='2'?'isnoAuditbg':value.auditStatus=='3'?'isAuditEmOkbg':'']"><span>¥{{value.integralUsed}}</span></div>
                 <div style="margin-left:0rem;">
                     <div class="ms mt" :class="[value.auditStatus=='0'?'isAuditEmm':value.auditStatus=='1'?'':value.auditStatus=='2'?'isAuditNok':value.auditStatus=='3'?'isAuditEmOk':'']">{{auditStatName[value.auditStatus]}}
                     </div>
@@ -19,6 +19,7 @@
                 <div style="width:1rem"></div>
                 <div v-if="value.auditStatus == 3" class="vant-btn">
                     <p class="info_btn" @click="confirmMsg(value)">确认</p>
+                    <!--<van-button type="info" block @click="confirmMsg(value)">确认</van-button> -->
                 </div>
             </div>
         </van-tab>
@@ -27,7 +28,7 @@
                 <img src="../assets/img/xiaoxi_wuxiaoxi.jpg" alt="">
             </div>
             <div class="flex flex__justify flex__center bg-white" v-for="(value,index) in listAudit1" :key="index">
-                <div class="ms num"><span>¥{{value.accountMoney}}</span></div>
+                <div class="ms num"><span>¥{{value.integralUsed}}</span></div>
                 <div style="margin-left:0rem">
                     <div class="ms mt isAuditOk">{{auditStatName[value.auditStatus]}}
                     </div>
@@ -44,7 +45,7 @@
                 <img src="../assets/img/xiaoxi_wuxiaoxi.jpg" alt="">
             </div>
             <div class="flex flex__justify flex__center bg-white" v-for="(value,index) in listAudit2" :key="index">
-                <div class="ms num isnoAuditbg"><span>¥{{value.accountMoney}}</span></div>
+                <div class="ms num isnoAuditbg"><span>¥{{value.integralUsed}}</span></div>
                 <div style="margin-left:0rem">
                     <div class="ms mt" :class="[value.auditStatus=='0'?'isAuditEmm':value.auditStatus=='1'?'':value.auditStatus=='2'?'isAuditNok':value.auditStatus=='3'?'isAuditEmOk':'']">{{auditStatName[value.auditStatus]}}
                     </div>
@@ -62,54 +63,59 @@
 
 <script>
 import {
-    findAccountMsgList,
-    confirmMsg
+    findIntegralMsgList,
+    integralConfirmMsg
 } from "api/doctor";
 import HeadTop from 'base/header/header'
 import router from '../router'
 import $ from 'jquery'
 import cookie from "js-cookie"
+import {
+    Toast
+} from 'vant';
 export default {
     name: "Page9",
     data() {
         return {
-            active: 0,
+            active: 2,
             list: "",
-            accountId: '',
+            integralId: '',
             auditStatus: "", // 0--待审核  1--审核成功     2--审核未通过 
             auditStatName: [
                 '待审核', '审核成功', '审核未通过', '审核成功，医生待确认'
             ],
             fblock: false,
-            loadUp2: false,
+            active: 0,
             isAuditshow1: false,
             isAuditshow2: false,
             isAuditshow3: false,
+            loadUp2: false,
             listAudit1: [], //审核成功
             listAudit2: [], //审核未通过
             listAudit3: [] //待审核或待医生确认
         };
     },
     created() {
-        this.accountId = this.$route.params.accountId
-        if (!this.accountId) {
+        this.integralId = this.$route.params.integralId
+        if (!this.integralId) {
             this.$router.push({
-                name: 'zhanghu'
+                name: 'myjifen'
             })
         }
         this.showmoney();
     },
     methods: {
         showmoney() {
-            this.loadUp2 = true
+            // this.loadUp2 = true
             let token = cookie.get("token");
             let list = {
                 token: token,
-                accountId: this.accountId,
+                integralId: this.integralId,
             };
-            findAccountMsgList(list).then((res) => {
+            //console.log(list)
+            findIntegralMsgList(list).then((res) => {
                 this.loadUp2 = false
-                console.log(res)
+                //console.log(res)
                 this.list = res.list_return;
                 let lists = this.list
                 lists.map((item, index) => {
@@ -121,7 +127,6 @@ export default {
                         this.listAudit3.push(item)
                     }
                 })
-                console.log(this.listAudit3)
                 if (this.listAudit3 == '') {
                     this.isAuditshow3 = true
                 }
@@ -135,25 +140,27 @@ export default {
             });
         },
         confirmMsg(item) {
-            this.loadUp2 = true
+            // this.loadUp2 = true
             let token = cookie.get("token");
-            let extractAcId = item.id
+            let integralId = item.id
             let list = {
                 token: token,
-                extractAcId: extractAcId,
+                integralId: integralId,
             };
             console.log(list)
-            confirmMsg(list).then((res) => {
+            integralConfirmMsg(list).then((res) => {
+                console.log(res)
                 this.loadUp2 = false
-                let loop = null
-                loop = setTimeout(() => {
+                Toast.success('已确认')
+                clearTimeout(this.loop2); //再次清空定时器，防止重复注册定时器
+                this.loop2 = setTimeout(() => {
                     this.$router.push({
-                        name: 'jiaoyi',
+                        name: 'myjifen',
                         params: {
-                            accountId: this.accountId
+                            integralId: this.integralId
                         }
                     })
-                }, 1000)
+                }, 1800);
                 console.log(res)
             }).catch(error => {
                 console.log(error)

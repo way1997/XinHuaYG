@@ -225,7 +225,7 @@ export default {
                 if (res.type == true) {
                     this.$toast(res.massage)
                     this.$refs.confirm.hide();
-                    this.$router.go(0)
+                    window.location.reload()
                 } else {
                     this.$toast(res.massage)
                 }

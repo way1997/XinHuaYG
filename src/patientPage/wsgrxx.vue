@@ -136,6 +136,9 @@ export default {
                 cookie.set(
                     'patientId', res.patientId
                 )
+                cookie.set(
+                    'token', res.token
+                )
                 if (res.massage == "该手机号码已经存在，如有疑问请联系管理员") {
                     this.$toast('该手机号码已经存在，如有疑问请联系管理员')
                 }

@@ -141,6 +141,11 @@ export default new Router({
       component: (changjianwenti) => require(['@/doctorPage/changjianwenti'], changjianwenti)
     },
     {
+      path: '/paizhaowenti',
+      name: 'paizhaowenti',
+      component: (paizhaowenti) => require(['@/doctorPage/paizhaowenti'], paizhaowenti)
+    },
+    {
       path: '/jiaoyi',
       name: 'jiaoyi',
       component: (jiaoyi) => require(['@/doctorPage/jiaoyi'], jiaoyi)
@@ -340,6 +345,50 @@ export default new Router({
       path: '/proclamation',
       name: 'proclamation',
       component: (proclamation) => require(['@/patientPage/proclamation'], proclamation)
+    },
+    { //医生端积分提现银行卡模块
+      path: '/cardlistJf',
+      name: 'cardlistJf',
+      component: (cardlistJf) => require(['@/doctorPage/cardlistJf'], cardlistJf)
+    },
+    { //医生端积分提现详情模块
+      path: '/jiaoyiJf',
+      name: 'jiaoyiJf',
+      component: (jiaoyiJf) => require(['@/doctorPage/jiaoyiJf'], jiaoyiJf)
+    },
+    { //患者端拍处方
+      path: '/paichufang',
+      name: 'paichufang',
+      component: (paichufang) => require(['@/patientPage/paichufang'], paichufang)
+    },
+    { //患者端拍处方列表
+      path: '/upchufangDetail',
+      name: 'upchufangDetail',
+      component: (upchufangDetail) => require(['@/patientPage/upchufangDetail'], upchufangDetail)
+    },
+    //医生端医生分享医生
+    {
+      path: '/mydevm',
+      name: 'mydevm',
+      component: (mydevm) => require(['@/doctorPage/mydevm'], mydevm)
+    },
+    //医生端被邀医生注册  
+    {
+      path: '/docZhuCe',
+      name: 'docZhuCe',
+      component: (docZhuCe) => require(['@/doctorPage/docZhuCe'], docZhuCe)
+    },
+    //医生查询邀请列表
+    {
+      path: '/yaoqinglist',
+      name: 'yaoqinglist',
+      component: (yaoqinglist) => require(['@/doctorPage/yaoqinglist'], yaoqinglist)
+    },
+    {
+      path: '/tangniaobinglink',
+      name: 'tangniaobinglink',
+      component: (tangniaobinglink) => require(['@/patientPage/tangniaobinglink'], tangniaobinglink)
     }
+
   ]
 })

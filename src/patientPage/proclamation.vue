@@ -87,7 +87,9 @@ export default {
                 this.proclaConDate = this.proclaContent.proclamationDate
                 this.proclamationImage = this.proclaContent.proclamationImage
                 let prolist = []
-                this.proclamationImage.map((item, index) => {
+                let proclamationImage = this.proclamationImage
+                //console.log(proclamationImage.map)
+                proclamationImage.map((item, index) => {
                     prolist.push(item.img)
                 })
                 this.device = prolist

@@ -114,11 +114,13 @@ export default {
     },
     gogonggaolist(){
       let doctorId = this.doctorId
-      //console.log(doctorId)
+      let token = this.token
+      console.log(token)
       this.$router.push({
         name:"proclamationlist",
         query:{
-          doctorId:doctorId
+          doctorId:doctorId,
+          token:token
         }
       })
     },

@@ -18,7 +18,7 @@
                                 <img class='ltjt' src='../assets/img/ltjt.png'>
                                 <div class='liaotzs_wrap'>
                                     <div class='liaotzs'>
-                                        <p>{{item.chartComment}}</p>
+                                        <p style="word-break:break-all">{{item.chartComment}}</p>
                                     </div>
                                 </div>
                                 <div class='lefttime' style="margin-top:.15rem">{{item.sendTime}}</div>
@@ -30,7 +30,7 @@
                             <div class='liaotian_ck liaotian_ck1'>
                                 <img class='ltjt ltjt1' src='../assets/img/ltjt.png'>
                                 <div class='liaotzs_wrap1' v-longTap="{methods: liaoBack,arg:{item:item}}">
-                                    <div class='liaotzs1'>{{item.chartComment}}</div>
+                                    <div class='liaotzs1' style="word-break:break-all">{{item.chartComment}}</div>
                                 </div>
                                 <div class='lefttime' style='float:right;margin-right:0.55rem;margin-top:.2rem'>{{item.sendTime}}</div>
                             </div>
@@ -406,21 +406,38 @@ export default {
             timer: null,
             proclamationId: '',
             isBack: false,
-            loadUp2: false
+            loadUp2: false,
+            loop0: false
         }
     },
     created() {
         this.$nextTick(function () {
             this.token = cookie.get("token");
+            this.patientId = cookie.get("patientId");
+            this.imgUrl = cookie.get("patientImgUrl");
+            this.patientName = cookie.get("patientName");
+
+            //判断进入的用户是否存在信息存储
+
             this.doctorId = this.$route.query.doctorId;
             this.doctorImg = this.$route.query.doctorImg;
             this.doctorName = this.$route.query.doctorName;
             this.pageName = this.$route.query.doctorName;
-            this.patientId = cookie.get("patientId");
-            this.imgUrl = cookie.get("patientImgUrl");
-            this.patientName = cookie.get("patientName");
+
             //this.findPatientMsg();
-            this.getChatContent();
+            if (this.patientId == undefined || this.patientId == null) {
+                this.$toast.center('您还没有登录，稍后会自动进入首页自动登录')
+                clearTimeout(this.loop0); //                                                                                                                                                                                                                                                                                                                                                                   再次清空定时器，防止重复注册定时器
+                this.loop0 = setTimeout(() => {
+                    this.$router.push({
+                        name: 'indexPage'
+                    })
+                }, 2000);
+
+            } else {
+                this.getChatContent();
+            }
+
             this.getWxConfig();
             this.socketOpen();
         });
@@ -496,6 +513,7 @@ export default {
             })
         },
         getChatContent() {
+
             let list = {
                 doctorId: this.doctorId,
                 token: this.token,
@@ -917,7 +935,7 @@ export default {
                     clearTimeout(this.loop2); //再次清空定时器，防止重复注册定时器
                     this.loop2 = setTimeout(() => {
                         console.log("页面刷新");
-                        this.$router.go(0)
+                        window.location.reload()
                     }, 2000);
                 }
             }).catch(error => {

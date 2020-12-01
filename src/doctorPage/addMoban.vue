@@ -20,7 +20,19 @@
         <div @click="quxiao">取消</div>
         <div @click="saveModel">完成添加</div>
     </div>
+    <div class="addYao" v-if="showAdd">
+        <div id="scrolldIV">
+            <p v-for="(item,index) in arr" :key="index">
+                <label>{{item.medicineName}}</label>
 
+                <input type="number" readonly v-model='item.howWeight' @input="lengthNum(index)" @click="hideYaocai(index)">
+                <img class='guangbiao1' src='../assets/img/gb.gif' v-if="shuzi==index&&jianpanS">
+                <em>g</em>
+
+                <img src="../assets/img/delete.png" alt="" @click="deleteYao(index)">
+            </p>
+        </div>
+    </div>
     <div class="yaocaiList" v-show="medicinalWraphid">
         <div class="yaocaiselecet">
             <div class="yaocaiselecets" style="white-space: nowrap;">
@@ -36,7 +48,7 @@
         <div class="inputWrap">
             <input :type="typeInput" ref="yaocai" readonly @input="selcettext" @click="inputclick" v-model="valuess" placeholder="请输入药材简称" style="overflow:visible;position:relative;">
             <img class='guangbiao1' src='../assets/img/gb.gif' v-if="gbxs1">
-            <span @click="hideYao">取消</span>
+            <span @click="hideYao">完成</span>
         </div>
 
         <!--键盘-->
@@ -95,7 +107,7 @@
                     <div data-key="b" hover-class='active' hover-stay-time='100' @click='bb("b")'>B</div>
                     <div data-key="n" hover-class='active' hover-stay-time='100' @click='nn("n")'>N</div>
                     <div data-key="m" hover-class='active' hover-stay-time='100' @click='mm("m")'>M</div>
-                    <div data-key="hs" hover-class='active' hover-stay-time='100' @click='delkey' style='width:50px'><img src='../assets/img/hs.png' style='width:25px;height:25px;margin-top:11px;'></div>
+                    <div data-key="hs" hover-class='active' hover-stay-time='100' @click='delkey' style='width:50px'><img src='../assets/img/hs.png' style='width:35px;height:35px;margin-top:8px;'></div>
                 </div>
             </div>
         </div>
@@ -140,8 +152,9 @@ export default {
             yaocaiListkong: false,
             shuzi: 0,
             jianpanS: false,
-            confirmList:[],
-            tipText:''
+            confirmList: [],
+            tipText: '',
+            showAdd: false
         }
     },
     created() {
@@ -161,6 +174,7 @@ export default {
 
     methods: {
         showList() {
+            this.showAdd = true;
             this.medicinalWraphid = true
             this.yaocaiList = []
             this.valuess = ''
@@ -174,6 +188,7 @@ export default {
             }
         },
         hideYaocai(index) {
+
             this.shuzi = index;
             this.jianpanS = true;
             this.medicinalWraphid = true;
@@ -242,6 +257,7 @@ export default {
             this.gbxs1 = true;
         },
         hideYao() {
+            this.showAdd = false;
             this.medicinalWraphid = false;
             this.jianpanS = false;
         },
@@ -291,6 +307,10 @@ export default {
             this.$refs.confirm.hide();
         },
         addYaocai(data) {
+            var div = document.getElementById('scrolldIV');
+            console.log(div.scrollTop)
+            console.log(div.scrollHeight)
+            div.scrollTop = div.scrollHeight;
             for (var i = 0; i < this.arr.length; i++) {
                 if (data.drugName == this.arr[i].medicineName) {
                     this.$toast('此项已存在，不能再次添加');
@@ -315,7 +335,7 @@ export default {
                 medicineName: data.drugName
             }
             tabooType(list).then((res) => {
-            	console.log(res);
+                console.log(res);
                 if (res.status == 3) {
                     this.arr.push(listArr);
                     this.shuzi = this.arr.length - 1;
@@ -327,10 +347,10 @@ export default {
                     this.$refs.confirm.show();
                     this.tipText = '您选择的药品与已开药品相反，确定开药吗？'
                 } else if (res.status == 1) {
-                	this.$refs.confirm.show();
+                    this.$refs.confirm.show();
                     this.tipText = '您选择的药品与已开药品相畏，确定开药吗？'
                 } else if (res.status == 2) {
-                	this.$refs.confirm.show();
+                    this.$refs.confirm.show();
                     this.tipText = '您选择的药品妊娠禁忌，确定开药吗？'
                 }
             })
@@ -582,12 +602,12 @@ export default {
     padding: 60px 48px 0 40px;
 
     span {
-        font-size: 24px;
+        font-size: .28rem;
         color: #727272;
     }
 
     input {
-        width: 486px;
+        width: 4.86rem;
         height: 75px;
         padding-left: 33px;
         border: 1px solid rgba(204, 204, 204, 1);
@@ -602,20 +622,93 @@ export default {
     }
 }
 
+.addYao {
+    width: 100%;
+    height: 70%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+
+    div {
+        width: 100%;
+        height: 45%;
+        overflow: auto;
+        //background:rgba(255,255,255,0.5);
+        padding-bottom: 80px;
+    }
+
+    p {
+        width: 2.8rem;
+        height: 1.4rem;
+        background: #42cac6;
+        margin-top: 20px;
+        margin-left: 20px;
+        font-size: 25px;
+        float: left;
+        position: relative;
+        border-radius: 0.1rem;
+
+        label {
+            color: #fff;
+            padding-left: 20px;
+            width: 3rem;
+            float: left;
+            padding-top: 20px;
+            text-align: -webkit-center;
+
+        }
+
+        input {
+            width: 0.5rem;
+            height: 50px;
+            background: #fff;
+            border-radius: 10px;
+            text-align: center;
+            margin-left: 0.8rem;
+            margin-top: 0.2rem;
+        }
+
+        em {
+            color: #fff;
+            font-size: 0.4rem;
+            margin-left: 0.2rem;
+        }
+
+        img {
+            width: 0.5rem;
+            height: 0.5rem;
+            margin-top: 0.2rem;
+            margin-left: 0.4rem;
+            float: left;
+        }
+
+        .guangbiao1 {
+            width: 0.01rem;
+            height: 0.3rem;
+            position: absolute;
+            margin-top: 0.7rem;
+            margin-left: 1.89rem;
+
+        }
+    }
+}
+
 .yaofang {
-    width: 688px;
+    width: 91.73%;
     border: none;
-    margin: 40px auto;
+    margin: .4rem auto;
 
     >span {
-        font-size: 24px;
+        font-size: .28rem;
         color: #828282;
         float: left;
-        padding-left: 10px;
+        padding-left: .1rem;
     }
 
     div.list {
-        margin-top: -10px;
+        margin-top: 10px;
         font-size: 25px;
         padding-left: 30px;
         padding-bottom: 700px;
@@ -700,7 +793,7 @@ export default {
     left: 0;
 
     div {
-        width: 374px;
+        width: 50%;
         height: 91px;
         color: #fff;
         font-size: 24px;
@@ -782,7 +875,7 @@ div.yaocaiselecets {
     border-radius: 10px;
     background: #42cac6;
     margin-right: 10px;
-    margin-top: 10px;
+    margin-top: -0.6rem;
 }
 
 div.medicinalWrap {
@@ -798,7 +891,8 @@ div.medicinalWrap {
 div.gundong_box {
     width: 100%;
     height: 100%;
-    overflow-x:scroll;
+    white-space: nowrap;
+    display: inline-flex;
 }
 
 //键盘

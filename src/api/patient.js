@@ -201,6 +201,7 @@ export function indentPay(list){
 			patientId: list.patientId,
 			shopId: list.shopId,
 			money: list.money,
+			moneyzkq:list.moneyzkq,
 			is_dispatching: list.is_dispatching,
 			dispatchingMoney: list.dispatchingMoney,
 			is_to_agency: list.is_to_agency,
@@ -743,6 +744,7 @@ export function sendMsg7 (list){
 			d4: list.d4,
 			d5: list.d5,
 			d6: list.d6,
+			d7: list.d7,
 			type:list.type,
 			path: list.path,
 			appid: list.appid,
@@ -766,9 +768,21 @@ export function findChatDoctor(list) {
 	  })
 	})
   }
-  //患者端查看公告详情
-  export function getProclamation(list) {
-	const url = baseURI + '/mkkMoblie/doctorSupplyTwo/proclamation'
+//患者公告列表
+export function proclamationList(list) {
+	const url = baseURI + '/mkkMoblie/patientSupply/proclamationList'
+	return new Promise((resolve, reject) => {
+	  axios.post(url, qs.stringify({
+		doctorId: list.doctorId,
+		token: list.token
+	  })).then((res) => {
+		resolve(res.data)
+	  })
+	})
+  }
+//患者端查看公告详情
+export function getProclamation(list) {
+	const url = baseURI + '/mkkMoblie/patientSupply/proclamation'
   
 	return new Promise((resolve, reject) => {
 	  axios.post(url, qs.stringify({
@@ -779,8 +793,8 @@ export function findChatDoctor(list) {
 	  })
 	})
   }
-	//患者端消息撤回
-	export function delChatMag(list) {
+//患者端消息撤回
+export function delChatMag(list) {
 		const url = baseURI + '/mkkMoblie/chat/delChatMag'
 	  
 		return new Promise((resolve, reject) => {
@@ -792,3 +806,59 @@ export function findChatDoctor(list) {
 		  })
 		})
 	  }
+//患者端上传处方列表
+  export function findPatPrescriptionList(list) {
+	const url = baseURI + '/mkkMoblie/patientPrescription/findPatPrescriptionList'
+	return new Promise((resolve, reject) => {
+	  axios.post(url, qs.stringify({
+		patientId: list.patientId,
+		token: list.token
+	  })).then((res) => {
+		resolve(res.data)
+	  })
+	})
+  }
+  //保存患者上传处方
+  export function PatPrescriptionSaveMsg(list) {
+	const url = baseURI + '/mkkMoblie/patientPrescription/saveMsg'
+	return new Promise((resolve, reject) => {
+	  axios.post(url, qs.stringify({
+		token: list.token,
+        patientId: list.patientId,
+        patientName: list.patientName,
+        patientAge: list.patientAge,
+        patientSex: list.patientSex,
+        photo: list.photo,
+        medicineType: list.medicineType
+		
+	  })).then((res) => {
+		resolve(res.data)
+	  })
+	})
+  }
+  //查询单个患者上传处方详情	
+  export function findPatPreMsg(list) {
+	const url = baseURI + '/mkkMoblie/patientPrescription/findPatPreMsg'
+	return new Promise((resolve, reject) => {
+	  axios.post(url, qs.stringify({
+		token: list.token,
+        patPreId: list.patPreId,
+		
+	  })).then((res) => {
+		resolve(res.data)
+	  })
+	})
+  }
+   //删除患者上传处方	
+   export function delMsg(list) {
+	const url = baseURI + '/mkkMoblie/patientPrescription/delMsg'
+	return new Promise((resolve, reject) => {
+	  axios.post(url, qs.stringify({
+		token: list.token,
+        patPreId: list.patPreId,
+		
+	  })).then((res) => {
+		resolve(res.data)
+	  })
+	})
+  }

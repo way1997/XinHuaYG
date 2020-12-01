@@ -1116,7 +1116,7 @@ export function generateData(list){
       occPic2: list.img2,
       quaPic1: list.picurl1text,
       quaPic2: list.picurl2text,
-      docHonorPic: list.picurl
+      docHonorPic:list.docHonorPic
     })).then((res) => {
       resolve(res.data)
     })
@@ -1210,6 +1210,8 @@ export function cardListOK(list) {
     })
   })
 }
+
+
 //公告列表
 export function proclamationList(list) {
   const url = baseURI + '/mkkMoblie/doctorSupplyTwo/proclamationList'
@@ -1256,6 +1258,116 @@ export function proclamation(list) {
     axios.post(url, qs.stringify({
       token: list.token,
       proclamationId:list.proclamationId
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+
+
+//账户提现
+export function saveAccountMsg(list) {
+  const url = baseURI + '/mkkMoblie/extractAccount/saveAccountMsg'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      token: list.token,
+      accountId: list.accountId,
+      accountUsed : list.accountUsed ,
+      cardNo: list.cardNo,
+      bankCode: list.bankCode,
+      accountName :list.accountName,
+      txmode : list.txmode 
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+//账户提现详情
+export function findAccountMsgList(list) {
+  const url = baseURI + '/mkkMoblie/extractAccount/findAccountMsgList'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      token: list.token,
+      accountId: list.accountId,
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+//医生账户提现详情订单确认
+export function confirmMsg(list) {
+  const url = baseURI + '/mkkMoblie/extractAccount/confirmMsg'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      token: list.token,
+      extractAcId: list.extractAcId,
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+//积分提现
+export function saveIntegralMsg(list) {
+  const url = baseURI + '/mkkMoblie/extractIntegral/saveIntegralMsg'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      token: list.token,
+      integralId : list.integralId ,
+      integralUsed  : list.integralUsed  ,
+      cardNo: list.cardNo,
+      bankCode: list.bankCode,
+      accountName :list.accountName,
+      txmode : list.txmode 
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+//积分提现详情
+export function findIntegralMsgList(list) {
+  const url = baseURI + '/mkkMoblie/extractIntegral/findIntegralMsgList'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      token: list.token,
+      integralId: list.integralId,
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+//医生积分提现详情订单确认
+export function integralConfirmMsg(list) {
+  const url = baseURI + '/mkkMoblie/extractIntegral/confirmMsg'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      token: list.token,
+      integralId: list.integralId,
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+//医生拉新/邀请医生接口
+export function addInviteMsg(list) {
+  const url = baseURI + '/mkkMoblie/inviteDetails/addInviteMsg'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      userId: list.userId,
+      openId: list.openId,
+      doctorName: list.doctorName,
+      phone: list.phone
+    })).then((res) => {
+      resolve(res.data)
+    })
+  })
+}
+//医生查询邀请列表接口
+export function findInviteList(list) {
+  const url = baseURI + '/mkkMoblie/inviteDetails/findInviteList'
+  return new Promise((resolve, reject) => {
+    axios.post(url, qs.stringify({
+      token: list.token,
+      doctorId: list.doctorId
     })).then((res) => {
       resolve(res.data)
     })

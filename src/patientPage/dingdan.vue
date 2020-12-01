@@ -9,7 +9,7 @@
     <div class="xian" style="clear:both;"></div>
     <div class="list">
         <div v-for="(item,index) in orderlistd" :key="index" @click="goDetail(item.takeWay,item)">
-            <div>{{item.doctorName}}医生 的辩证及处方</div>
+            <div>{{item.doctorName}}医生 的辩证及处方 </div>
             <div><span style="float:left;" v-if="hidePath">取药方式：<em v-if="item.takeWay==0">用户自提</em><em v-if="item.takeWay==1">药店配送</em></span>
                 <span>订单状态：
                     <em v-if="item.indentStatus==2">待支付</em>
@@ -21,8 +21,11 @@
 
                     <!-- <em v-if="item.indentStatus==7">配送中</em>
                     <em v-if="item.indentStatus==8">待评价</em>
-                    <em v-if="item.indentStatus==9">已评价</em>-->
+               +     <em v-if="item.indentStatus==9">已评价</em>-->
                 </span>
+            </div>
+            <div style="color: #7E7E7E;font-size: 0.25rem;padding: 0.6rem .2rem 0.4rem 0.20rem;text-align: right;">
+                <span style="">{{item.createDate}}</span>
             </div>
         </div>
     </div>
@@ -68,7 +71,8 @@ export default {
             index: '', //  0[待支付 ]；1 [待取货] ； 2 [待配送]； 3 [待收货] ；4[已完成]
             orderlistd: [],
             loadUp: true,
-            hidePath: true
+            hidePath: true,
+            createDate:'',//订单时间
         }
     },
     created() {
@@ -103,7 +107,7 @@ export default {
                 this.hidePath = true
             }
             findOrder(list).then((res) => {
-                console.log(res.data)
+                console.log(res)
                 if (res.type == true) {
                     this.orderlistd = res.data;
                     this.loadUp = false;
@@ -176,7 +180,9 @@ export default {
                 index: this.index
             }
             this.loadUp = true
+            console.log(list)
             findOrder(list).then((res) => {
+                console.log(res)
                 this.loadUp = false
                 console.log(res.data)
                 if (res.type == true) {
@@ -251,7 +257,7 @@ export default {
 
     >div {
         width: 100%;
-        height: 1.65rem;
+        height: 2rem;
         border-bottom: 0.01rem solid #E9E9E9;
 
         div:nth-of-type(1) {

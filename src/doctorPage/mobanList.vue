@@ -154,11 +154,12 @@ export default {
     margin-bottom: 15px;
 
     input {
-        width: 100%;
+        width: 94%;
         height: 74px;
         border-radius: 38px;
         color: #ccc;
         font-size: 25px;
+        margin-left: .25rem;
         float: left;
         text-align: center;
         border: 1px solid #cecece;

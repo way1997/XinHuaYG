@@ -1,4 +1,3 @@
 const url = 'https://www.mfzhosp.com' ;
-
-
-export default url ;  
+// const url = 'http://192.168.7.211:8080' ;
+export default url;  
